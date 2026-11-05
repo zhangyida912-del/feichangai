@@ -36,6 +36,9 @@
   .card h4 { font-size:18px; font-weight:900; margin-bottom:6px; }
   .card p { font-size:14px; color:#555; }
   .card .soon { color:#e8380d; font-weight:800; font-size:13px; }
+  .fear-num { font-size:40px; font-weight:900; line-height:1.15; }
+  .fear-chg { font-size:13px; font-weight:800; }
+  .up { color:#e8380d; } .down { color:#1a9e4b; }
   .about-box { background:#fafafa; border-radius:14px; padding:22px; margin-top:16px; font-size:16px; }
   footer { border-top:3px solid #111; margin-top:48px; padding:22px 0 34px; color:#777; font-size:13px; }
   @media (max-width:640px){ .hero h1{font-size:52px;} .cards{grid-template-columns:1fr;} .nav-links a{margin-left:12px;} }
@@ -94,11 +97,17 @@
     <span class="tag">尚未确认</span>
   </div></div></a>
 
-  <div class="section-title">这个站在做什么<small>COLUMNS</small></div>
+  <div class="section-title">每日市场情绪<small>FEAR INDEX</small></div>
+  <div class="issue-meta">截至 2026 年 11 月 3 日美股收盘 · 数据来源：Cboe 指数 / 圣路易斯联储 FRED · 每个交易日随简报更新。指数越高，市场越恐慌。</div>
   <div class="cards">
+    <div class="card"><h4>标普 500 恐慌指数 VIX</h4><div class="fear-num">20.83</div><p><span class="fear-chg down">较前日 -0.32</span></p><p>刚过 20 这条警戒线，美股整体情绪偏紧张。</p></div>
+    <div class="card"><h4>纳斯达克 100 恐慌指数 VXN</h4><div class="fear-num">30.53</div><p><span class="fear-chg down">较前日 -0.36</span></p><p>明显高于标普，科技股这边的波动和不安更大。</p></div>
+    <div class="card"><h4>黄金恐慌指数 GVZ</h4><div class="fear-num">25.82</div><p><span class="fear-chg up">较前日 +0.37</span></p><p>处在中高位，黄金的避险情绪也不低。</p></div>
+  </div>
+
+  <div class="section-title">这个站在做什么<small>COLUMNS</small></div>
+  <div class="cards" style="grid-template-columns:1fr;">
     <div class="card"><h4>AI 每日简报</h4><p>每天一期，从海外一手源里筛出真正值得看的 3–5 条，中文讲清 + 原文链接。</p></div>
-    <div class="card"><h4>长文与复盘</h4><p>我写的长文和复盘会沉淀到这里，不怕被信息流冲走。</p><p class="soon">建设中</p></div>
-    <div class="card"><h4>AI 工具与教程</h4><p>我自己真用过的工具和工作流，踩过的坑也会写。</p><p class="soon">建设中</p></div>
   </div>
 
   <div class="section-title">关于我<small>ABOUT</small></div>
