@@ -3,51 +3,67 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>非常AI · 每天一期 AI 简报 | feichangai.vip</title>
-<meta name="description" content="非常AI：张益达的个人站。每天一期 AI 简报，看懂 AI 圈今天发生了什么。">
+<title>非常AI · 每天几分钟，看懂 AI 变化与你的关系 | feichangai.vip</title>
+<meta name="description" content="非常AI：每天一期 AI 简报，精选值得关注的 AI 动态，讲清发生了什么、为什么重要，并附来源与核验状态。">
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
   body { font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif; color:#111; background:#fff; line-height:1.7; }
-  a { color:#111; text-decoration:none; }
+  a { color:#111; }
   .wrap { max-width:760px; margin:0 auto; padding:0 20px; }
   header { border-bottom:3px solid #111; }
-  .nav { display:flex; align-items:center; justify-content:space-between; padding:16px 0; }
-  .logo { font-size:24px; font-weight:900; letter-spacing:2px; }
+  .nav { display:flex; align-items:center; justify-content:space-between; padding:10px 0; }
+  .logo { font-size:22px; font-weight:900; letter-spacing:2px; text-decoration:none; padding:8px 0; }
   .logo span { color:#e8380d; }
-  .nav-links a { margin-left:18px; font-size:15px; font-weight:600; }
-  .hero { padding:56px 0 40px; }
-  .hero .site { font-size:14px; letter-spacing:4px; color:#888; font-weight:700; }
-  .hero h1 { font-size:76px; font-weight:900; line-height:1.1; margin:10px 0 14px; letter-spacing:4px; }
-  .hero h1 span { color:#e8380d; }
-  .hero p { font-size:20px; color:#333; max-width:560px; }
-  .hero .cta { margin-top:26px; display:flex; gap:12px; flex-wrap:wrap; }
-  .btn { display:inline-block; padding:12px 26px; font-size:16px; font-weight:700; border:2px solid #111; border-radius:999px; }
+  .nav-links { display:flex; }
+  .nav-links a { margin-left:6px; font-size:15px; font-weight:600; text-decoration:none; padding:10px 8px; min-height:44px; display:inline-flex; align-items:center; }
+  .nav-links a:hover { text-decoration:underline; }
+  .nav-links a[aria-current="page"] { color:#e8380d; }
+  a:focus-visible, button:focus-visible { outline:3px solid #e8380d; outline-offset:2px; }
+  .hero { padding:40px 0 8px; }
+  .hero .kicker { font-size:13px; letter-spacing:3px; color:#e8380d; font-weight:900; }
+  .hero h1 { font-size:40px; font-weight:900; line-height:1.3; margin:10px 0 12px; }
+  .hero .sub { font-size:18px; color:#333; max-width:600px; }
+  .hero .cta { margin-top:22px; display:flex; gap:12px; flex-wrap:wrap; }
+  .btn { display:inline-block; padding:12px 26px; font-size:16px; font-weight:700; border:2px solid #111; border-radius:999px; text-decoration:none; min-height:44px; }
   .btn.primary { background:#111; color:#fff; }
+  .btn:hover { text-decoration:underline; }
   .section-title { font-size:15px; font-weight:900; letter-spacing:3px; border-top:3px solid #111; padding-top:22px; margin:38px 0 6px; }
   .section-title small { color:#e8380d; letter-spacing:1px; margin-left:8px; }
   .issue-meta { color:#888; font-size:14px; margin-bottom:14px; }
-  .item { padding:16px 0; border-bottom:1px solid #eee; display:flex; gap:16px; }
-  .item .rank { font-size:28px; font-weight:900; color:#e8380d; min-width:40px; }
-  .item h3 { font-size:19px; font-weight:800; line-height:1.45; }
-  .item p { color:#555; font-size:15px; margin-top:4px; }
-  .tag { display:inline-block; font-size:12px; font-weight:700; border:1.5px solid #111; border-radius:999px; padding:1px 9px; margin-top:8px; }
-  .cards { display:grid; grid-template-columns:1fr 1fr 1fr; gap:14px; margin-top:16px; }
-  .card { border:2px solid #111; border-radius:14px; padding:18px; }
-  .card h4 { font-size:18px; font-weight:900; margin-bottom:6px; }
-  .card p { font-size:14px; color:#555; }
-  .card .soon { color:#e8380d; font-weight:800; font-size:13px; }
-  .fear-num { font-size:40px; font-weight:900; line-height:1.15; }
-  .fear-chg { font-size:13px; font-weight:800; }
-  .up { color:#e8380d; } .down { color:#1a9e4b; }
+  .headline-card { border:2.5px solid #111; border-radius:16px; padding:22px; margin-top:14px; }
+  .headline-card .hc-meta { font-size:13px; color:#888; font-weight:700; letter-spacing:1px; }
+  .headline-card h2 { font-size:26px; font-weight:900; line-height:1.4; margin:8px 0; }
+  .headline-card p { font-size:16px; color:#333; }
+  .headline-card .why { margin-top:10px; font-size:15px; background:#fff7f2; border-left:4px solid #e8380d; padding:10px 14px; }
+  .headline-card .go { display:inline-block; margin-top:14px; font-weight:800; text-decoration:underline; padding:6px 0; }
+  .item { padding:15px 0; border-bottom:1px solid #eee; display:flex; gap:16px; }
+  .item .rank { font-size:26px; font-weight:900; color:#e8380d; min-width:38px; }
+  .item h3 { font-size:18px; font-weight:800; line-height:1.45; }
+  .item h3 a { text-decoration:none; }
+  .item h3 a:hover { text-decoration:underline; }
+  .item p { color:#555; font-size:14.5px; margin-top:3px; }
+  .src-line { font-size:13px; color:#777; margin-top:6px; }
+  .chip { display:inline-block; font-size:12px; font-weight:700; border:1.5px solid #111; border-radius:999px; padding:1px 9px; margin-right:6px; }
+  .chip.verify { border-style:dashed; }
   .about-box { background:#fafafa; border-radius:14px; padding:22px; margin-top:16px; font-size:16px; }
+  .update-box { border:2px dashed #bbb; border-radius:14px; padding:20px 22px; margin-top:16px; font-size:15px; color:#444; }
   footer { border-top:3px solid #111; margin-top:48px; padding:22px 0 34px; color:#777; font-size:13px; }
-  @media (max-width:640px){ .hero h1{font-size:52px;} .cards{grid-template-columns:1fr;} .nav-links a{margin-left:12px;} }
+  footer nav a { margin-right:16px; font-weight:600; text-decoration:none; padding:6px 0; display:inline-block; }
+  footer nav a:hover { text-decoration:underline; }
+  @media (max-width:640px){
+    .hero { padding:30px 0 4px; }
+    .hero h1 { font-size:30px; }
+    .hero .sub { font-size:16.5px; }
+    .headline-card h2 { font-size:22px; }
+    .nav-links a { margin-left:2px; padding:10px 6px; }
+  }
 </style>
 </head>
 <body>
 <header><div class="wrap nav">
-  <div class="logo">非常<span>AI</span></div>
+  <a class="logo" href="index.html">非常<span>AI</span></a>
   <nav class="nav-links">
+    <a href="index.html" aria-current="page">首页</a>
     <a href="news/2026-11-05.html">今日简报</a>
     <a href="archive.html">存档</a>
     <a href="about.html">关于</a>
@@ -56,69 +72,69 @@
 
 <main class="wrap">
   <section class="hero">
-    <div class="site">FEICHANGAI.VIP</div>
-    <h1>非常<span>AI</span></h1>
-    <p>每天一期 AI 简报，看懂 AI 圈今天发生了什么。不堆术语，不编数字，每条都标来源。</p>
+    <div class="kicker">每日简报 · 第 0 期（样刊）已发布</div>
+    <h1>每天几分钟，看懂 AI 变化与你的关系。</h1>
+    <p class="sub">精选值得关注的 AI 动态，讲清发生了什么、为什么重要，并附来源与核验状态。</p>
     <div class="cta">
-      <a class="btn primary" href="news/2026-11-05.html">看今日简报</a>
+      <a class="btn primary" href="news/2026-11-05.html">读今日 5 条</a>
+      <a class="btn" href="news/2026-11-05.html#item-01">先看今日重点</a>
     </div>
   </section>
 
-  <div class="section-title">今日简报<small>LATEST</small></div>
-  <div class="issue-meta">第 0 期（样刊）· 2026 年 11 月 5 日 星期四 · 本期 5 条</div>
+  <div class="section-title">今日重点<small>TOP STORY</small></div>
+  <div class="headline-card">
+    <div class="hc-meta">第 0 期（样刊）· 2026 年 11 月 5 日 星期四 · 本期 5 条 · 约 8 分钟读完</div>
+    <h2>ChatGPT 的搜索量，已经摸到谷歌的 20%</h2>
+    <p>据 OpenAI 消费产品负责人 Adam Fry 在 Big Technology 访谈中表示：ChatGPT 的搜索量已达谷歌的约 20%，过去两个月新增 2 亿用户、周活 12 亿，语音模式周活 2.5 亿。</p>
+    <div class="why"><strong>为什么值得看：</strong>搜索入口正从「打关键词点链接」变成「开口问一句」。做内容的人，读者会先被 AI 读一遍，才轮到点进你的页面。</div>
+    <div class="src-line"><span class="chip">媒体报道</span><span class="chip verify">原文已核 · 数字为受访方自述</span> 来源：Big Technology（2026-11-03）</div>
+    <a class="go" href="news/2026-11-05.html#item-01">读这一条 →</a>
+  </div>
 
-  <a href="news/2026-11-05.html"><div class="item"><div class="rank">1</div><div>
-    <h3>ChatGPT 的搜索量，已经摸到谷歌的 20%</h3>
-    <p>过去两个月新增 2 亿用户、周活 12 亿，每 5 个用户里有 1 个在用语音跟它说话。</p>
-    <span class="tag">媒体二手</span>
-  </div></div></a>
+  <div class="section-title">今日其余简报<small>IN THIS ISSUE</small></div>
+  <div class="issue-meta">点任意一条，直达本期对应位置。</div>
 
-  <a href="news/2026-11-05.html"><div class="item"><div class="rank">2</div><div>
-    <h3>前沿模型正在反过来喂大开放权重模型？</h3>
-    <p>图灵奖得主判断：开源和闭源的差距在以「月」为单位缩小，机制是合成数据和评测信号外溢。</p>
-    <span class="tag">媒体二手</span>
-  </div></div></a>
+  <div class="item"><div class="rank">2</div><div>
+    <h3><a href="news/2026-11-05.html#item-02">前沿模型开始直接给小模型「改权重」</a></h3>
+    <p>MIT CSAIL 研究者让前沿模型直接编辑较小模型的权重参数，数学任务成绩大涨——让小模型变强的新路径。</p>
+    <div class="src-line"><span class="chip">媒体报道</span><span class="chip verify">原文已核</span> 来源：AI Breakfast（2026-11-04）</div>
+  </div></div>
 
-  <a href="news/2026-11-05.html"><div class="item"><div class="rank">3</div><div>
-    <h3>Netflix 上线 AI Discover：一句话找电影</h3>
-    <p>不用再一层层点类型标签，用自然语言描述想看什么，它直接给片单。</p>
-    <span class="tag">媒体二手</span>
-  </div></div></a>
+  <div class="item"><div class="rank">3</div><div>
+    <h3><a href="news/2026-11-05.html#item-03">Netflix 上线 AI Discover：按心情主题找电影</a></h3>
+    <p>电视端新增 Discover 标签，按心情和主题选片，美国小范围用户先行测试。</p>
+    <div class="src-line"><span class="chip">媒体报道</span><span class="chip verify">原文已核</span> 来源：Superhuman AI（2026-11-04）</div>
+  </div></div>
 
-  <a href="news/2026-11-05.html"><div class="item"><div class="rank">4</div><div>
-    <h3>聊 2027 年 AI 创业，他说最赚钱的技能是「注意力」</h3>
+  <div class="item"><div class="rank">4</div><div>
+    <h3><a href="news/2026-11-05.html#item-04">聊 2027 年 AI 创业，他说最赚钱的技能是「注意力」</a></h3>
     <p>产品做得再好，没人知道你是谁、你能提供什么，就没人付钱。</p>
-    <span class="tag">作者观点</span>
-  </div></div></a>
+    <div class="src-line"><span class="chip">作者观点</span><span class="chip verify">原文已核</span> 来源：Dan Koe 长信（2026-11-03）</div>
+  </div></div>
 
-  <a href="news/2026-11-05.html"><div class="item"><div class="rank">5</div><div>
-    <h3>闲置显卡也能换大模型额度：Hashference</h3>
-    <p>用闲置 CPU/GPU 算力当付款方式，换 45+ 顶级模型的 API 额度。</p>
-    <span class="tag">尚未确认</span>
-  </div></div></a>
-
-  <div class="section-title">每日市场情绪<small>FEAR INDEX</small></div>
-  <div class="issue-meta">截至 2026 年 11 月 3 日美股收盘 · 数据来源：Cboe 指数 / 圣路易斯联储 FRED · 每个交易日随简报更新。指数越高，市场越恐慌。</div>
-  <div class="cards">
-    <div class="card"><h4>标普 500 恐慌指数 VIX</h4><div class="fear-num">20.83</div><p><span class="fear-chg down">较前日 -0.32</span></p><p>刚过 20 这条警戒线，美股整体情绪偏紧张。</p></div>
-    <div class="card"><h4>纳斯达克 100 恐慌指数 VXN</h4><div class="fear-num">30.53</div><p><span class="fear-chg down">较前日 -0.36</span></p><p>明显高于标普，科技股这边的波动和不安更大。</p></div>
-    <div class="card"><h4>黄金恐慌指数 GVZ</h4><div class="fear-num">25.82</div><p><span class="fear-chg up">较前日 +0.37</span></p><p>处在中高位，黄金的避险情绪也不低。</p></div>
-  </div>
-
-  <div class="section-title">这个站在做什么<small>COLUMNS</small></div>
-  <div class="cards" style="grid-template-columns:1fr;">
-    <div class="card"><h4>AI 每日简报</h4><p>每天一期，从海外一手源里筛出真正值得看的 3–5 条，中文讲清 + 原文链接。</p></div>
-  </div>
+  <div class="item"><div class="rank">5</div><div>
+    <h3><a href="news/2026-11-05.html#item-05">闲置显卡也能换大模型额度：Hashference</a></h3>
+    <p>用闲置 CPU/GPU 算力当付款方式，换 45+ 顶级模型的 API 额度；价格宣称未独立核实。</p>
+    <div class="src-line"><span class="chip">厂商自述</span><span class="chip verify">尚未确认</span> 来源：Product Hunt 产品页（2026-11-03）</div>
+  </div></div>
 
   <div class="section-title">关于我<small>ABOUT</small></div>
   <div class="about-box">
     我是张益达。这个站是我放简报和长文的地方：每天一期 AI 简报，把海外一手源里值得看的筛出来、中文讲清、标好来源；长文和复盘也沉淀在这里，不被信息流冲走。<a href="about.html" style="font-weight:800;text-decoration:underline;">更多 →</a>
   </div>
+
+  <div class="section-title">获取更新<small>STAY UPDATED</small></div>
+  <div class="update-box">
+    公众号与 RSS 订阅正在配置中，暂未开通，本站不收集邮箱。开通后这里会放真实入口；在此之前，你可以收藏本站，或从<a href="archive.html" style="font-weight:700;text-decoration:underline;">存档页</a>查看往期。
+  </div>
 </main>
 
 <footer><div class="wrap">
+  <nav>
+    <a href="index.html">首页</a><a href="news/2026-11-05.html">今日简报</a><a href="archive.html">存档</a><a href="about.html">关于</a>
+  </nav>
   非常AI · feichangai.vip<br>
-  本站资讯均标注来源与可信度标签，只做自有摘要与点评并附原文链接，不全文转载。内容由 AI 辅助整理、人工复核。
+  本站资讯均标注来源与核验状态，只做自有摘要与点评并附原文链接，不全文转载。内容由 AI 辅助整理、人工复核。
 </div></footer>
 </body>
 </html>

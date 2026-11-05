@@ -4,35 +4,60 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>简报存档 · 非常AI</title>
+<meta name="description" content="非常AI每日简报存档：目前已发布 1 期（样刊）。">
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
   body { font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif; color:#111; background:#fff; line-height:1.7; }
-  a { color:#111; text-decoration:none; }
+  a { color:#111; }
   .wrap { max-width:760px; margin:0 auto; padding:0 20px; }
   header { border-bottom:3px solid #111; }
-  .nav { display:flex; align-items:center; justify-content:space-between; padding:16px 0; }
-  .logo { font-size:24px; font-weight:900; letter-spacing:2px; }
+  .nav { display:flex; align-items:center; justify-content:space-between; padding:10px 0; }
+  .logo { font-size:22px; font-weight:900; letter-spacing:2px; text-decoration:none; padding:8px 0; }
   .logo span { color:#e8380d; }
-  .nav a { font-size:15px; font-weight:600; }
-  h1 { font-size:34px; font-weight:900; padding:36px 0 14px; }
-  .entry { padding:16px 0; border-bottom:1px solid #eee; }
+  .nav-links { display:flex; }
+  .nav-links a { margin-left:6px; font-size:15px; font-weight:600; text-decoration:none; padding:10px 8px; min-height:44px; display:inline-flex; align-items:center; }
+  .nav-links a:hover { text-decoration:underline; }
+  .nav-links a[aria-current="page"] { color:#e8380d; }
+  a:focus-visible { outline:3px solid #e8380d; outline-offset:2px; }
+  h1 { font-size:34px; font-weight:900; padding:36px 0 6px; }
+  .count { color:#888; font-size:14.5px; margin-bottom:10px; }
+  .entry { padding:18px 0; border-bottom:1px solid #eee; }
   .entry .date { color:#888; font-size:14px; }
-  .entry h3 { font-size:20px; font-weight:800; margin-top:2px; }
+  .entry h3 { font-size:20px; font-weight:800; margin-top:2px; line-height:1.45; }
+  .entry h3 a { text-decoration:none; }
+  .entry h3 a:hover { text-decoration:underline; }
+  .entry p { color:#555; font-size:14.5px; margin-top:4px; }
+  .chip { display:inline-block; font-size:12px; font-weight:700; border:1.5px solid #111; border-radius:999px; padding:1px 9px; margin-left:8px; vertical-align:2px; }
   footer { border-top:3px solid #111; margin-top:40px; padding:22px 0 34px; color:#777; font-size:13px; }
+  footer nav a { margin-right:16px; font-weight:600; text-decoration:none; padding:6px 0; display:inline-block; }
+  footer nav a:hover { text-decoration:underline; }
+  @media (max-width:640px){ .nav-links a { margin-left:2px; padding:10px 6px; } }
 </style>
 </head>
 <body>
 <header><div class="wrap nav">
-  <div class="logo">非常<span>AI</span></div>
-  <nav><a href="index.html">← 回首页</a></nav>
+  <a class="logo" href="index.html">非常<span>AI</span></a>
+  <nav class="nav-links">
+    <a href="index.html">首页</a>
+    <a href="news/2026-11-05.html">今日简报</a>
+    <a href="archive.html" aria-current="page">存档</a>
+    <a href="about.html">关于</a>
+  </nav>
 </div></header>
 <main class="wrap">
   <h1>简报存档</h1>
-  <a href="news/2026-11-05.html"><div class="entry">
-    <div class="date">2026-11-05 · 星期四</div>
-    <h3>第 0 期（样刊）：搜索在换代，开源在逼近</h3>
-  </div></a>
+  <div class="count">已发布 1 期（样刊）。正式期数从第 1 期起，每期都会出现在这里。</div>
+  <div class="entry">
+    <div class="date">2026-11-05 · 星期四 · 共 5 条</div>
+    <h3><a href="news/2026-11-05.html">第 0 期：搜索在换代，能力在下放</a><span class="chip">样刊</span></h3>
+    <p>ChatGPT 搜索量摸到谷歌 20%（据 OpenAI 受访自述）、前沿模型直接给小模型改权重、Netflix 按心情选片、Dan Koe 谈注意力、闲置显卡换模型额度。</p>
+  </div>
 </main>
-<footer><div class="wrap">非常AI · feichangai.vip · 内容由 AI 辅助整理、人工复核，均标注来源。</div></footer>
+<footer><div class="wrap">
+  <nav>
+    <a href="index.html">首页</a><a href="news/2026-11-05.html">今日简报</a><a href="archive.html">存档</a><a href="about.html">关于</a>
+  </nav>
+  非常AI · feichangai.vip · 内容由 AI 辅助整理、人工复核，均标注来源与核验状态。
+</div></footer>
 </body>
 </html>

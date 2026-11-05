@@ -4,35 +4,73 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>关于 · 非常AI</title>
+<meta name="description" content="关于非常AI：服务谁、筛选标准、来源与更正规则。">
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
   body { font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif; color:#111; background:#fff; line-height:1.8; }
   a { color:#111; }
   .wrap { max-width:760px; margin:0 auto; padding:0 20px; }
   header { border-bottom:3px solid #111; }
-  .nav { display:flex; align-items:center; justify-content:space-between; padding:16px 0; }
-  .logo { font-size:24px; font-weight:900; letter-spacing:2px; }
+  .nav { display:flex; align-items:center; justify-content:space-between; padding:10px 0; }
+  .logo { font-size:22px; font-weight:900; letter-spacing:2px; text-decoration:none; padding:8px 0; }
   .logo span { color:#e8380d; }
-  .nav a { font-size:15px; font-weight:600; text-decoration:none; }
-  h1 { font-size:52px; font-weight:900; padding:40px 0 10px; letter-spacing:2px; }
-  p { font-size:17px; margin-bottom:14px; color:#222; }
+  .nav-links { display:flex; }
+  .nav-links a { margin-left:6px; font-size:15px; font-weight:600; text-decoration:none; padding:10px 8px; min-height:44px; display:inline-flex; align-items:center; }
+  .nav-links a:hover { text-decoration:underline; }
+  .nav-links a[aria-current="page"] { color:#e8380d; }
+  a:focus-visible { outline:3px solid #e8380d; outline-offset:2px; }
+  h1 { font-size:40px; font-weight:900; padding:36px 0 8px; }
+  h2 { font-size:20px; font-weight:900; margin:26px 0 8px; border-top:3px solid #111; padding-top:20px; }
+  p { font-size:17px; margin-bottom:12px; color:#222; }
   .big { font-size:21px; font-weight:700; }
-  .btn { display:inline-block; margin-top:10px; padding:12px 26px; font-size:16px; font-weight:700; border:2px solid #111; border-radius:999px; background:#111; color:#fff; text-decoration:none; }
+  ul { margin:0 0 12px 22px; font-size:16.5px; color:#222; }
+  li { margin-bottom:6px; }
   footer { border-top:3px solid #111; margin-top:44px; padding:22px 0 34px; color:#777; font-size:13px; }
+  footer nav a { margin-right:16px; font-weight:600; text-decoration:none; padding:6px 0; display:inline-block; }
+  footer nav a:hover { text-decoration:underline; }
+  @media (max-width:640px){ h1 { font-size:32px; } .nav-links a { margin-left:2px; padding:10px 6px; } }
 </style>
 </head>
 <body>
 <header><div class="wrap nav">
-  <div class="logo">非常<span>AI</span></div>
-  <nav><a href="index.html">← 回首页</a></nav>
+  <a class="logo" href="index.html">非常<span>AI</span></a>
+  <nav class="nav-links">
+    <a href="index.html">首页</a>
+    <a href="news/2026-11-05.html">今日简报</a>
+    <a href="archive.html">存档</a>
+    <a href="about.html" aria-current="page">关于</a>
+  </nav>
 </div></header>
 <main class="wrap">
   <h1>关于</h1>
   <p class="big">我是张益达。</p>
   <p>我每天泡在 AI 资讯里：读海外一手源、试新工具、做笔记。没什么秘诀，就是死磕——把 AI 圈每天真正发生的事筛出来、讲清楚。</p>
-  <p>「非常AI」是我的个人站，做两件事：一是每天一期 AI 简报，从海外一手源里筛出真正值得看的几条，中文讲清、标好来源；二是把我的长文和复盘沉淀下来，不被信息流冲走。</p>
-  <p>本站只做 AI 科技内容。每条资讯都标可信度，数字没核实的就老实写未确认——这是我给自己定的规矩。</p>
+  <p>「非常AI」是我的个人站，目前只做一件事：每天一期 AI 简报，从海外一手源里筛出真正值得看的几条，中文讲清、标好来源与核验状态。本站只做 AI 科技内容。</p>
+
+  <h2>这个站写给谁</h2>
+  <p>写给关注 AI 应用的创作者、独立开发者和产品从业者——想每天花几分钟判断「今天哪些变化值得我关注、值得我试」，而不是被信息流推着走的人。</p>
+
+  <h2>我的筛选标准</h2>
+  <ul>
+    <li>一手源优先：能找到原文、官方发布或当事人访谈，就不引用二手转述当结论。</li>
+    <li>数字必须归因：谁说的、什么时候说的，写清楚；没有独立核实的数字，明确标「未独立核实」。</li>
+    <li>性质与状态分开标：媒体报道、厂商自述、作者观点是「来源性质」；原文已核、未独立核实、尚未确认、存在争议是「核验状态」，两样都标，不混为一谈。</li>
+    <li>标题力度跟着证据走：证据只够说「据报道」，标题就不会写成定论。</li>
+    <li>厂商自述默认打折看：价格、性能、可持续性这类话，先标「尚未确认」，实测过再升级。</li>
+  </ul>
+
+  <h2>来源与更正规则</h2>
+  <ul>
+    <li>每条资讯给出原文直达链接与发布日期；暂时找不到原文的，明确写「原文链接待补」，聚合目录只标为发现渠道，不冒充原文。</li>
+    <li>发现错误不悄悄改：在对应条目处保留一条更正说明，写明原先错在哪、已按什么更正。</li>
+    <li>只做自有摘要与点评并附原文链接，不全文转载。</li>
+  </ul>
 </main>
-<footer><div class="wrap">非常AI · feichangai.vip · 内容由 AI 辅助整理、人工复核。</div></footer>
+<footer><div class="wrap">
+  <nav>
+    <a href="index.html">首页</a><a href="news/2026-11-05.html">今日简报</a><a href="archive.html">存档</a><a href="about.html">关于</a>
+  </nav>
+  非常AI · feichangai.vip · 内容由 AI 辅助整理、人工复核。
+</div></footer>
 </body>
 </html>
