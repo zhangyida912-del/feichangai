@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>非常AI每日简报 第0期（样刊）· 2026-11-05</title>
-<meta name="description" content="2026年11月5日 AI 简报：ChatGPT 搜索量、开放权重模型、Netflix AI Discover、AI 创业与注意力、Hashference。每条附原文链接与核验状态。">
+<meta name="description" content="2026年11月5日 AI 简报：ChatGPT 搜索类查询量、权重空间编程研究、Netflix AI Discover，另附 1 篇延伸阅读。每条附原文链接与核验状态。">
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
   body { font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif; color:#111; background:#fff; line-height:1.8; }
@@ -28,8 +28,13 @@
   details.note { background:#fafafa; border-radius:12px; padding:6px 18px; font-size:14px; color:#555; margin:18px 0 4px; }
   details.note summary { cursor:pointer; font-weight:800; color:#111; padding:10px 0; min-height:44px; }
   details.note .note-body { padding-bottom:12px; }
-  .toc { border:2px solid #111; border-radius:14px; padding:16px 20px; margin:20px 0 6px; }
-  .toc .toc-title { font-size:13px; font-weight:900; letter-spacing:3px; margin-bottom:8px; }
+  details.toc-details { border:2px solid #111; border-radius:14px; margin:20px 0 6px; }
+  details.toc-details summary { cursor:pointer; font-weight:900; letter-spacing:2px; font-size:14px; padding:14px 20px; min-height:44px; list-style:none; }
+  details.toc-details summary::-webkit-details-marker { display:none; }
+  details.toc-details summary::after { content:"▸"; float:right; color:#e8380d; }
+  details.toc-details[open ] summary::after { content:"▾"; }
+  .toc { padding:0 20px 14px; }
+  .toc .toc-title { display:none; }
   .toc ol { margin-left:20px; }
   .toc li { margin:4px 0; }
   .toc a { text-decoration:none; font-weight:600; padding:4px 0; }
@@ -39,13 +44,11 @@
   article .rank { font-size:15px; font-weight:900; color:#e8380d; letter-spacing:2px; }
   article h2 { font-size:26px; font-weight:900; line-height:1.4; margin:6px 0 12px; }
   article p { font-size:17.5px; color:#222; margin-bottom:10px; }
-  article .block-label { font-size:13px; font-weight:900; letter-spacing:2px; color:#888; margin:14px 0 4px; }
-  article .why { background:#fff7f2; border-left:4px solid #e8380d; padding:10px 14px; font-size:15.5px; }
-  article .todo { font-size:15.5px; background:#fafafa; border-left:4px solid #111; padding:10px 14px; }
   .src { border-top:1px dashed #ddd; margin-top:16px; padding-top:10px; color:#666; font-size:13.5px; line-height:1.7; }
   .src a { font-weight:700; }
   .chip { display:inline-block; font-size:12px; font-weight:700; border:1.5px solid #111; border-radius:999px; padding:1px 9px; margin-right:6px; color:#111; }
   .chip.verify { border-style:dashed; }
+  .corr { margin-top:8px; }
   .copy-row { margin-top:12px; }
   .copy-btn { font-size:13.5px; font-weight:700; border:1.5px solid #111; background:#fff; border-radius:999px; padding:8px 16px; min-height:44px; cursor:pointer; }
   .copy-btn:hover { background:#111; color:#fff; }
@@ -61,9 +64,6 @@
     article h2 { font-size:23px; }
     article p { font-size:16.5px; }
     .nav-links a { margin-left:2px; padding:10px 6px; }
-  }
-  @media (prefers-reduced-motion: reduce){
-    html { scroll-behavior:auto; }
   }
   html { scroll-behavior:smooth; }
   @media (prefers-reduced-motion: reduce){
@@ -86,9 +86,9 @@
 <main class="wrap">
   <div class="head">
     <div class="kicker">每日简报 · 第 0 期（样刊）</div>
-    <h1>搜索在换代，能力在下放</h1>
-    <div class="meta">2026 年 11 月 5 日 星期四 · 共 5 条 · 预计阅读约 8 分钟 · 整理：非常AI</div>
-    <p class="lede">本期看三件大事：搜索入口正在换代、前沿能力开始向小模型下放、大厂把找内容做成按心情选——外加一个创业观点和一个先放观察名单的新产品。</p>
+    <h1>2026 年 11 月 5 日简报</h1>
+    <div class="meta">2026 年 11 月 5 日 星期四 · 3 条新闻 + 1 篇延伸阅读 · 整理：非常AI</div>
+    <p class="lede">本期 3 条新闻 + 1 篇延伸阅读：一个自报的搜索量数字、一项改权重的研究、一个选片新功能，外加一篇谈注意力的长信。</p>
   </div>
 
   <details class="note">
@@ -96,108 +96,70 @@
     <div class="note-body">本期为站点上线前的第 0 期样刊，素材取自乔木公开阅读目录 2026-11-04 列表，摘要均为本站自有文字、未搬运原文。本版已逐条核对原文：每条都给出原文直达链接、发布日期、来源性质与核验状态；乔木目录仅作为「发现渠道」标注，不再冒充原文。核验口径：原文已核 / 未独立核实 / 尚未确认 / 存在争议，标题力度与核验状态一致。</div>
   </details>
 
-  <nav class="toc" aria-label="本期目录">
+  <details class="toc-details"><summary>本期目录 · 3 条 + 延伸阅读</summary><nav class="toc" aria-label="本期目录">
     <div class="toc-title">本期目录</div>
     <ol>
-      <li><a href="#item-01">ChatGPT 的搜索量，已经摸到谷歌的 20%</a></li>
-      <li><a href="#item-02">前沿模型开始直接给小模型「改权重」</a></li>
-      <li><a href="#item-03">Netflix 上线 AI Discover：按心情主题找电影</a></li>
-      <li><a href="#item-04">聊 2027 年 AI 创业，他说最赚钱的技能是「注意力」</a></li>
-      <li><a href="#item-05">闲置显卡也能换大模型额度：Hashference</a></li>
+      <li><a href="#item-01">OpenAI 称：ChatGPT 的搜索类查询量，已约为谷歌的五分之一</a></li>
+      <li><a href="#item-02">大模型亲手改了小模型的权重，修好了一个让它反复打转的毛病</a></li>
+      <li><a href="#item-03">Netflix 推出 AI Discover：先选一个心情主题，再慢慢缩小范围</a></li>
+      <li><a href="#item-04">延伸阅读 · Dan Koe：2027 年最赚钱的 AI 生意，是先让人看见你</a></li>
     </ol>
-  </nav>
+  </nav></details>
 
   <article id="item-01">
-    <div class="rank">01 · 今日重点</div>
-    <h2>ChatGPT 的搜索量，已经摸到谷歌的 20%</h2>
-    <div class="block-label">发生了什么</div>
-    <p>据 OpenAI 消费产品负责人 Adam Fry 在 Big Technology 访谈中表示：ChatGPT 的搜索量已达谷歌的约 20%；过去两个月新增 2 亿用户，周活跃用户来到 12 亿；其中语音模式周活 2.5 亿——每 5 个用户里，就有 1 个不是打字、而是在跟它说话。以上数字均为 OpenAI 一方在受访时给出的自述，无独立第三方测量。</p>
-    <div class="block-label">为什么与你有关</div>
-    <div class="why">搜索的入口正在从「打关键词点链接」变成「开口问一句」。做内容的人，读者以后先被 AI 读一遍，才轮到点进你的页面。</div>
-    <div class="block-label">可以做什么</div>
-    <div class="todo">自查一遍：你写的东西被 AI 摘要时，关键结论是不是在开头就讲清了——现在它先决定读者要不要继续点进来。</div>
+    <div class="rank">01</div>
+    <h2>OpenAI 称：ChatGPT 的搜索类查询量，已约为谷歌的五分之一</h2>
+    <p>OpenAI 消费产品负责人 Adam Fry 接受 Big Technology 访谈时称，ChatGPT 的「搜索类查询」量已达谷歌约 20%，过去两个月周活从 10 亿涨到 12 亿。</p>
+    <figure style="margin:16px 0;"><img src="../assets/chatgpt-growth.png" alt="Big Technology 原文配图：一条陡峭上升的增长曲线与 OpenAI 标志" style="width:100%;display:block;border:1px solid #eee;"><figcaption style="font-size:12.5px;color:#888;margin-top:6px;">配图：Big Technology 原文插图（2026-11-03），示意 ChatGPT 增长曲线。</figcaption></figure>
+    <p>先说清口径：按 Fry 的定义，搜索类查询指需要最新信息、过去会去搜索引擎完成的问题，如查人物地点、金融健康信息。这个比例由 OpenAI 自行定义、自行统计；记者追问多轮对话如何计数，本次可读取的公开部分未显示回答，计数方式尚未核实，报道也未提供可供外界复算的完整比较方法。</p>
+    <p>这提供了观察 ChatGPT 搜索使用规模的一条企业自述，但不足以判断它替代了多少传统搜索，也不能据此计算搜索市场份额。</p>
     <div class="src">
-      <span class="chip">媒体报道</span><span class="chip verify">原文已核 · 数字未独立核实</span><br>
-      来源：<a href="https://www.bigtechnology.com/p/openai-chatgpt-search-is-about-20" target="_blank" rel="noopener">Big Technology · OpenAI: ChatGPT Search Is About 20% of Google's…</a>（2026-11-03，Alex Kantrowitz 对 Adam Fry 的访谈）<br>
-      发现渠道：<a href="https://rss.qiaomu.ai" target="_blank" rel="noopener">乔木公开目录</a>（经 TLDR 转述条目发现）
-      <div class="copy-row"><button class="copy-btn" type="button" data-copy="https://feichangai.vip/news/2026-11-05.html#item-01">复制本条链接</button><div class="copy-fallback">手动复制：https://feichangai.vip/news/2026-11-05.html#item-01</div></div>
+      <span class="chip">媒体报道</span><span class="chip verify">企业自述 · 未独立核实</span><br>
+      来源：<a href="https://www.bigtechnology.com/p/openai-chatgpt-search-is-about-20" target="_blank" rel="noopener">Big Technology 对 Adam Fry 的访谈</a> · 2026-11-03
+      <div class="copy-row"><button class="copy-btn" data-copy="https://feichangai.vip/news/2026-11-05.html#item-01">复制本条链接</button><div class="copy-fallback">https://feichangai.vip/news/2026-11-05.html#item-01</div></div>
     </div>
   </article>
 
   <article id="item-02">
     <div class="rank">02</div>
-    <h2>前沿模型开始直接给小模型「改权重」</h2>
-    <div class="block-label">发生了什么</div>
-    <p>AI Breakfast 2026-11-04 一期报道了 MIT CSAIL 研究者的论文《Weight-Space Programming》：让前沿大模型直接读写、编辑较小模型的权重参数，被「改过权重」的小模型在数学任务上成绩大幅提升。也就是说，前沿模型不只是被使用，也开始被用来当「改造其他模型」的工具。</p>
-    <div class="block-label">为什么与你有关</div>
-    <div class="why">让小模型、开放权重模型变强，除了蒸馏和微调，又多了一条路：能力下放的速度可能比预想的快，本地能跑的模型会越来越能打。</div>
+    <h2>大模型亲手改了小模型的权重，修好了一个让它反复打转的毛病</h2>
+    <p>MIT CSAIL 四位研究者让前沿模型 GPT-6 Astra 不训练、不算梯度，直接改小模型 Qwen3.5-0.8B 的权重，看能否让它数学变好。Astra 查出的不是知识不够，而是一个具体故障：这模型思考时容易原地打转、反复重复同一段推理，许多回答因耗尽输出额度而未能完成。它定位到相关参数，只改约 0.016%，打转大幅减少：同一测试口径下，MATH-500 从 7.9% 升到 48.1%，指令跟随 IFEval 从 21.0% 升到 62.3%。修改后的模型已公开，可下载试用，并有在线演示和独立复测。</p>
+    <p>边界由作者自己划明：这修的是「已有能力被故障挡住」，不是增加能力；换一个没有打转毛病的 Gemma 3 270M，未观察到明确改善。还要提醒：独立审计按小模型官方推荐设置复测，未修改的原模型本可得约 44%（测试口径见本站核验记录），所以 7.9% 这个起点很大程度是「打转有多严重」的度量，不能读成数学能力涨了六倍。作为新的模型调试思路值得跟踪；作为通用方法是否实用，仍待更多模型与故障类型验证。</p>
     <div class="src">
-      <span class="chip">媒体报道</span><span class="chip verify">原文已核</span><br>
-      来源：<a href="https://aibreakfast.beehiiv.com/p/frontier-models-improving-open-weight-models" target="_blank" rel="noopener">AI Breakfast · Frontier Models improving open-weight models?</a>（2026-11-04）<br>
-      发现渠道：<a href="https://rss.qiaomu.ai" target="_blank" rel="noopener">乔木公开目录</a><br>
-      更正：本期样刊初版曾将本条转述为「图灵奖得主在播客中判断差距以月缩小」，与原文内容不符，本版已按原文更正。
-      <div class="copy-row"><button class="copy-btn" type="button" data-copy="https://feichangai.vip/news/2026-11-05.html#item-02">复制本条链接</button><div class="copy-fallback">手动复制：https://feichangai.vip/news/2026-11-05.html#item-02</div></div>
+      <span class="chip">研究者一手报告</span><span class="chip verify">未经同行评审 · 有独立复测</span><br>
+      来源：<a href="https://rikiyat.github.io/blog/weight-space-programming/" target="_blank" rel="noopener">研究者报告《Sparks of Weight-Space Programming》</a> · 2026-11-02；<a href="https://huggingface.co/RikiyaT/Qwen3.5-0.8B-weight-space-programming" target="_blank" rel="noopener">修改后模型页（含独立复测记录），Hugging Face</a>；独立审计：<a href="https://carlostoledo.co/reports/weight-space-programming.html" target="_blank" rel="noopener">Carlos Toledo 审计报告</a>、<a href="https://www.hedwigai.com/blog/weight-edit-math-or-loops" target="_blank" rel="noopener">HedwigAI 评测</a>
+      <div class="corr">更正：本期样刊初版曾将本条转述为「图灵奖得主在播客中判断差距以月缩小」，与原文内容不符，本版已按原文更正。</div>
+      <div class="copy-row"><button class="copy-btn" data-copy="https://feichangai.vip/news/2026-11-05.html#item-02">复制本条链接</button><div class="copy-fallback">https://feichangai.vip/news/2026-11-05.html#item-02</div></div>
     </div>
   </article>
 
   <article id="item-03">
     <div class="rank">03</div>
-    <h2>Netflix 上线 AI Discover：按心情主题找电影</h2>
-    <div class="block-label">发生了什么</div>
-    <p>Superhuman AI 报道：Netflix 推出 AI Discover，电视端新增 Discover 标签，用户按心情和主题来选片，不用再在一层层类型标签里翻。Netflix 于 2026-11-03 宣布该功能，先在小范围美国用户中测试。它的交互是「按主题点选」，还不是完全自由的打字问答。</p>
-    <div class="block-label">为什么与你有关</div>
-    <div class="why">大厂产品的「找内容」都在从搜索框变成对话式的主题推荐。这个交互一旦被用户习惯，所有做检索和推荐的产品都得跟。</div>
-    <div class="block-label">可以做什么</div>
-    <div class="todo">有 Netflix 账号的可以留意电视端是否出现 Discover 标签——目前仅美国小范围测试，国内账号大概率还看不到。</div>
+    <h2>Netflix 推出 AI Discover：先选一个心情主题，再慢慢缩小范围</h2>
+    <p>Netflix 在电视应用里推出 AI Discover 新区域，入口是顶部导航新加的 Discover 标签，官方 2026 年 11 月 3 日发文宣布。用起来分三步：先挑一个主题，如「Scare Me」「Quick Watches」，每个主题配一段影片预览；选中后给出一批匹配推荐，想再细就继续点更具体的主题，或换一组新的；每部片旁有「Tune Your Recommendations」按钮，可保留推荐，也可明确说不要再推。</p>
+    <figure style="margin:16px 0;"><img src="../assets/netflix-discover-ui.jpg" alt="Netflix AI Discover 界面：主题卡片居中展示（Royal Court Intrigue），下方是 Get more options 按钮" style="width:100%;display:block;border:1px solid #eee;"><figcaption style="font-size:12.5px;color:#888;margin-top:6px;">图片来源：Netflix 官方演示素材（静态帧）。</figcaption></figure>
+    <p>值得关注的是反馈方式：你说某部不合口味，它会在 Discover 里记住、不再反复出现，官方称系统会按反馈实时调整。而这目前只是试验——官方称之为「试验场」，哪些功能留下或进入主界面，看反馈再定。</p>
+    <p>范围与限制：先在美国、面向英文版会员、在受支持的电视上向一小部分人开放，未来几周逐步扩大；主题由 AI 参与生成，方法未披露；官方描述是点选主题，未提自由输入文字找片；全面上线与美国以外时间表均未给出。</p>
     <div class="src">
-      <span class="chip">媒体报道</span><span class="chip verify">原文已核</span><br>
-      来源：<a href="https://www.superhuman.ai/p/netflix-launches-ai-discover-to-make-finding-new-movies-easier" target="_blank" rel="noopener">Superhuman AI · Netflix launches AI Discover…</a>（2026-11-04，转述 Netflix 官方发布）<br>
-      发现渠道：<a href="https://rss.qiaomu.ai" target="_blank" rel="noopener">乔木公开目录</a><br>
-      限制：Netflix 官方介绍页本次未能直接打开核读，功能细节据 Superhuman 与多家媒体一致报道。
-      <div class="copy-row"><button class="copy-btn" type="button" data-copy="https://feichangai.vip/news/2026-11-05.html#item-03">复制本条链接</button><div class="copy-fallback">手动复制：https://feichangai.vip/news/2026-11-05.html#item-03</div></div>
+      <span class="chip">官方一手</span><span class="chip verify">官方页已核读</span><br>
+      来源：<a href="https://about.netflix.com/en/news/introducing-ai-discover" target="_blank" rel="noopener">Netflix 官方新闻</a> · 2026-11-03；<a href="https://www.superhuman.ai/p/netflix-launches-ai-discover-to-make-finding-new-movies-easier" target="_blank" rel="noopener">Superhuman AI 报道</a> · 2026-11-04
+      <div class="copy-row"><button class="copy-btn" data-copy="https://feichangai.vip/news/2026-11-05.html#item-03">复制本条链接</button><div class="copy-fallback">https://feichangai.vip/news/2026-11-05.html#item-03</div></div>
     </div>
   </article>
 
   <article id="item-04">
-    <div class="rank">04</div>
-    <h2>聊 2027 年 AI 创业，他说最赚钱的技能是「注意力」</h2>
-    <div class="block-label">发生了什么</div>
-    <p>Dan Koe 的长信《The most lucrative AI business to start in 2027》开篇就说：回报最高的技能一直是抓住注意力。软件做得再好、书稿磨得再久，没人知道你是谁、你能提供什么，就没人会付钱——能不能获取客户，才是决定成败的头号因素，对自己的生意和给别人打工都成立。需要说明：这是作者观点文，文中也在推广他自己的产品。</p>
-    <div class="block-label">为什么与你有关</div>
-    <div class="why">这正是这个站存在的理由：AI 让「做出来」越来越便宜，「被看见」越来越贵。先把分发建起来，再谈产品。</div>
+    <div class="rank">延伸阅读</div>
+    <h2>Dan Koe：2027 年最赚钱的 AI 生意，是先让人看见你</h2>
+    <p>Dan Koe 在长信中认为：AI 让做产品越来越容易之后，回报最高的技能是获取注意力——没人知道你是谁、你能提供什么，就没人付钱。此为作者观点，文中同时推广他自己的产品 Eden，作延伸阅读，不计入本期新闻。</p>
     <div class="src">
-      <span class="chip">作者观点</span><span class="chip verify">原文已核 · 观点不涉及事实核验</span><br>
-      来源：<a href="https://letters.thedankoe.com/p/the-most-lucrative-ai-business-to" target="_blank" rel="noopener">Dan Koe · The most lucrative AI business to start in 2027</a>（2026-11-03）<br>
-      发现渠道：<a href="https://rss.qiaomu.ai" target="_blank" rel="noopener">乔木公开目录</a>
-      <div class="copy-row"><button class="copy-btn" type="button" data-copy="https://feichangai.vip/news/2026-11-05.html#item-04">复制本条链接</button><div class="copy-fallback">手动复制：https://feichangai.vip/news/2026-11-05.html#item-04</div></div>
+      <span class="chip">作者观点</span><span class="chip verify">文内推广自有产品</span><br>
+      来源：<a href="https://letters.thedankoe.com/p/the-most-lucrative-ai-business-to" target="_blank" rel="noopener">Dan Koe 长信《The most lucrative AI business to start in 2027》</a> · 2026-11-03
+      <div class="copy-row"><button class="copy-btn" data-copy="https://feichangai.vip/news/2026-11-05.html#item-04">复制本条链接</button><div class="copy-fallback">https://feichangai.vip/news/2026-11-05.html#item-04</div></div>
     </div>
   </article>
-
-  <article id="item-05">
-    <div class="rank">05</div>
-    <h2>闲置显卡也能换大模型额度：Hashference</h2>
-    <div class="block-label">发生了什么</div>
-    <p>Product Hunt 上的一款产品：一个兼容 OpenAI / Anthropic 协议的 API 网关，卖点是付款方式——可以用闲置的 CPU/GPU 算力付费，换 45+ 顶级模型的调用额度。厂商宣称价格远低于主流服务，但其宣传中的个别低价数字未在 Product Hunt 产品页上核到。</p>
-    <div class="block-label">为什么与你有关</div>
-    <div class="why">思路有意思，但价格与可持续性都是厂商自述，先放观察名单，真用之前必须小额实测。</div>
-    <div class="block-label">可以做什么</div>
-    <div class="todo">真想试：只用闲置设备、小额试跑，不接主力业务，不预付大额。</div>
-    <div class="src">
-      <span class="chip">厂商自述</span><span class="chip verify">尚未确认</span><br>
-      来源：<a href="https://www.producthunt.com/products/hashference" target="_blank" rel="noopener">Product Hunt · Hashference 产品页</a>（2026-11-03）<br>
-      发现渠道：<a href="https://rss.qiaomu.ai" target="_blank" rel="noopener">乔木公开目录</a><br>
-      限制：价格宣称未独立核实，产品页未载明具体单价。
-      <div class="copy-row"><button class="copy-btn" type="button" data-copy="https://feichangai.vip/news/2026-11-05.html#item-05">复制本条链接</button><div class="copy-fallback">手动复制：https://feichangai.vip/news/2026-11-05.html#item-05</div></div>
-    </div>
-  </article>
-
-  <div class="copy-row" style="margin-top:26px;">
-    <button class="copy-btn" type="button" data-copy="https://feichangai.vip/news/2026-11-05.html">复制本期链接</button>
-    <div class="copy-fallback">手动复制：https://feichangai.vip/news/2026-11-05.html</div>
-  </div>
 
   <div class="end-box">
-    <strong>获取更新：</strong>公众号与 RSS 订阅正在配置中，暂未开通，本站不收集邮箱。开通后这里会放真实入口；在此之前，你可以收藏本站，或从<a href="../archive.html" style="font-weight:700;text-decoration:underline;">存档页</a>查看往期。
+    本期完。获取更新：公众号与 RSS 正在配置中，暂未开通，本站不收集邮箱；往期见<a href="../archive.html" style="font-weight:700;">存档页</a>。本期为第 0 期样刊，完整核验记录由编辑部留存，条内来源与核验状态以上述标注为准。
   </div>
 </main>
 
@@ -205,7 +167,7 @@
   <nav>
     <a href="../index.html">首页</a><a href="2026-11-05.html">今日简报</a><a href="../archive.html">存档</a><a href="../about.html">关于</a>
   </nav>
-  非常AI · feichangai.vip<br>
+  非常AI · feichangai.vip · 张益达主理<br>
   本站资讯均标注来源与核验状态，只做自有摘要与点评并附原文链接，不全文转载。内容由 AI 辅助整理、人工复核。
 </div></footer>
 
@@ -223,7 +185,7 @@
     btn.addEventListener('click', function(){
       var url = btn.getAttribute('data-copy');
       var fb = btn.parentElement.querySelector('.copy-fallback');
-      function ok(){ btn.textContent = '链接已复制'; setTimeout(function(){ btn.textContent = btn.textContent.indexOf('本期') > -1 ? '复制本期链接' : '复制本条链接'; }, 2000); }
+      function ok(){ btn.textContent = '链接已复制'; setTimeout(function(){ btn.textContent = '复制本条链接'; }, 2000); }
       function fail(){ if (fb) fb.style.display = 'block'; }
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(url).then(ok, fail);
@@ -231,6 +193,8 @@
     });
   });
 
+  var det = document.querySelector('.toc-details');
+  if (det && window.matchMedia('(min-width: 900px)').matches) det.open = true;
   var links = document.querySelectorAll('.toc a');
   var map = {};
   links.forEach(function(a){ map[a.getAttribute('href').slice(1)] = a; });
