@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>非常AI第1期 · 2026-11-06</title>
+<meta name="description" content="非常AI第1期：Claude个人财务、GPT-6 Cyber、ERNIE基础模型与METR评估。">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif; color:#111; background:#fff; line-height:1.8; }
+  a { color:#111; }
+  .wrap { max-width:760px; margin:0 auto; padding:0 20px; }
+  #progress { position:fixed; top:0; left:0; height:3px; background:#e8380d; width:0; z-index:50; }
+  header { border-bottom:3px solid #111; }
+  .nav { display:flex; align-items:center; justify-content:space-between; padding:10px 0; }
+  .logo { font-size:22px; font-weight:900; letter-spacing:2px; text-decoration:none; padding:8px 0; }
+  .logo span { color:#e8380d; }
+  .nav-links { display:flex; }
+  .nav-links a { margin-left:6px; font-size:15px; font-weight:600; text-decoration:none; padding:10px 8px; min-height:44px; display:inline-flex; align-items:center; }
+  .nav-links a:hover { text-decoration:underline; }
+  .nav-links a[aria-current="page"] { color:#e8380d; }
+  a:focus-visible, button:focus-visible, summary:focus-visible { outline:3px solid #e8380d; outline-offset:2px; }
+  .head { padding:36px 0 4px; }
+  .head .kicker { font-size:14px; letter-spacing:3px; color:#e8380d; font-weight:900; }
+  .head h1 { font-size:40px; font-weight:900; line-height:1.3; margin:10px 0; }
+  .head .meta { color:#888; font-size:14px; }
+  .head .lede { font-size:18px; color:#333; margin-top:14px; }
+  details.note { background:#fafafa; border-radius:12px; padding:6px 18px; font-size:14px; color:#555; margin:18px 0 4px; }
+  details.note summary { cursor:pointer; font-weight:800; color:#111; padding:10px 0; min-height:44px; }
+  details.note .note-body { padding-bottom:12px; }
+  details.toc-details { border:2px solid #111; border-radius:14px; margin:20px 0 6px; }
+  details.toc-details summary { cursor:pointer; font-weight:900; letter-spacing:2px; font-size:14px; padding:14px 20px; min-height:44px; list-style:none; }
+  details.toc-details summary::-webkit-details-marker { display:none; }
+  details.toc-details summary::after { content:"▸"; float:right; color:#e8380d; }
+  details.toc-details[open ] summary::after { content:"▾"; }
+  .toc { padding:0 20px 14px; }
+  .toc .toc-title { display:none; }
+  .toc ol { margin-left:20px; }
+  .toc li { margin:4px 0; }
+  .toc a { text-decoration:none; font-weight:600; padding:4px 0; }
+  .toc a:hover { text-decoration:underline; }
+  .toc a.active { color:#e8380d; }
+  article { padding:28px 0; border-bottom:1px solid #eee; scroll-margin-top:16px; }
+  article .rank { font-size:15px; font-weight:900; color:#e8380d; letter-spacing:2px; }
+  article h2 { font-size:26px; font-weight:900; line-height:1.4; margin:6px 0 12px; }
+  article p { font-size:17.5px; color:#222; margin-bottom:10px; }
+  .src { border-top:1px dashed #ddd; margin-top:16px; padding-top:10px; color:#666; font-size:13.5px; line-height:1.7; }
+  .src a { font-weight:700; }
+  .chip { display:inline-block; font-size:12px; font-weight:700; border:1.5px solid #111; border-radius:999px; padding:1px 9px; margin-right:6px; color:#111; }
+  .chip.verify { border-style:dashed; }
+  .corr { margin-top:8px; }
+  .copy-row { margin-top:12px; }
+  .copy-btn { font-size:13.5px; font-weight:700; border:1.5px solid #111; background:#fff; border-radius:999px; padding:8px 16px; min-height:44px; cursor:pointer; }
+  .copy-btn:hover { background:#111; color:#fff; }
+  .copy-fallback { display:none; font-size:13px; color:#666; margin-top:8px; word-break:break-all; }
+  .end-box { border:2px dashed #bbb; border-radius:14px; padding:20px 22px; margin:28px 0 6px; font-size:15px; color:#444; }
+  footer { border-top:3px solid #111; margin-top:36px; padding:22px 0 34px; color:#777; font-size:13px; }
+  footer nav a { margin-right:16px; font-weight:600; text-decoration:none; padding:6px 0; display:inline-block; }
+  footer nav a:hover { text-decoration:underline; }
+  @media (max-width:640px){
+    .wrap { padding:0 20px; }
+    .head h1 { font-size:30px; }
+    .head .lede { font-size:16.5px; }
+    article h2 { font-size:23px; }
+    article p { font-size:16.5px; }
+    .nav-links a { margin-left:2px; padding:10px 6px; }
+  }
+  html { scroll-behavior:smooth; }
+  @media (prefers-reduced-motion: reduce){
+    html { scroll-behavior:auto; }
+  }
+.review-banner{background:#fff3e9;color:#933515;border-bottom:1px solid #e8380d;text-align:center;padding:8px 16px;font-size:13px}.src a{overflow-wrap:anywhere}.chip{max-width:100%;white-space:normal}.fact-panel{border:1px solid #ddd;padding:22px;background:#fafafa}.fact-panel h4{font-size:16px;margin-bottom:10px}.fact-row{padding:10px 0;border-bottom:1px solid #ddd;display:flex;justify-content:space-between;gap:18px}.fact-row:last-child{border:0}.fact-row b{color:#e8380d}.mini-bars .bar{height:18px;margin:6px 0 16px}.mini-bars p{font-size:13px}.brief-text{max-width:850px}.brief-text h3{font-size:24px;margin-bottom:10px}.brief-text p{font-size:16px}.preview-label{color:#9b3d1d}.page>*{min-width:0}.hero-main h1{word-break:normal;overflow-wrap:anywhere}.rail-item>div:last-child{min-width:0}.fact-row>*{min-width:0;overflow-wrap:anywhere}</style>
+</head>
+<body>
+<div id="progress" aria-hidden="true"></div>
+<header><div class="wrap nav">
+  <a class="logo" href="../index.html">非常<span>AI</span></a>
+  <nav class="nav-links">
+    <a href="../index.html">首页</a>
+    <a href="2026-11-06.html" aria-current="page">今日简报</a>
+    <a href="../archive.html">存档</a>
+    <a href="../about.html">关于</a>
+  </nav>
+</div></header>
+
+<main class="wrap"><div class="head"><div class="kicker">每日简报 · 第1期</div><h1>Claude接入个人账本，OpenAI发布安全专用模型</h1><div class="meta">2026年11月6日 星期五 · 3条重点＋1条快讯 · 张益达主理</div><p class="lede">Claude开始读取用户授权的账本，OpenAI推出安全专用模型；另看百度基础模型权重与METR的研发评估。消息以11月5日原始公告为主，未标日期的材料另行说明。</p></div><details class="toc-details"><summary>本期目录 · 3条重点＋1条快讯</summary><nav class="toc" aria-label="本期目录"><ol><li><a href="#item-01">Claude推出个人财务功能，只读账户、不能转账</a></li><li><a href="#item-02">GPT-6 Cyber发布，首批仅向获批安全客户开放</a></li><li><a href="#item-03">百度公开ERNIE 5.5 Flash Base权重，定位后续训练起点</a></li><li><a href="#item-04">METR评估：Anthropic部分任务进展加快，但证据公开有限</a></li></ol></nav></details><article id="item-01"><div class="rank">01</div><h2>Claude推出个人财务功能：能看账本，不能替你动钱</h2><p>Anthropic于11月5日宣布Personal Finance，用户可以通过Plaid连接选定的金融账户，让Claude根据余额与交易记录回答问题，例如本月花了多少钱、有哪些重复收费，或生成消费图表。功能以测试版逐步向美国Pro、Max和Ultra用户开放。</p><p>权限是这次更新的重要边界：官方称访问只读，Claude不能移动、管理或投资用户的钱。用户自行通过Plaid登录银行并授权，Claude不接触银行密码。官方还表示，Personal Finance专区内的对话不用于训练模型，但这不意味着该政策覆盖专区外的所有聊天。</p><p>它仍可能答错，定位也不是提供投资建议。是否已经获得入口，以账号实际显示为准，不能把此次测试写成全球用户都已可用。</p><div class="src"><span class="chip">官方公告已核读；账户内功能未实测</span><br>来源日期：2026-11-05<br><a href="https://claude.com/resources/articles/introducing-personal-finance-in-claude" target="_blank" rel="noopener">Anthropic · Introducing Personal Finance in Claude</a><div class="copy-row"><button class="copy-btn" data-copy="#item-01">复制本条链接</button><div class="copy-fallback"></div></div></div></article><article id="item-02"><div class="rank">02</div><h2>OpenAI发布GPT-6 Cyber，首批仅向获批安全客户开放</h2><p>OpenAI于11月5日发布GPT-6 Cyber，面向漏洞研究、验证与修复等授权安全任务。首批通过API和Codex向部分获批Daybreak Red客户开放，之后计划扩大到该项目的其他客户，不能理解为普通ChatGPT用户已经可以使用。</p><p>在OpenAI公布的ExploitGym测试中，GPT-6 Cyber得分为48.5%，前代GPT-5.6 Cyber为32.1%。这是厂商所列测试条件下的表现，不代表模型能在任意真实系统中达到相同比例，也不是本站独立评测。</p><p>公司同时强调了授权边界训练与访问控制。能力提升和安全控制都要分别看待：测试中更少越界，不等于真实部署永远不会越界。</p><div class="src"><span class="chip">官方公告已核读；测试分数为厂商公布，未独立复现</span><br>来源日期：2026-11-05<br><a href="https://openai.com/index/introducing-gpt-6-cyber/" target="_blank" rel="noopener">OpenAI · GPT-6 Cyber发布说明</a><div class="copy-row"><button class="copy-btn" data-copy="#item-02">复制本条链接</button><div class="copy-fallback"></div></div></div></article><article id="item-03"><div class="rank">03</div><h2>百度公开ERNIE 5.5 Flash Base权重，定位后续训练起点</h2><p>百度官方页面介绍了ERNIE 5.5 Flash Base，并提供FP8与BF16权重入口。按官方说明，这是一款总参数2800亿、每token激活140亿参数的MoE语言模型，权重取自预训练结束阶段，尚未经过中期或后训练。</p><p>因此，这条消息更直接面向做领域适配、指令微调或强化学习研究的开发者，而不是想立即使用聊天助手的普通用户。基础权重可以成为后续训练的起点，但不应把它与经过完整后训练的产品直接混比。</p><p>模型使用自定义许可，不能仅凭权重可下载就写成可无条件使用。此次核查确认了官方介绍与权重入口，未下载运行模型；页面未显示明确发布日期，本条按近期动态收录，不声称11月6日当天发布。</p><div class="src"><span class="chip">官方介绍已核读；未下载运行，首次开放日期未确认</span><br>来源日期：官方页未标明确发布日期；2026-11-06核查<br><a href="https://ernie.baidu.com/release/ernie-5-5-flash-base" target="_blank" rel="noopener">百度ERNIE官方介绍</a>；<a href="https://huggingface.co/baidu/ERNIE-5.5-Flash-Base" target="_blank" rel="noopener">百度Hugging Face模型页</a>；<a href="https://huggingface.co/baidu/ERNIE-5.5-Flash-Base/blob/main/LICENSE" target="_blank" rel="noopener">模型许可原文</a><div class="copy-row"><button class="copy-btn" data-copy="#item-03">复制本条链接</button><div class="copy-fallback"></div></div></div></article><article id="item-04"><div class="rank">今日快讯</div><h2>METR评估Anthropic研发加速，强调高不确定性与证据删节</h2><p>METR于11月5日发布对Anthropic的研发评估，认为其在定义明确任务上的模型能力进展，可能约为此前历史速度的两倍。报告强调估计存在很大不确定性，且Anthropic删节了部分重要证据；不能将其简化为“整个AI行业效率翻倍”，也不能据此确定加速全部由AI造成。</p><div class="src"><span class="chip">评估机构原文已核读；判断具高不确定性，部分证据未公开</span><br>来源日期：2026-11-05<br><a href="https://metr.org/blog/2026-11-05-anthropic-ai-rd-acceleration-assessment/" target="_blank" rel="noopener">METR · Anthropic研发加速独立评估</a><div class="copy-row"><button class="copy-btn" data-copy="#item-04">复制本条链接</button><div class="copy-fallback"></div></div></div></article><div class="end-box">本期完。往期见<a href="../archive.html">存档</a>。每条保留原文链接与核验限制；来源记录见<a href="../verification-2026-11-06.html">本期核验记录</a>。</div></main>
+
+<footer><div class="wrap">
+  <nav>
+    <a href="../index.html">首页</a><a href="2026-11-06.html">今日简报</a><a href="../archive.html">存档</a><a href="../about.html">关于</a>
+  </nav>
+  非常AI · feichangai.vip · 张益达主理<br>
+  本站资讯均标注来源与核验状态，只做自有摘要与点评并附原文链接，不全文转载。内容由 AI 辅助整理、人工复核。
+</div></footer>
+
+<script>
+(function(){
+  var bar = document.getElementById('progress');
+  function onScroll(){
+    var h = document.documentElement;
+    var max = h.scrollHeight - h.clientHeight;
+    bar.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + '%';
+  }
+  document.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+  document.querySelectorAll('.copy-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var url = new URL(btn.getAttribute('data-copy'), window.location.href).href;
+      var fb = btn.parentElement.querySelector('.copy-fallback');
+      function ok(){ btn.textContent = '链接已复制'; setTimeout(function(){ btn.textContent = '复制本条链接'; }, 2000); }
+      function fail(){ if (fb) { fb.textContent=url; fb.style.display='block'; } }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url).then(ok, fail);
+      } else { fail(); }
+    });
+  });
+
+  var det = document.querySelector('.toc-details');
+  if (det && window.matchMedia('(min-width: 900px)').matches) det.open = true;
+  var links = document.querySelectorAll('.toc a');
+  var map = {};
+  links.forEach(function(a){ map[a.getAttribute('href').slice(1)] = a; });
+  if ('IntersectionObserver' in window) {
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting) {
+          links.forEach(function(a){ a.classList.remove('active'); });
+          var a = map[e.target.id]; if (a) a.classList.add('active');
+        }
+      });
+    }, {rootMargin:'-20% 0px -70% 0px'});
+    document.querySelectorAll('article[id]').forEach(function(el){ obs.observe(el); });
+  }
+})();
+</script>
+</body>
+</html>

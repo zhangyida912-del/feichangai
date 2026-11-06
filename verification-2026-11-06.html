@@ -1,0 +1,99 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>第1期核验记录</title><style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif; color:#111; background:#fff; line-height:1.8; }
+  a { color:#111; }
+  .wrap { max-width:760px; margin:0 auto; padding:0 20px; }
+  #progress { position:fixed; top:0; left:0; height:3px; background:#e8380d; width:0; z-index:50; }
+  header { border-bottom:3px solid #111; }
+  .nav { display:flex; align-items:center; justify-content:space-between; padding:10px 0; }
+  .logo { font-size:22px; font-weight:900; letter-spacing:2px; text-decoration:none; padding:8px 0; }
+  .logo span { color:#e8380d; }
+  .nav-links { display:flex; }
+  .nav-links a { margin-left:6px; font-size:15px; font-weight:600; text-decoration:none; padding:10px 8px; min-height:44px; display:inline-flex; align-items:center; }
+  .nav-links a:hover { text-decoration:underline; }
+  .nav-links a[aria-current="page"] { color:#e8380d; }
+  a:focus-visible, button:focus-visible, summary:focus-visible { outline:3px solid #e8380d; outline-offset:2px; }
+  .head { padding:36px 0 4px; }
+  .head .kicker { font-size:14px; letter-spacing:3px; color:#e8380d; font-weight:900; }
+  .head h1 { font-size:40px; font-weight:900; line-height:1.3; margin:10px 0; }
+  .head .meta { color:#888; font-size:14px; }
+  .head .lede { font-size:18px; color:#333; margin-top:14px; }
+  details.note { background:#fafafa; border-radius:12px; padding:6px 18px; font-size:14px; color:#555; margin:18px 0 4px; }
+  details.note summary { cursor:pointer; font-weight:800; color:#111; padding:10px 0; min-height:44px; }
+  details.note .note-body { padding-bottom:12px; }
+  details.toc-details { border:2px solid #111; border-radius:14px; margin:20px 0 6px; }
+  details.toc-details summary { cursor:pointer; font-weight:900; letter-spacing:2px; font-size:14px; padding:14px 20px; min-height:44px; list-style:none; }
+  details.toc-details summary::-webkit-details-marker { display:none; }
+  details.toc-details summary::after { content:"▸"; float:right; color:#e8380d; }
+  details.toc-details[open ] summary::after { content:"▾"; }
+  .toc { padding:0 20px 14px; }
+  .toc .toc-title { display:none; }
+  .toc ol { margin-left:20px; }
+  .toc li { margin:4px 0; }
+  .toc a { text-decoration:none; font-weight:600; padding:4px 0; }
+  .toc a:hover { text-decoration:underline; }
+  .toc a.active { color:#e8380d; }
+  article { padding:28px 0; border-bottom:1px solid #eee; scroll-margin-top:16px; }
+  article .rank { font-size:15px; font-weight:900; color:#e8380d; letter-spacing:2px; }
+  article h2 { font-size:26px; font-weight:900; line-height:1.4; margin:6px 0 12px; }
+  article p { font-size:17.5px; color:#222; margin-bottom:10px; }
+  .src { border-top:1px dashed #ddd; margin-top:16px; padding-top:10px; color:#666; font-size:13.5px; line-height:1.7; }
+  .src a { font-weight:700; }
+  .chip { display:inline-block; font-size:12px; font-weight:700; border:1.5px solid #111; border-radius:999px; padding:1px 9px; margin-right:6px; color:#111; }
+  .chip.verify { border-style:dashed; }
+  .corr { margin-top:8px; }
+  .copy-row { margin-top:12px; }
+  .copy-btn { font-size:13.5px; font-weight:700; border:1.5px solid #111; background:#fff; border-radius:999px; padding:8px 16px; min-height:44px; cursor:pointer; }
+  .copy-btn:hover { background:#111; color:#fff; }
+  .copy-fallback { display:none; font-size:13px; color:#666; margin-top:8px; word-break:break-all; }
+  .end-box { border:2px dashed #bbb; border-radius:14px; padding:20px 22px; margin:28px 0 6px; font-size:15px; color:#444; }
+  footer { border-top:3px solid #111; margin-top:36px; padding:22px 0 34px; color:#777; font-size:13px; }
+  footer nav a { margin-right:16px; font-weight:600; text-decoration:none; padding:6px 0; display:inline-block; }
+  footer nav a:hover { text-decoration:underline; }
+  @media (max-width:640px){
+    .wrap { padding:0 20px; }
+    .head h1 { font-size:30px; }
+    .head .lede { font-size:16.5px; }
+    article h2 { font-size:23px; }
+    article p { font-size:16.5px; }
+    .nav-links a { margin-left:2px; padding:10px 6px; }
+  }
+  html { scroll-behavior:smooth; }
+  @media (prefers-reduced-motion: reduce){
+    html { scroll-behavior:auto; }
+  }
+pre{white-space:pre-wrap;overflow-wrap:anywhere;font:16px/1.8 sans-serif;padding:24px 0}.review-banner{background:#fff3e9;color:#933515;border-bottom:1px solid #e8380d;text-align:center;padding:8px 16px;font-size:13px}.src a{overflow-wrap:anywhere}.chip{max-width:100%;white-space:normal}.fact-panel{border:1px solid #ddd;padding:22px;background:#fafafa}.fact-panel h4{font-size:16px;margin-bottom:10px}.fact-row{padding:10px 0;border-bottom:1px solid #ddd;display:flex;justify-content:space-between;gap:18px}.fact-row:last-child{border:0}.fact-row b{color:#e8380d}.mini-bars .bar{height:18px;margin:6px 0 16px}.mini-bars p{font-size:13px}.brief-text{max-width:850px}.brief-text h3{font-size:24px;margin-bottom:10px}.brief-text p{font-size:16px}.preview-label{color:#9b3d1d}.page>*{min-width:0}.hero-main h1{word-break:normal;overflow-wrap:anywhere}.rail-item>div:last-child{min-width:0}.fact-row>*{min-width:0;overflow-wrap:anywhere}</style></head><body><main class="wrap"><a href="index.html">返回首页</a><pre># 第1期核验记录
+
+核验日期：2026-11-06，Asia/Taipei。执行者：Codex。状态：随2026年11月6日第1期公开。记录为读取结果摘要，不是原网页存档。
+
+## 01 Claude个人财务
+原始出处：https://claude.com/resources/articles/introducing-personal-finance-in-claude
+来源发布日期：2026-11-05。
+读取结果：官方公告明确Plaid授权、只读、不能移动管理或投资资金，以及美国Pro/Max/Ultra逐步开放。专区内对话不用于训练不等于专区外全部聊天具有同一政策。
+评估：有条件支持。未连接任何账户、未使用用户财务数据、未实测功能；不提供投资建议，不写全球上线。
+
+## 02 GPT-6 Cyber
+原始出处：https://openai.com/index/introducing-gpt-6-cyber/
+来源发布日期：2026-11-05。
+读取结果：支持部分获批Daybreak Red用户通过API与Codex先行访问；公告列ExploitGym 32.1%至48.5%。
+评估：发布与访问范围由官方公告支持；性能和越界结果属于厂商测试，不代表外部复现或普遍保证。未运行安全测试。图表仅使用上述两项成绩、同一0—100刻度，不引用可误解为新增漏洞数的利用数量。
+
+## 03 ERNIE基础模型
+原始出处：https://ernie.baidu.com/release/ernie-5-5-flash-base
+模型页：https://huggingface.co/baidu/ERNIE-5.5-Flash-Base
+许可：https://huggingface.co/baidu/ERNIE-5.5-Flash-Base/blob/main/LICENSE
+日期：官方介绍未标明确发布日期；本次核查日期为2026-11-06，不能据聚合站当天报道推断当天首次发布。
+读取结果：官方介绍确认280B总参数、14B激活、基础预训练检查点与FP8/BF16入口。自定义许可已读取，不称无条件开源；未给用户法律适用建议。
+评估：近期模型动态有条件支持；未下载模型或验证推理能力，首发时刻未确认。未使用二手榜单成绩。
+
+## 04 METR快讯
+原始出处：https://metr.org/blog/2026-11-05-anthropic-ai-rd-acceleration-assessment/
+来源发布日期：2026-11-05。
+读取结果：高访问权限评估覆盖2026-08-12至10-29；约两倍为定义明确任务进展相对历史速度的判断，有高不确定性，关键证据经Anthropic删节。
+评估：支持报告存在及其有条件结论，不扩展为全行业效率翻倍、AI已自主递归改进或确定因果。
+
+## 编辑选择与限制
+昨天Images 2.6、Pierre、Hy4草稿未直接复用为今日新闻。聚合站只用于发现线索；未将传闻列入正文。4项均取得原始发布者材料；ERΝIE首发日期仍未确认并在正文披露。
+无新下载照片，无假产品截图。首页图解由官方文字整理并标注，GPT图表为厂商测试。
+上线前仍应检查原始页面是否更新。本记录对应第1期发布时所用材料，后续更正将单独说明。
+</pre></main></body></html>

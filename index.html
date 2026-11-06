@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>非常AI 日报 · 张益达主理 | feichangai.vip</title>
-<meta name="description" content="张益达主理的 AI 日报：每天从海外一手源筛选，只留标题、短摘要和一个核心看点，完整解释见详情页。">
+<meta name="description" content="非常AI第1期：Claude个人财务、GPT-6 Cyber、百度ERNIE基础模型与METR评估。">
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
   body { font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif; color:#111; background:#fff; line-height:1.7; }
@@ -112,7 +112,7 @@
     .nav-links a { margin-left:14px; }
     .logo small { display:none; }
   }
-</style>
+.review-banner{background:#fff3e9;color:#933515;border-bottom:1px solid #e8380d;text-align:center;padding:8px 16px;font-size:13px}.src a{overflow-wrap:anywhere}.chip{max-width:100%;white-space:normal}.fact-panel{border:1px solid #ddd;padding:22px;background:#fafafa}.fact-panel h4{font-size:16px;margin-bottom:10px}.fact-row{padding:10px 0;border-bottom:1px solid #ddd;display:flex;justify-content:space-between;gap:18px}.fact-row:last-child{border:0}.fact-row b{color:#e8380d}.mini-bars .bar{height:18px;margin:6px 0 16px}.mini-bars p{font-size:13px}.brief-text{max-width:850px}.brief-text h3{font-size:24px;margin-bottom:10px}.brief-text p{font-size:16px}.preview-label{color:#9b3d1d}.page>*{min-width:0}.hero-main h1{word-break:normal;overflow-wrap:anywhere}.rail-item>div:last-child{min-width:0}.fact-row>*{min-width:0;overflow-wrap:anywhere}</style>
 </head>
 <body>
 <div class="wrap">
@@ -120,114 +120,22 @@
     <a class="logo" href="index.html">非常<span>AI</span><small>AI 日报 · DAILY BRIEFING</small></a>
     <nav class="nav-links">
       <a href="index.html" aria-current="page">首页</a>
-      <a href="news/2026-11-05.html">今日简报</a>
+      <a href="news/2026-11-06.html">今日简报</a>
       <a href="archive.html">存档</a>
       <a href="about.html">关于</a>
     </nav>
   </div>
   <div class="dateline">
-    <span><b>2026 年 11 月 5 日</b> 星期四</span>
-    <span>第 0 期（样刊）· 3 条新闻 + 1 篇延伸阅读</span>
+    <span><b>2026 年 11 月 6 日</b> 星期五</span>
+    <span>第 1 期 · 3 条重点 + 1 条快讯</span>
     <span>主理人：<b>张益达</b></span>
   </div>
 
-  <div class="page">
-    <!-- 头条 -->
-    <article class="hero-main">
-      <div class="kicker">今日头条</div>
-      <h1 class="serif">OpenAI称：ChatGPT<wbr>搜索类查询量<wbr>约为谷歌两成</h1>
-      <p class="standfirst">据 OpenAI 消费产品负责人 Adam Fry 在 Big Technology 访谈中表示，ChatGPT 的搜索量已达谷歌的约 20%。</p>
-      <div class="point"><span class="p-label">核心看点</span>这个 20% 是企业自述：能用来观察规模，算不出市场份额。</div>
-      <div class="meta-line" style="margin:0 0 16px;">来源：Big Technology · 对 Adam Fry 的访谈 · 2026-11-03 &nbsp;|&nbsp; <a href="news/2026-11-05.html#item-01">读这一条 →</a></div>
-      <figure class="hero-fig">
-        <img src="assets/chatgpt-growth.png" alt="Big Technology 原文配图：一条陡峭上升的增长曲线与 OpenAI 标志">
-        <figcaption>配图：Big Technology 原文插图（2026-11-03）</figcaption>
-      </figure>
-    </article>
-
-    <!-- 右栏速览（手机端折叠，位于全部新闻之后） -->
-    <aside class="rail">
-      <h2>本期速览</h2>
-      <details class="rail-det">
-        <summary>本期速览 · 3 条 + 延伸阅读</summary>
-        <div class="rail-list">
-          <div class="rail-item"><div class="no">1</div><div><h3><a href="news/2026-11-05.html#item-01">OpenAI称：ChatGPT<wbr>搜索类查询量<wbr>约为谷歌两成</a></h3></div></div>
-          <div class="rail-item"><div class="no">2</div><div><h3><a href="news/2026-11-05.html#item-02">大模型亲手改了小模型的权重</a></h3><p>修好「反复打转」的故障。</p></div></div>
-          <div class="rail-item"><div class="no">3</div><div><h3><a href="news/2026-11-05.html#item-03">Netflix 推出 AI Discover</a></h3><p>按心情主题选片。</p></div></div>
-          <div class="rail-item"><div class="no">读</div><div><h3><a href="news/2026-11-05.html#item-04">Dan Koe：先让人看见你</a></h3><p>延伸阅读 · 作者观点。</p></div></div>
-        </div>
-      </details>
-    </aside>
-
-    <!-- 研究进展 -->
-    <section class="section sec-research" style="margin-top:6px;">
-      <div class="sec-head"><h2>研究进展</h2><span>RESEARCH</span></div>
-      <div class="research">
-        <div>
-          <h3 class="serif"><a href="news/2026-11-05.html#item-02">大模型亲手改了小模型的权重，修好了一个让它反复打转的毛病</a></h3>
-          <p>MIT CSAIL 研究报告：让前沿模型直接改小模型 Qwen3.5-0.8B 的权重，只改约 0.016%、不用训练，修好它「反复打转」的故障；换个没这毛病的模型，未观察到明确改善。</p>
-          <div class="meta-line">来源：研究者报告 · 2026-11-02 &nbsp;|&nbsp; <a href="news/2026-11-05.html#item-02">读这一条 →</a></div>
-        </div>
-        <figure class="chart">
-          <div class="c-title">改权重前后：Qwen3.5-0.8B 三项基准（%，统一刻度 0–100）</div>
-          <div class="plot">
-            <div class="grid" style="left:25%"></div><div class="grid" style="left:50%"></div><div class="grid" style="left:75%"></div>
-            <div class="row"><div class="r-label"><span>MATH-500 数学</span><span>7.9 → <span class="delta">48.1</span></span></div><div class="bar"><b style="width:48.1%"></b><i style="left:7.9%"></i></div></div>
-            <div class="row"><div class="r-label"><span>GSM8K 数学应用题</span><span>13.8 → <span class="delta">67.1</span></span></div><div class="bar"><b style="width:67.1%"></b><i style="left:13.8%"></i></div></div>
-            <div class="row"><div class="r-label"><span>IFEval 指令跟随</span><span>21.0 → <span class="delta">62.3</span></span></div><div class="bar"><b style="width:62.3%"></b><i style="left:21%"></i></div></div>
-          </div>
-          <div class="axis"><span style="left:0">0</span><span style="left:25%">25</span><span style="left:50%">50</span><span style="left:75%">75</span><span style="left:100%">100</span></div>
-          <div class="legend"><i></i>改权重前的位置<b></b>改权重后（50 次前向传递）</div>
-          <figcaption>数据图：据作者报告数字由本站制图（作者实验口径），长度按统一刻度与数值对应。</figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <!-- 产品动态 -->
-    <section class="section sec-product">
-      <div class="sec-head"><h2>产品动态</h2><span>PRODUCTS</span></div>
-      <div class="product">
-        <figure>
-          <img src="assets/netflix-discover-ui.jpg" alt="Netflix AI Discover 界面：主题卡片居中展示（Royal Court Intrigue），下方是 Get more options 按钮">
-          <figcaption>图片来源：Netflix 官方演示素材（静态帧）。</figcaption>
-        </figure>
-        <div class="product-text">
-          <h3 class="serif"><a href="news/2026-11-05.html#item-03">Netflix 推出 AI Discover：先选一个心情主题，再慢慢缩小范围</a></h3>
-          <p>电视端推出 AI Discover 新区域：先选一个 AI 参与生成的主题，再往下缩小范围；说不合口味，它会记住不再推。先在美国小范围测试。</p>
-          <div class="core">这是一个先试再定的试验功能，去留看用户反馈。</div>
-          <div class="meta-line">来源：Netflix 官方新闻 · 2026-11-03 &nbsp;|&nbsp; <a href="news/2026-11-05.html#item-03">读这一条 →</a></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 延伸阅读 -->
-    <section class="section sec-opinion">
-      <div class="sec-head"><h2>延伸阅读</h2><span>READING</span></div>
-      <div class="quote-block">
-        <blockquote class="serif"><a href="news/2026-11-05.html#item-04" style="color:inherit;">Dan Koe：2027 年最赚钱的 AI 生意，是先让人看见你</a></blockquote>
-        <p class="q-context">AI 让做产品越来越容易之后，回报最高的技能是获取注意力。此为作者观点，文中推广其自有产品 Eden，不计入本期新闻。</p>
-        <div class="meta-line">来源：Dan Koe 长信 · 2026-11-03 &nbsp;|&nbsp; <a href="news/2026-11-05.html#item-04">读延伸阅读 →</a></div>
-      </div>
-    </section>
-
-    <!-- 主理人（全部新闻之后） -->
-    <div class="host-zone">
-      <div class="host">
-        <div>
-          <div class="h-label">主理人</div>
-          <div class="h-name">张益达</div>
-          <p>每天读海外一手源、试新工具、做笔记。这个日报只做一件事：把真正值得看的筛出来，讲清，标好来源。</p>
-          <a href="about.html">关于我与筛选标准 →</a>
-        </div>
-      </div>
-      <div class="update-line">获取更新：公众号与 RSS 正在配置中，暂未开通，本站不收集邮箱。此前可从<a href="archive.html" style="font-weight:700;text-decoration:underline;">存档页</a>看往期。本期为第 0 期样刊，3 条新闻 + 1 篇延伸阅读；完整正文与核验信息见各条详情页。</div>
-    </div>
-  </div>
+<div class="page"><article class="hero-main"><div class="kicker">今日头条</div><h1 class="serif">Claude推出个人财务功能：能看账本，不能替你动钱</h1><p class="standfirst">美国付费用户将逐步获得Personal Finance测试功能，通过Plaid连接所选账户，询问消费、余额与账单。权限只读，不能转账或投资。</p><div class="point"><span class="p-label">核心看点</span>从回答通用问题，进入读取用户授权账本的具体场景；先向美国指定套餐逐步开放。</div><div class="meta-line">来源日期：2026-11-05 &nbsp;|&nbsp; <a href="news/2026-11-06.html#item-01">读这一条 →</a></div><figure class="fact-panel" style="margin-top:20px"><h4>Personal Finance：官方公布的访问边界</h4><div class="fact-row"><span>账户权限</span><b>只读</b></div><div class="fact-row"><span>首批地区</span><b>美国</b></div><div class="fact-row"><span>套餐</span><b>Pro / Max / Ultra</b></div><div class="fact-row"><span>转账、管理或投资资金</span><b>不支持</b></div><figcaption>依据Anthropic 11月5日公告整理，不是账号实测截图。</figcaption></figure></article><aside class="rail"><h2>本期速览</h2><details class="rail-det"><summary>本期速览 · 3条重点＋1条快讯</summary><div class="rail-list"><div class="rail-item"><div class="no">1</div><div><h3><a href="news/2026-11-06.html#item-01">Claude推出个人财务功能，只读账户、不能转账</a></h3><p>重点</p></div></div><div class="rail-item"><div class="no">2</div><div><h3><a href="news/2026-11-06.html#item-02">GPT-6 Cyber发布，首批仅向获批安全客户开放</a></h3><p>重点</p></div></div><div class="rail-item"><div class="no">3</div><div><h3><a href="news/2026-11-06.html#item-03">百度公开ERNIE 5.5 Flash Base权重，定位后续训练起点</a></h3><p>重点</p></div></div><div class="rail-item"><div class="no">讯</div><div><h3><a href="news/2026-11-06.html#item-04">METR评估：Anthropic部分任务进展加快，但证据公开有限</a></h3><p>评估快讯</p></div></div></div></details></aside><section class="section sec-research"><div class="sec-head"><h2>模型动态</h2><span>MODELS</span></div><div class="research"><div><h3 class="serif"><a href="news/2026-11-06.html#item-02">OpenAI发布GPT-6 Cyber，首批仅向获批安全客户开放</a></h3><p>OpenAI发布安全专用模型GPT-6 Cyber，用于授权范围内的漏洞研究与修复验证。首批通过API和Codex提供给部分Daybreak Red客户。</p><div class="core">这是受限开放的安全专用模型，并非面向所有用户的通用聊天模型更新。</div><div class="meta-line">来源日期：2026-11-05 &nbsp;|&nbsp; <a href="news/2026-11-06.html#item-02">读这一条 →</a></div></div><figure class="fact-panel mini-bars"><h4>ExploitGym · 厂商公布成绩（%）</h4><p>GPT-5.6 Cyber · 32.1%</p><div class="bar"><b style="width:32.1%"></b></div><p>GPT-6 Cyber · 48.5%</p><div class="bar"><b style="width:48.5%"></b></div><div class="axis"><span style="left:0">0</span><span style="left:50%">50</span><span style="left:100%">100</span></div><figcaption>两条使用0—100统一刻度。来源：OpenAI 11月5日公告；非本站独立测试。</figcaption></figure></div></section><section class="section sec-product"><div class="sec-head"><h2>国内模型</h2><span>CHINA</span></div><div class="product"><figure class="fact-panel"><h4>ERNIE 5.5 Flash Base</h4><div class="fact-row"><span>模型类型</span><b>预训练基础模型</b></div><div class="fact-row"><span>总参数 / 每token激活</span><b>2800亿 / 140亿</b></div><div class="fact-row"><span>后训练</span><b>尚未进行</b></div><div class="fact-row"><span>权重格式</span><b>FP8 / BF16</b></div><figcaption>据百度官方介绍整理；许可与日期限制见正文。</figcaption></figure><div class="product-text"><h3 class="serif"><a href="news/2026-11-06.html#item-03">百度公开ERNIE 5.5 Flash Base权重，定位后续训练起点</a></h3><p>百度官方页面提供ERNIE 5.5 Flash Base权重入口，称总参数2800亿、每token激活140亿。它是预训练基础模型，不是开箱即用的聊天成品。</p><div class="core">基础模型权重公开不等于聊天产品上线；用途和许可都需分别确认。</div><div class="meta-line">来源日期：官方页未标明确发布日期；2026-11-06核查 &nbsp;|&nbsp; <a href="news/2026-11-06.html#item-03">读这一条 →</a></div></div></div></section><section class="section sec-opinion"><div class="sec-head"><h2>今日快讯</h2><span>BRIEF</span></div><div class="brief-text"><h3 class="serif"><a href="news/2026-11-06.html#item-04">METR评估Anthropic研发加速，强调高不确定性与证据删节</a></h3><p>METR发布评估，认为Anthropic在定义明确任务上的模型进展可能较历史速度加快约一倍，同时强调高不确定性，重要证据被删节。</p><div class="meta-line">来源日期：2026-11-05 &nbsp;|&nbsp; <a href="news/2026-11-06.html#item-04">读这一条 →</a></div></div></section><div class="host-zone"><div class="host"><div><div class="h-label">主理人</div><div class="h-name">张益达</div><p>筛选值得关注的AI变化，中文讲清，标好来源与限制。</p><a href="about.html">关于我与筛选标准 →</a></div></div><div class="update-line">本期为2026年11月6日第1期。往期见<a href="archive.html">存档</a>，本期<a href="verification-2026-11-06.html">核验记录</a>可单独查看。</div></div></div>
 </div>
-
 <footer><div class="wrap">
   <nav>
-    <a href="index.html">首页</a><a href="news/2026-11-05.html">今日简报</a><a href="archive.html">存档</a><a href="about.html">关于</a>
+    <a href="index.html">首页</a><a href="news/2026-11-06.html">今日简报</a><a href="archive.html">存档</a><a href="about.html">关于</a>
   </nav>
   非常AI · feichangai.vip · 张益达主理<br>
   本站资讯均标注来源，只做自有摘要与点评并附原文链接，不全文转载。内容由 AI 辅助整理、人工复核。
