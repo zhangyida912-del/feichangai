@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>非常AI第2期 · 2026-11-07</title>
+<meta name="description" content="Google让编程助手开口说话，群聊AI开始学习何时沉默">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif; color:#111; background:#fff; line-height:1.8; }
+  a { color:#111; }
+  .wrap { max-width:760px; margin:0 auto; padding:0 20px; }
+  #progress { position:fixed; top:0; left:0; height:3px; background:#e8380d; width:0; z-index:50; }
+  header { border-bottom:3px solid #111; }
+  .nav { display:flex; align-items:center; justify-content:space-between; padding:10px 0; }
+  .logo { font-size:22px; font-weight:900; letter-spacing:2px; text-decoration:none; padding:8px 0; }
+  .logo span { color:#e8380d; }
+  .nav-links { display:flex; }
+  .nav-links a { margin-left:6px; font-size:15px; font-weight:600; text-decoration:none; padding:10px 8px; min-height:44px; display:inline-flex; align-items:center; }
+  .nav-links a:hover { text-decoration:underline; }
+  .nav-links a[aria-current="page"] { color:#e8380d; }
+  a:focus-visible, button:focus-visible, summary:focus-visible { outline:3px solid #e8380d; outline-offset:2px; }
+  .head { padding:36px 0 4px; }
+  .head .kicker { font-size:14px; letter-spacing:3px; color:#e8380d; font-weight:900; }
+  .head h1 { font-size:40px; font-weight:900; line-height:1.3; margin:10px 0; }
+  .head .meta { color:#888; font-size:14px; }
+  .head .lede { font-size:18px; color:#333; margin-top:14px; }
+  details.note { background:#fafafa; border-radius:12px; padding:6px 18px; font-size:14px; color:#555; margin:18px 0 4px; }
+  details.note summary { cursor:pointer; font-weight:800; color:#111; padding:10px 0; min-height:44px; }
+  details.note .note-body { padding-bottom:12px; }
+  details.toc-details { border:2px solid #111; border-radius:14px; margin:20px 0 6px; }
+  details.toc-details summary { cursor:pointer; font-weight:900; letter-spacing:2px; font-size:14px; padding:14px 20px; min-height:44px; list-style:none; }
+  details.toc-details summary::-webkit-details-marker { display:none; }
+  details.toc-details summary::after { content:"▸"; float:right; color:#e8380d; }
+  details.toc-details[open ] summary::after { content:"▾"; }
+  .toc { padding:0 20px 14px; }
+  .toc .toc-title { display:none; }
+  .toc ol { margin-left:20px; }
+  .toc li { margin:4px 0; }
+  .toc a { text-decoration:none; font-weight:600; padding:4px 0; }
+  .toc a:hover { text-decoration:underline; }
+  .toc a.active { color:#e8380d; }
+  article { padding:28px 0; border-bottom:1px solid #eee; scroll-margin-top:16px; }
+  article .rank { font-size:15px; font-weight:900; color:#e8380d; letter-spacing:2px; }
+  article h2 { font-size:26px; font-weight:900; line-height:1.4; margin:6px 0 12px; }
+  article p { font-size:17.5px; color:#222; margin-bottom:10px; }
+  .src { border-top:1px dashed #ddd; margin-top:16px; padding-top:10px; color:#666; font-size:13.5px; line-height:1.7; }
+  .src a { font-weight:700; }
+  .chip { display:inline-block; font-size:12px; font-weight:700; border:1.5px solid #111; border-radius:999px; padding:1px 9px; margin-right:6px; color:#111; }
+  .chip.verify { border-style:dashed; }
+  .corr { margin-top:8px; }
+  .copy-row { margin-top:12px; }
+  .copy-btn { font-size:13.5px; font-weight:700; border:1.5px solid #111; background:#fff; border-radius:999px; padding:8px 16px; min-height:44px; cursor:pointer; }
+  .copy-btn:hover { background:#111; color:#fff; }
+  .copy-fallback { display:none; font-size:13px; color:#666; margin-top:8px; word-break:break-all; }
+  .end-box { border:2px dashed #bbb; border-radius:14px; padding:20px 22px; margin:28px 0 6px; font-size:15px; color:#444; }
+  footer { border-top:3px solid #111; margin-top:36px; padding:22px 0 34px; color:#777; font-size:13px; }
+  footer nav a { margin-right:16px; font-weight:600; text-decoration:none; padding:6px 0; display:inline-block; }
+  footer nav a:hover { text-decoration:underline; }
+  @media (max-width:640px){
+    .wrap { padding:0 20px; }
+    .head h1 { font-size:30px; }
+    .head .lede { font-size:16.5px; }
+    article h2 { font-size:23px; }
+    article p { font-size:16.5px; }
+    .nav-links a { margin-left:2px; padding:10px 6px; }
+  }
+  html { scroll-behavior:smooth; }
+  @media (prefers-reduced-motion: reduce){
+    html { scroll-behavior:auto; }
+  }
+.review-banner{background:#fff3e9;color:#933515;border-bottom:1px solid #e8380d;text-align:center;padding:8px 16px;font-size:13px}.src a{overflow-wrap:anywhere}.chip{max-width:100%;white-space:normal}.fact-panel{border:1px solid #ddd;padding:22px;background:#fafafa}.fact-panel h4{font-size:16px;margin-bottom:10px}.fact-row{padding:10px 0;border-bottom:1px solid #ddd;display:flex;justify-content:space-between;gap:18px}.fact-row:last-child{border:0}.fact-row b{color:#e8380d}.mini-bars .bar{height:18px;margin:6px 0 16px}.mini-bars p{font-size:13px}.brief-text{max-width:850px}.brief-text h3{font-size:24px;margin-bottom:10px}.brief-text p{font-size:16px}.preview-label{color:#9b3d1d}.page>*{min-width:0}.hero-main h1{word-break:normal;overflow-wrap:anywhere}.rail-item>div:last-child{min-width:0}.fact-row>*{min-width:0;overflow-wrap:anywhere}</style>
+</head>
+<body>
+<div id="progress" aria-hidden="true"></div>
+<header><div class="wrap nav">
+  <a class="logo" href="../index.html">非常<span>AI</span></a>
+  <nav class="nav-links">
+    <a href="../index.html">首页</a>
+    <a href="2026-11-07.html" aria-current="page">今日简报</a>
+    <a href="../archive.html">存档</a>
+    <a href="../about.html">关于</a>
+  </nav>
+</div></header>
+
+<main class="wrap"><div class="head"><div class="kicker">每日简报 · 第2期</div><h1>Google让编程助手开口说话，群聊AI开始学习何时沉默</h1><div class="meta">2026年11月7日 星期六 · 3条重点＋1条快讯 · 张益达主理</div><p class="lede">本期3条重点＋1条快讯：Antigravity语音模式、Inkling 2 Small、群聊模型Ampersand，以及FLUX图像生成加速。收录11月5日至6日的原始公告，核验截至11月7日11:00（台北时间）。</p></div><details class="toc-details"><summary>本期目录 · 3条重点＋1条快讯</summary><nav class="toc" aria-label="本期目录"><ol><li><a href="#item-01">Google Antigravity加入语音，可边说边指挥编程助手</a></li><li><a href="#item-02">Inkling 2 Small发布，先开放Tinker使用，权重稍后再放</a></li><li><a href="#item-03">Humans&amp;群聊模型接入Vercel，能决定发言或等待</a></li><li><a href="#item-04">NVIDIA公布FLUX加速方案，成绩限于指定硬件与配置</a></li></ol></nav></details><article id="item-01"><div class="rank">01</div><h2>Google给编程助手加入语音模式：任务没做完，也能开口改方向</h2><p>Google于11月6日宣布，Antigravity App和CLI加入由Gemini Live支持的语音模式。用户可以直接说出编程任务，在助手工作时补充条件、纠正方向、询问进展，或者要求停止；助手会口头回应，读代码、改文件和运行命令的结果仍留在原来的会话里。</p><p>这比把语音转成一段提示词多了一步：语音接着当前对话进行，保留此前打字交代的背景，也允许用户说话打断回复。对需要反复看代码、补充要求的开发者，值得观察的是这种持续沟通是否减少了来回切换键盘的负担。</p><p>语音不会扩大助手原有权限。官方明确，删除文件、提权运行命令、强推远程仓库等高风险操作不能靠语音批准，仍需屏幕确认。官方说明CLI需1.5.0及以上版本；本站核读了公告，未登录账号测试识别准确率、语言支持或实际完成任务的效果。</p><div class="src"><span class="chip">Google官方公告已核读；语音功能未实测</span><br>来源日期：2026-11-06<br><a href="https://antigravity.google/blog/antigravity-voice-mode" target="_blank" rel="noopener">Google Antigravity · Voice mode in Antigravity</a><div class="copy-row"><button class="copy-btn" data-copy="#item-01">复制本条链接</button><div class="copy-fallback"></div></div></div></article><article id="item-02"><div class="rank">02</div><h2>Thinking Machines发布Inkling 2 Small：模型能用了，权重还没开放</h2><p>Thinking Machines Lab在11月5日发布Inkling 2 Small。这是一款混合专家模型，总参数5940亿、每次激活170亿，支持图像输入和可调推理投入。它先在Tinker Playground提供试用，也可以通过Tinker微调和采样。</p><p>开发者最需要看清的是开放顺序：发布公告说当前权重保持封闭，计划在外部安全测试和红队测试完成后，于下一周以Apache 2.0许可开放完整权重；微调检查点也要等权重发布后才能下载。这里的“下周”是11月5日公告中的计划，截至本次核查，不能把计划写成已兑现。</p><p>公司介绍了编程、视觉和长任务方面的进展，但产品演示与自报评测不等于本站验证。官方也列出限制：不支持音频，有时表达不够简洁，在技能很多的代码库里未必能选对工具。对想在自有环境部署的人，下一步应关注实际权重文件、许可和部署要求是否一并落地。</p><div class="src"><span class="chip">研究机构发布原文已核读；未运行模型，权重开放仍为计划</span><br>来源日期：2026-11-05<br><a href="https://thinkingmachines.ai/news/inkling-2-small/" target="_blank" rel="noopener">Thinking Machines Lab · Introducing Inkling 2 Small</a><div class="copy-row"><button class="copy-btn" data-copy="#item-02">复制本条链接</button><div class="copy-fallback"></div></div></div></article><article id="item-03"><div class="rank">03</div><h2>群聊里的AI不必句句接话：Ampersand接入Vercel AI Gateway</h2><p>Vercel于11月6日宣布，Humans&amp;的Ampersand已接入AI Gateway，平台模型名为humansand/ampersand-v0.1，并提供截至11月13日的限时免费调用。这次消息是开发者平台新增模型入口，不是某个聊天软件已经给所有群聊加上AI成员。</p><p>它面向多人对话，特别之处是每轮可以决定发言，也可以等待。按平台介绍，模型可以补充背景、提出澄清问题，或在人们互相回应时不插话。接入应用需要提供两种动作：send_message负责贡献消息，pass代表保持安静，直到下一条真人消息到来。</p><p>模型选择动作，应用负责执行并记录结果；它不会仅凭生成一个动作就自行进入你的群。免费期限属于Vercel此次接入政策，不代表永久免费。本站未实际调用或测试它判断发言时机的质量，平台描述也不能证明它总能化解团队分歧。</p><div class="src"><span class="chip">Vercel官方更新已核读；未调用测试，免费政策有截止日</span><br>来源日期：2026-11-06<br><a href="https://vercel.com/changelog/humans-and-ampersand-now-available-on-ai-gateway" target="_blank" rel="noopener">Vercel · Ampersand from Humans&amp; now available on AI Gateway</a><div class="copy-row"><button class="copy-btn" data-copy="#item-03">复制本条链接</button><div class="copy-fallback"></div></div></div></article><article id="item-04"><div class="rank">今日快讯</div><h2>NVIDIA公布FLUX图像生成加速方案：特定B200测试下最高提速3.46倍</h2><p>NVIDIA在11月6日技术博客中公布FLUX 3 Image Klein的推理优化方案。在单张B200、2048×2048分辨率的厂商测试中，编译、低精度计算、稀疏注意力和缓存等组合优化，将Base版文生图耗时从22.36秒降至6.46秒，约为原速度的3.46倍。</p><p>这是部署优化结果，不是宣布一个新图像模型。对运行图像服务的开发者，它展示了降低等待时间的空间；对普通用户，不能据此推断现有网站会立即变快。硬件、精度和输出画面差异都要一起看，本站未复现测试。</p><div class="src"><span class="chip">NVIDIA技术博客正文已核读；厂商自测，未独立复现</span><br>来源日期：2026-11-06<br><a href="https://developer.nvidia.com/blog/speed-up-image-generation-with-flux-3-image-klein-on-nvidia-blackwell-gpus/" target="_blank" rel="noopener">NVIDIA · Speed Up Image Generation with FLUX 3 Image Klein on NVIDIA Blackwell GPUs</a><div class="copy-row"><button class="copy-btn" data-copy="#item-04">复制本条链接</button><div class="copy-fallback"></div></div></div></article><div class="end-box">本期完。往期见<a href="../archive.html">存档</a>。原文与限制见各条标注；另附<a href="../verification-2026-11-07.html">本期核验记录</a>。</div></main>
+
+<footer><div class="wrap">
+  <nav>
+    <a href="../index.html">首页</a><a href="2026-11-07.html">今日简报</a><a href="../archive.html">存档</a><a href="../about.html">关于</a>
+  </nav>
+  非常AI · feichangai.vip · 张益达主理<br>
+  本站资讯均标注来源与核验状态，只做自有摘要与点评并附原文链接，不全文转载。内容由 AI 辅助整理、人工复核。
+</div></footer>
+
+<script>
+(function(){
+  var bar = document.getElementById('progress');
+  function onScroll(){
+    var h = document.documentElement;
+    var max = h.scrollHeight - h.clientHeight;
+    bar.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + '%';
+  }
+  document.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+  document.querySelectorAll('.copy-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var url = new URL(btn.getAttribute('data-copy'), window.location.href).href;
+      var fb = btn.parentElement.querySelector('.copy-fallback');
+      function ok(){ btn.textContent = '链接已复制'; setTimeout(function(){ btn.textContent = '复制本条链接'; }, 2000); }
+      function fail(){ if (fb) { fb.textContent=url; fb.style.display='block'; } }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url).then(ok, fail);
+      } else { fail(); }
+    });
+  });
+
+  var det = document.querySelector('.toc-details');
+  if (det && window.matchMedia('(min-width: 900px)').matches) det.open = true;
+  var links = document.querySelectorAll('.toc a');
+  var map = {};
+  links.forEach(function(a){ map[a.getAttribute('href').slice(1)] = a; });
+  if ('IntersectionObserver' in window) {
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting) {
+          links.forEach(function(a){ a.classList.remove('active'); });
+          var a = map[e.target.id]; if (a) a.classList.add('active');
+        }
+      });
+    }, {rootMargin:'-20% 0px -70% 0px'});
+    document.querySelectorAll('article[id]').forEach(function(el){ obs.observe(el); });
+  }
+})();
+</script>
+</body>
+</html>

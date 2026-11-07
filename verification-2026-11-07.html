@@ -1,0 +1,95 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>第2期核验记录</title><style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif; color:#111; background:#fff; line-height:1.8; }
+  a { color:#111; }
+  .wrap { max-width:760px; margin:0 auto; padding:0 20px; }
+  #progress { position:fixed; top:0; left:0; height:3px; background:#e8380d; width:0; z-index:50; }
+  header { border-bottom:3px solid #111; }
+  .nav { display:flex; align-items:center; justify-content:space-between; padding:10px 0; }
+  .logo { font-size:22px; font-weight:900; letter-spacing:2px; text-decoration:none; padding:8px 0; }
+  .logo span { color:#e8380d; }
+  .nav-links { display:flex; }
+  .nav-links a { margin-left:6px; font-size:15px; font-weight:600; text-decoration:none; padding:10px 8px; min-height:44px; display:inline-flex; align-items:center; }
+  .nav-links a:hover { text-decoration:underline; }
+  .nav-links a[aria-current="page"] { color:#e8380d; }
+  a:focus-visible, button:focus-visible, summary:focus-visible { outline:3px solid #e8380d; outline-offset:2px; }
+  .head { padding:36px 0 4px; }
+  .head .kicker { font-size:14px; letter-spacing:3px; color:#e8380d; font-weight:900; }
+  .head h1 { font-size:40px; font-weight:900; line-height:1.3; margin:10px 0; }
+  .head .meta { color:#888; font-size:14px; }
+  .head .lede { font-size:18px; color:#333; margin-top:14px; }
+  details.note { background:#fafafa; border-radius:12px; padding:6px 18px; font-size:14px; color:#555; margin:18px 0 4px; }
+  details.note summary { cursor:pointer; font-weight:800; color:#111; padding:10px 0; min-height:44px; }
+  details.note .note-body { padding-bottom:12px; }
+  details.toc-details { border:2px solid #111; border-radius:14px; margin:20px 0 6px; }
+  details.toc-details summary { cursor:pointer; font-weight:900; letter-spacing:2px; font-size:14px; padding:14px 20px; min-height:44px; list-style:none; }
+  details.toc-details summary::-webkit-details-marker { display:none; }
+  details.toc-details summary::after { content:"▸"; float:right; color:#e8380d; }
+  details.toc-details[open ] summary::after { content:"▾"; }
+  .toc { padding:0 20px 14px; }
+  .toc .toc-title { display:none; }
+  .toc ol { margin-left:20px; }
+  .toc li { margin:4px 0; }
+  .toc a { text-decoration:none; font-weight:600; padding:4px 0; }
+  .toc a:hover { text-decoration:underline; }
+  .toc a.active { color:#e8380d; }
+  article { padding:28px 0; border-bottom:1px solid #eee; scroll-margin-top:16px; }
+  article .rank { font-size:15px; font-weight:900; color:#e8380d; letter-spacing:2px; }
+  article h2 { font-size:26px; font-weight:900; line-height:1.4; margin:6px 0 12px; }
+  article p { font-size:17.5px; color:#222; margin-bottom:10px; }
+  .src { border-top:1px dashed #ddd; margin-top:16px; padding-top:10px; color:#666; font-size:13.5px; line-height:1.7; }
+  .src a { font-weight:700; }
+  .chip { display:inline-block; font-size:12px; font-weight:700; border:1.5px solid #111; border-radius:999px; padding:1px 9px; margin-right:6px; color:#111; }
+  .chip.verify { border-style:dashed; }
+  .corr { margin-top:8px; }
+  .copy-row { margin-top:12px; }
+  .copy-btn { font-size:13.5px; font-weight:700; border:1.5px solid #111; background:#fff; border-radius:999px; padding:8px 16px; min-height:44px; cursor:pointer; }
+  .copy-btn:hover { background:#111; color:#fff; }
+  .copy-fallback { display:none; font-size:13px; color:#666; margin-top:8px; word-break:break-all; }
+  .end-box { border:2px dashed #bbb; border-radius:14px; padding:20px 22px; margin:28px 0 6px; font-size:15px; color:#444; }
+  footer { border-top:3px solid #111; margin-top:36px; padding:22px 0 34px; color:#777; font-size:13px; }
+  footer nav a { margin-right:16px; font-weight:600; text-decoration:none; padding:6px 0; display:inline-block; }
+  footer nav a:hover { text-decoration:underline; }
+  @media (max-width:640px){
+    .wrap { padding:0 20px; }
+    .head h1 { font-size:30px; }
+    .head .lede { font-size:16.5px; }
+    article h2 { font-size:23px; }
+    article p { font-size:16.5px; }
+    .nav-links a { margin-left:2px; padding:10px 6px; }
+  }
+  html { scroll-behavior:smooth; }
+  @media (prefers-reduced-motion: reduce){
+    html { scroll-behavior:auto; }
+  }
+.review-banner{background:#fff3e9;color:#933515;border-bottom:1px solid #e8380d;text-align:center;padding:8px 16px;font-size:13px}.src a{overflow-wrap:anywhere}.chip{max-width:100%;white-space:normal}.fact-panel{border:1px solid #ddd;padding:22px;background:#fafafa}.fact-panel h4{font-size:16px;margin-bottom:10px}.fact-row{padding:10px 0;border-bottom:1px solid #ddd;display:flex;justify-content:space-between;gap:18px}.fact-row:last-child{border:0}.fact-row b{color:#e8380d}.mini-bars .bar{height:18px;margin:6px 0 16px}.mini-bars p{font-size:13px}.brief-text{max-width:850px}.brief-text h3{font-size:24px;margin-bottom:10px}.brief-text p{font-size:16px}.preview-label{color:#9b3d1d}.page>*{min-width:0}.hero-main h1{word-break:normal;overflow-wrap:anywhere}.rail-item>div:last-child{min-width:0}.fact-row>*{min-width:0;overflow-wrap:anywhere}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:16px/1.8 sans-serif;padding:24px 0}</style></head><body><main class="wrap"><a href="index.html">返回首页</a><pre># 第2期核验记录
+
+核验日期：2026-11-07，Asia/Taipei。资料检索截止11:00。用于第2期公开说明；本文件是核读摘要，不是原网页存档。
+
+## 01 Google Antigravity语音模式
+来源：https://antigravity.google/blog/antigravity-voice-mode
+原文日期：2026-11-06。正文确认App与CLI接入Gemini Live；沿用当前会话，可补充、打断、叫停；通常权限不变，高风险操作须屏幕确认；CLI 1.5.0及以上。
+结论：官方发布及功能描述有一手支持。未安装、登录、录音或实测，不写识别效果、语言覆盖、套餐价格或全球账号均已可用。
+
+## 02 Inkling 2 Small
+来源：https://thinkingmachines.ai/news/inkling-2-small/
+原文日期：2026-11-05。总参数594B、激活17B、图像输入，Tinker提供Playground、微调、采样；公告明确initially closed weights，计划外部安全测试后下一周以Apache 2.0开放，检查点届时才能下载。
+原文限制章节确认不支持音频、表达不够简洁、部分工具选择不足。
+结论：近期模型发布，明确标11月5日；不称11月7日首发，不称权重已经开放，不复述厂商榜单领先。此次只核读原文，未运行模型。
+
+## 03 Ampersand接入Vercel
+来源：https://vercel.com/changelog/humans-and-ampersand-now-available-on-ai-gateway
+原文日期：2026-11-06。模型名humansand/ampersand-v0.1，免费至11月13日。模型通过send_message/pass选择贡献或等待，调用方执行动作；pass不启动另一个模型轮次，等下一条真人消息。
+结论：平台接入与限时免费由平台一手公告支持；不写永久免费、已接入任何用户群，未调用和测试实际协作效果。
+
+## 04 NVIDIA图像生成优化
+来源：https://developer.nvidia.com/blog/speed-up-image-generation-with-flux-3-image-klein-on-nvidia-blackwell-gpus/
+原文日期：2026-11-06。读取正文“FLUX 3 end-to-end performance”，未仅引用页面AI生成摘要。单B200、2048×2048、Base版、未编译BF16 VANILLA基线，对比组合优化，T2I 22.36s→6.46s，3.46x；原文还比较了输出画面差异。
+结论：归因厂商特定配置自测，不推广至任意显卡、模型或消费者服务，不称新模型首发，未独立复现。
+
+## 选稿排除与日期处理
+- 聚合站只用于发现线索，四条正文均回到原始发布方核读。
+- Perplexity Teammates被聚合站列入11月6日，但官方News目录标11月4日，本期不收录为当天新发布。
+- Conductor加入Meta公告时间线从11月4日开始；Cognition SWE-2 Flash正文标11月4日，均未当作11月6日新消息。
+- 第0、1期内容保留，今日导航转向第2期；公众号已取消。
+</pre></main></body></html>
