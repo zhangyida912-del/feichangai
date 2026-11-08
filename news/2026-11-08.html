@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>非常AI第3期 · 2026-11-08</title>
+<meta name="description" content="Claude如何整理记忆，AI能否看懂实验里的错误">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif; color:#111; background:#fff; line-height:1.8; }
+  a { color:#111; }
+  .wrap { max-width:760px; margin:0 auto; padding:0 20px; }
+  #progress { position:fixed; top:0; left:0; height:3px; background:#e8380d; width:0; z-index:50; }
+  header { border-bottom:3px solid #111; }
+  .nav { display:flex; align-items:center; justify-content:space-between; padding:10px 0; }
+  .logo { font-size:22px; font-weight:900; letter-spacing:2px; text-decoration:none; padding:8px 0; }
+  .logo span { color:#e8380d; }
+  .nav-links { display:flex; }
+  .nav-links a { margin-left:6px; font-size:15px; font-weight:600; text-decoration:none; padding:10px 8px; min-height:44px; display:inline-flex; align-items:center; }
+  .nav-links a:hover { text-decoration:underline; }
+  .nav-links a[aria-current="page"] { color:#e8380d; }
+  a:focus-visible, button:focus-visible, summary:focus-visible { outline:3px solid #e8380d; outline-offset:2px; }
+  .head { padding:36px 0 4px; }
+  .head .kicker { font-size:14px; letter-spacing:3px; color:#e8380d; font-weight:900; }
+  .head h1 { font-size:40px; font-weight:900; line-height:1.3; margin:10px 0; }
+  .head .meta { color:#888; font-size:14px; }
+  .head .lede { font-size:18px; color:#333; margin-top:14px; }
+  details.note { background:#fafafa; border-radius:12px; padding:6px 18px; font-size:14px; color:#555; margin:18px 0 4px; }
+  details.note summary { cursor:pointer; font-weight:800; color:#111; padding:10px 0; min-height:44px; }
+  details.note .note-body { padding-bottom:12px; }
+  details.toc-details { border:2px solid #111; border-radius:14px; margin:20px 0 6px; }
+  details.toc-details summary { cursor:pointer; font-weight:900; letter-spacing:2px; font-size:14px; padding:14px 20px; min-height:44px; list-style:none; }
+  details.toc-details summary::-webkit-details-marker { display:none; }
+  details.toc-details summary::after { content:"▸"; float:right; color:#e8380d; }
+  details.toc-details[open ] summary::after { content:"▾"; }
+  .toc { padding:0 20px 14px; }
+  .toc .toc-title { display:none; }
+  .toc ol { margin-left:20px; }
+  .toc li { margin:4px 0; }
+  .toc a { text-decoration:none; font-weight:600; padding:4px 0; }
+  .toc a:hover { text-decoration:underline; }
+  .toc a.active { color:#e8380d; }
+  article { padding:28px 0; border-bottom:1px solid #eee; scroll-margin-top:16px; }
+  article .rank { font-size:15px; font-weight:900; color:#e8380d; letter-spacing:2px; }
+  article h2 { font-size:26px; font-weight:900; line-height:1.4; margin:6px 0 12px; }
+  article p { font-size:17.5px; color:#222; margin-bottom:10px; }
+  .src { border-top:1px dashed #ddd; margin-top:16px; padding-top:10px; color:#666; font-size:13.5px; line-height:1.7; }
+  .src a { font-weight:700; }
+  .chip { display:inline-block; font-size:12px; font-weight:700; border:1.5px solid #111; border-radius:999px; padding:1px 9px; margin-right:6px; color:#111; }
+  .chip.verify { border-style:dashed; }
+  .corr { margin-top:8px; }
+  .copy-row { margin-top:12px; }
+  .copy-btn { font-size:13.5px; font-weight:700; border:1.5px solid #111; background:#fff; border-radius:999px; padding:8px 16px; min-height:44px; cursor:pointer; }
+  .copy-btn:hover { background:#111; color:#fff; }
+  .copy-fallback { display:none; font-size:13px; color:#666; margin-top:8px; word-break:break-all; }
+  .end-box { border:2px dashed #bbb; border-radius:14px; padding:20px 22px; margin:28px 0 6px; font-size:15px; color:#444; }
+  footer { border-top:3px solid #111; margin-top:36px; padding:22px 0 34px; color:#777; font-size:13px; }
+  footer nav a { margin-right:16px; font-weight:600; text-decoration:none; padding:6px 0; display:inline-block; }
+  footer nav a:hover { text-decoration:underline; }
+  @media (max-width:640px){
+    .wrap { padding:0 20px; }
+    .head h1 { font-size:30px; }
+    .head .lede { font-size:16.5px; }
+    article h2 { font-size:23px; }
+    article p { font-size:16.5px; }
+    .nav-links a { margin-left:2px; padding:10px 6px; }
+  }
+  html { scroll-behavior:smooth; }
+  @media (prefers-reduced-motion: reduce){
+    html { scroll-behavior:auto; }
+  }
+.review-banner{background:#fff3e9;color:#933515;border-bottom:1px solid #e8380d;text-align:center;padding:8px 16px;font-size:13px}.src a{overflow-wrap:anywhere}.chip{max-width:100%;white-space:normal}.fact-panel{border:1px solid #ddd;padding:22px;background:#fafafa}.fact-panel h4{font-size:16px;margin-bottom:10px}.fact-row{padding:10px 0;border-bottom:1px solid #ddd;display:flex;justify-content:space-between;gap:18px}.fact-row:last-child{border:0}.fact-row b{color:#e8380d}.mini-bars .bar{height:18px;margin:6px 0 16px}.mini-bars p{font-size:13px}.brief-text{max-width:850px}.brief-text h3{font-size:24px;margin-bottom:10px}.brief-text p{font-size:16px}.preview-label{color:#9b3d1d}.page>*{min-width:0}.hero-main h1{word-break:normal;overflow-wrap:anywhere}.rail-item>div:last-child{min-width:0}.fact-row>*{min-width:0;overflow-wrap:anywhere}</style>
+</head>
+<body>
+<div id="progress" aria-hidden="true"></div>
+<header><div class="wrap nav">
+  <a class="logo" href="../index.html">非常<span>AI</span></a>
+  <nav class="nav-links">
+    <a href="../index.html">首页</a>
+    <a href="2026-11-08.html" aria-current="page">今日简报</a>
+    <a href="../archive.html">存档</a>
+    <a href="../about.html">关于</a>
+  </nav>
+</div></header>
+
+<main class="wrap"><div class="head"><div class="kicker">每日简报 · 第3期</div><h1>Claude如何整理记忆，AI能否看懂实验里的错误</h1><div class="meta">2026年11月8日 星期日 · 2条重点＋1条快讯 · 张益达主理</div><p class="lede">本期2条重点＋1条快讯：Claude的记忆整理机制、OpenAI的原始实验数据评测，以及Kakao的多模态决策模型。三条原始材料均于11月6日发布，本期补充报道，11月8日核验。</p></div><details class="toc-details"><summary>本期目录 · 2条重点＋1条快讯</summary><nav class="toc" aria-label="本期目录"><ol><li><a href="#item-01">Anthropic解释Claude如何回看记录、纠正错误记忆</a></li><li><a href="#item-02">OpenAI与Ligo发布BioBasicsBench，考察原始实验数据判断</a></li><li><a href="#item-03">Kakao公开多模态决策模型：返回选项概率，不写长回答</a></li></ol></nav></details><article id="item-01"><div class="rank">01</div><h2>Claude也会“做梦”？Anthropic说的是回看记录，整理记忆</h2><p>Anthropic在11月6日的工程文章中解释了Claude的跨会话记忆设计。所谓dreaming，是利用交互间隙回看日志，纠正错误笔记、建立关联索引，并挑选适合下次会话预先加载的信息；“做梦”只是对这一过程的比喻。</p><p>这里保存的是模型以后能读取的上下文，不是修改模型权重。文章特别指出，记忆可能一开始就写错，也可能随环境变化而过时；反复检查、整理这些材料同样消耗计算资源。对做长任务的智能体，这解决的是工作经验如何留到下一次的问题。</p><p>文中结果来自公司设计的评测，不能理解为所有Claude账号都新上线了一个“自动做梦”开关。比如其中一项数据库问答测试会在每次回答后告知正确答案，让模型据此写记忆；真实任务未必有这样的纠错条件。本站未复现实验。</p><div class="src"><span class="chip">Anthropic工程原文已核读；公司评测，未独立复现</span><br>来源日期：2026-11-06<br><a href="https://www.anthropic.com/research/components-of-agent-memory" target="_blank" rel="noopener">Anthropic · The components of agent memory</a><div class="copy-row"><button class="copy-btn" data-copy="#item-01">复制本条链接</button><div class="copy-fallback"></div></div></div></article><article id="item-02"><div class="rank">02</div><h2>AI不只要读懂漂亮图表：OpenAI用100道实验题测它能否发现问题</h2><p>OpenAI于11月6日与Ligo推出BioBasicsBench，包含100道日常湿实验分析任务。题目来自科学家的真实实验，保留原始图像、仪器读数等材料，按专家编写的细项标准评分；一份答案可以得到部分分数。</p><p>按OpenAI公布的xhigh推理设置，GPT-6 Astra获得66.7%的平均可得分，GPT-5.6 Sol为43.8%。每个设置覆盖全部100题、每题尝试5次。这是评分标准中的平均得分，不能读成66.7道实验全部做对，更不是独立完成实验的成功率。</p><p>原文同时展示了模型仍会让预设判断压过证据、漏看矛盾信息等失败。对研究人员，这是一套衡量实验数据解读能力的评测；它不证明模型可以可靠替代科学家判断。成绩由发布方报告，本站未运行评测，也未开展实验操作。</p><div class="src"><span class="chip">OpenAI发布原文已核读；平均得分为厂商评测，未独立复现</span><br>来源日期：2026-11-06<br><a href="https://openai.com/index/measuring-how-ai-agents-handle-wet-lab-science/" target="_blank" rel="noopener">OpenAI · Measuring how AI agents handle everyday wet-lab science</a><div class="copy-row"><button class="copy-btn" data-copy="#item-02">复制本条链接</button><div class="copy-fallback"></div></div></div></article><article id="item-03"><div class="rank">今日快讯</div><h2>Kakao公开Kanana决策模型：看文字和图片，直接做选择题</h2><p>Kakao官方模型卡记录，11月6日已公开Kanana-2-v-decide-3b-2611权重。该模型约36.7亿参数，接受文字、结构化内容、聊天记录及图片，针对给定选项做选择、是否判断或等级评分，不生成文本回答。模型卡给出的例子包括判断客户来信属于哪类诉求。</p><p>这类模型更适合嵌入分类、分流等流程。它返回的概率是相对于所给候选项计算的，增加或修改选项会改变分布，不能直接当成现实判断必然正确的概率。权重采用Kanana Open License，使用时需查看对应条款；本站未下载运行，也未独立测试准确率或速度。</p><div class="src"><span class="chip">Kakao官方模型卡已核读；未运行模型，不引用速度或领先宣称</span><br>来源日期：2026-11-06<br><a href="https://huggingface.co/kakaocorp/kanana-2-v-decide-3b-2611" target="_blank" rel="noopener">Kakao · Kanana-2-v-decide-3b-2611模型卡</a><div class="copy-row"><button class="copy-btn" data-copy="#item-03">复制本条链接</button><div class="copy-fallback"></div></div></div></article><div class="end-box">本期完。往期见<a href="../archive.html">存档</a>。原文与限制见各条标注；另附<a href="../verification-2026-11-08.html">本期核验记录</a>。</div></main>
+
+<footer><div class="wrap">
+  <nav>
+    <a href="../index.html">首页</a><a href="2026-11-08.html">今日简报</a><a href="../archive.html">存档</a><a href="../about.html">关于</a>
+  </nav>
+  非常AI · feichangai.vip · 张益达主理<br>
+  本站资讯均标注来源与核验状态，只做自有摘要与点评并附原文链接，不全文转载。内容由 AI 辅助整理、人工复核。
+</div></footer>
+
+<script>
+(function(){
+  var bar = document.getElementById('progress');
+  function onScroll(){
+    var h = document.documentElement;
+    var max = h.scrollHeight - h.clientHeight;
+    bar.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + '%';
+  }
+  document.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+  document.querySelectorAll('.copy-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var url = new URL(btn.getAttribute('data-copy'), window.location.href).href;
+      var fb = btn.parentElement.querySelector('.copy-fallback');
+      function ok(){ btn.textContent = '链接已复制'; setTimeout(function(){ btn.textContent = '复制本条链接'; }, 2000); }
+      function fail(){ if (fb) { fb.textContent=url; fb.style.display='block'; } }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url).then(ok, fail);
+      } else { fail(); }
+    });
+  });
+
+  var det = document.querySelector('.toc-details');
+  if (det && window.matchMedia('(min-width: 900px)').matches) det.open = true;
+  var links = document.querySelectorAll('.toc a');
+  var map = {};
+  links.forEach(function(a){ map[a.getAttribute('href').slice(1)] = a; });
+  if ('IntersectionObserver' in window) {
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting) {
+          links.forEach(function(a){ a.classList.remove('active'); });
+          var a = map[e.target.id]; if (a) a.classList.add('active');
+        }
+      });
+    }, {rootMargin:'-20% 0px -70% 0px'});
+    document.querySelectorAll('article[id]').forEach(function(el){ obs.observe(el); });
+  }
+})();
+</script>
+</body>
+</html>
