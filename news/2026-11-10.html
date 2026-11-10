@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>非常AI第4期 · 2026-11-10</title>
+<meta name="description" content="Claude更新5.2，Seedream把重点放在反复改图">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif; color:#111; background:#fff; line-height:1.8; }
+  a { color:#111; }
+  .wrap { max-width:760px; margin:0 auto; padding:0 20px; }
+  #progress { position:fixed; top:0; left:0; height:3px; background:#e8380d; width:0; z-index:50; }
+  header { border-bottom:3px solid #111; }
+  .nav { display:flex; align-items:center; justify-content:space-between; padding:10px 0; }
+  .logo { font-size:22px; font-weight:900; letter-spacing:2px; text-decoration:none; padding:8px 0; }
+  .logo span { color:#e8380d; }
+  .nav-links { display:flex; }
+  .nav-links a { margin-left:6px; font-size:15px; font-weight:600; text-decoration:none; padding:10px 8px; min-height:44px; display:inline-flex; align-items:center; }
+  .nav-links a:hover { text-decoration:underline; }
+  .nav-links a[aria-current="page"] { color:#e8380d; }
+  a:focus-visible, button:focus-visible, summary:focus-visible { outline:3px solid #e8380d; outline-offset:2px; }
+  .head { padding:36px 0 4px; }
+  .head .kicker { font-size:14px; letter-spacing:3px; color:#e8380d; font-weight:900; }
+  .head h1 { font-size:40px; font-weight:900; line-height:1.3; margin:10px 0; }
+  .head .meta { color:#888; font-size:14px; }
+  .head .lede { font-size:18px; color:#333; margin-top:14px; }
+  details.note { background:#fafafa; border-radius:12px; padding:6px 18px; font-size:14px; color:#555; margin:18px 0 4px; }
+  details.note summary { cursor:pointer; font-weight:800; color:#111; padding:10px 0; min-height:44px; }
+  details.note .note-body { padding-bottom:12px; }
+  details.toc-details { border:2px solid #111; border-radius:14px; margin:20px 0 6px; }
+  details.toc-details summary { cursor:pointer; font-weight:900; letter-spacing:2px; font-size:14px; padding:14px 20px; min-height:44px; list-style:none; }
+  details.toc-details summary::-webkit-details-marker { display:none; }
+  details.toc-details summary::after { content:"▸"; float:right; color:#e8380d; }
+  details.toc-details[open ] summary::after { content:"▾"; }
+  .toc { padding:0 20px 14px; }
+  .toc .toc-title { display:none; }
+  .toc ol { margin-left:20px; }
+  .toc li { margin:4px 0; }
+  .toc a { text-decoration:none; font-weight:600; padding:4px 0; }
+  .toc a:hover { text-decoration:underline; }
+  .toc a.active { color:#e8380d; }
+  article { padding:28px 0; border-bottom:1px solid #eee; scroll-margin-top:16px; }
+  article .rank { font-size:15px; font-weight:900; color:#e8380d; letter-spacing:2px; }
+  article h2 { font-size:26px; font-weight:900; line-height:1.4; margin:6px 0 12px; }
+  article p { font-size:17.5px; color:#222; margin-bottom:10px; }
+  .src { border-top:1px dashed #ddd; margin-top:16px; padding-top:10px; color:#666; font-size:13.5px; line-height:1.7; }
+  .src a { font-weight:700; }
+  .chip { display:inline-block; font-size:12px; font-weight:700; border:1.5px solid #111; border-radius:999px; padding:1px 9px; margin-right:6px; color:#111; }
+  .chip.verify { border-style:dashed; }
+  .corr { margin-top:8px; }
+  .copy-row { margin-top:12px; }
+  .copy-btn { font-size:13.5px; font-weight:700; border:1.5px solid #111; background:#fff; border-radius:999px; padding:8px 16px; min-height:44px; cursor:pointer; }
+  .copy-btn:hover { background:#111; color:#fff; }
+  .copy-fallback { display:none; font-size:13px; color:#666; margin-top:8px; word-break:break-all; }
+  .end-box { border:2px dashed #bbb; border-radius:14px; padding:20px 22px; margin:28px 0 6px; font-size:15px; color:#444; }
+  footer { border-top:3px solid #111; margin-top:36px; padding:22px 0 34px; color:#777; font-size:13px; }
+  footer nav a { margin-right:16px; font-weight:600; text-decoration:none; padding:6px 0; display:inline-block; }
+  footer nav a:hover { text-decoration:underline; }
+  @media (max-width:640px){
+    .wrap { padding:0 20px; }
+    .head h1 { font-size:30px; }
+    .head .lede { font-size:16.5px; }
+    article h2 { font-size:23px; }
+    article p { font-size:16.5px; }
+    .nav-links a { margin-left:2px; padding:10px 6px; }
+  }
+  html { scroll-behavior:smooth; }
+  @media (prefers-reduced-motion: reduce){
+    html { scroll-behavior:auto; }
+  }
+.review-banner{background:#fff3e9;color:#933515;border-bottom:1px solid #e8380d;text-align:center;padding:8px 16px;font-size:13px}.src a{overflow-wrap:anywhere}.chip{max-width:100%;white-space:normal}.fact-panel{border:1px solid #ddd;padding:22px;background:#fafafa}.fact-panel h4{font-size:16px;margin-bottom:10px}.fact-row{padding:10px 0;border-bottom:1px solid #ddd;display:flex;justify-content:space-between;gap:18px}.fact-row:last-child{border:0}.fact-row b{color:#e8380d}.mini-bars .bar{height:18px;margin:6px 0 16px}.mini-bars p{font-size:13px}.brief-text{max-width:850px}.brief-text h3{font-size:24px;margin-bottom:10px}.brief-text p{font-size:16px}.preview-label{color:#9b3d1d}.page>*{min-width:0}.hero-main h1{word-break:normal;overflow-wrap:anywhere}.rail-item>div:last-child{min-width:0}.fact-row>*{min-width:0;overflow-wrap:anywhere}</style>
+</head>
+<body>
+<div id="progress" aria-hidden="true"></div>
+<header><div class="wrap nav">
+  <a class="logo" href="../index.html">非常<span>AI</span></a>
+  <nav class="nav-links">
+    <a href="../index.html">首页</a>
+    <a href="2026-11-10.html" aria-current="page">今日简报</a>
+    <a href="../archive.html">存档</a>
+    <a href="../about.html">关于</a>
+  </nav>
+</div></header>
+
+<main class="wrap"><div class="head"><div class="kicker">每日简报 · 第4期</div><h1>Claude更新5.2，Seedream把重点放在反复改图</h1><div class="meta">2026年11月10日 星期二 · 3条重点＋1条快讯 · 张益达主理</div><p class="lede">本期3条重点＋1条快讯：Claude Fable／Mythos 5.2、字节Seedream 5.5、Meta Muse Ember，以及Google新增TPU系统。原始公告均为11月9日，11月10日核验。</p></div><details class="toc-details"><summary>本期目录 · 3条重点＋1条快讯</summary><nav class="toc" aria-label="本期目录"><ol><li><a href="#item-01">Claude Fable／Mythos升级5.2，开放方式不同</a></li><li><a href="#item-02">Seedream 5.5发布，主打多轮改图和透明素材</a></li><li><a href="#item-03">Meta推出Muse Ember，瞄准智能体的重复小任务</a></li><li><a href="#item-04">Google新增TPU 8tx与8i Max，分别侧重保密计算和长上下文</a></li></ol></nav></details><article id="item-01"><div class="rank">01</div><h2>Claude升级5.2：Fable面向广泛用户，Mythos仍需申请验证</h2><p>Anthropic于11月9日发布Claude Fable 5.2与Claude Mythos 5.2，面向复杂编程、推理和视觉任务。两者使用相同底层模型，但开放方式不同：Fable加入网络安全与生物领域的防滥用保护；机构若需Mythos，仍要通过网络安全或生命科学验证计划申请。</p><p>Fable 5.2已在Claude平台及AWS、Google Cloud、Azure等平台提供。官方公布的标准API价为每百万输入token 8美元、输出40美元；可选fast mode为16美元和80美元。公司称标准输出较5.1最高快30%，fast mode的token生成速度最高可达2.5倍，这些是官方口径，不等于所有任务总耗时按同样比例缩短。</p><p>对开发者，值得实际比较的是自己的难任务能否少返工、总调用成本是否下降。发布页也提醒，多数日常编程与知识工作仍可从Opus 5.5开始，再按难度切换。本站未登录测试新模型，也未独立复现其评测；付费套餐额度与数据保留规则应分别查阅官方说明。</p><div class="src"><span class="chip">Anthropic官方发布已核读；速度与能力为官方主张，未实测</span><br>来源日期：2026-11-09<br><a href="https://www.anthropic.com/claude-fable-and-mythos-5-2" target="_blank" rel="noopener">Anthropic · Claude Fable 5.2 and Mythos 5.2</a><div class="copy-row"><button class="copy-btn" data-copy="#item-01">复制本条链接</button><div class="copy-fallback"></div></div></div></article><article id="item-02"><div class="rank">02</div><h2>Seedream 5.5发布：改了衣服，尽量别把整张图也改掉</h2><p>字节Seed团队于11月9日发布Seedream 5.5。官方重点介绍多轮编辑：在继续修改服装、配饰、物件等内容时，保持未编辑区域，降低反复改图带来的颜色偏移、细节丢失与画质衰减。公告演示了同一人物图连续100轮编辑，这是厂商展示的样例，不是对任意图片都能成立的保证。</p><p>另一项变化是原生RGBA输出，也就是直接生成带透明或半透明背景的素材。对于需要放进版式、拼贴或系列画面的元素，目标是减少后续抠图和修边。团队还宣称改善光照、材质、肤质与密集小字的生成质量，效果仍需在具体素材上检验。</p><p>官方中文公告称，功能正陆续在即梦、豆包、豆包工作和火山方舟上线；某个账号是否已出现入口，要以实际界面为准。Pro版本属于后续计划。本站核读了中英文发布说明，未生成图片或复测100轮编辑，不把样例效果当作独立测试结果。</p><div class="src"><span class="chip">Seed官方中英文公告已核读；逐步上线，图片效果未实测</span><br>来源日期：2026-11-09<br><a href="https://seed.bytedance.com/zh/blog/more-realistic-images-more-stable-editing-across-100-rounds-introducing-seedream-5-5?view_from=content_recommend" target="_blank" rel="noopener">字节Seed · 生成更真实，百轮编辑更稳定｜Seedream 5.5发布</a><div class="copy-row"><button class="copy-btn" data-copy="#item-02">复制本条链接</button><div class="copy-fallback"></div></div></div></article><article id="item-03"><div class="rank">03</div><h2>Meta推出Muse Ember：让小模型处理智能体里的大量小步骤</h2><p>Meta发布Muse Ember，定位为面向日常智能体任务的小模型，重点是反复出现的工具调用、文件读取、测试、信息提取和局部代码修改。官方称它是首个使用Muse Wonder Full训练的模型，并建议将复杂规划交给更强模型，把大量重复步骤交给Ember。</p><p>公告提供Muse Code和Meta Model API入口，模型名为muse-ember-1.0，标注100万token上下文和最高51.2万输出token。它原生处理文字、图片、音频与视频；这说明它可以接受哪些材料，不代表长文档中的每个细节都能准确找回。</p><p>对开发者，实际问题是子任务能否分得清、出错后是否容易发现。低价调用若带来更多重试，也未必降低整个流程的成本。本站只核对官方发布与使用入口，未调用模型；不将API发布称作权重开源，也不依据厂商展示的排行榜断言它在所有任务上领先。</p><div class="src"><span class="chip">Meta官方发布已核读；未调用或验证端到端成本</span><br>来源日期：2026-11-09<br><a href="https://research.meta.ai/blog/muse-ember" target="_blank" rel="noopener">Meta AI · Introducing Our Smallest, Most Efficient Model: Muse Ember</a><div class="copy-row"><button class="copy-btn" data-copy="#item-03">复制本条链接</button><div class="copy-fallback"></div></div></div></article><article id="item-04"><div class="rank">今日快讯</div><h2>Google扩展第八代TPU：一款侧重保密计算，一款侧重长上下文</h2><p>Google于11月9日宣布TPU 8tx和TPU 8i Max，扩展第八代TPU产品线。官方特意区分了新芯片与新系统：8tx沿用8t硅片、搭配AMD EPYC主机，面向保密推理；8i Max把两颗8i芯片组合到同一封装，以应对长上下文带来的计算与内存带宽需求。</p><p>这条消息主要面向部署模型与智能体的大型客户，不是普通用户立即获得一个新聊天功能。公告没有给出这两款系统的统一公开价格与全面可用日期；硬件规格和性能表述来自Google，本站未测试，也不把“新增系统”写成新一代TPU芯片。</p><div class="src"><span class="chip">Google原文正文已核读；系统发布，不是新一代芯片，未测试</span><br>来源日期：2026-11-09<br><a href="https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/tpu-8i-max-and-8tx/" target="_blank" rel="noopener">Google · Our newest TPUs: 8tx and 8i Max, built for the agentic era</a><div class="copy-row"><button class="copy-btn" data-copy="#item-04">复制本条链接</button><div class="copy-fallback"></div></div></div></article><div class="end-box">本期完。往期见<a href="../archive.html">存档</a>。原文与限制见各条标注；另附<a href="../verification-2026-11-10.html">本期核验记录</a>。</div></main>
+
+<footer><div class="wrap">
+  <nav>
+    <a href="../index.html">首页</a><a href="2026-11-10.html">今日简报</a><a href="../archive.html">存档</a><a href="../about.html">关于</a>
+  </nav>
+  非常AI · feichangai.vip · 张益达主理<br>
+  本站资讯均标注来源与核验状态，只做自有摘要与点评并附原文链接，不全文转载。内容由 AI 辅助整理、人工复核。
+</div></footer>
+
+<script>
+(function(){
+  var bar = document.getElementById('progress');
+  function onScroll(){
+    var h = document.documentElement;
+    var max = h.scrollHeight - h.clientHeight;
+    bar.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + '%';
+  }
+  document.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+  document.querySelectorAll('.copy-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var url = new URL(btn.getAttribute('data-copy'), window.location.href).href;
+      var fb = btn.parentElement.querySelector('.copy-fallback');
+      function ok(){ btn.textContent = '链接已复制'; setTimeout(function(){ btn.textContent = '复制本条链接'; }, 2000); }
+      function fail(){ if (fb) { fb.textContent=url; fb.style.display='block'; } }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url).then(ok, fail);
+      } else { fail(); }
+    });
+  });
+
+  var det = document.querySelector('.toc-details');
+  if (det && window.matchMedia('(min-width: 900px)').matches) det.open = true;
+  var links = document.querySelectorAll('.toc a');
+  var map = {};
+  links.forEach(function(a){ map[a.getAttribute('href').slice(1)] = a; });
+  if ('IntersectionObserver' in window) {
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting) {
+          links.forEach(function(a){ a.classList.remove('active'); });
+          var a = map[e.target.id]; if (a) a.classList.add('active');
+        }
+      });
+    }, {rootMargin:'-20% 0px -70% 0px'});
+    document.querySelectorAll('article[id]').forEach(function(el){ obs.observe(el); });
+  }
+})();
+</script>
+</body>
+</html>

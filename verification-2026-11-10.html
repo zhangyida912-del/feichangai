@@ -1,0 +1,93 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>第4期核验记录</title><style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif; color:#111; background:#fff; line-height:1.8; }
+  a { color:#111; }
+  .wrap { max-width:760px; margin:0 auto; padding:0 20px; }
+  #progress { position:fixed; top:0; left:0; height:3px; background:#e8380d; width:0; z-index:50; }
+  header { border-bottom:3px solid #111; }
+  .nav { display:flex; align-items:center; justify-content:space-between; padding:10px 0; }
+  .logo { font-size:22px; font-weight:900; letter-spacing:2px; text-decoration:none; padding:8px 0; }
+  .logo span { color:#e8380d; }
+  .nav-links { display:flex; }
+  .nav-links a { margin-left:6px; font-size:15px; font-weight:600; text-decoration:none; padding:10px 8px; min-height:44px; display:inline-flex; align-items:center; }
+  .nav-links a:hover { text-decoration:underline; }
+  .nav-links a[aria-current="page"] { color:#e8380d; }
+  a:focus-visible, button:focus-visible, summary:focus-visible { outline:3px solid #e8380d; outline-offset:2px; }
+  .head { padding:36px 0 4px; }
+  .head .kicker { font-size:14px; letter-spacing:3px; color:#e8380d; font-weight:900; }
+  .head h1 { font-size:40px; font-weight:900; line-height:1.3; margin:10px 0; }
+  .head .meta { color:#888; font-size:14px; }
+  .head .lede { font-size:18px; color:#333; margin-top:14px; }
+  details.note { background:#fafafa; border-radius:12px; padding:6px 18px; font-size:14px; color:#555; margin:18px 0 4px; }
+  details.note summary { cursor:pointer; font-weight:800; color:#111; padding:10px 0; min-height:44px; }
+  details.note .note-body { padding-bottom:12px; }
+  details.toc-details { border:2px solid #111; border-radius:14px; margin:20px 0 6px; }
+  details.toc-details summary { cursor:pointer; font-weight:900; letter-spacing:2px; font-size:14px; padding:14px 20px; min-height:44px; list-style:none; }
+  details.toc-details summary::-webkit-details-marker { display:none; }
+  details.toc-details summary::after { content:"▸"; float:right; color:#e8380d; }
+  details.toc-details[open ] summary::after { content:"▾"; }
+  .toc { padding:0 20px 14px; }
+  .toc .toc-title { display:none; }
+  .toc ol { margin-left:20px; }
+  .toc li { margin:4px 0; }
+  .toc a { text-decoration:none; font-weight:600; padding:4px 0; }
+  .toc a:hover { text-decoration:underline; }
+  .toc a.active { color:#e8380d; }
+  article { padding:28px 0; border-bottom:1px solid #eee; scroll-margin-top:16px; }
+  article .rank { font-size:15px; font-weight:900; color:#e8380d; letter-spacing:2px; }
+  article h2 { font-size:26px; font-weight:900; line-height:1.4; margin:6px 0 12px; }
+  article p { font-size:17.5px; color:#222; margin-bottom:10px; }
+  .src { border-top:1px dashed #ddd; margin-top:16px; padding-top:10px; color:#666; font-size:13.5px; line-height:1.7; }
+  .src a { font-weight:700; }
+  .chip { display:inline-block; font-size:12px; font-weight:700; border:1.5px solid #111; border-radius:999px; padding:1px 9px; margin-right:6px; color:#111; }
+  .chip.verify { border-style:dashed; }
+  .corr { margin-top:8px; }
+  .copy-row { margin-top:12px; }
+  .copy-btn { font-size:13.5px; font-weight:700; border:1.5px solid #111; background:#fff; border-radius:999px; padding:8px 16px; min-height:44px; cursor:pointer; }
+  .copy-btn:hover { background:#111; color:#fff; }
+  .copy-fallback { display:none; font-size:13px; color:#666; margin-top:8px; word-break:break-all; }
+  .end-box { border:2px dashed #bbb; border-radius:14px; padding:20px 22px; margin:28px 0 6px; font-size:15px; color:#444; }
+  footer { border-top:3px solid #111; margin-top:36px; padding:22px 0 34px; color:#777; font-size:13px; }
+  footer nav a { margin-right:16px; font-weight:600; text-decoration:none; padding:6px 0; display:inline-block; }
+  footer nav a:hover { text-decoration:underline; }
+  @media (max-width:640px){
+    .wrap { padding:0 20px; }
+    .head h1 { font-size:30px; }
+    .head .lede { font-size:16.5px; }
+    article h2 { font-size:23px; }
+    article p { font-size:16.5px; }
+    .nav-links a { margin-left:2px; padding:10px 6px; }
+  }
+  html { scroll-behavior:smooth; }
+  @media (prefers-reduced-motion: reduce){
+    html { scroll-behavior:auto; }
+  }
+.review-banner{background:#fff3e9;color:#933515;border-bottom:1px solid #e8380d;text-align:center;padding:8px 16px;font-size:13px}.src a{overflow-wrap:anywhere}.chip{max-width:100%;white-space:normal}.fact-panel{border:1px solid #ddd;padding:22px;background:#fafafa}.fact-panel h4{font-size:16px;margin-bottom:10px}.fact-row{padding:10px 0;border-bottom:1px solid #ddd;display:flex;justify-content:space-between;gap:18px}.fact-row:last-child{border:0}.fact-row b{color:#e8380d}.mini-bars .bar{height:18px;margin:6px 0 16px}.mini-bars p{font-size:13px}.brief-text{max-width:850px}.brief-text h3{font-size:24px;margin-bottom:10px}.brief-text p{font-size:16px}.preview-label{color:#9b3d1d}.page>*{min-width:0}.hero-main h1{word-break:normal;overflow-wrap:anywhere}.rail-item>div:last-child{min-width:0}.fact-row>*{min-width:0;overflow-wrap:anywhere}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:16px/1.8 sans-serif;padding:24px 0}</style></head><body><main class="wrap"><a href="index.html">返回首页</a><pre># 第4期核验记录
+
+核验日期：2026-11-10，Asia/Taipei。延续AI圈发生了什么的定位；本期3重点＋1快讯，日期采用原始公告日期。第3期之后为本期，不虚构11月9日有单独发布一期。
+
+## 01 Claude Fable／Mythos 5.2
+出处：https://www.anthropic.com/claude-fable-and-mythos-5-2
+公告日期：2026-11-09。
+原文核对：相同底层模型；Fable带cyber与bio保护，Mythos经专项验证计划申请；Fable在Claude平台、AWS、Google Cloud与Azure提供。标准每百万token输入8美元/输出40美元，fast mode16/80；最高30%与2.5x为输出生成口径，非端到端任务提速保证。
+边界：不将付费促销写成永久额度，不称所有人无条件获得Mythos；不复述物理突破和数学形式化故事为独立验证事实。价格为公告API价，未核账单，不代替实时计费页。
+
+## 02 Seedream 5.5
+中文原文：https://seed.bytedance.com/zh/blog/more-realistic-images-more-stable-editing-across-100-rounds-introducing-seedream-5-5?view_from=content_recommend
+英文原文：https://seed.bytedance.com/en/blog/more-realistic-images-more-stable-editing-across-100-rounds-introducing-seedream-5-5
+日期均为2026-11-09。中文正文确认即梦、豆包、豆包工作、火山方舟陆续上线；原生RGBA与多轮编辑定位由中英文正文支持，Pro后续计划。100轮来自发布方同人物连续编辑展示，不是全场景保证。
+边界：未观看全部视频逐帧核对，未生成或编辑测试，不引用主观排行榜、文字崩坏率或可用率作为独立效果结论。页面图表和演示为厂商材料，本站不制造伪实测截图。
+
+## 03 Muse Ember
+出处：https://research.meta.ai/blog/muse-ember
+公告与评测图表日期：2026-11-09。核对Availability与Agents、Coding、Multimodal：muse-ember-1.0，Muse Code与Meta Model API入口，1M上下文、最高512K输出，原生文字图像音视频；由Muse Wonder Full训练，定位反复执行子任务。
+边界：原文短暂重新读取失败，但首次读取与find查询成功取得正文；不把一次读取失败当不存在。未调用API，不写完整价格规则（长输入分档未单独核计费页）、参数量、权重开放或独立成本优势。
+
+## 04 Google TPU
+出处：https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/tpu-8i-max-and-8tx/
+公告日期：2026-11-09。核读正文Building the computer around the chip与两个系统章节，不以页面AI摘要为唯一依据。8tx使用8t同硅片与第五代AMD EPYC；8i Max两颗8i同封装，分别面向保密计算和长上下文。
+边界：不把此前8t/8i的2.7x、80%性能价格比套到新系统；本公告未列两个新系统公开价格或全面可用日期，未测试。
+
+## 发布检查
+所有正文事实均返回原始发布方材料，聚合站仅用于发现线索。保留旧期正文、来源与历史更正；首页、今日导航、存档和核验页同步更新。定时自动运行未配置；公众号仍取消。
+</pre></main></body></html>
