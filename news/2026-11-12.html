@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>非常AI第5期 · 2026-11-12</title>
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="非常AI">
+<meta property="og:title" content="非常AI第5期 · 2026-11-12">
+<meta property="og:description" content="Gemini 4 Carbon向付费用户开放，MiniMax放出4K生图权重">
+<meta property="og:url" content="https://feichangai.vip/news/2026-11-12.html">
+<meta property="og:image" content="https://feichangai.vip/assets/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="非常AI第5期 · 2026-11-12">
+<meta name="twitter:description" content="Gemini 4 Carbon向付费用户开放，MiniMax放出4K生图权重">
+<meta name="twitter:image" content="https://feichangai.vip/assets/og-cover.png">
+<link rel="icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="description" content="Gemini 4 Carbon向付费用户开放，MiniMax放出4K生图权重">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif; color:#111; background:#fff; line-height:1.8; }
+  a { color:#111; }
+  .wrap { max-width:760px; margin:0 auto; padding:0 20px; }
+  #progress { position:fixed; top:0; left:0; height:3px; background:#e8380d; width:0; z-index:50; }
+  header { border-bottom:3px solid #111; }
+  .nav { display:flex; align-items:center; justify-content:space-between; padding:10px 0; }
+  .logo { font-size:22px; font-weight:900; letter-spacing:2px; text-decoration:none; padding:8px 0; }
+  .logo span { color:#e8380d; }
+  .nav-links { display:flex; }
+  .nav-links a { margin-left:6px; font-size:15px; font-weight:600; text-decoration:none; padding:10px 8px; min-height:44px; display:inline-flex; align-items:center; }
+  .nav-links a:hover { text-decoration:underline; }
+  .nav-links a[aria-current="page"] { color:#e8380d; }
+  a:focus-visible, button:focus-visible, summary:focus-visible { outline:3px solid #e8380d; outline-offset:2px; }
+  .head { padding:36px 0 4px; }
+  .head .kicker { font-size:14px; letter-spacing:3px; color:#e8380d; font-weight:900; }
+  .head h1 { font-size:40px; font-weight:900; line-height:1.3; margin:10px 0; }
+  .head .meta { color:#888; font-size:14px; }
+  .head .lede { font-size:18px; color:#333; margin-top:14px; }
+  details.note { background:#fafafa; border-radius:12px; padding:6px 18px; font-size:14px; color:#555; margin:18px 0 4px; }
+  details.note summary { cursor:pointer; font-weight:800; color:#111; padding:10px 0; min-height:44px; }
+  details.note .note-body { padding-bottom:12px; }
+  details.toc-details { border:2px solid #111; border-radius:14px; margin:20px 0 6px; }
+  details.toc-details summary { cursor:pointer; font-weight:900; letter-spacing:2px; font-size:14px; padding:14px 20px; min-height:44px; list-style:none; }
+  details.toc-details summary::-webkit-details-marker { display:none; }
+  details.toc-details summary::after { content:"▸"; float:right; color:#e8380d; }
+  details.toc-details[open ] summary::after { content:"▾"; }
+  .toc { padding:0 20px 14px; }
+  .toc .toc-title { display:none; }
+  .toc ol { margin-left:20px; }
+  .toc li { margin:4px 0; }
+  .toc a { text-decoration:none; font-weight:600; padding:4px 0; }
+  .toc a:hover { text-decoration:underline; }
+  .toc a.active { color:#e8380d; }
+  article { padding:28px 0; border-bottom:1px solid #eee; scroll-margin-top:16px; }
+  article .rank { font-size:15px; font-weight:900; color:#e8380d; letter-spacing:2px; }
+  article h2 { font-size:26px; font-weight:900; line-height:1.4; margin:6px 0 12px; }
+  article p { font-size:17.5px; color:#222; margin-bottom:10px; }
+  .src { border-top:1px dashed #ddd; margin-top:16px; padding-top:10px; color:#666; font-size:13.5px; line-height:1.7; }
+  .src a { font-weight:700; }
+  .chip { display:inline-block; font-size:12px; font-weight:700; border:1.5px solid #111; border-radius:999px; padding:1px 9px; margin-right:6px; color:#111; }
+  .chip.verify { border-style:dashed; }
+  .corr { margin-top:8px; }
+  .copy-row { margin-top:12px; }
+  .copy-btn { font-size:13.5px; font-weight:700; border:1.5px solid #111; background:#fff; border-radius:999px; padding:8px 16px; min-height:44px; cursor:pointer; }
+  .copy-btn:hover { background:#111; color:#fff; }
+  .copy-fallback { display:none; font-size:13px; color:#666; margin-top:8px; word-break:break-all; }
+  .end-box { border:2px dashed #bbb; border-radius:14px; padding:20px 22px; margin:28px 0 6px; font-size:15px; color:#444; }
+  footer { border-top:3px solid #111; margin-top:36px; padding:22px 0 34px; color:#777; font-size:13px; }
+  footer nav a { margin-right:16px; font-weight:600; text-decoration:none; padding:6px 0; display:inline-block; }
+  footer nav a:hover { text-decoration:underline; }
+  @media (max-width:640px){
+    .wrap { padding:0 20px; }
+    .head h1 { font-size:30px; }
+    .head .lede { font-size:16.5px; }
+    article h2 { font-size:23px; }
+    article p { font-size:16.5px; }
+    .nav-links a { margin-left:2px; padding:10px 6px; }
+  }
+  html { scroll-behavior:smooth; }
+  @media (prefers-reduced-motion: reduce){
+    html { scroll-behavior:auto; }
+  }
+.review-banner{background:#fff3e9;color:#933515;border-bottom:1px solid #e8380d;text-align:center;padding:8px 16px;font-size:13px}.src a{overflow-wrap:anywhere}.chip{max-width:100%;white-space:normal}.fact-panel{border:1px solid #ddd;padding:22px;background:#fafafa}.fact-panel h4{font-size:16px;margin-bottom:10px}.fact-row{padding:10px 0;border-bottom:1px solid #ddd;display:flex;justify-content:space-between;gap:18px}.fact-row:last-child{border:0}.fact-row b{color:#e8380d}.mini-bars .bar{height:18px;margin:6px 0 16px}.mini-bars p{font-size:13px}.brief-text{max-width:850px}.brief-text h3{font-size:24px;margin-bottom:10px}.brief-text p{font-size:16px}.preview-label{color:#9b3d1d}.page>*{min-width:0}.hero-main h1{word-break:normal;overflow-wrap:anywhere}.rail-item>div:last-child{min-width:0}.fact-row>*{min-width:0;overflow-wrap:anywhere}</style>
+</head>
+<body>
+<div id="progress" aria-hidden="true"></div>
+<header><div class="wrap nav">
+  <a class="logo" href="../index.html">非常<span>AI</span></a>
+  <nav class="nav-links">
+    <a href="../index.html">首页</a>
+    <a href="2026-11-12.html" aria-current="page">今日简报</a>
+    <a href="../archive.html">存档</a>
+    <a href="../about.html">关于</a>
+  </nav>
+</div></header>
+
+<main class="wrap"><div class="head"><div class="kicker">每日简报 · 第5期</div><h1>Gemini 4 Carbon向付费用户开放，MiniMax放出4K生图权重</h1><div class="meta">2026年11月12日 星期四 · 3条重点＋1条快讯 · 张益达主理</div><p class="lede">本期3条重点＋1条快讯：Google Gemini 4 Carbon开放付费使用、Claude新增表格和白板、MiniMax开放H3-Image权重，以及阿里Qwen4-Max预览版。原始公告为11月10日至11日，11月12日核验。</p></div><details class="toc-details"><summary>本期目录 · 3条重点＋1条快讯</summary><nav class="toc" aria-label="本期目录"><ol><li><a href="#item-01">Gemini 4 Carbon向付费开发者和Ultra用户开放，12月起价格翻倍</a></li><li><a href="#item-02">Claude新增表格与白板，Claude Data正式可用</a></li><li><a href="#item-03">MiniMax开放H3-Image权重：能下载，但许可有地区和规模限制</a></li><li><a href="#item-04">阿里Qwen4-Max预览版上线，只开放两周</a></li></ol></nav></details><article id="item-01"><div class="rank">01</div><h2>Gemini 4 Carbon开放付费使用：先用介绍价，12月1日起翻倍</h2><p>Google于11月10日宣布，Gemini 4 Carbon向所有付费开发者和企业开放：开发者可在AI Studio、Android Studio通过Gemini API付费层调用，企业可经API或Gemini for business、Antigravity、CodeMender使用；面向个人，正陆续推送给全部Google AI Ultra订阅者，入口包括Antigravity、Gemini应用和搜索的AI Mode。10月28日首发时，它只通过Fairwind计划开放给部分网络安全防御者。</p><p>价格分两段：11月30日前为介绍价，每百万输入token 2美元、输出10美元，与Gemini 4 Argon相同；12月1日起调整为4美元和20美元。官方同时提醒，Carbon为了探索得更彻底，会比Argon消耗更多token，多数软件工程和知识工作仍以Argon为合适选择。所以单价之外，还要看同一任务实际用了多少token。</p><p>同时预览的/swarm在Antigravity里把一个提示拆给多个智能体协作：可让Carbon负责架构、协调和审计，搭配更轻的模型在隔离工作区并行执行，再由对抗式验证者检查。它是预览功能，范围可能调整。公告列出的CursorBench 4.0等排名与安全数字均为Google口径；本站未调用模型或试用/swarm。</p><div class="src"><span class="chip">Google官方公告已核读；排名为官方口径，未实测</span><br>来源日期：2026-11-10<br><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/" target="_blank" rel="noopener">Google · Gemini 4 Carbon is now available</a><br>10月首发背景：<a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/" target="_blank" rel="noopener">Google · Gemini 4 Carbon: our next frontier model</a><div class="copy-row"><button class="copy-btn" data-copy="#item-01">复制本条链接</button><div class="copy-fallback"></div></div></div></article><article id="item-02"><div class="rank">02</div><h2>Claude新增表格和白板：在对话里直接做表、排计划</h2><p>Anthropic于11月10日推出Claude Sheets与Claude Whiteboards两项beta功能，并宣布Claude Data（原Claude Dashboards）正式可用。三者面向所有付费方案，网页、桌面和移动端均可使用。Team方案默认开启；Enterprise方案中表格和白板默认关闭，需管理员开启，Claude Data则自11月19日起默认开启。</p><p>Sheets可建立带多个标签页、公式、格式和下拉菜单的表格，Claude修改单元格时会列出每处改动，表格也能分享给同事共同编辑。官方写明目前只有“简单表格功能”，需要完整Excel能力时要导出为xlsx或CSV。Whiteboards用于团队讨论：把计划排成带负责人和日期的时间线、按主题归类便签，也能框选一块区域向Claude提问，再导出成文档或演示稿。Claude Data需先连接数据仓库或CRM，用看板、文字说明或讲解视频回答数据问题。</p><p>同日，Adobe、Atlassian等应用可作为“互动连接器”在对话旁以完整应用打开。另一项Claude Meetings在官方文章中标为“即将推出”；TechCrunch报道称它先以beta形式面向Team和Enterprise、从Google Meet开始，入口以官方页面为准。本站未在账号中实测这些功能。</p><div class="src"><span class="chip">Claude官方文章已核读；Meetings细节来自媒体报道，功能未实测</span><br>来源日期：2026-11-10<br><a href="https://claude.com/resources/articles/sheets-whiteboards-data" target="_blank" rel="noopener">Claude · Claude Whiteboards, Claude Sheets, and Claude Data</a><br>连接器与Meetings：<a href="https://claude.com/resources/articles/more-ways-to-work-with-claude-sheets-whiteboards-and-interactive-connectors" target="_blank" rel="noopener">Claude · Working with Claude Sheets, Whiteboards, and Interactive Connectors</a><br>Meetings报道：<a href="https://techcrunch.com/2026/11/10/anthropic-launches-claude-meetings-to-turn-workplace-discussions-into-plans-and-tasks/" target="_blank" rel="noopener">TechCrunch · Anthropic launches Claude Meetings</a><div class="copy-row"><button class="copy-btn" data-copy="#item-02">复制本条链接</button><div class="copy-fallback"></div></div></div></article><article id="item-03"><div class="rank">03</div><h2>MiniMax开放H3-Image权重：能下载，商用要先看许可</h2><p>MiniMax于11月10日深夜发布H3-Image，并在Hugging Face放出权重。模型卡显示，它是331亿参数的扩散Transformer（文本编码器来自MiniMax-H3，不在该仓库），文生图与改图共用同一模型，最多可传16张参考图，采样蒸馏到6步。官方宣传“10秒生成4K图像”；模型卡说明最佳尺寸约1600万像素（如4096×4096），并建议多卡并行降低延迟，但没有在页面上给出具体硬件下的耗时。</p><p>需要特别看的是许可。它采用“MiniMax-H3-Image社区许可”，不是常见的宽松开源协议：允许商用，但商业产品界面要显著标注模型名；年收入超过100万美元，或向第三方提供托管服务，需事先获得MiniMax书面授权；许可地区不含欧盟、英国、韩国和美国；也不允许用模型或其输出去改进其他AI模型。所以更准确的说法是“开放权重”。</p><p>模型卡还提示，提示词最好是详细的英文描述，不支持负面提示词。据IT之家转述官方信息，发布首周对1600万像素及以上的API生成请求打五折。本站未下载权重或生成图片，不把官方样图当作独立测试结果。</p><div class="src"><span class="chip">Hugging Face模型卡与许可原文已核读；官方博客读取失败，速度未实测</span><br>来源日期：2026-11-10<br><a href="https://huggingface.co/MiniMaxAI/MiniMax-H3-Image" target="_blank" rel="noopener">Hugging Face · MiniMaxAI/MiniMax-H3-Image</a><br>许可原文：<a href="https://huggingface.co/MiniMaxAI/MiniMax-H3-Image/blob/main/LICENSE" target="_blank" rel="noopener">MiniMax-H3-Image Community License</a><br>官方博客：<a href="https://www.minimax.cn/blog/minimax-h3-image" target="_blank" rel="noopener">MiniMax · H3-Image 开源：让 4K 图像生成进入 10 秒时代</a><br>首周优惠参考：<a href="https://www.ithome.com/1/025/191.htm" target="_blank" rel="noopener">IT之家 · MiniMax 开源 H3-Image 生图模型</a><div class="copy-row"><button class="copy-btn" data-copy="#item-03">复制本条链接</button><div class="copy-fallback"></div></div></div></article><article id="item-04"><div class="rank">今日快讯</div><h2>阿里预告Qwen4：Max预览版只在Token Plan开放到11月25日</h2><p>阿里11月11日宣布Qwen4即将推出，先上线Qwen4-Max预览版，主打编程和智能体任务。阿里云文档显示，模型名为qwen4-max-preview，上下文100万token，最长输出约39.3万token（思考与回答共用），默认开启思考；只能通过Token Plan个人版或团队版使用，不支持按量付费。</p><p>预览期为北京时间11月11日10:00至11月25日24:00，期间模型不做改动，结束后下线，因此不适合直接接入长期业务。凤凰网报道称Token Plan有限时2折、新用户可再叠加5折，以平台规则为准。Qwen4正式版的时间、价格以及是否开放权重，目前都未公布；本站未调用该模型。</p><div class="src"><span class="chip">阿里云模型文档已核读；正式版信息未公布，未实测</span><br>来源日期：2026-11-11<br><a href="https://www.alibabacloud.com/help/en/model-studio/qwen4-max-preview" target="_blank" rel="noopener">阿里云Model Studio · qwen4-max-preview</a><br>优惠与产品入口参考：<a href="https://original.ifeng.com/c/8xxhbHrtxII" target="_blank" rel="noopener">凤凰网 · 阿里发布Qwen4-Max预览版</a><div class="copy-row"><button class="copy-btn" data-copy="#item-04">复制本条链接</button><div class="copy-fallback"></div></div></div></article><div class="end-box">本期完。往期见<a href="../archive.html">存档</a>。原文与限制见各条标注；另附<a href="../verification-2026-11-12.html">本期核验记录</a>。</div></main>
+
+<footer><div class="wrap">
+  <nav>
+    <a href="../index.html">首页</a><a href="2026-11-12.html">今日简报</a><a href="../archive.html">存档</a><a href="../about.html">关于</a>
+  </nav>
+  非常AI · feichangai.vip · 张益达主理<br>
+  本站资讯均标注来源与核验状态，只做自有摘要与点评并附原文链接，不全文转载。内容由 AI 辅助整理、人工复核。
+</div></footer>
+
+<script>
+(function(){
+  var bar = document.getElementById('progress');
+  function onScroll(){
+    var h = document.documentElement;
+    var max = h.scrollHeight - h.clientHeight;
+    bar.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + '%';
+  }
+  document.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+  document.querySelectorAll('.copy-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var url = new URL(btn.getAttribute('data-copy'), window.location.href).href;
+      var fb = btn.parentElement.querySelector('.copy-fallback');
+      function ok(){ btn.textContent = '链接已复制'; setTimeout(function(){ btn.textContent = '复制本条链接'; }, 2000); }
+      function fail(){ if (fb) { fb.textContent=url; fb.style.display='block'; } }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url).then(ok, fail);
+      } else { fail(); }
+    });
+  });
+
+  var det = document.querySelector('.toc-details');
+  if (det && window.matchMedia('(min-width: 900px)').matches) det.open = true;
+  var links = document.querySelectorAll('.toc a');
+  var map = {};
+  links.forEach(function(a){ map[a.getAttribute('href').slice(1)] = a; });
+  if ('IntersectionObserver' in window) {
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting) {
+          links.forEach(function(a){ a.classList.remove('active'); });
+          var a = map[e.target.id]; if (a) a.classList.add('active');
+        }
+      });
+    }, {rootMargin:'-20% 0px -70% 0px'});
+    document.querySelectorAll('article[id]').forEach(function(el){ obs.observe(el); });
+  }
+})();
+</script>
+</body>
+</html>
