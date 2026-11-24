@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>非常AI第7期 · 2026-11-21</title>
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="非常AI">
+<meta property="og:title" content="非常AI第7期 · 2026-11-21">
+<meta property="og:description" content="Thinking Machines开放Inkling 2 Mini，Baseten开源bison-1与groundhog-1，Reson8开源0.5B语音识别模型">
+<meta property="og:url" content="https://feichangai.vip/news/2026-11-21.html">
+<meta property="og:image" content="https://feichangai.vip/assets/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="非常AI第7期 · 2026-11-21">
+<meta name="twitter:description" content="Thinking Machines开放Inkling 2 Mini，Baseten开源bison-1与groundhog-1，Reson8开源0.5B语音识别模型">
+<meta name="twitter:image" content="https://feichangai.vip/assets/og-cover.png">
+<link rel="icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="description" content="Thinking Machines开放Inkling 2 Mini，Baseten开源bison-1与groundhog-1，Reson8开源0.5B语音识别模型">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif; color:#111; background:#fff; line-height:1.8; }
+  a { color:#111; }
+  .wrap { max-width:760px; margin:0 auto; padding:0 20px; }
+  #progress { position:fixed; top:0; left:0; height:3px; background:#e8380d; width:0; z-index:50; }
+  header { border-bottom:3px solid #111; }
+  .nav { display:flex; align-items:center; justify-content:space-between; padding:10px 0; }
+  .logo { font-size:22px; font-weight:900; letter-spacing:2px; text-decoration:none; padding:8px 0; }
+  .logo span { color:#e8380d; }
+  .nav-links { display:flex; }
+  .nav-links a { margin-left:6px; font-size:15px; font-weight:600; text-decoration:none; padding:10px 8px; min-height:44px; display:inline-flex; align-items:center; }
+  .nav-links a:hover { text-decoration:underline; }
+  .nav-links a[aria-current="page"] { color:#e8380d; }
+  a:focus-visible, button:focus-visible, summary:focus-visible { outline:3px solid #e8380d; outline-offset:2px; }
+  .head { padding:36px 0 4px; }
+  .head .kicker { font-size:14px; letter-spacing:3px; color:#e8380d; font-weight:900; }
+  .head h1 { font-size:40px; font-weight:900; line-height:1.3; margin:10px 0; }
+  .head .meta { color:#888; font-size:14px; }
+  .head .lede { font-size:18px; color:#333; margin-top:14px; }
+  details.note { background:#fafafa; border-radius:12px; padding:6px 18px; font-size:14px; color:#555; margin:18px 0 4px; }
+  details.note summary { cursor:pointer; font-weight:800; color:#111; padding:10px 0; min-height:44px; }
+  details.note .note-body { padding-bottom:12px; }
+  details.toc-details { border:2px solid #111; border-radius:14px; margin:20px 0 6px; }
+  details.toc-details summary { cursor:pointer; font-weight:900; letter-spacing:2px; font-size:14px; padding:14px 20px; min-height:44px; list-style:none; }
+  details.toc-details summary::-webkit-details-marker { display:none; }
+  details.toc-details summary::after { content:"▸"; float:right; color:#e8380d; }
+  details.toc-details[open ] summary::after { content:"▾"; }
+  .toc { padding:0 20px 14px; }
+  .toc .toc-title { display:none; }
+  .toc ol { margin-left:20px; }
+  .toc li { margin:4px 0; }
+  .toc a { text-decoration:none; font-weight:600; padding:4px 0; }
+  .toc a:hover { text-decoration:underline; }
+  .toc a.active { color:#e8380d; }
+  article { padding:28px 0; border-bottom:1px solid #eee; scroll-margin-top:16px; }
+  article .rank { font-size:15px; font-weight:900; color:#e8380d; letter-spacing:2px; }
+  article h2 { font-size:26px; font-weight:900; line-height:1.4; margin:6px 0 12px; }
+  article p { font-size:17.5px; color:#222; margin-bottom:10px; }
+  .src { border-top:1px dashed #ddd; margin-top:16px; padding-top:10px; color:#666; font-size:13.5px; line-height:1.7; }
+  .src a { font-weight:700; }
+  .chip { display:inline-block; font-size:12px; font-weight:700; border:1.5px solid #111; border-radius:999px; padding:1px 9px; margin-right:6px; color:#111; }
+  .chip.verify { border-style:dashed; }
+  .corr { margin-top:8px; }
+  .copy-row { margin-top:12px; }
+  .copy-btn { font-size:13.5px; font-weight:700; border:1.5px solid #111; background:#fff; border-radius:999px; padding:8px 16px; min-height:44px; cursor:pointer; }
+  .copy-btn:hover { background:#111; color:#fff; }
+  .copy-fallback { display:none; font-size:13px; color:#666; margin-top:8px; word-break:break-all; }
+  .end-box { border:2px dashed #bbb; border-radius:14px; padding:20px 22px; margin:28px 0 6px; font-size:15px; color:#444; }
+  footer { border-top:3px solid #111; margin-top:36px; padding:22px 0 34px; color:#777; font-size:13px; }
+  footer nav a { margin-right:16px; font-weight:600; text-decoration:none; padding:6px 0; display:inline-block; }
+  footer nav a:hover { text-decoration:underline; }
+  @media (max-width:640px){
+    .wrap { padding:0 20px; }
+    .head h1 { font-size:30px; }
+    .head .lede { font-size:16.5px; }
+    article h2 { font-size:23px; }
+    article p { font-size:16.5px; }
+    .nav-links a { margin-left:2px; padding:10px 6px; }
+  }
+  html { scroll-behavior:smooth; }
+  @media (prefers-reduced-motion: reduce){
+    html { scroll-behavior:auto; }
+  }
+.review-banner{background:#fff3e9;color:#933515;border-bottom:1px solid #e8380d;text-align:center;padding:8px 16px;font-size:13px}.src a{overflow-wrap:anywhere}.chip{max-width:100%;white-space:normal}.fact-panel{border:1px solid #ddd;padding:22px;background:#fafafa}.fact-panel h4{font-size:16px;margin-bottom:10px}.fact-row{padding:10px 0;border-bottom:1px solid #ddd;display:flex;justify-content:space-between;gap:18px}.fact-row:last-child{border:0}.fact-row b{color:#e8380d}.mini-bars .bar{height:18px;margin:6px 0 16px}.mini-bars p{font-size:13px}.brief-text{max-width:850px}.brief-text h3{font-size:24px;margin-bottom:10px}.brief-text p{font-size:16px}.preview-label{color:#9b3d1d}.page>*{min-width:0}.hero-main h1{word-break:normal;overflow-wrap:anywhere}.rail-item>div:last-child{min-width:0}.fact-row>*{min-width:0;overflow-wrap:anywhere}</style>
+</head>
+<body>
+<div id="progress" aria-hidden="true"></div>
+<header><div class="wrap nav">
+  <a class="logo" href="../index.html">非常<span>AI</span></a>
+  <nav class="nav-links">
+    <a href="../index.html">首页</a>
+    <a href="2026-11-24.html">今日简报</a>
+    <a href="../archive.html">存档</a>
+    <a href="../about.html">关于</a>
+  </nav>
+</div></header>
+
+<main class="wrap"><div class="head"><div class="kicker">每日简报 · 第7期</div><h1>Inkling 2 Mini放出Apache权重，Baseten开源决策模型</h1><div class="meta">2026年11月21日 星期六 · 2条重点＋1条快讯 · 张益达主理</div><p class="lede">本期2条重点＋1条快讯：Thinking Machines的Inkling 2 Mini、Baseten的两款决策模型，以及Reson8开源的Rumble-2-Flash语音识别模型。原始公告为11月18日至20日，三者权重都可下载。</p></div><details class="toc-details"><summary>本期目录 · 2条重点＋1条快讯</summary><nav class="toc" aria-label="本期目录"><ol><li><a href="#item-01">Inkling 2 Mini开放权重：26.4B总参数、3.4B激活，Apache 2.0</a></li><li><a href="#item-02">Baseten开源两款决策模型：不写长回答，只给选项概率</a></li><li><a href="#item-03">Reson8开源Rumble-2-Flash：0.5B语音识别，Apache 2.0</a></li></ol></nav></details><article id="item-01"><div class="rank">01</div><h2>Thinking Machines放出Inkling 2 Mini：小而循环，Apache 2.0许可</h2><p>Thinking Machines于11月20日发布Inkling 2 Mini，权重同步放在Hugging Face。模型卡显示：总参数264亿、每个token激活34亿，是混合专家结构（128个专家中选8个）；24层中的中间层循环执行三遍，等效激活约54亿；支持文本和图像输入、输出文本，上下文最长100万token。</p><p>许可为Apache 2.0，另附一份“模型可接受使用政策”，下载不需申请。也可以在该公司的Tinker平台上直接推理和微调，并支持vLLM、SGLang、Ollama等；公告和模型卡都没有写Tinker上的价格。</p><p>官方称它在DeepSWE v1.1得48.2%，是总参数1000亿以下开放模型中最好的；SWE-bench Verified 79.2%，略高于Qwen3.8-27B的77.8%。在官方列出的对比里，Terminal Bench、HLE、MMMU Pro略低于Qwen3.8-27B，官方也点名多轮对话和复杂约束指令是短板。成绩均为官方口径，本站未下载测试。</p><div class="src"><span class="chip">官方博客与Hugging Face模型卡已核读；跑分为官方口径，未实测</span><br>来源日期：2026-11-20<br><a href="https://thinkingmachines.ai/news/inkling-2-mini/" target="_blank" rel="noopener">Thinking Machines · Inkling 2 Mini</a><br>权重与许可：<a href="https://huggingface.co/thinkingmachines/Inkling-2-Mini" target="_blank" rel="noopener">Hugging Face · thinkingmachines/Inkling-2-Mini</a><div class="copy-row"><button class="copy-btn" data-copy="#item-01">复制本条链接</button><div class="copy-fallback"></div></div></div></article><article id="item-02"><div class="rank">02</div><h2>Baseten开源bison-1和groundhog-1：不写回答，只给选项概率</h2><p>Baseten于11月20日发布两款“决策模型”并开放权重：bison-1基于Gemma 4 31B，groundhog-1基于Gemma 4 26B-A4B（约40亿激活）。它们不生成长文本，而是读入当前状态和若干选项，直接返回每个选项的校准概率，适合做分类、路由、是否调用工具这类判断。两者都支持文本和图像输入，上下文12.8万token。</p><p>许可上，Gemma 4基座部分是Apache 2.0，Baseten的改动部分是MIT，两份许可同时适用。也可以用Baseten的Model API调用：bison-1每百万token 0.10美元，groundhog-1每百万token 0.035美元。</p><p>官方称bison-1在Artificial Analysis决策指数v2.1上得76分，在19个决策模型中排第1；groundhog-1尚未参评。长上下文成绩来自Baseten自测。本站未调用或部署。</p><div class="src"><span class="chip">Baseten官方博客与Hugging Face模型卡已核读；跑分为官方口径，未实测</span><br>来源日期：2026-11-20<br><a href="https://www.baseten.co/blog/meet-bison-1-and-groundhog-1/" target="_blank" rel="noopener">Baseten · Meet bison-1 and groundhog-1</a><br>权重与许可：<a href="https://huggingface.co/baselabs/bison-1" target="_blank" rel="noopener">Hugging Face · baselabs/bison-1</a><div class="copy-row"><button class="copy-btn" data-copy="#item-02">复制本条链接</button><div class="copy-fallback"></div></div></div></article><article id="item-03"><div class="rank">今日快讯</div><h2>Reson8开源Rumble-2-Flash：5亿参数的语音识别模型，可自动识别语种</h2><p>Reson8于11月18日开源Rumble-2-Flash，只有5亿参数，基于Qwen3-ASR架构，许可Apache 2.0，可直接用Transformers或vLLM运行，不需要额外代码。它能自动识别语种；支持语种数量，官方博客写“40多种”，模型卡标为45种。</p><p>官方称英文测试集平均词错率6.6%，在H200上用vLLM满批次处理时，一小时音频约半秒转完；在客服通话测试中为7.86%，官方也承认这一项不如Qwen3-ASR 1.7B。公告没有提到实时流式识别，也没有API价格。本站未实测。</p><div class="src"><span class="chip">Hugging Face官方博客与模型卡已核读；未实测</span><br>来源日期：2026-11-18<br><a href="https://huggingface.co/blog/rumble-2-flash" target="_blank" rel="noopener">Hugging Face Blog · Rumble-2-Flash</a><br>权重与许可：<a href="https://huggingface.co/Reson8/Rumble-2-Flash" target="_blank" rel="noopener">Hugging Face · Reson8/Rumble-2-Flash</a><div class="copy-row"><button class="copy-btn" data-copy="#item-03">复制本条链接</button><div class="copy-fallback"></div></div></div></article><div class="end-box">本期完。往期见<a href="../archive.html">存档</a>。原文与限制见各条标注；另附<a href="../verification-2026-11-21.html">本期核验记录</a>。</div></main>
+
+<footer><div class="wrap">
+  <nav>
+    <a href="../index.html">首页</a><a href="2026-11-24.html">今日简报</a><a href="../archive.html">存档</a><a href="../about.html">关于</a>
+  </nav>
+  非常AI · feichangai.vip · 张益达主理<br>
+  本站资讯均标注来源与核验状态，只做自有摘要与点评并附原文链接，不全文转载。内容由 AI 辅助整理、人工复核。
+</div></footer>
+
+<script>
+(function(){
+  var bar = document.getElementById('progress');
+  function onScroll(){
+    var h = document.documentElement;
+    var max = h.scrollHeight - h.clientHeight;
+    bar.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + '%';
+  }
+  document.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+  document.querySelectorAll('.copy-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var url = new URL(btn.getAttribute('data-copy'), window.location.href).href;
+      var fb = btn.parentElement.querySelector('.copy-fallback');
+      function ok(){ btn.textContent = '链接已复制'; setTimeout(function(){ btn.textContent = '复制本条链接'; }, 2000); }
+      function fail(){ if (fb) { fb.textContent=url; fb.style.display='block'; } }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url).then(ok, fail);
+      } else { fail(); }
+    });
+  });
+
+  var det = document.querySelector('.toc-details');
+  if (det && window.matchMedia('(min-width: 900px)').matches) det.open = true;
+  var links = document.querySelectorAll('.toc a');
+  var map = {};
+  links.forEach(function(a){ map[a.getAttribute('href').slice(1)] = a; });
+  if ('IntersectionObserver' in window) {
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting) {
+          links.forEach(function(a){ a.classList.remove('active'); });
+          var a = map[e.target.id]; if (a) a.classList.add('active');
+        }
+      });
+    }, {rootMargin:'-20% 0px -70% 0px'});
+    document.querySelectorAll('article[id]').forEach(function(el){ obs.observe(el); });
+  }
+})();
+</script>
+</body>
+</html>
