@@ -86,7 +86,7 @@ def render(d, base, current):
     toc = f'<li><a href="{item(lead["id"])}">{E(lead["title"])}</a></li>'
     toc += "".join(f'<li><a href="{item(f["id"])}">{E(f["title"])}</a></li>' for f in flash[:4])
     rest = len(flash) - 4
-    more = (f"还有 {rest} 条快讯，" if rest > 0 else "") + "外加今天可以试试、今日论文和模型榜单 👇"
+    more = (f"还有 {rest} 条快讯，" if rest > 0 else "") + "外加今天可以试试、好用工具、今日论文、AI小词典和模型榜单 👇"
 
     facts = "".join(
         f'<div class="fact"><span>{E(k)}</span><b{HOT if hot else ""}>{E(v)}</b></div>'
@@ -105,13 +105,35 @@ def render(d, base, current):
         for i, r in enumerate(b["rows"], 1)
     )
     title = f'{d["title"]} · 非常AI第{d["issue"]}期'
+    minutes = d.get("minutes", 5)
+    why = f'<div class="why"><b>💡 为什么重要</b>{E(lead["why"])}</div>' if lead.get("why") else ""
+    fun = ""
+    if d.get("fun"):
+        f = d["fun"]
+        fun = (f'<section class="card fun" id="{f.get("id", "fun")}"><div class="sec-title"><span class="em" aria-hidden="true">😄</span>今日趣闻</div>'
+               f'<h3>{E(f["title"])}</h3><p>{E(f["text"])}</p><div class="src"><span class="chip">{E(f["chip"])}</span>来源日期：{E(f["date"])} · '
+               f'<a href="{E(f["url"])}" target="_blank" rel="noopener">原文 ↗</a></div></section>')
+    tools = ""
+    if d.get("tools"):
+        lis = "".join(
+            f'<li><h4>{E(x["name"])}</h4><p>{E(x["desc"])}</p><p class="tag">{E(x["tag"])} · <a href="{E(x["url"])}" target="_blank" rel="noopener">官网 ↗</a></p></li>'
+            for x in d["tools"])
+        tools = (f'<section class="card" id="tools"><div class="sec-title"><span class="em" aria-hidden="true">🧰</span>好用工具</div>'
+                 f'<ul class="tools-list">{lis}</ul></section>')
+    word = ""
+    if d.get("word"):
+        w = d["word"]
+        word = (f'<section class="card word" id="word"><div class="sec-title"><span class="em" aria-hidden="true">📖</span>AI小词典</div>'
+                f'<h3><span class="term">{E(w["term"])}</span>{E(w["short"])}</h3><p>{E(w["plain"])}</p><p class="tip">举个例子：{E(w["example"])}</p></section>')
 
     body = f"""<main class="wrap">
 <section class="hero">
-  <span class="badge">第{d["issue"]}期 <b>{cn_date} {d["weekday"]}</b> · 5分钟读完</span>
+  <span class="badge">第{d["issue"]}期 <b>{cn_date} {d["weekday"]}</b> · {minutes}分钟读完</span>
   <h1>{E(d["title"])}</h1>
   <p class="hello">{E(d["hello"])}</p>
 </section>
+
+{fun}
 
 <nav class="card toc" aria-label="本期目录"><h2><span class="em" aria-hidden="true">📌</span>今天看什么</h2><ol>{toc}</ol><p class="more">{more}</p></nav>
 
@@ -120,6 +142,7 @@ def render(d, base, current):
   <h2>{E(lead["title"])}</h2>
   <div class="tldr">{E(lead["tldr"])}</div>
   {paras}
+  {why}
   <div class="facts">{facts}</div>
   <div class="src"><span class="chip">{E(lead["chip"])}</span><br>来源日期：{E(lead["date"])}<br>{links_html(lead["links"])}</div>
 </article>
@@ -138,6 +161,8 @@ def render(d, base, current):
   <p class="tip">💡 {E(t["tip"])}</p>
 </section>
 
+{tools}
+
 <section class="card paper" id="paper">
   <div class="sec-title"><span class="em" aria-hidden="true">📄</span>今日论文</div>
   <h3>{E(p["title"])}</h3>
@@ -146,6 +171,8 @@ def render(d, base, current):
   <div class="src"><a href="{E(p["url"])}" target="_blank" rel="noopener">论文页面 ↗</a></div>
 </section>
 
+{word}
+
 <section class="card" id="board">
   <div class="sec-title"><span class="em" aria-hidden="true">🏆</span>{E(b["title"])}</div>
   <table><thead><tr><th>#</th><th>模型</th><th class="num">得分</th><th class="num">每题成本</th></tr></thead><tbody>{rows}</tbody></table>
@@ -153,6 +180,7 @@ def render(d, base, current):
 </section>
 
 <div class="end"><p class="bye">今天就到这儿，明天见 👋</p>
+<p>觉得有用，就转发给一个也在关注 AI 的朋友 🙌</p>
 <p>每条都核对过官方原文。<a href="{base}verification-{date}.html">本期核验记录</a> · <a href="{base}archive.html">往期存档</a></p></div>
 </main>
 """
