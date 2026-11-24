@@ -107,8 +107,32 @@ Carbon价格对比引用第5期已核对的Google公告：11月30日前2/10美�
 原文核对：模型名qwen4-max；上下文1,000,000；最长输出131,072（思考模式262,144）；输入文本、图像、视频，输出文本；默认开启思考；地域含北京、新加坡、法兰克福、弗吉尼亚、东京、香港；北京每百万token输入10元、输出30元，思考与非思考同价；新加坡10.938元/32.813元；新闻稿称“available now on QwenCloud via the Token Plan and API”；总参数2.4万亿、激活710亿；Qwen4系列较小规模开放权重模型“will soon be released”；消费者入口QwenStudio、QwenWork。
 边界：Batch半价无截止日期，正文不写；新闻稿缓存价0.075美元与文档人民币表口径不一致，正文不写；Work360等成本对比为阿里口径；未写预览版是否提前下线（新文档未说明）；未调用模型。
 
+## 05 Claude Ship（快讯）
+出处：https://claude.com/resources/articles/introducing-claude-ship （2026-11-23）
+线索来源：The Decoder 2026-11-24 报道，仅用于发现线索。
+原文核对：Code Review正式可用，可按仓库选Quick／Standard／Deep；PR Steward（beta）处理失败的CI、合并冲突和评审意见，不批准、不合并；Claude Approvals（beta）执行团队写在仓库里的审批策略文件；仅Team和Enterprise；支持GitHub仓库；按token计费，管理员可给Code Review与PR Steward设花费上限；“not available to organizations with Zero Data Retention”。
+边界：Enterprise赠送额度与申领截止日期、HIPAA与客户自管密钥限制未写入正文；未实测。
+
+## 06 黄仁勋复任英伟达CEO（快讯）
+出处：https://nvidianews.nvidia.com/news/nvidia-board-reinstates-jensen-huang-as-president-ceo-and-board-director （2026-11-23）
+线索来源：The Neuron、The Decoder。
+原文核对：董事会一致投票，黄仁勋恢复总裁、CEO及董事职务，立即生效；美国政府高层意见使董事会认定“poses no national security risk”；独立董事委员会聘独立律师继续调查；新设国家安全与出口管制委员会；在招首席合规官；Colette Kress继续任CFO。
+边界：辞职日期、股价涨幅、市值变化仅见媒体报道，正文不写。
+
+## 07 OpenAI困惑度与“共同界线”（快讯）
+出处：https://openai.com/index/perplexity-and-intelligence/ （2026-11-22，作者Jakub Pachocki）
+线索来源：The Neuron 头条、The Decoder。
+原文核对：提议以困惑度（交叉熵损失）作共同指标；提议各家约定在理解与监控AI行为达到具体里程碑（如CoT监控的后继方案）前不越过的“common limits”；对数困惑度GPT-3.5约0.99、GPT-4约0.91，后续模型低于0.8，一个升级模型约0.76；预计0.68–0.7区间出现新的变革性能力；作者列出的局限：各家数据集不同难以横比、不直接衡量任务能力、思维链提升不降低困惑度。
+边界：数据为OpenAI内部数据集口径；媒体报道中“内部模型约0.73”一说原文未写明对应模型，正文不写。
+
+## 08 GPT-6.2 Astra的Lean证明（快讯）
+出处：https://www.vals.ai/blogs/smoktunowicz-gap-theorem （2026-11-18）
+线索来源：The Decoder 2026-11-23 报道。
+原文核对：定理为Smoktunowicz 2006年结果（不存在GK维数严格介于2与3之间的分次整环）；沙箱含Lean、Mathlib与shell；94分钟、146轮、按公开价格21.58美元；约1794行Lean、约20个文件；47分钟时提交含sorry的证明被拒并报告unsolved，因花费不足20美元下限被要求继续，39分钟后通过评分；无sorry、无警告、仅标准公理；Autoform-Hard 56题，Astra 49题，GPT-6.2 Sol与Claude Fable 5.2各48题。
+边界：“首次形式化”为Vals基于所知的判断；未独立复核证明；未调用模型。
+
 ## 未采用的线索
-Gemini 4 Hydrogen、腾讯Hy4 flash、微软MAI Code 2、商汤SenseNova-Loop-9B已补入第6期（11月18日）；Thinking Machines Inkling 2 Mini、Baseten决策模型、Rumble-2-Flash已补入第7期（11月21日）。Kimi K3.1 Pro Prime：只见于聚合站模型页，未找到月之暗面官方材料，不写。豆包工作接入Kimi、GLM、DeepSeek：只读到媒体报道，未核读官方说明。DeepSeek V5：只是代码库线索与媒体猜测，尚未发布。智谱约3万亿参数旗舰：来自券商调研纪要的转述，属未经确认的计划。
+Gemini 4 Hydrogen、腾讯Hy4 flash、微软MAI Code 2、商汤SenseNova-Loop-9B已补入第6期（11月18日）；Thinking Machines Inkling 2 Mini、Baseten决策模型、Rumble-2-Flash已补入第7期（11月21日）。Kimi K3.1 Pro Prime：只见于聚合站模型页，未找到月之暗面官方材料，不写。豆包工作接入Kimi、GLM、DeepSeek：只读到媒体报道，未核读官方说明。DeepSeek V5：只是代码库线索与媒体猜测，尚未发布。智谱约3万亿参数旗舰：来自券商调研纪要的转述，属未经确认的计划。ChatGPT聊天默认模型换为聊天调优版GPT-6.2 Sol（The Decoder 11-23）：OpenAI发布说明页本次未能读取，暂不写。xAI向Anthropic、Google出租算力：仅见纽约时报报道，未核读公司材料。Anthropic IPO相关（The Neuron 11-22）：未找到公司正式文件，不写。
 
 ## 发布检查
 正文事实回到发布方材料核对，聚合站与媒体只用于发现线索或已在正文标明的补充。保留旧期正文与来源；首页、今日导航、存档、sitemap与核验页同步更新；旧期页面去掉“今日简报”上的aria-current。
