@@ -1,0 +1,100 @@
+{
+  "date": "2026-11-24",
+  "weekday": "星期二",
+  "issue": 8,
+  "title": "GPT-6.2来了，Astra的API降价两成",
+  "description": "非常AI第8期：GPT-6.2 Astra与Sol上线，Gemini 4 Neon、智谱GLM-5.4、Qwen4-Max正式版、Claude Ship等6条快讯，外加一个能马上用的提示词。",
+  "hello": "早上好 👋 今天 5 分钟带你看完：OpenAI 一口气上了两个新模型，还给 API 降了价；Google、智谱、阿里也各有新货。最后送你一个马上能用的提示词。",
+  "lead": {
+    "id": "item-01",
+    "title": "GPT-6.2来了，Astra的API降价两成",
+    "tldr": "OpenAI 新出两个模型：Astra 干最难的活，Sol 干日常的活。对开发者最实在的是，Astra 的 API 变便宜了。",
+    "paras": [
+      "先说谁能用：ChatGPT 的 Plus、Pro、企业版和教育版用户，在 ChatGPT Work 和 Codex 里都能选这两款，公告没提免费版和 Go。Pro 500 用户两款都能开 Ultrafast（更快的出字模式）；Pro 200 第一次拿到 Ultrafast，先从 Sol 开始。企业版和教育版要等管理员打开。",
+      "再说钱：Astra 的 API 每百万 token 输入 8 美元、输出 40 美元，比 GPT-6 Astra 便宜 20%；缓存输入（重复用到的那部分提示词）便宜 60%，只要 0.40 美元。Sol 价格不变，还是 2 美元和 10 美元。一个省钱小技巧：提示词开头那段保持不变、新内容往后加，更容易吃到缓存价。",
+      "要注意的是，OpenAI 说这两款的网络安全能力达到了它内部框架的「Critical」级别，所以对高风险的安全请求管得更严，官方自己也承认会误拦一些正当的漏洞研究。文中的跑分都是 OpenAI 自己的说法，我们没有实测。"
+    ],
+    "facts": [
+      ["ChatGPT", "Plus／Pro／企业／教育", false],
+      ["Astra API", "$8／$40 每百万token", true],
+      ["Sol API", "$2／$10 每百万token", false],
+      ["Astra降价", "输入输出 −20%", false]
+    ],
+    "chip": "OpenAI官方公告已核读；发布日期据媒体报道，跑分为官方口径，未实测",
+    "date": "2026-11-17（媒体报道日期）",
+    "links": [
+      ["OpenAI · Introducing GPT-6.2 Astra and Sol", "https://openai.com/index/introducing-gpt-6-2-astra-sol/"],
+      ["9to5Mac · 发布日期参考", "https://9to5mac.com/2026/11/17/openai-upgrades-chatgpt-and-codex-with-new-gpt-6-2-astra-and-sol-models/"]
+    ]
+  },
+  "flash": [
+    {
+      "id": "item-02", "emoji": "🟦",
+      "title": "Gemini 4 Neon：Google的「中杯」",
+      "text": "Google 给 Gemini 4 排了座次：Carbon 干最难的长任务，Hydrogen 干快速的日常活，新来的 Neon 夹在中间。它有 100 万 token 上下文，API 每百万 token 输入 3 美元、输出 15 美元；Google AI Pro 和 Ultra 订阅者能在 Gemini 应用里直接选。Google 说默认档下做同一个任务比 Carbon 便宜 32%（官方口径，未实测）。",
+      "chip": "Google官方公告已核读", "date": "2026-11-18",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/"
+    },
+    {
+      "id": "item-03", "emoji": "🇨🇳",
+      "title": "智谱GLM-5.4上线，API还没开",
+      "text": "智谱第一款 Loop Transformer 旗舰（让模型里一部分层循环跑两遍，用更多计算换效果），新增看图、看视频，上下文 100 万 token。目前只能在 GLM Coding Plan 里用，API 要等安全评估后才开放，所以还没有价格；官方也没说开放权重。",
+      "chip": "智谱开放文档已核读；上线日期据媒体转述", "date": "2026-11-23",
+      "url": "https://docs.bigmodel.cn/cn/guide/models/glm-5.4"
+    },
+    {
+      "id": "item-04", "emoji": "🇨🇳",
+      "title": "Qwen4-Max正式版开放API",
+      "text": "阿里的 qwen4-max 正式版能用 API 调了：上下文 100 万 token，能看图看视频，北京地域每百万 token 输入 10 元、输出 30 元。这款不开放权重，阿里说更小的 Qwen4 开放权重模型「即将」发布。",
+      "chip": "阿里云文档与新闻稿已核读；未实测", "date": "2026-11-16",
+      "url": "https://help.aliyun.com/en/model-studio/qwen4-max"
+    },
+    {
+      "id": "item-05", "emoji": "🛠️",
+      "title": "Claude Ship：代码合并前的杂活交给Claude",
+      "text": "代码提交以后的审查、修补、判断能不能合并，Anthropic 想全包。Code Review 负责审代码（已正式可用）；PR Steward 负责修跑不过的测试和合并冲突，但自己不批准也不合并；Claude Approvals 按团队写在仓库里的规则，决定哪些小改动能自动批准。后两块还在测试，只给 Team 和 Enterprise 用户，只支持 GitHub，按 token 计费。",
+      "chip": "Anthropic官方公告已核读；未实测", "date": "2026-11-23",
+      "url": "https://claude.com/resources/articles/introducing-claude-ship"
+    },
+    {
+      "id": "item-06", "emoji": "🚦",
+      "title": "OpenAI首席科学家：各家该约定「共同红线」",
+      "text": "OpenAI 首席科学家 Jakub Pachocki 建议全行业用「困惑度」（模型猜下一个词猜得多准，越低越强）当共同标尺，再约定一条谁都不越过的线，直到人类能更好地看懂和监控 AI。他公布的内部数据：GPT-3.5 约 0.99，GPT-4 约 0.91，一个升级模型约 0.76。他也承认各家数据不同，很难横比。",
+      "chip": "OpenAI官方文章已核读；数据为OpenAI内部口径", "date": "2026-11-22",
+      "url": "https://openai.com/index/perplexity-and-intelligence/"
+    },
+    {
+      "id": "item-07", "emoji": "🧮",
+      "title": "GPT-6.2 Astra独自写出一份数学证明",
+      "text": "测评机构 Vals AI 让 Astra 在只有证明工具的沙箱里独自干活，它给一个 2006 年的代数定理写出了机器能验证的证明：约 1794 行，用时 94 分钟，花了约 21.58 美元。有个插曲：做到一半它交了个有漏洞的半成品说「做不出来」，因为花费没到下限被打回去，39 分钟后才交出完整证明。「首次」是 Vals 自己的判断。",
+      "chip": "Vals AI原文已核读；未独立验证", "date": "2026-11-18",
+      "url": "https://www.vals.ai/blogs/smoktunowicz-gap-theorem"
+    }
+  ],
+  "try": {
+    "title": "看不懂的通知，让AI讲人话",
+    "intro": "收到一份满是术语的合同、政策通知或者说明书？把下面这段话复制下来，后面贴上原文，发给你常用的 AI（豆包、DeepSeek、Kimi、ChatGPT 都行）。",
+    "prompt": "请把下面这段内容，用初中生能听懂的话讲给我听。先用三句话说清楚它在讲什么；再列出跟我有关、需要我去做的事和截止日期；最后告诉我哪些地方你不确定、需要我去问清楚。不要编造原文里没有的内容。\n\n【在这里贴上原文】",
+    "tip": "最后那句「不要编造」很关键，能减少 AI 瞎补细节。体检报告、病历这类，AI 的解释只能帮你看懂，不能代替医生。"
+  },
+  "paper": {
+    "title": "模糊照片里的字，AI得会「猜」才修得好",
+    "text": "把模糊图片变清晰的 AI（超分辨率模型），碰到糊得厉害的文字常常越修越错。研究团队做了个测试集 ReasonText，专门挑「光看像素认不出、得靠上下文推理」的字，测了 12 个模型，表现都明显变差。他们的办法不用重新训练：先让一个能看图的大模型猜出图里写的是什么，再把猜出的文字交给修图模型参考。据作者介绍，DiT4SR 在这类文字上的准确率从 24.5% 提到了 45.8%。代码和数据集已公开，作者称论文已被 NeurIPS 2026 接收。",
+    "name": "Reading the Unreadable: Text-Aware Image Super-Resolution Needs Reasoning",
+    "url": "https://huggingface.co/papers/2611.15449",
+    "date": "2026-11-11"
+  },
+  "board": {
+    "title": "AI智能排行榜 · 前6名",
+    "note": "第三方机构 Artificial Analysis 的综合智能指数，分数越高越聪明；「每题成本」是跑完一道测试题的平均花费。前 8 名里暂时没有国内模型。11月24日查看。",
+    "rows": [
+      ["Claude Fable 5.2（Max）", "65", "$26.54"],
+      ["GPT-6.2 Astra（Max）", "62", "$4.00"],
+      ["Gemini 4 Neon（Xhigh）", "61", "$6.44"],
+      ["Gemini 4 Carbon（High）", "60", "$7.76"],
+      ["Claude Opus 5.5（Max）", "59", "$10.04"],
+      ["GPT-6.2 Sol（Max）", "57", "$1.01"]
+    ],
+    "url": "https://artificialanalysis.ai/leaderboards/models"
+  }
+}
