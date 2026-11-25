@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>第9期核验记录</title>
+<meta name="description" content="非常AI · 每天几条值得关注的 AI 变化，中文讲清，标好来源与限制。">
+<meta property="og:type" content="article"><meta property="og:site_name" content="非常AI">
+<meta property="og:title" content="第9期核验记录"><meta property="og:description" content="非常AI · 每天几条值得关注的 AI 变化，中文讲清，标好来源与限制。">
+<meta property="og:url" content="https://feichangai.vip/verification-2026-11-25.html">
+<meta property="og:image" content="https://feichangai.vip/assets/og-cover.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="第9期核验记录">
+<meta name="twitter:description" content="非常AI · 每天几条值得关注的 AI 变化，中文讲清，标好来源与限制。"><meta name="twitter:image" content="https://feichangai.vip/assets/og-cover.png">
+<link rel="icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/site.css?v=f942c2f2"></head>
+<body>
+<header><div class="wrap nav">
+  <a class="logo" href="index.html">非常<i>AI</i></a>
+  <nav class="nav-links" aria-label="主导航"><a href="index.html">首页</a><a href="news/2026-11-25.html">今日简报</a><a href="archive.html">存档</a><a href="about.html">关于</a></nav>
+</div></header>
+<main class="wrap page"><pre class="log"># 第9期核验记录
+
+核验日期：2026-11-25，Asia/Taipei。本期1条头条＋5条快讯，覆盖11月23日至24日的原始公告。
+
+## 头条依据
+各家日报最新一期（均为2026-11-24）的头条或第一条：
+- The Neuron：英伟达董事会恢复黄仁勋CEO职务
+- The Rundown AI：黄仁勋重返英伟达
+- Superhuman AI：英伟达请回黄仁勋
+- The Deep View：英伟达恢复黄仁勋职务
+- TLDR AI：智谱 GLM-5.4（Loop Transformer 旗舰）
+- Ben's Bites：11月24、25日无新一期（最新为11月19日随笔）
+四家同时以黄仁勋复任为头条，属人事新闻，按本站范围规则不选；TLDR AI 头条 GLM-5.4 第8期已写，不重复。因此按“对普通用户和开发者影响最大”选头条：ChatGPT 聊天页换上 GPT-6.2 聊天版（The Neuron、The Deep View 快讯均有提及），直接影响所有付费用户的日常使用。
+其他几家头条之外的条目中，符合范围的 Claude 连接器（MCP）更新、Gemini API 文件切片、Google AI Mode 连接钱包、Shirudo 放入快讯。
+
+## 01 ChatGPT 聊天页换上 GPT-6.2（头条）
+出处：https://help.openai.com/en/articles/6825453-chatgpt-release-notes （11月23日条目“GPT-6.2, now in the chat tab”）；系统卡 https://deploymentsafety.openai.com/gpt-6-2-chatgpt （2026-11-23）
+公告日期：2026-11-23。
+线索来源：The Neuron、The Deep View 11月24日快讯，The Decoder 11月23日报道，仅用于发现线索。
+原文核对：面向 Plus、Pro、Business、Enterprise 全球逐步推送；Free、Go、Edu 未列出；Enterprise 取决于管理员设置；为“针对日常对话调教的 GPT-6.2 Sol 版本”，只改 Chat，Work 与 Codex 的模型本次不变；更擅长复杂多步指令、上网找信息、判断何时主动提出后续（例：降价提醒）。官方数据：看图理解 71.7%（GPT-6 为 47.4%）；难指令遵循 78.1%（62.5%）；内部 BrowseComp（Extra high）64.5%（54.4%）。系统卡：网络安全达 Preparedness“Critical”阈值。
+边界：更新说明未提 API，正文写“没提”；系统卡中生物、自我改进等阈值与大量评测数字未写入正文；“最低推理档专家任务 65%”“政策遵循 91–94%”未写，控制篇幅；未实测。release notes 默认地址一度读取失败，改用带参数地址读到同一页面正文。
+
+## 02 Claude 连接器（MCP）自带技能、后台任务（快讯）
+出处：https://claude.com/resources/articles/skills-over-mcp-tasks-and-more （2026-11-24）
+线索来源：The Decoder 2026-11-24。
+原文核对：MCP SDK 月下载超过7亿；Claude 可用 MCP 连接器超过1万；Skills over MCP 公开测试，Pro、Max、Ultra 默认开启，Team 需管理员开启，Enterprise“即将”；Tasks 与 Elicitation（中途向用户追问）在 Claude 和 Claude Code 中正式可用（Pro/Max/Ultra，Team/Enterprise 逐步开放）；File Uploads“即将推出”。
+边界：Tool Search、Enterprise Managed Auth、MCP Apps 未写；协议规范层面的变化（2026-07-28 规范）不属本次新闻，未写；未实测。
+
+## 03 Gemini API 文件切片（快讯）
+出处：https://blog.google/innovation-and-ai/technology/developers-tools/file-slicing-controls/ （2026-11-23）
+线索来源：The Neuron「Treats to Try」（unite.ai 报道）。
+原文核对：服务器端切片支持 PDF、Office（docx/pptx/xlsx）、OpenDocument、音频与视频；新增 Office 与 OpenDocument 原生上传；只按模型实际查看的内容计费；今天起在 Google AI Studio 与 Vertex AI 可用；支持全部 Gemini 4 模型；原有文件大小与页数上限不变。
+边界：unite.ai 所列 50MB、1000 页等具体上限未在官方博客读到，正文不写；合作方节省比例为合作方口径，未写；未实测。
+
+## 04 Google AI Mode 连接钱包（快讯）
+出处：https://blog.google/products-and-platforms/products/search/google-search-personal-intelligence-apps/ （2026-11-23）
+线索来源：The Neuron「Treats to Try」、TechCrunch 2026-11-23。
+原文核对：Wallet 当天开始推送，需在搜索个性化设置的 Connected Apps 中手动开启，只读，不能转账、管理或投资；Drive 与 Gemini 应用“未来几周”；Gmail、日历、相册此前已支持。
+边界：博客未写国家、语言、是否付费，正文写“公告没写开放哪些国家”；“国内无法直接使用”是 Google 服务在国内的一般情况，非公告内容。
+
+## 05 Shirudo（快讯）
+出处：https://openai.com/index/introducing-shirudo/ （2026-11-23）；GitHub https://github.com/shirudo-dev/shirudo
+线索来源：The Neuron「Treats to Try」、TLDR AI。
+原文核对：OpenAI 与思科（Isovalent）合作的开源运行时，用 eBPF 在内核挂载点加临时“盾牌”；盾牌需签名验证、由操作员批准；BSD 2-Clause 许可（BPF 程序 BSD/GPL 双许可）；官方称“第一步”，公开一次受控测试（Elasticsearch 上的 Java 漏洞示例）。
+边界：页面未写支持的发行版与内核版本，正文不写；未实测。
+
+## 06 Enterprise Frontier Safeguards 零数据留存（快讯）
+出处：https://claude.com/resources/articles/zero-data-retention-with-enterprise-frontier-safeguards （2026-11-23）
+线索来源：The Rundown AI 11月24日快讯。
+原文核对：公开测试；在零数据留存前提下做跨请求的自动滥用监测；客户自带 Amazon S3 或 Google Cloud Storage，写入后在 Anthropic 侧删除；无人工审阅、不用于训练；支持 Claude Platform、Claude Platform on AWS、Amazon Bedrock、Claude on Google Cloud，Microsoft Foundry 即将支持。
+边界：Safety Case 细节与私测客户名单未写。
+
+## 今日趣闻：DeepMind 量子算法智能体
+出处：https://deepmind.google/blog/finding-faster-quantum-algorithms-with-agents-and-formal-verification/ （2026-11-23）
+线索来源：The Rundown AI、TLDR AI。
+原文核对：多组 Gemini 4 智能体分题改进已知量子算法；各组每4小时在虚拟会议交流；新点子用 Lean 证明后才写入共享笔记本；惯性约束聚变相关电路计算成本降低11.8倍；开源 Lean 库与验证过的解。
+边界：分子模拟8倍、P450 2.5倍等其他数字未写；论文 arXiv 2611.09822 未读；未独立验证。
+
+## 今天可以试试
+本站自拟提示词（一周晚饭与买菜清单），不来自外部来源；“过敏、控糖控盐要写进去，病情饮食听医生”为本站加注。线索站的提示词栏目未采用。
+
+## 好用工具
+tday.com：https://tday.com/ （2026-11-25读取）。核对：由编程智能体在本机录制运行中应用的演示并自动加配音、光标、缩放、字幕，可编辑；免费版5个演示、Pro 每月39美元、Growth 每月149美元；有 Mac 下载，未提 Windows/Linux；称源代码不离开本机。线索：Product Hunt 当日榜。
+Granular.Build：https://granular.build/ （2026-11-25读取）。核对：桌面多智能体工作台，“总管”智能体分派任务，自带订阅；免费版2个项目；Pro 每月12.99美元；Mac 与 Windows（Windows 为测试版）。线索：Product Hunt 当日榜。
+未收：Clam AI（邀请制有限测试，正式版12月中旬）；Canva MCP（页面未写可用状态与价格）；Nothing Ear Note（12月才上市）；Strands Decider v2（未找到 AWS 官方页）。
+
+## 今日论文
+出处：https://huggingface.co/papers/2611.31201 （arXiv 2611.31201，2026-11-23 发布，11-24 进入 Daily Papers）
+线索来源：Hugging Face Daily Papers 11月24日榜单（页面点赞数最高的论文之一）。
+原文核对：研究前沿多模态模型直接当机器人策略的“外壳”设计，分提示、规划、动作执行、工具使用四部分；结论偏向原生视觉推理与工具调用；RoboLab-120 成功率 83.3%，比最强基线高 26.2 个百分点；4 种真实操作任务零样本 20 次成功 15 次；代码在 GitHub 公开。
+边界：页面只显示“MMLab@NTU”标签，正文不写机构；页面摘要块标注为模型生成，arXiv 原文未读；未复现。
+
+## AI小词典
+本站自写的“智能体”解释，不含经验数字。示例取自本期今日趣闻。
+
+## 模型榜单
+出处：https://artificialanalysis.ai/leaderboards/models （2026-11-25查看）
+原文核对：前六：Claude Fable 5.2 Max 65（$26.54）、GPT-6.2 Astra Max 62（$4.00）、Gemini 4 Neon Xhigh 62（$6.44）、Gemini 4 Carbon High 60（$7.76）、Claude Opus 5.5 Max 59（$10.04）、GPT-6.2 Sol Max 57（$1.01）；国内最高 Kimi K3.1 Pro 47 分（第12行）。上期 Neon 为61分。
+边界：页面未标日期；第三方评测口径，排名随时变动。
+
+## 未采用的线索
+英伟达黄仁勋复任（人事）、Sierra 融资、亚马逊收购 Decart 技术、CrowdStrike 收购 Zscaler、Supertake 与 Embo 融资：属于人事或资本新闻，不选。
+Claude Artifacts 可装成 Mac/Windows 桌面应用：只有 The Decoder 报道与员工 X 帖（无法读取），未找到 Anthropic 官方页面，不写。
+OpenRouter 提醒 MiniMax 请求可能被第三方访问：Axios 报道无法读取，未找到 OpenRouter 官方公告，不写。
+Google“My Channel”AI 电视专利：未找到专利号与原文，不写。
+AWS Strands Decider v2：未找到 AWS 官方页面，不写。
+OpenAI OpenWorks：美国本地小企业帮扶项目，对本站读者关系不大，不写。
+豆包工作接入 Kimi、DeepSeek：发布时间约为11月17日，早于本期范围。
+国内厂商：11月24日至25日在线索站与搜索中未发现够格的新模型或新功能，本期没有国内条目。
+Claude Ship、GLM-5.4、OpenAI 困惑度提议：第8期已写。
+
+## 发布检查
+正文事实回到发布方材料核对，线索站只用于发现线索，未翻译或照搬其标题与句子。首页、本期页、存档、sitemap、核验页与旧期“今日简报”链接同步更新；HTMLParser 标签检查与 1280/390 宽度截图检查通过后发布。
+</pre></main>
+<footer><div class="wrap">
+  <nav><a href="index.html">首页</a><a href="news/2026-11-25.html">今日简报</a><a href="archive.html">存档</a><a href="about.html">关于</a></nav>
+  非常AI · feichangai.vip<br>本站资讯均标注来源，只做自有摘要与点评并附原文链接，不全文转载。内容由 AI 辅助整理，逐条核对官方来源。
+</div></footer>
+</body></html>

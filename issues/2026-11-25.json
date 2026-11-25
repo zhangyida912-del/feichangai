@@ -1,0 +1,133 @@
+{
+  "date": "2026-11-25",
+  "weekday": "星期三",
+  "issue": 9,
+  "minutes": 7,
+  "title": "ChatGPT聊天换上GPT-6.2，看图和搜索更强",
+  "description": "非常AI第9期：ChatGPT聊天页换上专门调教的GPT-6.2，外加Claude连接器能自带技能、Gemini API按页切文件、Google AI Mode连钱包、OpenAI开源Shirudo等快讯，以及提示词、好用工具、今日论文、AI小词典和模型榜单。",
+  "hello": "早上好 👋 今天 7 分钟带你看完：ChatGPT 的聊天页悄悄换了新模型；Claude 的连接器学会了自带技能、跑后台任务；Google 让 AI 搜索能读你的钱包账单。后面还有一个做晚饭菜单的提示词、两个好用工具和一个 AI 小词。",
+  "fun": {
+    "id": "fun",
+    "title": "一群AI每4小时开一次「学术会议」",
+    "text": "Google DeepMind 让好几组 Gemini 4 智能体去改进已有的量子算法，每组盯一道题。有意思的是，各组每 4 小时会在一个虚拟会议里碰头交流，而且任何新点子都要先用 Lean（一种能让电脑逐步检查数学证明的工具）证明对了，才能写进大家共用的笔记本。结果据 DeepMind 介绍，一个核聚变相关的量子电路，计算成本降到原来的约 1/11.8。他们把这套 Lean 库和验证过的答案都开源了。",
+    "chip": "DeepMind官方博客已核读；结果为官方口径，未独立验证",
+    "date": "2026-11-23",
+    "url": "https://deepmind.google/blog/finding-faster-quantum-algorithms-with-agents-and-formal-verification/"
+  },
+  "lead": {
+    "id": "item-01",
+    "title": "ChatGPT聊天换上GPT-6.2，看图和搜索更强",
+    "tldr": "ChatGPT 付费用户平时聊天用的那个模型换了：OpenAI 把 GPT-6.2 Sol 专门调教成「聊天版」，放进了聊天页。",
+    "paras": [
+      "先说谁能用：从 11 月 23 日起在全球逐步推送给 Plus、Pro、Business 和 Enterprise 用户；更新说明没有列出免费版、Go 和教育版。企业版能不能用，要看公司管理员怎么设置。只换「聊天」这一页，Work 和 Codex 里用的模型这次不变。",
+      "再说变了什么：OpenAI 说它更能听懂又长又绕的多步要求，上网查资料更准，也更会判断什么时候该主动问一句，比如问你要不要在降价时提醒你。官方给的几个数：看图理解从 GPT-6 的 47.4% 涨到 71.7%，难的指令遵循从 62.5% 涨到 78.1%，内部的网页检索测试从 54.4% 涨到 64.5%。这些都是 OpenAI 自己的说法，我们没有实测。订阅价格没有变化。",
+      "要注意：这个「聊天版」是不是也会单独开放 API，更新说明没提，开发者先别急着找新的模型名。系统卡（模型的安全说明书）里写，它在网络安全方面达到了 OpenAI 内部框架的「Critical」级别，所以相关的高风险请求会管得比较严。"
+    ],
+    "why": "对普通用户：如果你是 ChatGPT 付费用户，不用做任何设置，聊天就会慢慢换成新模型，发截图让它看、让它帮你上网查东西，会比以前靠谱一些；免费用户这次没有份。对开发者：这次只动了 ChatGPT 的聊天页，没有新 API，你的程序不受影响；但可以留意用户对「聊天体验」的期待又被抬高了一点。",
+    "facts": [
+      ["开放对象", "Plus／Pro／Business／Enterprise", false],
+      ["看图理解", "47.4% → 71.7%", true],
+      ["指令遵循", "62.5% → 78.1%", false],
+      ["Work和Codex", "这次不变", false]
+    ],
+    "chip": "OpenAI更新说明与系统卡已核读；成绩为官方口径，未实测",
+    "date": "2026-11-23",
+    "links": [
+      ["OpenAI · ChatGPT 更新说明（11月23日）", "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"],
+      ["OpenAI · GPT-6.2 in ChatGPT 系统卡", "https://deploymentsafety.openai.com/gpt-6-2-chatgpt"]
+    ]
+  },
+  "flash": [
+    {
+      "id": "item-02",
+      "emoji": "🔌",
+      "title": "Claude连接器能自带技能、跑后台任务",
+      "text": "给 Claude 接外部工具的那套 MCP（模型上下文协议，让 AI 连上各种软件的通用接口）又加了新本事。Anthropic 说，MCP 服务器现在能直接附带「技能」（公开测试，Pro、Max、Ultra 默认打开，Team 要管理员开，企业版即将支持）；能在后台跑长任务、半路停下来问你一句的功能已经正式可用。传文件的功能还要等等。Anthropic 还说 MCP 的 SDK 每月下载超过 7 亿次。",
+      "chip": "Anthropic官方文章已核读；未实测",
+      "date": "2026-11-24",
+      "url": "https://claude.com/resources/articles/skills-over-mcp-tasks-and-more"
+    },
+    {
+      "id": "item-03",
+      "emoji": "✂️",
+      "title": "Gemini API能只读文件的某几页",
+      "text": "一份 300 页的 PDF，只想让 AI 看第 10 到 12 页？现在 Gemini API 能在服务器端帮你切。PDF、Word、PPT、Excel、OpenDocument 文件和音视频都能按页、按表格、按时间段截取，只按模型实际看了的部分收费；Office 和 OpenDocument 文件也能直接上传了。Google AI Studio 和 Vertex AI 今天就能用，Gemini 4 全系列支持，原有的文件大小和页数上限不变。",
+      "chip": "Google官方博客已核读；未实测",
+      "date": "2026-11-23",
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/file-slicing-controls/"
+    },
+    {
+      "id": "item-04",
+      "emoji": "🔎",
+      "title": "Google AI搜索能读你的钱包了",
+      "text": "Google 搜索的 AI Mode 开始能连上 Google Wallet，帮你看消费、挑更划算的返现和积分卡。要自己去设置里手动打开，而且只能读、不能动钱。连 Google Drive 和 Gemini 应用要再等几周；Gmail、日历和相册之前就能连。公告没写开放哪些国家，Google 服务在国内无法直接使用。",
+      "chip": "Google官方博客已核读",
+      "date": "2026-11-23",
+      "url": "https://blog.google/products-and-platforms/products/search/google-search-personal-intelligence-apps/"
+    },
+    {
+      "id": "item-05",
+      "emoji": "🛡️",
+      "title": "OpenAI和思科开源Shirudo：补丁没到先挡一挡",
+      "text": "服务器有漏洞、补丁还没出，先给它套个临时「盾牌」。OpenAI 和思科开源了 Shirudo，在 Linux 内核层面临时拦住针对已知漏洞的攻击，每个盾牌都要签名、要人批准才能装上。用的是 BSD 2-Clause 开源许可。官方自己说这只是「第一步」，只公布了一次受控测试，生产环境要自己掂量。",
+      "chip": "OpenAI官方文章已核读；未实测",
+      "date": "2026-11-23",
+      "url": "https://openai.com/index/introducing-shirudo/"
+    },
+    {
+      "id": "item-06",
+      "emoji": "🔒",
+      "title": "Claude企业版：数据不留存，也能防滥用",
+      "text": "很多公司要求 AI 服务「零数据留存」（对话不在服务商那里保存），但这样服务商就很难发现有人在滥用模型。Anthropic 的新方案是让客户用自己的云存储（Amazon S3 或 Google Cloud Storage）放数据，Anthropic 只做自动监测，不派人看内容，也不拿来训练。现在是公开测试，面向企业客户，支持 Claude 平台、Amazon Bedrock 和 Google Cloud，微软 Foundry 即将支持。",
+      "chip": "Anthropic官方文章已核读",
+      "date": "2026-11-23",
+      "url": "https://claude.com/resources/articles/zero-data-retention-with-enterprise-frontier-safeguards"
+    }
+  ],
+  "try": {
+    "title": "一句话排好一周晚饭和买菜清单",
+    "intro": "每天下班纠结「今晚吃什么」？把下面这段复制给你常用的 AI（豆包、DeepSeek、Kimi、ChatGPT 都行），把方括号里的内容换成你家的情况。",
+    "prompt": "请帮我安排接下来 5 天的晚饭。我家情况：[几口人]，[不吃什么／口味偏好]，每天做饭时间不超过[30]分钟，厨房有[电饭煲、炒锅、空气炸锅]。\n要求：\n1. 每天一荤一素一汤或两菜一汤，5 天尽量不重样，用到家常、好买的食材；\n2. 每道菜写清主要食材用量和 3 步以内的做法；\n3. 最后按「肉蛋、蔬菜、豆制品、调料」分类，汇总一份买菜清单，标出能连着几天用的食材；\n4. 不确定的地方先问我，不要自己假设。",
+    "tip": "家里有人过敏、在控糖控盐或有其他饮食限制的，一定要写进去；涉及具体病情的饮食安排，AI 只能参考，要听医生或营养师的。"
+  },
+  "tools": [
+    {
+      "name": "tday.com",
+      "desc": "给要做产品演示视频的开发者和团队用：让 Claude Code、Cursor、Codex 等写代码 AI 在你自己电脑上操作正在运行的应用，自动录一段带配音、鼠标轨迹、放大镜头和字幕的演示，录完还能改。官网说源代码不会离开你的电脑。",
+      "tag": "免费版可存 5 个演示，Pro 每月 39 美元；有 Mac 下载，官网没提 Windows；国内能否使用官网没写",
+      "url": "https://tday.com/"
+    },
+    {
+      "name": "Granular.Build",
+      "desc": "不会写代码的创业者、设计师、产品经理也能用的桌面 AI 工作台：一个「总管」智能体把活分给多个干活的智能体，每个在自己的终端和项目副本里做事，带实时预览。用你自己已有的 Claude、Codex、Gemini 等订阅。",
+      "tag": "免费下载，免费版限 2 个项目；Pro 每月 12.99 美元；支持 Mac，Windows 版还在测试；国内能否使用官网没写",
+      "url": "https://granular.build/"
+    }
+  ],
+  "paper": {
+    "title": "让最强的大模型直接当机器人的「大脑」",
+    "text": "现在的顶级多模态大模型（能同时看图、读字的 AI）很聪明，能不能直接拿来指挥机器臂干活？这篇论文把这件事拆成四块来研究：怎么写提示、怎么做计划、怎么把想法变成动作、怎么用工具，总结出一套做法——与其给模型写死步骤，不如让它自己看图推理、自己调用工具。据作者介绍，这套方法在 RoboLab-120 测试上成功率 83.3%，比之前最好的方法高 26.2 个百分点；在真实世界的 4 种抓取摆放任务里，没有专门训练也成功了 20 次里的 15 次。他们还发现，模型最要紧的是把「目标在哪」估准。代码已公开。",
+    "name": "Embo-Harness: Towards Understanding Frontier-Model-as-Policy Harness",
+    "url": "https://huggingface.co/papers/2611.31201",
+    "date": "2026-11-23"
+  },
+  "word": {
+    "term": "智能体",
+    "short": "会自己动手干活的 AI",
+    "plain": "普通聊天 AI 是你问一句、它答一句；智能体（Agent）则是你给它一个目标，它自己拆步骤、调用工具（搜网页、读文件、写代码、点按钮），做完一步看看结果再决定下一步，直到把事办完。它能干的事更多，但出错时也更难察觉，所以重要操作最好让人把关。",
+    "example": "今天的趣闻里，DeepMind 让几组 Gemini 智能体各自琢磨量子算法、定时开会交流，每个点子还要先通过证明检查——这就是让智能体干活、再给它加上「把关」的典型做法。"
+  },
+  "board": {
+    "title": "AI智能排行榜 · 前6名",
+    "note": "第三方机构 Artificial Analysis 的综合智能指数，分数越高越聪明；「每题成本」是跑完一道测试题的平均花费。和上期比，Gemini 4 Neon 从 61 分升到 62 分，和 GPT-6.2 Astra 并列第二；前 11 名里仍没有国内模型，国内最高是月之暗面的 Kimi K3.1 Pro（47 分）。11月25日查看。",
+    "rows": [
+      ["Claude Fable 5.2（Max）", "65", "$26.54"],
+      ["GPT-6.2 Astra（Max）", "62", "$4.00"],
+      ["Gemini 4 Neon（Xhigh）", "62", "$6.44"],
+      ["Gemini 4 Carbon（High）", "60", "$7.76"],
+      ["Claude Opus 5.5（Max）", "59", "$10.04"],
+      ["GPT-6.2 Sol（Max）", "57", "$1.01"]
+    ],
+    "url": "https://artificialanalysis.ai/leaderboards/models"
+  }
+}
