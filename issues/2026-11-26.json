@@ -190,5 +190,17 @@
       ]
     ],
     "url": "https://artificialanalysis.ai/leaderboards/models"
+  },
+  "repo": {
+    "name": "anthropics/skills",
+    "kind": "Skill",
+    "url": "https://github.com/anthropics/skills",
+    "desc": "Anthropic 官方的技能（Skill）合集。Skill 就是给 AI 的一份操作说明书，装上以后它能用固定方法完成某类任务。这里有十几个现成的：做 Word、PDF、PPT 和表格，前端页面设计，自动测试网页，帮你搭 MCP 服务器，还有一个专门教你写自己的 Skill 的「skill-creator」。",
+    "who": "用 Claude Code 写代码、做文档的开发者；想学怎么写 Skill 的人，可以直接拿来当模板。Claude 网页版的付费用户已经内置了这些示例技能，不用另装。",
+    "how": "/plugin marketplace add anthropics/skills\n/plugin install document-skills@anthropic-agent-skills",
+    "license": "多数为 Apache 2.0 开源，以各技能文件夹里的说明为准",
+    "updated": "2026-11-16",
+    "maintainer": "Anthropic 官方",
+    "safety": "官方说明这些技能主要用于演示和学习，用在重要工作前要自己先测试。Skill 里可能带脚本，会在你电脑上运行。"
   }
 }

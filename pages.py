@@ -163,6 +163,24 @@ def build_prompts(all_issues):
 <button class="mini-copy" data-src="{pid}">复制</button></div>
 </div></article>
 """
+    extra = json.loads((B.ROOT / "data" / "prompts_extra.json").read_text(encoding="utf-8"))
+    for i, t in enumerate(extra):
+        cat = t.get("cat", "其他") if t.get("cat") in B.CATS else "其他"
+        if cat not in used:
+            used.append(cat)
+        emo, color, bg = B.CATS[cat]
+        pid = f"px{i}"
+        cards += f"""<article class="pcard" data-cat="{cat}" style="--accent:{color};--accent-bg:{bg}">
+<div class="top"></div><div class="inner">
+<div class="row"><div class="ico" aria-hidden="true">{emo}</div><div><span class="tag">{cat}</span><h3>{E(t["title"])}</h3></div></div>
+<p style="font-size:14px;color:var(--soft)">{E(t.get("intro", ""))}</p>
+<details><summary>展开完整提示词 ▾</summary><div class="preview">{E(t["prompt"])}</div><pre id="{pid}">{E(t["prompt"])}</pre></details>
+<p style="font-size:13px;color:var(--mute)">💡 {E(t.get("tip", ""))}</p>
+<div class="foot"><span>常用精选 · 适用于豆包、DeepSeek、Kimi、ChatGPT 等</span>
+<button class="mini-copy" data-src="{pid}">复制</button></div>
+</div></article>
+"""
+    items = items + extra
     lib_page("prompts", "提示词库", "🧪", "每期「今天可以试试」都收在这里。挑一个，点复制，贴给你常用的 AI 就能用。",
              f"已收录 {len(items)} 条 · 每天更新", f'<div class="grid">{cards}</div>',
              "非常AI提示词库：每天一个拿来就能用的AI提示词，适用于豆包、DeepSeek、Kimi、ChatGPT等，一键复制。",
@@ -206,6 +224,36 @@ def build_tools(all_issues):
     return len(rows)
 
 
+# ---------- 开源精选 ----------
+
+def build_repos(all_issues):
+    rows = [(d, d["repo"]) for d in all_issues if d.get("repo")]
+    seen = {r["url"] for _, r in rows}
+    extra = [r for r in json.loads((B.ROOT / "data" / "repos_extra.json").read_text(encoding="utf-8")) if r["url"] not in seen]
+    kinds, cards = [], ""
+    for d, r in rows + [(None, r) for r in extra]:
+        k = r.get("kind") or "项目"
+        if k not in kinds:
+            kinds.append(k)
+        src = f'第{d["issue"]}期推荐 · <a href="news/{d["date"]}.html#repo">原文</a>' if d else f'精选 · 核对于 {E(r.get("added", ""))}'
+        how = f'<pre>{E(r["how"])}</pre>' if r.get("how") else ""
+        cards += f"""<article class="pcard" data-cat="{E(k)}" style="--accent:var(--ink);--accent-bg:var(--bg)">
+<div class="top"></div><div class="inner">
+<div class="row"><div class="ico" aria-hidden="true">🐙</div><div><span class="tag">{E(k)}</span><h3 style="overflow-wrap:anywhere">{E(r["name"])}</h3></div></div>
+<p style="font-size:15px">{E(r["desc"])}</p>
+<p style="font-size:14px;color:var(--soft)"><b>适合谁：</b>{E(r.get("who", ""))}</p>{how}
+<p class="preview" style="-webkit-line-clamp:unset">📄 {E(r.get("license", ""))} · 🕒 {E(r.get("updated", ""))} · 👤 {E(r.get("maintainer", ""))}<br>⚠️ {E(r.get("safety", ""))}</p>
+<div class="foot"><span>{src}</span><a class="mini-copy" style="text-decoration:none" href="{E(r["url"])}" target="_blank" rel="noopener">GitHub ↗</a></div>
+</div></article>
+"""
+    lib_page("repos", "GitHub 开源精选", "🐙", "每期「GitHub 精选」都收在这里：好用的 Skill、MCP 服务器和 AI 开源项目，写清许可、维护情况和安全提醒。",
+             f"已收录 {len(rows) + len(extra)} 个 · 每天更新", f'<div class="grid">{cards}</div>',
+             "非常AI GitHub开源精选：每天推荐一个靠谱的AI Skill、MCP服务器或开源项目，标清许可证、更新时间和安全提醒。",
+             "搜一搜：Skill、MCP、Claude……", chips_html(kinds),
+             "Skill 和 MCP 服务器可能会在你的电脑上运行代码、读写文件。安装前先看代码、限制权限；本站推荐不收费。")
+    return len(rows) + len(extra)
+
+
 # ---------- AI 小词典 ----------
 
 def build_glossary(all_issues):
@@ -220,6 +268,18 @@ def build_glossary(all_issues):
 <div class="foot"><span>第{d["issue"]}期 · <a href="news/{d["date"]}.html#word">原文</a></span></div>
 </div></article>
 """
+    have = {w["term"] for _, w in words}
+    extra = [w for w in json.loads((B.ROOT / "data" / "glossary_extra.json").read_text(encoding="utf-8")) if w["term"] not in have]
+    for w in extra:
+        cards += f"""<article class="pcard" data-cat="词" style="--accent:var(--ink);--accent-bg:var(--bg)">
+<div class="top"></div><div class="inner">
+<h3><span class="term-tag">{E(w["term"])}</span> {E(w["short"])}</h3>
+<p style="font-size:15px">{E(w["plain"])}</p>
+<p class="preview" style="-webkit-line-clamp:unset">举个例子：{E(w["example"])}</p>
+<div class="foot"><span>基础词条</span></div>
+</div></article>
+"""
+    words = words + [(None, w) for w in extra]
     lib_page("glossary", "AI 小词典", "📖", "新闻里看不懂的 AI 词，这里用大白话讲清楚。每天新增一个。",
              f"已收录 {len(words)} 个词 · 每天更新", f'<div class="grid">{cards}</div>',
              "非常AI小词典：用大白话解释 token、智能体、开放权重等常见AI术语，每天新增一个。",
@@ -239,6 +299,12 @@ def build_topics(all_issues):
                 tag_count[t] = tag_count.get(t, 0) + 1
             summary = x.get("tldr") or x.get("text", "")
             rows.append((d, x, tags, summary))
+    for x in json.loads((B.ROOT / "data" / "legacy_news.json").read_text(encoding="utf-8")):
+        tags = tags_for(x)
+        for t in tags:
+            tag_count[t] = tag_count.get(t, 0) + 1
+        d = {"date": x["date"], "issue": x["issue"]}
+        rows.append((d, x, tags, x["text"]))
     order = sorted(tag_count, key=lambda t: (-tag_count[t], t))
     cards = ""
     for d, x, tags, summary in rows:
@@ -366,9 +432,10 @@ def build_library(counts):
     body = '<div class="hubs">' + "".join([
         card("prompts.html", "🧪", "提示词库", "拿来就能用的提示词，一键复制", f"{counts['prompts']} 条", [(v, "📋"), (c, "🏠"), (m, "🌱"), (s, "✍️")]),
         card("tools.html", "🧰", "AI 工具箱", "每天推荐的新工具，收费和系统写清楚", f"{counts['tools']} 个", [(c, "💻"), (v, "🤖"), (s, "🎨"), (m, "🔒")]),
+        card("repos.html", "🐙", "GitHub 开源精选", "靠谱的 Skill、MCP 和 AI 开源项目", f"{counts['repos']} 个", [(v, "🐙"), (m, "🧩"), (s, "⭐"), (c, "🔌")]),
         card("topics.html", "🔎", "新闻话题与搜索", "按公司、话题找往期新闻", f"{counts['topics']} 条新闻", [(m, "🟢"), (v, "🟣"), (c, "🇨🇳"), (s, "#")]),
         card("glossary.html", "📖", "AI 小词典", "看不懂的 AI 词，大白话讲清", f"{counts['glossary']} 个词", [(s, "🔤"), (v, "🧠"), (m, "📦"), (c, "💬")]),
-        card("prices.html", "💰", "大模型价格表", "主流模型 API 价格，附官方来源", "12 个模型", [(m, "$"), (c, "¥"), (v, "📊"), (s, "⚖️")]),
+        card("prices.html", "💰", "大模型价格表", "主流模型 API 价格，附官方来源", f"{counts['prices']} 个模型", [(m, "$"), (c, "¥"), (v, "📊"), (s, "⚖️")]),
         card("weekly.html", "🗓️", "每周回顾", "每周日梳理一周大事", f"{counts['weekly']} 期", [(v, "🗓️"), (s, "⭐"), (c, "📰"), (m, "✅")]),
         card("start.html", "👋", "AI 新手入门", "第一次用 AI 从这里看起", "3 分钟读完", [(c, "👋"), (m, "💡"), (v, "💬"), (s, "⚠️")]),
     ]) + "</div>"
@@ -389,9 +456,11 @@ def build_all():
     counts = {
         "prompts": build_prompts(all_issues),
         "tools": build_tools(all_issues),
+        "repos": build_repos(all_issues),
         "glossary": build_glossary(all_issues),
         "topics": build_topics(all_issues),
         "weekly": build_weekly_pages(),
+        "prices": len(json.loads((B.ROOT / "data" / "prices.json").read_text(encoding="utf-8"))["rows"]),
     }
     build_prices()
     build_start()

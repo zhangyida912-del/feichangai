@@ -1,0 +1,7 @@
+[
+ {"name":"modelcontextprotocol/servers","kind":"MCP","url":"https://github.com/modelcontextprotocol/servers",
+  "desc":"MCP（让 AI 连上各种软件的通用接口）官方的参考服务器合集：读写本地文件、抓取网页内容、操作 Git 仓库、给 AI 加「记忆」、时间换算等。每个都是一个小例子，教你一个 MCP 服务器怎么写。",
+  "who":"想给 AI 接上自己的文件和工具，或者想自己写 MCP 服务器的开发者。",
+  "how":"","license":"正在从 MIT 迁移到 Apache 2.0，新代码为 Apache 2.0","updated":"2026-11-18","maintainer":"MCP 官方项目",
+  "safety":"官方说明这些是演示用的参考实现，不是正式产品。文件系统这类服务器能读写你的文件，一定要限定它能访问的文件夹。","added":"2026-11-26"}
+]

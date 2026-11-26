@@ -1,0 +1,242 @@
+[
+ {
+  "date": "2026-11-05",
+  "issue": 0,
+  "id": "item-01",
+  "title": "OpenAI 称：ChatGPT 的搜索类查询量，已约为谷歌的五分之一",
+  "text": "OpenAI 消费产品负责人 Adam Fry 接受 Big Technology 访谈时称，ChatGPT 的「搜索类查询」量已达谷歌约 20%，过去两个月周活从 10 亿涨到 12 亿。",
+  "url": "https://www.bigtechnology.com/p/openai-chatgpt-search-is-about-20"
+ },
+ {
+  "date": "2026-11-05",
+  "issue": 0,
+  "id": "item-02",
+  "title": "大模型亲手改了小模型的权重，修好了一个让它反复打转的毛病",
+  "text": "MIT CSAIL 四位研究者让前沿模型 GPT-6 Astra 不训练、不算梯度，直接改小模型 Qwen3.5-0.8B 的权重，看能否让它数学变好。Astra 查出的不是知识不够，而是一个具体故障：这模型思考时容易原地打转、反复重复同一段推理，许多回答因耗尽输出额度而未能完成。它定位到相关参数，只改约 0.016%，打转大幅减少：同一测试口径下，MATH-500 从 7.9% 升到 48.1%，指令跟随 IFEval 从 21.0% 升到 62.3%。修改后的模型已公开，可下载试用，并有在线演示和独立复测。",
+  "url": "https://rikiyat.github.io/blog/weight-space-programming/"
+ },
+ {
+  "date": "2026-11-05",
+  "issue": 0,
+  "id": "item-03",
+  "title": "Netflix 推出 AI Discover：先选一个心情主题，再慢慢缩小范围",
+  "text": "Netflix 在电视应用里推出 AI Discover 新区域，入口是顶部导航新加的 Discover 标签，官方 2026 年 11 月 3 日发文宣布。用起来分三步：先挑一个主题，如「Scare Me」「Quick Watches」，每个主题配一段影片预览；选中后给出一批匹配推荐，想再细就继续点更具体的主题，或换一组新的；每部片旁有「Tune Your Recommendations」按钮，可保留推荐，也可明确说不要再推。",
+  "url": "https://about.netflix.com/en/news/introducing-ai-discover"
+ },
+ {
+  "date": "2026-11-05",
+  "issue": 0,
+  "id": "item-04",
+  "title": "Dan Koe：2027 年最赚钱的 AI 生意，是先让人看见你",
+  "text": "Dan Koe 在长信中认为：AI 让做产品越来越容易之后，回报最高的技能是获取注意力——没人知道你是谁、你能提供什么，就没人付钱。此为作者观点，文中同时推广他自己的产品 Eden，作延伸阅读，不计入本期新闻。",
+  "url": "https://letters.thedankoe.com/p/the-most-lucrative-ai-business-to"
+ },
+ {
+  "date": "2026-11-06",
+  "issue": 1,
+  "id": "item-01",
+  "title": "Claude推出个人财务功能：能看账本，不能替你动钱",
+  "text": "Anthropic于11月5日宣布Personal Finance，用户可以通过Plaid连接选定的金融账户，让Claude根据余额与交易记录回答问题，例如本月花了多少钱、有哪些重复收费，或生成消费图表。功能以测试版逐步向美国Pro、Max和Ultra用户开放。",
+  "url": "https://claude.com/resources/articles/introducing-personal-finance-in-claude"
+ },
+ {
+  "date": "2026-11-06",
+  "issue": 1,
+  "id": "item-02",
+  "title": "OpenAI发布GPT-6 Cyber，首批仅向获批安全客户开放",
+  "text": "OpenAI于11月5日发布GPT-6 Cyber，面向漏洞研究、验证与修复等授权安全任务。首批通过API和Codex向部分获批Daybreak Red客户开放，之后计划扩大到该项目的其他客户，不能理解为普通ChatGPT用户已经可以使用。",
+  "url": "https://openai.com/index/introducing-gpt-6-cyber/"
+ },
+ {
+  "date": "2026-11-06",
+  "issue": 1,
+  "id": "item-03",
+  "title": "百度公开ERNIE 5.5 Flash Base权重，定位后续训练起点",
+  "text": "百度官方页面介绍了ERNIE 5.5 Flash Base，并提供FP8与BF16权重入口。按官方说明，这是一款总参数2800亿、每token激活140亿参数的MoE语言模型，权重取自预训练结束阶段，尚未经过中期或后训练。",
+  "url": "https://ernie.baidu.com/release/ernie-5-5-flash-base"
+ },
+ {
+  "date": "2026-11-06",
+  "issue": 1,
+  "id": "item-04",
+  "title": "METR评估Anthropic研发加速，强调高不确定性与证据删节",
+  "text": "METR于11月5日发布对Anthropic的研发评估，认为其在定义明确任务上的模型能力进展，可能约为此前历史速度的两倍。报告强调估计存在很大不确定性，且Anthropic删节了部分重要证据；不能将其简化为“整个AI行业效率翻倍”，也不能据此确定加速全部由AI造成。",
+  "url": "https://metr.org/blog/2026-11-05-anthropic-ai-rd-acceleration-assessment/"
+ },
+ {
+  "date": "2026-11-07",
+  "issue": 2,
+  "id": "item-01",
+  "title": "Google给编程助手加入语音模式：任务没做完，也能开口改方向",
+  "text": "Google于11月6日宣布，Antigravity App和CLI加入由Gemini Live支持的语音模式。用户可以直接说出编程任务，在助手工作时补充条件、纠正方向、询问进展，或者要求停止；助手会口头回应，读代码、改文件和运行命令的结果仍留在原来的会话里。",
+  "url": "https://antigravity.google/blog/antigravity-voice-mode"
+ },
+ {
+  "date": "2026-11-07",
+  "issue": 2,
+  "id": "item-02",
+  "title": "Thinking Machines发布Inkling 2 Small：模型能用了，权重还没开放",
+  "text": "Thinking Machines Lab在11月5日发布Inkling 2 Small。这是一款混合专家模型，总参数5940亿、每次激活170亿，支持图像输入和可调推理投入。它先在Tinker Playground提供试用，也可以通过Tinker微调和采样。",
+  "url": "https://thinkingmachines.ai/news/inkling-2-small/"
+ },
+ {
+  "date": "2026-11-07",
+  "issue": 2,
+  "id": "item-03",
+  "title": "群聊里的AI不必句句接话：Ampersand接入Vercel AI Gateway",
+  "text": "Vercel于11月6日宣布，Humans&的Ampersand已接入AI Gateway，平台模型名为humansand/ampersand-v0.1，并提供截至11月13日的限时免费调用。这次消息是开发者平台新增模型入口，不是某个聊天软件已经给所有群聊加上AI成员。",
+  "url": "https://vercel.com/changelog/humans-and-ampersand-now-available-on-ai-gateway"
+ },
+ {
+  "date": "2026-11-07",
+  "issue": 2,
+  "id": "item-04",
+  "title": "NVIDIA公布FLUX图像生成加速方案：特定B200测试下最高提速3.46倍",
+  "text": "NVIDIA在11月6日技术博客中公布FLUX 3 Image Klein的推理优化方案。在单张B200、2048×2048分辨率的厂商测试中，编译、低精度计算、稀疏注意力和缓存等组合优化，将Base版文生图耗时从22.36秒降至6.46秒，约为原速度的3.46倍。",
+  "url": "https://developer.nvidia.com/blog/speed-up-image-generation-with-flux-3-image-klein-on-nvidia-blackwell-gpus/"
+ },
+ {
+  "date": "2026-11-08",
+  "issue": 3,
+  "id": "item-01",
+  "title": "Claude也会“做梦”？Anthropic说的是回看记录，整理记忆",
+  "text": "Anthropic在11月6日的工程文章中解释了Claude的跨会话记忆设计。所谓dreaming，是利用交互间隙回看日志，纠正错误笔记、建立关联索引，并挑选适合下次会话预先加载的信息；“做梦”只是对这一过程的比喻。",
+  "url": "https://www.anthropic.com/research/components-of-agent-memory"
+ },
+ {
+  "date": "2026-11-08",
+  "issue": 3,
+  "id": "item-02",
+  "title": "AI不只要读懂漂亮图表：OpenAI用100道实验题测它能否发现问题",
+  "text": "OpenAI于11月6日与Ligo推出BioBasicsBench，包含100道日常湿实验分析任务。题目来自科学家的真实实验，保留原始图像、仪器读数等材料，按专家编写的细项标准评分；一份答案可以得到部分分数。",
+  "url": "https://openai.com/index/measuring-how-ai-agents-handle-wet-lab-science/"
+ },
+ {
+  "date": "2026-11-08",
+  "issue": 3,
+  "id": "item-03",
+  "title": "Kakao公开Kanana决策模型：看文字和图片，直接做选择题",
+  "text": "Kakao官方模型卡记录，11月6日已公开Kanana-2-v-decide-3b-2611权重。该模型约36.7亿参数，接受文字、结构化内容、聊天记录及图片，针对给定选项做选择、是否判断或等级评分，不生成文本回答。模型卡给出的例子包括判断客户来信属于哪类诉求。",
+  "url": "https://huggingface.co/kakaocorp/kanana-2-v-decide-3b-2611"
+ },
+ {
+  "date": "2026-11-10",
+  "issue": 4,
+  "id": "item-01",
+  "title": "Claude升级5.2：Fable面向广泛用户，Mythos仍需申请验证",
+  "text": "Anthropic于11月9日发布Claude Fable 5.2与Claude Mythos 5.2，面向复杂编程、推理和视觉任务。两者使用相同底层模型，但开放方式不同：Fable加入网络安全与生物领域的防滥用保护；机构若需Mythos，仍要通过网络安全或生命科学验证计划申请。",
+  "url": "https://www.anthropic.com/claude-fable-and-mythos-5-2"
+ },
+ {
+  "date": "2026-11-10",
+  "issue": 4,
+  "id": "item-02",
+  "title": "Seedream 5.5发布：改了衣服，尽量别把整张图也改掉",
+  "text": "字节Seed团队于11月9日发布Seedream 5.5。官方重点介绍多轮编辑：在继续修改服装、配饰、物件等内容时，保持未编辑区域，降低反复改图带来的颜色偏移、细节丢失与画质衰减。公告演示了同一人物图连续100轮编辑，这是厂商展示的样例，不是对任意图片都能成立的保证。",
+  "url": "https://seed.bytedance.com/zh/blog/more-realistic-images-more-stable-editing-across-100-rounds-introducing-seedream-5-5?view_from=content_recommend"
+ },
+ {
+  "date": "2026-11-10",
+  "issue": 4,
+  "id": "item-03",
+  "title": "Meta推出Muse Ember：让小模型处理智能体里的大量小步骤",
+  "text": "Meta发布Muse Ember，定位为面向日常智能体任务的小模型，重点是反复出现的工具调用、文件读取、测试、信息提取和局部代码修改。官方称它是首个使用Muse Wonder Full训练的模型，并建议将复杂规划交给更强模型，把大量重复步骤交给Ember。",
+  "url": "https://research.meta.ai/blog/muse-ember"
+ },
+ {
+  "date": "2026-11-10",
+  "issue": 4,
+  "id": "item-04",
+  "title": "Google扩展第八代TPU：一款侧重保密计算，一款侧重长上下文",
+  "text": "Google于11月9日宣布TPU 8tx和TPU 8i Max，扩展第八代TPU产品线。官方特意区分了新芯片与新系统：8tx沿用8t硅片、搭配AMD EPYC主机，面向保密推理；8i Max把两颗8i芯片组合到同一封装，以应对长上下文带来的计算与内存带宽需求。",
+  "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/tpu-8i-max-and-8tx/"
+ },
+ {
+  "date": "2026-11-12",
+  "issue": 5,
+  "id": "item-01",
+  "title": "Gemini 4 Carbon开放付费使用：先用介绍价，12月1日起翻倍",
+  "text": "Google于11月10日宣布，Gemini 4 Carbon向所有付费开发者和企业开放：开发者可在AI Studio、Android Studio通过Gemini API付费层调用，企业可经API或Gemini for business、Antigravity、CodeMender使用；面向个人，正陆续推送给全部Google AI Ultra订阅者，入口包括Antigravity、Gemini应用和搜索的AI Mode。10月28日首发时，它只通过Fairwind计划开放给部分网络安全防御者。",
+  "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/"
+ },
+ {
+  "date": "2026-11-12",
+  "issue": 5,
+  "id": "item-02",
+  "title": "Claude新增表格和白板：在对话里直接做表、排计划",
+  "text": "Anthropic于11月10日推出Claude Sheets与Claude Whiteboards两项beta功能，并宣布Claude Data（原Claude Dashboards）正式可用。三者面向所有付费方案，网页、桌面和移动端均可使用。Team方案默认开启；Enterprise方案中表格和白板默认关闭，需管理员开启，Claude Data则自11月19日起默认开启。",
+  "url": "https://claude.com/resources/articles/sheets-whiteboards-data"
+ },
+ {
+  "date": "2026-11-12",
+  "issue": 5,
+  "id": "item-03",
+  "title": "MiniMax开放H3-Image权重：能下载，商用要先看许可",
+  "text": "MiniMax于11月10日深夜发布H3-Image，并在Hugging Face放出权重。模型卡显示，它是331亿参数的扩散Transformer（文本编码器来自MiniMax-H3，不在该仓库），文生图与改图共用同一模型，最多可传16张参考图，采样蒸馏到6步。官方宣传“10秒生成4K图像”；模型卡说明最佳尺寸约1600万像素（如4096×4096），并建议多卡并行降低延迟，但没有在页面上给出具体硬件下的耗时。",
+  "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3-Image"
+ },
+ {
+  "date": "2026-11-12",
+  "issue": 5,
+  "id": "item-04",
+  "title": "阿里预告Qwen4：Max预览版只在Token Plan开放到11月25日",
+  "text": "阿里11月11日宣布Qwen4即将推出，先上线Qwen4-Max预览版，主打编程和智能体任务。阿里云文档显示，模型名为qwen4-max-preview，上下文100万token，最长输出约39.3万token（思考与回答共用），默认开启思考；只能通过Token Plan个人版或团队版使用，不支持按量付费。",
+  "url": "https://www.alibabacloud.com/help/en/model-studio/qwen4-max-preview"
+ },
+ {
+  "date": "2026-11-18",
+  "issue": 6,
+  "id": "item-01",
+  "title": "Gemini 4 Hydrogen向所有人开放：日常任务的主力模型，API每百万token 1.5／7.5美元",
+  "text": "Google于11月12日推出Gemini 4 Hydrogen，定位是“智能体工作流的日常主力”：Carbon和Argon负责深度、长时间的推理，Hydrogen负责快速执行，也是从Gemini 3.8 Flash迁移的升级选项。思考强度分low、medium、high（默认）和新增的xhigh。",
+  "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/"
+ },
+ {
+  "date": "2026-11-18",
+  "issue": 6,
+  "id": "item-02",
+  "title": "腾讯开放Hy4 flash权重：220B总参数、12B激活，可以自己部署",
+  "text": "据媒体报道，腾讯于11月16日发布Hy4 flash，并在Hugging Face放出Hy4 flash、FP8版和预训练基座Hy4 flash-base三份权重。模型卡显示：总参数2200亿（含640亿Engram参数），每个token只激活约120亿；上下文100万token；原生支持文本和图像输入，输出文本。可用vLLM、SGLang、Transformers部署，也有GGUF版本。",
+  "url": "https://huggingface.co/tencent/Hy4-flash"
+ },
+ {
+  "date": "2026-11-18",
+  "issue": 6,
+  "id": "item-03",
+  "title": "微软发布MAI Code 2：先进GitHub Copilot，官方承认还不擅长长任务",
+  "text": "微软11月17日在Ignite大会发布两款自研编程模型。MAI Code 2面向把代码推到生产、深度调试、多文件实现、全仓库推理和界面开发；MAI Code 2 Flash面向量大的轻活，比如解释代码、定点修改、常规修复。两款都已在GitHub Copilot中可用；Flash另在Microsoft Foundry开放有限访问预览。OpenRouter、Vercel、OpenCode、Kilo等渠道标为“即将”。",
+  "url": "https://microsoft.ai/news/introducing-mai-code-2-and-mai-code-2-flash/"
+ },
+ {
+  "date": "2026-11-18",
+  "issue": 6,
+  "id": "item-04",
+  "title": "商汤开源SenseNova-Loop-9B：中间层跑两遍，Apache 2.0许可",
+  "text": "商汤11月17日发布SenseNova-Loop-9B正式版（10月31日先出过预览版）。它约90亿参数，32层解码器中第4到27层共享权重、循环执行两遍，相当于约146亿参数的推理计算量；支持文本和图像输入、输出文本，上下文最长51.2万token。权重在Hugging Face，许可为Apache 2.0，属于真正的开源；4bit量化版约4.9GB。",
+  "url": "https://www.sensetime.com/en/news/sensenova-loop-9b-release-20261118-1435"
+ },
+ {
+  "date": "2026-11-21",
+  "issue": 7,
+  "id": "item-01",
+  "title": "Thinking Machines放出Inkling 2 Mini：小而循环，Apache 2.0许可",
+  "text": "Thinking Machines于11月20日发布Inkling 2 Mini，权重同步放在Hugging Face。模型卡显示：总参数264亿、每个token激活34亿，是混合专家结构（128个专家中选8个）；24层中的中间层循环执行三遍，等效激活约54亿；支持文本和图像输入、输出文本，上下文最长100万token。",
+  "url": "https://thinkingmachines.ai/news/inkling-2-mini/"
+ },
+ {
+  "date": "2026-11-21",
+  "issue": 7,
+  "id": "item-02",
+  "title": "Baseten开源bison-1和groundhog-1：不写回答，只给选项概率",
+  "text": "Baseten于11月20日发布两款“决策模型”并开放权重：bison-1基于Gemma 4 31B，groundhog-1基于Gemma 4 26B-A4B（约40亿激活）。它们不生成长文本，而是读入当前状态和若干选项，直接返回每个选项的校准概率，适合做分类、路由、是否调用工具这类判断。两者都支持文本和图像输入，上下文12.8万token。",
+  "url": "https://www.baseten.co/blog/meet-bison-1-and-groundhog-1/"
+ },
+ {
+  "date": "2026-11-21",
+  "issue": 7,
+  "id": "item-03",
+  "title": "Reson8开源Rumble-2-Flash：5亿参数的语音识别模型，可自动识别语种",
+  "text": "Reson8于11月18日开源Rumble-2-Flash，只有5亿参数，基于Qwen3-ASR架构，许可Apache 2.0，可直接用Transformers或vLLM运行，不需要额外代码。它能自动识别语种；支持语种数量，官方博客写“40多种”，模型卡标为45种。",
+  "url": "https://huggingface.co/blog/rumble-2-flash"
+ }
+]

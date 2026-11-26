@@ -87,7 +87,7 @@ def render(d, base, current):
     toc = f'<li><a href="{item(lead["id"])}">{E(lead["title"])}</a></li>'
     toc += "".join(f'<li><a href="{item(f["id"])}">{E(f["title"])}</a></li>' for f in flash[:4])
     rest = len(flash) - 4
-    more = (f"还有 {rest} 条快讯，" if rest > 0 else "") + "外加今天可以试试、好用工具、今日论文、AI小词典和模型榜单 👇"
+    more = (f"还有 {rest} 条快讯，" if rest > 0 else "") + "外加今天可以试试、好用工具、GitHub 精选、今日论文、AI小词典和模型榜单 👇"
 
     facts = "".join(
         f'<div class="fact"><span>{E(k)}</span><b{HOT if hot else ""}>{E(v)}</b></div>'
@@ -121,6 +121,16 @@ def render(d, base, current):
             for x in d["tools"])
         tools = (f'<section class="card" id="tools"><div class="sec-title"><span class="em" aria-hidden="true">🧰</span>好用工具</div>'
                  f'<ul class="tools-list">{lis}</ul></section>')
+    repo = ""
+    if d.get("repo"):
+        r = d["repo"]
+        how = f'<div class="prompt" id="repo-how">{E(r["how"])}</div><button class="copy-btn" data-copy="#repo-how">复制安装命令</button>' if r.get("how") else ""
+        repo = (f'<section class="card repo" id="repo"><div class="sec-title"><span class="em" aria-hidden="true">🐙</span>GitHub 精选</div>'
+                f'<h3>{E(r["name"])} <span class="kind">{E(r.get("kind", ""))}</span></h3><p>{E(r["desc"])}</p>'
+                f'<p class="tip"><b>适合谁：</b>{E(r.get("who", ""))}</p>{how}'
+                f'<div class="repo-meta"><span>📄 {E(r.get("license", "许可见仓库"))}</span><span>🕒 最近更新 {E(r.get("updated", ""))}</span><span>👤 {E(r.get("maintainer", ""))}</span></div>'
+                f'<p class="tip">⚠️ {E(r.get("safety", "装之前先看一眼代码和需要的权限。"))}</p>'
+                f'<div class="src"><a href="{E(r["url"])}" target="_blank" rel="noopener">GitHub 仓库 ↗</a></div></section>')
     word = ""
     if d.get("word"):
         w = d["word"]
@@ -163,6 +173,8 @@ def render(d, base, current):
 </section>
 
 {tools}
+
+{repo}
 
 <section class="card paper" id="paper">
   <div class="sec-title"><span class="em" aria-hidden="true">📄</span>今日论文</div>
