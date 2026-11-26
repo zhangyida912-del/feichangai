@@ -54,14 +54,14 @@ def topbar(base, news_href, current):
     cur = lambda k: ' aria-current="page"' if k == current else ""
     return f"""<header><div class="wrap nav">
   <a class="logo" href="{base}index.html">非常<i>AI</i></a>
-  <nav class="nav-links" aria-label="主导航"><a href="{base}index.html"{cur("home")}>首页</a><a href="{news_href}"{cur("news")}>今日简报</a><a href="{base}archive.html"{cur("archive")}>存档</a><a href="{base}about.html"{cur("about")}>关于</a></nav>
+  <nav class="nav-links" aria-label="主导航"><a href="{base}index.html"{cur("home")}>首页</a><a href="{news_href}"{cur("news")}>今日简报</a><a href="{base}library.html"{cur("library")}>资料库</a><a href="{base}archive.html"{cur("archive")}>存档</a><a href="{base}about.html"{cur("about")}>关于</a></nav>
 </div></header>
 """
 
 
 def bottom(base, news_href):
     return f"""<footer><div class="wrap">
-  <nav><a href="{base}index.html">首页</a><a href="{news_href}">今日简报</a><a href="{base}archive.html">存档</a><a href="{base}about.html">关于</a></nav>
+  <nav><a href="{base}index.html">首页</a><a href="{news_href}">今日简报</a><a href="{base}library.html">资料库</a><a href="{base}prompts.html">提示词库</a><a href="{base}topics.html">新闻搜索</a><a href="{base}archive.html">存档</a><a href="{base}about.html">关于</a></nav>
   非常AI · feichangai.vip<br>本站资讯均标注来源，只做自有摘要与点评并附原文链接，不全文转载。内容由 AI 辅助整理，逐条核对官方来源。
 </div></footer>
 """
@@ -75,6 +75,7 @@ def links_html(pairs):
 
 def render(d, base, current):
     """base: 到站点根目录的相对前缀（首页为''，news页为'../'）。current: 'home' 或 'news'。"""
+    from pages import status_pill
     date = d["date"]
     _, m, dd = date.split("-")
     cn_date = f"{int(m)}月{int(dd)}日"
@@ -94,7 +95,7 @@ def render(d, base, current):
     )
     paras = "".join(f"<p>{E(p)}</p>" for p in lead["paras"])
     flash_items = "".join(
-        f'<li id="{f["id"]}"><h3><span class="em" aria-hidden="true">{f["emoji"]}</span><span>{E(f["title"])}</span></h3>'
+        f'<li id="{f["id"]}"><h3><span class="em" aria-hidden="true">{f["emoji"]}</span><span>{E(f["title"])} {status_pill(f.get("status"))}</span></h3>'
         f'<p>{E(f["text"])}</p><div class="src"><span class="chip">{E(f["chip"])}</span>来源日期：{E(f["date"])} · '
         f'<a href="{E(f["url"])}" target="_blank" rel="noopener">原文 ↗</a></div></li>'
         for f in flash
@@ -138,7 +139,7 @@ def render(d, base, current):
 <nav class="card toc" aria-label="本期目录"><h2><span class="em" aria-hidden="true">📌</span>今天看什么</h2><ol>{toc}</ol><p class="more">{more}</p></nav>
 
 <article class="card lead" id="{lead["id"]}">
-  <div class="sec-title"><span class="em" aria-hidden="true">🔥</span>今日头条</div>
+  <div class="sec-title"><span class="em" aria-hidden="true">🔥</span>今日头条 {status_pill(lead.get("status"))}</div>
   <h2>{E(lead["title"])}</h2>
   <div class="tldr">{E(lead["tldr"])}</div>
   {paras}
@@ -188,8 +189,19 @@ def render(d, base, current):
             + body + bottom(base, news_href) + f"<script>{JS}</script>\n</body></html>\n")
 
 
+CATS = {  # 分类：emoji、主色、浅底色
+    "工作": ("💼", "#6b4eff", "var(--violet-bg)"),
+    "生活": ("🏠", "#ff5a36", "var(--coral-bg)"),
+    "办事": ("📋", "#12a37a", "var(--mint-bg)"),
+    "学习": ("📚", "#2f80ed", "#e8f1fd"),
+    "写作": ("✍️", "#d9480f", "var(--sun-bg)"),
+    "成长": ("🌱", "#12a37a", "var(--mint-bg)"),
+    "编程": ("💻", "#1d1b26", "#ecebf0"),
+    "其他": ("✨", "#6b4eff", "var(--violet-bg)"),
+}
+
 def latest_date():
-    return sorted(p.stem for p in (ROOT / "issues").glob("*.json"))[-1]
+    return sorted(p.stem for p in (ROOT / "issues").glob("*.json") if not p.stem.startswith("weekly"))[-1]
 
 
 def wrap(name):
@@ -211,6 +223,10 @@ def wrap(name):
 
 
 def main():
+    if sys.argv[1] in ("pages", "prompts"):
+        import pages
+        print("built pages", pages.build_all())
+        return
     if sys.argv[1] == "wrap":
         for n in sys.argv[2:]:
             wrap(n)
@@ -222,7 +238,9 @@ def main():
     (out / "news").mkdir(parents=True, exist_ok=True)
     (out / "news" / f'{d["date"]}.html').write_text(render(d, "../", "news"), encoding="utf-8")
     (out / "index.html").write_text(render(d, "", "home"), encoding="utf-8")
-    print("built", d["date"], "->", out)
+    import pages
+    counts = pages.build_all()
+    print("built", d["date"], "+ pages", counts, "->", out)
 
 
 if __name__ == "__main__":

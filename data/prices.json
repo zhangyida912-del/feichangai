@@ -1,0 +1,18 @@
+{
+  "checked": "2026-11-26",
+  "note": "API 标准价，每百万 token。各家计价口径不同（缓存、分档、高峰低谷），以官方页面为准。",
+  "rows": [
+    {"vendor": "OpenAI", "model": "GPT-6.2 Astra", "id": "gpt-6.2-astra", "input": 8.00, "cached": 0.40, "output": 40.00, "cur": "USD", "note": "", "src": "https://developers.openai.com/api/docs/pricing"},
+    {"vendor": "OpenAI", "model": "GPT-6.2 Sol", "id": "gpt-6.2-sol", "input": 2.00, "cached": 0.10, "output": 10.00, "cur": "USD", "note": "", "src": "https://developers.openai.com/api/docs/pricing"},
+    {"vendor": "Anthropic", "model": "Claude Fable 5.2", "id": "", "input": 8.00, "cached": 0.20, "output": 40.00, "cur": "USD", "note": "", "src": "https://platform.claude.com/docs/en/about-claude/pricing"},
+    {"vendor": "Anthropic", "model": "Claude Opus 5.5", "id": "", "input": 4.00, "cached": 0.20, "output": 20.00, "cur": "USD", "note": "", "src": "https://platform.claude.com/docs/en/about-claude/pricing"},
+    {"vendor": "Anthropic", "model": "Claude Sonnet 5.5", "id": "", "input": 2.00, "cached": 0.10, "output": 10.00, "cur": "USD", "note": "", "src": "https://platform.claude.com/docs/en/about-claude/pricing"},
+    {"vendor": "Anthropic", "model": "Claude Haiku 5.5", "id": "", "input": 0.10, "cached": 0.01, "output": 0.50, "cur": "USD", "note": "提示词超过 10 万 token 时为 $0.50／$2.50", "src": "https://platform.claude.com/docs/en/about-claude/pricing"},
+    {"vendor": "Google", "model": "Gemini 4 Carbon", "id": "", "input": 2.00, "cached": null, "output": 10.00, "cur": "USD", "note": "介绍价到 11 月 30 日，12 月 1 日起 $4／$20", "src": "https://feichangai.vip/news/2026-11-12.html"},
+    {"vendor": "Google", "model": "Gemini 4 Neon", "id": "", "input": 3.00, "cached": 0.15, "output": 15.00, "cur": "USD", "note": "", "src": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/"},
+    {"vendor": "Google", "model": "Gemini 4 Hydrogen", "id": "", "input": 1.50, "cached": null, "output": 7.50, "cur": "USD", "note": "100 万 token 上下文内统一价", "src": "https://feichangai.vip/news/2026-11-18.html"},
+    {"vendor": "DeepSeek", "model": "DeepSeek V4 Pro", "id": "deepseek-v4-pro", "input": 1.32, "cached": 0.044, "output": 3.96, "cur": "USD", "note": "表中为高峰价；低谷时段半价（周末全天和工作日多数时段）", "src": "https://api-docs.deepseek.com/quick_start/pricing"},
+    {"vendor": "DeepSeek", "model": "DeepSeek V4.1 Flash", "id": "deepseek-flash", "input": 0.30, "cached": 0.006, "output": 1.20, "cur": "USD", "note": "表中为高峰价；低谷时段半价", "src": "https://api-docs.deepseek.com/quick_start/pricing"},
+    {"vendor": "阿里", "model": "Qwen4-Max", "id": "qwen4-max", "input": 10, "cached": null, "output": 30, "cur": "CNY", "note": "北京地域；思考与非思考同价", "src": "https://help.aliyun.com/en/model-studio/qwen4-max"}
+  ]
+}

@@ -25,16 +25,36 @@
     ],
     "why": "对普通用户：以前「让 AI 帮我做个小工具」，做完只能在聊天窗口里用；现在能把记账表、倒计时、练习小测这类东西放到桌面上天天用，门槛又低了一截。但给「完全访问电脑」权限前要想清楚，别人分享来的应用尤其要小心。对开发者：做个内部小工具不用再搭框架、打包、签名，团队内部分享很方便；企业要提前想好管理员怎么配权限。",
     "facts": [
-      ["开放范围", "所有套餐，测试版", true],
-      ["系统", "Mac／Windows 桌面应用", false],
-      ["权限", "三档，最高可读写文件", false],
-      ["离线使用", "不行，要联网登录", false]
+      [
+        "开放范围",
+        "所有套餐，测试版",
+        true
+      ],
+      [
+        "系统",
+        "Mac／Windows 桌面应用",
+        false
+      ],
+      [
+        "权限",
+        "三档，最高可读写文件",
+        false
+      ],
+      [
+        "离线使用",
+        "不行，要联网登录",
+        false
+      ]
     ],
     "chip": "Anthropic官方文章已核读；未实测",
     "date": "2026-11-24",
     "links": [
-      ["Anthropic · Install Claude artifacts as apps", "https://claude.com/resources/articles/install-as-app"]
-    ]
+      [
+        "Anthropic · Install Claude artifacts as apps",
+        "https://claude.com/resources/articles/install-as-app"
+      ]
+    ],
+    "status": "测试中"
   },
   "flash": [
     {
@@ -44,7 +64,8 @@
       "text": "做编程智能体 Devin 的 Cognition 换了新模型。SWE-2.1 是在月之暗面的 Kimi K3 上用强化学习（让模型反复试错、做对给奖励）训出来的，官方说它在 Terminal-Bench 4.1 上从 24.2 分涨到 50.0 分，但仍低于 Claude Opus 5.5 的 65.8 分（官方口径，未实测）。Devin 桌面版和命令行版可以免费用到 12 月 8 日；官方没提开放权重和 API。",
       "chip": "Cognition官方博客已核读；成绩为官方口径",
       "date": "2026-11-24",
-      "url": "https://cognition.com/blog/swe-2-1"
+      "url": "https://cognition.com/blog/swe-2-1",
+      "status": "已上线"
     },
     {
       "id": "item-03",
@@ -53,7 +74,8 @@
       "text": "AI 想读你公司的 Gmail、云端硬盘、文档，以后得走 Google 指定的门。Google 宣布 Workspace 的 MCP 服务器和官方命令行工具正式可用，覆盖 Gmail、Drive、Docs、Sheets、Slides、日历、Chat 和 Tasks。从 2027 年 2 月 1 日起，AI 智能体这类工具必须通过 MCP 访问 Workspace 数据，不能再直接调原来的接口；用量大的项目从 2027 年 4 月 1 日起，超出每日免费额度的部分要付费。",
       "chip": "Google Workspace官方博客已核读",
       "date": "2026-11-24",
-      "url": "https://workspaceupdates.googleblog.com/2026/11/mcp-servers-cli-standardized-usage-tiers-now-available.html"
+      "url": "https://workspaceupdates.googleblog.com/2026/11/mcp-servers-cli-standardized-usage-tiers-now-available.html",
+      "status": "已上线"
     },
     {
       "id": "item-04",
@@ -62,7 +84,8 @@
       "text": "百度的新模型可以下载了。ERNIE 5.5 Flash 预览版已经在 Hugging Face 上放出权重，用 Apache 2.0 许可，总参数 2800 亿、每次只用 140 亿，上下文 100 万 token，只能处理文字。百度说这是训练中途的版本，有些能力还不到位，正式版之后再发；也能通过百度千帆和 OpenRouter 调用，页面没写价格。",
       "chip": "Hugging Face模型卡与百度官方页已核读；权重上线日期页面未标",
       "date": "2026-11-11（百度公告日期）",
-      "url": "https://huggingface.co/baidu/ERNIE-5.5-Flash-Preview"
+      "url": "https://huggingface.co/baidu/ERNIE-5.5-Flash-Preview",
+      "status": "可下载"
     },
     {
       "id": "item-05",
@@ -71,7 +94,8 @@
       "text": "AI 画图写字老出错？商汤的新版生图模型会先画一版，自己对照要求检查，再重画一遍改正错字。商汤称 80 亿参数的版本已开源，在密集信息图测试上，加上自检后得分从 86.04 提到 92.28（官方口径）。API 版叫 U1.6 Lite，注册用户限时免费。",
       "chip": "商汤官方新闻已核读；GitHub页面暂未见U1.6说明，未实测",
       "date": "2026-11-24",
-      "url": "https://sensetime.com/cn/news/sensenova-u1-6-open-source-20261124-1152"
+      "url": "https://sensetime.com/cn/news/sensenova-u1-6-open-source-20261124-1152",
+      "status": "可下载"
     },
     {
       "id": "item-06",
@@ -80,7 +104,8 @@
       "text": "一台游戏显卡电脑就能跑的编程模型又进步了。PrismML 的 Ternary Bonsai 2.5 27B 基于阿里的 Qwen3.8 27B，把权重压成只有 -1、0、1 三种值，整个模型只有 5.9GB，用 Apache 2.0 许可开放下载。官方说它在 SWE-bench Verified 上从上一版的 60.8 分涨到 75.6 分，原版 Qwen 是 80.6 分；在 RTX 4090 上每秒能出约 204 个 token（官方口径，未实测）。",
       "chip": "PrismML官方页与Hugging Face合集已核读；未实测",
       "date": "2026-11-24",
-      "url": "https://prismml.com/news/bonsai-2-5-27b"
+      "url": "https://prismml.com/news/bonsai-2-5-27b",
+      "status": "可下载"
     },
     {
       "id": "item-07",
@@ -89,27 +114,31 @@
       "text": "OpenAI 说 GPT-6 系列光靠推理和写代码，就能设计蛋白质。和合作方 Onava 做的实验里，GPT-6.2 设计的 322 个小蛋白，有 35 个（约 10.9%）真的结合上了目标。不过 OpenAI 自己也说，筛选候选时用了专门的生物模型，所以不算完全靠它从零设计；结合上也不代表有药效或安全。",
       "chip": "OpenAI官方文章已核读；预印本未读",
       "date": "2026-11-24",
-      "url": "https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities/"
+      "url": "https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities/",
+      "status": "研究"
     }
   ],
   "try": {
     "title": "年底了，让AI陪你复盘这一年",
     "intro": "离 2026 年结束只剩一个多月。把下面这段复制给你常用的 AI（豆包、DeepSeek、Kimi、ChatGPT 都行），它会一个一个问你问题，最后帮你整理成一页年终小结。",
     "prompt": "请你当我的年终复盘教练，帮我回顾这一年。规则：\n1. 每次只问我一个问题，等我回答后再问下一个，一共不超过 8 个问题；\n2. 问题要覆盖：工作或学习、身体和作息、家人朋友、钱怎么花的、学会的新东西、最遗憾的一件事；\n3. 我回答得太笼统时，追问一个具体例子；\n4. 问完后，帮我整理成一页小结：今年做得好的 3 件事、想改进的 3 件事、明年第一季度能马上开始的 3 个小行动（要具体到每周做什么）；\n5. 语气像朋友聊天，不要说教。\n准备好了就问第一个问题。",
-    "tip": "不用把身份证号、银行卡、病历这类隐私写进去；聊到钱和身体时，AI 的建议只能参考，真要做决定还是问专业人士。"
+    "tip": "不用把身份证号、银行卡、病历这类隐私写进去；聊到钱和身体时，AI 的建议只能参考，真要做决定还是问专业人士。",
+    "cat": "成长"
   },
   "tools": [
     {
       "name": "Fleetify",
       "desc": "给同时开好几个写代码 AI 的开发者用：在一个桌面应用里并排跑 Claude Code、Codex、OpenCode 等，每个任务自动分到单独的 git 工作区，还能看每个会话花了多少 token 和钱、统一审批工具调用。",
       "tag": "免费开源（GitHub 标 MIT 许可），需注册免费账号、自带 API 密钥；支持 macOS、Windows、Linux，安装包暂未签名，首次打开会有系统警告；国内能否使用官网没写",
-      "url": "https://fleetify.dev/"
+      "url": "https://fleetify.dev/",
+      "cat": "编程"
     },
     {
       "name": "Almma's PII Guard",
       "desc": "怕在 Claude 里不小心贴出个人信息的人用：一个 Chrome 扩展，发送前标出输入框里的姓名、邮箱、电话、证件号、地址等，也能自己加要拦的名字和格式。商店页说完全在本机运行，不联网、不需要账号。",
       "tag": "Chrome 扩展，价格商店页没写；只检查 claude.ai 等指定网站的输入框，不查附件和图片；目前用户很少；国内能否使用官网没写",
-      "url": "https://chromewebstore.google.com/detail/almma%E2%80%99s-pii-guard/cpfhfjdklpkbggehpopogciifckfempn"
+      "url": "https://chromewebstore.google.com/detail/almma%E2%80%99s-pii-guard/cpfhfjdklpkbggehpopogciifckfempn",
+      "cat": "隐私安全"
     }
   ],
   "paper": {
@@ -129,12 +158,36 @@
     "title": "AI智能排行榜 · 前6名",
     "note": "第三方机构 Artificial Analysis 的综合智能指数，分数越高越聪明；「每题成本」是跑完一道测试题的平均花费。和上期比，前 6 名的分数和名次都没变；国内最高仍是月之暗面的 Kimi K3.1 Pro（47 分），排在第 12 位。11月26日查看。",
     "rows": [
-      ["Claude Fable 5.2（Max）", "65", "$26.54"],
-      ["GPT-6.2 Astra（Max）", "62", "$4.00"],
-      ["Gemini 4 Neon（Xhigh）", "62", "$6.44"],
-      ["Gemini 4 Carbon（High）", "60", "$7.76"],
-      ["Claude Opus 5.5（Max）", "59", "$10.04"],
-      ["GPT-6.2 Sol（Max）", "57", "$1.01"]
+      [
+        "Claude Fable 5.2（Max）",
+        "65",
+        "$26.54"
+      ],
+      [
+        "GPT-6.2 Astra（Max）",
+        "62",
+        "$4.00"
+      ],
+      [
+        "Gemini 4 Neon（Xhigh）",
+        "62",
+        "$6.44"
+      ],
+      [
+        "Gemini 4 Carbon（High）",
+        "60",
+        "$7.76"
+      ],
+      [
+        "Claude Opus 5.5（Max）",
+        "59",
+        "$10.04"
+      ],
+      [
+        "GPT-6.2 Sol（Max）",
+        "57",
+        "$1.01"
+      ]
     ],
     "url": "https://artificialanalysis.ai/leaderboards/models"
   }

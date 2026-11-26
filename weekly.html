@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>每周回顾 · 非常AI</title>
+<meta name="description" content="非常AI每周回顾：每周日梳理一周最重要的AI新闻。">
+<meta property="og:type" content="article"><meta property="og:site_name" content="非常AI">
+<meta property="og:title" content="每周回顾 · 非常AI"><meta property="og:description" content="非常AI每周回顾：每周日梳理一周最重要的AI新闻。">
+<meta property="og:url" content="https://feichangai.vip/weekly.html">
+<meta property="og:image" content="https://feichangai.vip/assets/og-cover.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="每周回顾 · 非常AI">
+<meta name="twitter:description" content="非常AI每周回顾：每周日梳理一周最重要的AI新闻。"><meta name="twitter:image" content="https://feichangai.vip/assets/og-cover.png">
+<link rel="icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/site.css?v=05e50669"></head>
+<body>
+<header><div class="wrap nav">
+  <a class="logo" href="index.html">非常<i>AI</i></a>
+  <nav class="nav-links" aria-label="主导航"><a href="index.html">首页</a><a href="news/2026-11-26.html">今日简报</a><a href="library.html" aria-current="page">资料库</a><a href="archive.html">存档</a><a href="about.html">关于</a></nav>
+</div></header>
+<main class="wrap">
+<nav class="crumb"><a href="library.html">资料库</a> / 每周回顾</nav>
+<section class="lib-head"><h1>🗓️ 每周回顾</h1><p>没空天天看？每周日把这一周最重要的几件事串起来讲清楚。</p><span class="count">共 0 期</span></section>
+
+<div class="nlist"><p class="lib-note" style="text-align:center;padding:30px 0">第一期每周回顾将在本周日发布 👋</p></div>
+<p class="empty">没有找到，换个词试试 🙂</p>
+
+</main>
+<footer><div class="wrap">
+  <nav><a href="index.html">首页</a><a href="news/2026-11-26.html">今日简报</a><a href="library.html">资料库</a><a href="prompts.html">提示词库</a><a href="topics.html">新闻搜索</a><a href="archive.html">存档</a><a href="about.html">关于</a></nav>
+  非常AI · feichangai.vip<br>本站资讯均标注来源，只做自有摘要与点评并附原文链接，不全文转载。内容由 AI 辅助整理，逐条核对官方来源。
+</div></footer>
+<script>
+(function(){
+  var cards=[].slice.call(document.querySelectorAll('[data-cat]')).filter(function(c){return !c.classList.contains('chip-btn')});
+  var q=document.getElementById('q'),cat='全部',empty=document.querySelector('.empty');
+  function apply(){var k=(q?q.value:'').trim().toLowerCase(),n=0;
+    cards.forEach(function(c){var cs=(c.dataset.cat||'').split('|');var ok=(cat==='全部'||cs.indexOf(cat)>-1)&&(!k||c.innerText.toLowerCase().indexOf(k)>-1);c.style.display=ok?'':'none';if(ok)n++;});
+    if(empty)empty.style.display=n?'none':'block';}
+  document.querySelectorAll('.chip-btn').forEach(function(b){b.addEventListener('click',function(){
+    document.querySelectorAll('.chip-btn').forEach(function(x){x.setAttribute('aria-pressed','false')});
+    b.setAttribute('aria-pressed','true');cat=b.dataset.cat;apply();});});
+  if(q){q.addEventListener('input',apply);}
+  function fromHash(){var h=decodeURIComponent((location.hash||'').slice(1));if(h){var b=document.querySelector('.chip-btn[data-cat="'+h+'"]');if(b){b.click();window.scrollTo({top:0,behavior:'smooth'});}}}
+  fromHash();window.addEventListener('hashchange',fromHash);
+  document.querySelectorAll('.mini-copy').forEach(function(b){b.addEventListener('click',function(){
+    var t=document.getElementById(b.dataset.src).textContent;
+    if(navigator.clipboard){navigator.clipboard.writeText(t).then(function(){var o=b.textContent;b.textContent='已复制 ✓';setTimeout(function(){b.textContent=o},1500)})}});});
+})();
+</script>
+</body></html>

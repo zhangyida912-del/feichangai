@@ -25,17 +25,40 @@
     ],
     "why": "对普通用户：如果你是 ChatGPT 付费用户，不用做任何设置，聊天就会慢慢换成新模型，发截图让它看、让它帮你上网查东西，会比以前靠谱一些；免费用户这次没有份。对开发者：这次只动了 ChatGPT 的聊天页，没有新 API，你的程序不受影响；但可以留意用户对「聊天体验」的期待又被抬高了一点。",
     "facts": [
-      ["开放对象", "Plus／Pro／Business／Enterprise", false],
-      ["看图理解", "47.4% → 71.7%", true],
-      ["指令遵循", "62.5% → 78.1%", false],
-      ["Work和Codex", "这次不变", false]
+      [
+        "开放对象",
+        "Plus／Pro／Business／Enterprise",
+        false
+      ],
+      [
+        "看图理解",
+        "47.4% → 71.7%",
+        true
+      ],
+      [
+        "指令遵循",
+        "62.5% → 78.1%",
+        false
+      ],
+      [
+        "Work和Codex",
+        "这次不变",
+        false
+      ]
     ],
     "chip": "OpenAI更新说明与系统卡已核读；成绩为官方口径，未实测",
     "date": "2026-11-23",
     "links": [
-      ["OpenAI · ChatGPT 更新说明（11月23日）", "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"],
-      ["OpenAI · GPT-6.2 in ChatGPT 系统卡", "https://deploymentsafety.openai.com/gpt-6-2-chatgpt"]
-    ]
+      [
+        "OpenAI · ChatGPT 更新说明（11月23日）",
+        "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+      ],
+      [
+        "OpenAI · GPT-6.2 in ChatGPT 系统卡",
+        "https://deploymentsafety.openai.com/gpt-6-2-chatgpt"
+      ]
+    ],
+    "status": "已上线"
   },
   "flash": [
     {
@@ -45,7 +68,8 @@
       "text": "给 Claude 接外部工具的那套 MCP（模型上下文协议，让 AI 连上各种软件的通用接口）又加了新本事。Anthropic 说，MCP 服务器现在能直接附带「技能」（公开测试，Pro、Max、Ultra 默认打开，Team 要管理员开，企业版即将支持）；能在后台跑长任务、半路停下来问你一句的功能已经正式可用。传文件的功能还要等等。Anthropic 还说 MCP 的 SDK 每月下载超过 7 亿次。",
       "chip": "Anthropic官方文章已核读；未实测",
       "date": "2026-11-24",
-      "url": "https://claude.com/resources/articles/skills-over-mcp-tasks-and-more"
+      "url": "https://claude.com/resources/articles/skills-over-mcp-tasks-and-more",
+      "status": "测试中"
     },
     {
       "id": "item-03",
@@ -54,7 +78,8 @@
       "text": "一份 300 页的 PDF，只想让 AI 看第 10 到 12 页？现在 Gemini API 能在服务器端帮你切。PDF、Word、PPT、Excel、OpenDocument 文件和音视频都能按页、按表格、按时间段截取，只按模型实际看了的部分收费；Office 和 OpenDocument 文件也能直接上传了。Google AI Studio 和 Vertex AI 今天就能用，Gemini 4 全系列支持，原有的文件大小和页数上限不变。",
       "chip": "Google官方博客已核读；未实测",
       "date": "2026-11-23",
-      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/file-slicing-controls/"
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/file-slicing-controls/",
+      "status": "已上线"
     },
     {
       "id": "item-04",
@@ -63,7 +88,8 @@
       "text": "Google 搜索的 AI Mode 开始能连上 Google Wallet，帮你看消费、挑更划算的返现和积分卡。要自己去设置里手动打开，而且只能读、不能动钱。连 Google Drive 和 Gemini 应用要再等几周；Gmail、日历和相册之前就能连。公告没写开放哪些国家，Google 服务在国内无法直接使用。",
       "chip": "Google官方博客已核读",
       "date": "2026-11-23",
-      "url": "https://blog.google/products-and-platforms/products/search/google-search-personal-intelligence-apps/"
+      "url": "https://blog.google/products-and-platforms/products/search/google-search-personal-intelligence-apps/",
+      "status": "已上线"
     },
     {
       "id": "item-05",
@@ -72,7 +98,8 @@
       "text": "服务器有漏洞、补丁还没出，先给它套个临时「盾牌」。OpenAI 和思科开源了 Shirudo，在 Linux 内核层面临时拦住针对已知漏洞的攻击，每个盾牌都要签名、要人批准才能装上。用的是 BSD 2-Clause 开源许可。官方自己说这只是「第一步」，只公布了一次受控测试，生产环境要自己掂量。",
       "chip": "OpenAI官方文章已核读；未实测",
       "date": "2026-11-23",
-      "url": "https://openai.com/index/introducing-shirudo/"
+      "url": "https://openai.com/index/introducing-shirudo/",
+      "status": "可下载"
     },
     {
       "id": "item-06",
@@ -81,27 +108,31 @@
       "text": "很多公司要求 AI 服务「零数据留存」（对话不在服务商那里保存），但这样服务商就很难发现有人在滥用模型。Anthropic 的新方案是让客户用自己的云存储（Amazon S3 或 Google Cloud Storage）放数据，Anthropic 只做自动监测，不派人看内容，也不拿来训练。现在是公开测试，面向企业客户，支持 Claude 平台、Amazon Bedrock 和 Google Cloud，微软 Foundry 即将支持。",
       "chip": "Anthropic官方文章已核读",
       "date": "2026-11-23",
-      "url": "https://claude.com/resources/articles/zero-data-retention-with-enterprise-frontier-safeguards"
+      "url": "https://claude.com/resources/articles/zero-data-retention-with-enterprise-frontier-safeguards",
+      "status": "测试中"
     }
   ],
   "try": {
     "title": "一句话排好一周晚饭和买菜清单",
     "intro": "每天下班纠结「今晚吃什么」？把下面这段复制给你常用的 AI（豆包、DeepSeek、Kimi、ChatGPT 都行），把方括号里的内容换成你家的情况。",
     "prompt": "请帮我安排接下来 5 天的晚饭。我家情况：[几口人]，[不吃什么／口味偏好]，每天做饭时间不超过[30]分钟，厨房有[电饭煲、炒锅、空气炸锅]。\n要求：\n1. 每天一荤一素一汤或两菜一汤，5 天尽量不重样，用到家常、好买的食材；\n2. 每道菜写清主要食材用量和 3 步以内的做法；\n3. 最后按「肉蛋、蔬菜、豆制品、调料」分类，汇总一份买菜清单，标出能连着几天用的食材；\n4. 不确定的地方先问我，不要自己假设。",
-    "tip": "家里有人过敏、在控糖控盐或有其他饮食限制的，一定要写进去；涉及具体病情的饮食安排，AI 只能参考，要听医生或营养师的。"
+    "tip": "家里有人过敏、在控糖控盐或有其他饮食限制的，一定要写进去；涉及具体病情的饮食安排，AI 只能参考，要听医生或营养师的。",
+    "cat": "生活"
   },
   "tools": [
     {
       "name": "tday.com",
       "desc": "给要做产品演示视频的开发者和团队用：让 Claude Code、Cursor、Codex 等写代码 AI 在你自己电脑上操作正在运行的应用，自动录一段带配音、鼠标轨迹、放大镜头和字幕的演示，录完还能改。官网说源代码不会离开你的电脑。",
       "tag": "免费版可存 5 个演示，Pro 每月 39 美元；有 Mac 下载，官网没提 Windows；国内能否使用官网没写",
-      "url": "https://tday.com/"
+      "url": "https://tday.com/",
+      "cat": "视频"
     },
     {
       "name": "Granular.Build",
       "desc": "不会写代码的创业者、设计师、产品经理也能用的桌面 AI 工作台：一个「总管」智能体把活分给多个干活的智能体，每个在自己的终端和项目副本里做事，带实时预览。用你自己已有的 Claude、Codex、Gemini 等订阅。",
       "tag": "免费下载，免费版限 2 个项目；Pro 每月 12.99 美元；支持 Mac，Windows 版还在测试；国内能否使用官网没写",
-      "url": "https://granular.build/"
+      "url": "https://granular.build/",
+      "cat": "智能体"
     }
   ],
   "paper": {
@@ -121,12 +152,36 @@
     "title": "AI智能排行榜 · 前6名",
     "note": "第三方机构 Artificial Analysis 的综合智能指数，分数越高越聪明；「每题成本」是跑完一道测试题的平均花费。和上期比，Gemini 4 Neon 从 61 分升到 62 分，和 GPT-6.2 Astra 并列第二；前 11 名里仍没有国内模型，国内最高是月之暗面的 Kimi K3.1 Pro（47 分）。11月25日查看。",
     "rows": [
-      ["Claude Fable 5.2（Max）", "65", "$26.54"],
-      ["GPT-6.2 Astra（Max）", "62", "$4.00"],
-      ["Gemini 4 Neon（Xhigh）", "62", "$6.44"],
-      ["Gemini 4 Carbon（High）", "60", "$7.76"],
-      ["Claude Opus 5.5（Max）", "59", "$10.04"],
-      ["GPT-6.2 Sol（Max）", "57", "$1.01"]
+      [
+        "Claude Fable 5.2（Max）",
+        "65",
+        "$26.54"
+      ],
+      [
+        "GPT-6.2 Astra（Max）",
+        "62",
+        "$4.00"
+      ],
+      [
+        "Gemini 4 Neon（Xhigh）",
+        "62",
+        "$6.44"
+      ],
+      [
+        "Gemini 4 Carbon（High）",
+        "60",
+        "$7.76"
+      ],
+      [
+        "Claude Opus 5.5（Max）",
+        "59",
+        "$10.04"
+      ],
+      [
+        "GPT-6.2 Sol（Max）",
+        "57",
+        "$1.01"
+      ]
     ],
     "url": "https://artificialanalysis.ai/leaderboards/models"
   }

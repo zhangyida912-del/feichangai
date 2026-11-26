@@ -48,7 +48,8 @@
         "https://9to5mac.com/2026/11/17/openai-upgrades-chatgpt-and-codex-with-new-gpt-6-2-astra-and-sol-models/"
       ]
     ],
-    "why": "对普通用户：ChatGPT 付费版里多了一个更强、一个更高效的选择，公告没提免费版。对开发者：同样的活，用 Astra 少花两成钱；但如果你做的是网络安全相关的产品，要提前准备好请求被误拦的情况。"
+    "why": "对普通用户：ChatGPT 付费版里多了一个更强、一个更高效的选择，公告没提免费版。对开发者：同样的活，用 Astra 少花两成钱；但如果你做的是网络安全相关的产品，要提前准备好请求被误拦的情况。",
+    "status": "已上线"
   },
   "flash": [
     {
@@ -58,7 +59,8 @@
       "text": "Google 给 Gemini 4 排了座次：Carbon 干最难的长任务，Hydrogen 干快速的日常活，新来的 Neon 夹在中间。它有 100 万 token 上下文，API 每百万 token 输入 3 美元、输出 15 美元；Google AI Pro 和 Ultra 订阅者能在 Gemini 应用里直接选。Google 说默认档下做同一个任务比 Carbon 便宜 32%（官方口径，未实测）。",
       "chip": "Google官方公告已核读",
       "date": "2026-11-18",
-      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/"
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/",
+      "status": "已上线"
     },
     {
       "id": "item-03",
@@ -67,7 +69,8 @@
       "text": "智谱第一款 Loop Transformer 旗舰（让模型里一部分层循环跑两遍，用更多计算换效果），新增看图、看视频，上下文 100 万 token。目前只能在 GLM Coding Plan 里用，API 要等安全评估后才开放，所以还没有价格；官方也没说开放权重。",
       "chip": "智谱开放文档已核读；上线日期据媒体转述",
       "date": "2026-11-23",
-      "url": "https://docs.bigmodel.cn/cn/guide/models/glm-5.4"
+      "url": "https://docs.bigmodel.cn/cn/guide/models/glm-5.4",
+      "status": "部分开放"
     },
     {
       "id": "item-04",
@@ -76,7 +79,8 @@
       "text": "阿里的 qwen4-max 正式版能用 API 调了：上下文 100 万 token，能看图看视频，北京地域每百万 token 输入 10 元、输出 30 元。这款不开放权重，阿里说更小的 Qwen4 开放权重模型「即将」发布。",
       "chip": "阿里云文档与新闻稿已核读；未实测",
       "date": "2026-11-16",
-      "url": "https://help.aliyun.com/en/model-studio/qwen4-max"
+      "url": "https://help.aliyun.com/en/model-studio/qwen4-max",
+      "status": "已上线"
     },
     {
       "id": "item-05",
@@ -85,7 +89,8 @@
       "text": "代码提交以后的审查、修补、判断能不能合并，Anthropic 想全包。Code Review 负责审代码（已正式可用）；PR Steward 负责修跑不过的测试和合并冲突，但自己不批准也不合并；Claude Approvals 按团队写在仓库里的规则，决定哪些小改动能自动批准。后两块还在测试，只给 Team 和 Enterprise 用户，只支持 GitHub，按 token 计费。",
       "chip": "Anthropic官方公告已核读；未实测",
       "date": "2026-11-23",
-      "url": "https://claude.com/resources/articles/introducing-claude-ship"
+      "url": "https://claude.com/resources/articles/introducing-claude-ship",
+      "status": "测试中"
     },
     {
       "id": "item-06",
@@ -94,14 +99,16 @@
       "text": "OpenAI 首席科学家 Jakub Pachocki 建议全行业用「困惑度」（模型猜下一个词猜得多准，越低越强）当共同标尺，再约定一条谁都不越过的线，直到人类能更好地看懂和监控 AI。他公布的内部数据：GPT-3.5 约 0.99，GPT-4 约 0.91，一个升级模型约 0.76。他也承认各家数据不同，很难横比。",
       "chip": "OpenAI官方文章已核读；数据为OpenAI内部口径",
       "date": "2026-11-22",
-      "url": "https://openai.com/index/perplexity-and-intelligence/"
+      "url": "https://openai.com/index/perplexity-and-intelligence/",
+      "status": "观点"
     }
   ],
   "try": {
     "title": "看不懂的通知，让AI讲人话",
     "intro": "收到一份满是术语的合同、政策通知或者说明书？把下面这段话复制下来，后面贴上原文，发给你常用的 AI（豆包、DeepSeek、Kimi、ChatGPT 都行）。",
     "prompt": "请把下面这段内容，用初中生能听懂的话讲给我听。先用三句话说清楚它在讲什么；再列出跟我有关、需要我去做的事和截止日期；最后告诉我哪些地方你不确定、需要我去问清楚。不要编造原文里没有的内容。\n\n【在这里贴上原文】",
-    "tip": "最后那句「不要编造」很关键，能减少 AI 瞎补细节。体检报告、病历这类，AI 的解释只能帮你看懂，不能代替医生。"
+    "tip": "最后那句「不要编造」很关键，能减少 AI 瞎补细节。体检报告、病历这类，AI 的解释只能帮你看懂，不能代替医生。",
+    "cat": "办事"
   },
   "paper": {
     "title": "模糊照片里的字，AI得会「猜」才修得好",
@@ -161,13 +168,15 @@
       "name": "Gemini 图片工具",
       "desc": "在 Gemini 里用一句话生成图片；上传照片，让它照你说的改；还能把几张图合成一张新图，或者做一段 3 秒左右的循环 GIF。",
       "tag": "部分模型要 Google AI 付费计划；GIF 只在美、日、韩、英等 8 个国家逐步开放，还要付费计划；修图需年满 18 岁；国内无法直接使用",
-      "url": "https://support.google.com/gemini/answer/14286560"
+      "url": "https://support.google.com/gemini/answer/14286560",
+      "cat": "图片"
     },
     {
       "name": "Trix",
       "desc": "给同时开好几个写代码 AI 助手的人用：Claude Code、Codex、Gemini CLI 等在一个终端里并排跑，哪个在干活、哪个在等你回复、哪个做完了，一眼就能看到；按一个快捷键直接跳到等你最久的那个。",
       "tag": "开源（MIT 许可）；支持 Linux 和 macOS，官网没提 Windows",
-      "url": "https://trixapp.ai/"
+      "url": "https://trixapp.ai/",
+      "cat": "编程"
     }
   ],
   "word": {
