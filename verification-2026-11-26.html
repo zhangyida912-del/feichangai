@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>第10期核验记录</title>
+<meta name="description" content="非常AI · 每天几条值得关注的 AI 变化，中文讲清，标好来源与限制。">
+<meta property="og:type" content="article"><meta property="og:site_name" content="非常AI">
+<meta property="og:title" content="第10期核验记录"><meta property="og:description" content="非常AI · 每天几条值得关注的 AI 变化，中文讲清，标好来源与限制。">
+<meta property="og:url" content="https://feichangai.vip/verification-2026-11-26.html">
+<meta property="og:image" content="https://feichangai.vip/assets/og-cover.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="第10期核验记录">
+<meta name="twitter:description" content="非常AI · 每天几条值得关注的 AI 变化，中文讲清，标好来源与限制。"><meta name="twitter:image" content="https://feichangai.vip/assets/og-cover.png">
+<link rel="icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/site.css?v=f942c2f2"></head>
+<body>
+<header><div class="wrap nav">
+  <a class="logo" href="index.html">非常<i>AI</i></a>
+  <nav class="nav-links" aria-label="主导航"><a href="index.html">首页</a><a href="news/2026-11-26.html">今日简报</a><a href="archive.html">存档</a><a href="about.html">关于</a></nav>
+</div></header>
+<main class="wrap page"><pre class="log"># 第10期核验记录
+
+核验日期：2026-11-26，Asia/Taipei。本期1条头条＋6条快讯，覆盖11月24日至25日的原始公告。本期因定时任务改时间，由当日会话手动补做发布。
+
+## 头条依据
+各家日报最新一期的头条或第一条：
+- The Neuron（11-25）：Google DeepMind 推出 Humanity's First Exam 测试
+- The Rundown AI（11-25）：Epochal 发布 Time Portal（让智能体按指定日期浏览网页存档）
+- TLDR AI（11-25）：Cognition 发布 SWE-2.1
+- Superhuman AI（11-25）：Claude Artifacts 可装成 Mac／Windows 应用
+- Ben's Bites：最新为11-24个人随笔（自己用智能体做小应用），无新闻头条
+- The Deep View：存档最新为11-23（MacBook Pro 评测），未见11-24、11-25新一期
+各家头条互不相同。Claude「Install as app」是 Superhuman 头条，同时出现在 The Neuron、The Rundown AI、TLDR AI 的快讯或工具栏，覆盖最广，且所有套餐用户都能用，对普通用户和开发者影响最大，选为头条。
+其他头条：SWE-2.1 放入快讯；DeepMind HFE 放入今日趣闻；Epochal Time Portal 官方页只读到元信息（见未采用）。
+
+## 01 Claude「Install as app」（头条）
+出处：https://claude.com/resources/articles/install-as-app （2026-11-24）
+线索来源：Superhuman AI 头条；The Neuron、The Rundown AI、TLDR AI、The Decoder。
+原文核对：测试版，在 Claude Mac 与 Windows 应用中推送；所有套餐可用；HIPAA-ready 组织与混合部署不可用；Team 默认开启（完全访问关闭），Enterprise 需所有者开启；从 Artifact 的分享菜单选择 Install as app，无需打包签名、API 密钥，使用 Claude 账号；应用有独立图标窗口，可用 Claude 与连接器，编辑后自动更新，可发通知、加菜单栏/托盘项；权限三档（浏览器级、应用权限、完全访问电脑）；权限只覆盖当前版本，每次更新重新询问，从其他网站加载的部分变化不再询问；完全访问只限自己或同组织成员做的应用；Anthropic 不事先审查；需联网并登录，调用计入套餐用量；Claude Docs、Slides、Sheets 类 Artifact 不能安装。
+边界：页面写“all plans”，正文写“官方说所有套餐都能用”，未单独断言免费版；未写最低系统版本（页面未写）；Decoder 所述“可用 Apple 开发者账号生成独立应用”官方页未提，不写；未实测。
+
+## 02 Cognition SWE-2.1（快讯）
+出处：https://cognition.com/blog/swe-2-1 （2026-11-24）
+线索来源：TLDR AI 头条、The Rundown AI 工具栏。
+原文核对：以纯强化学习在 Kimi K3 上训练；Terminal-Bench 4.1：SWE-2.1 50.0、SWE-2 24.2、Claude Opus 5.5 65.8；Devin Desktop、Cloud、CLI 可用，Desktop 与 CLI 免费至12/8；另有 SWE-2.1 Cyber、Ultrafast（Cerebras）。
+边界：正文为官方口径；未写价格（未公布）；未写开放权重与 API（页面未提），正文写“官方没提”；图表中另有 Kimi K3.1 对比项，未写。
+
+## 03 Google Workspace MCP 与 CLI 正式版（快讯）
+出处：https://workspaceupdates.googleblog.com/2026/11/mcp-servers-cli-standardized-usage-tiers-now-available.html （2026-11-24）
+线索来源：The Neuron 新闻与「Treats to Try」。
+原文核对：MCP 服务器与官方 CLI 正式可用，覆盖 Gmail、Drive、Docs、Sheets、Slides、Calendar、Chat、Tasks（Keep 即将）；2027-02-01 起智能体类工具须经 MCP 访问 Workspace 数据，不能直接调用 REST API；Standard 免费、Scaled 更高限额，2027-04-01 起超出每日免费额度部分付费；管理员可标记内部项目。
+边界：管理员审计、DLP 等控制项未写；分批推送两周内完成未写。
+
+## 04 百度 ERNIE 5.5 Flash Preview（快讯）
+出处：https://huggingface.co/baidu/ERNIE-5.5-Flash-Preview ；https://ernie.baidu.com/release/ernie-5-5-flash-preview/ （2026-11-11）
+线索来源：The Neuron「Treats to Try」（11-25）。
+原文核对：MoE，总参数280B、激活14B；纯文本；上下文1,048,576；Preview 权重 Apache 2.0（Base 模型另有许可）；官方称为后训练中间检查点，部分能力未达标，正式版后续发布；可经百度千帆与 OpenRouter 调用。
+不一致：百度11-11页面写权重“即将”开源，Hugging Face 模型卡已有权重文件但未标上线日期；正文日期写“11-11（百度公告日期）”，chip 注明权重上线日期页面未标。
+边界：自报跑分未写；价格两页均未写；HF 页头“300B params”为元数据，正文按文字说明写2800亿；未实测。
+
+## 05 商汤 SenseNova U1.6（快讯）
+出处：https://sensetime.com/cn/news/sensenova-u1-6-open-source-20261124-1152 （2026-11-24）
+线索来源：The Neuron「Treats to Try」。
+原文核对：生成初稿后自检再重绘以修正文字错误；8B 开源模型新增自检；UltraTextBench 单次86.04、自检后92.28；API 版 U1.6 Lite 在 SenseNova Token Plan，注册用户限时免费。
+边界：公告列出 GitHub、Hugging Face（ComfyUI）、ModelScope 链接，但 GitHub README 仍只写到 U1.5，未确认 U1.6 的 Hugging Face 权重仓库，正文写“商汤称已开源”并在 chip 注明；许可（GitHub 为 Apache-2.0）因未确认 U1.6 仓库，正文不写；未实测。
+
+## 06 PrismML Ternary Bonsai 2.5 27B（快讯）
+出处：https://prismml.com/news/bonsai-2-5-27b （2026-11-24）；https://huggingface.co/collections/prism-ml/bonsai-25-27b
+线索来源：TLDR AI、The Decoder。
+原文核对：基于 Qwen3.8 27B；三值权重；5.9GB；Apache 2.0，可下载；SWE-bench Verified：Qwen3.8 27B 80.6、Bonsai 2 60.8、Bonsai 2.5 75.6；RTX 4090 开启多 token 预测约204 tok/s。
+边界：其他跑分与 H100 速度未写；白皮书未读；未实测。
+
+## 07 OpenAI GPT-6 蛋白质设计（快讯）
+出处：https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities/ （2026-11-24）
+线索来源：The Neuron、TLDR AI。
+原文核对：与 Onava 合作，GPT-6.2（发布前版本）设计322个小结合蛋白、针对5个靶点，35个（10.9%）结合；OpenAI 说明筛选时用了 Boltz-2、OpenDDE、ESMFold2 等专门模型，不代表端到端零样本设计；结合不等于功能、特异性或安全。
+边界：实验2、计算基准对比、结构预测短板等未写；预印本 PDF 未读。
+
+## 今日趣闻：DeepMind Humanity's First Exam
+出处：https://blog.google/innovation-and-ai/models-and-research/google-deepmind/humanitys-first-exam/ （2026-11-24）
+线索来源：The Neuron 头条。
+原文核对：544道文字与图片日常题，20种基础能力，考察是否“每次都”答对；例题为霓虹灯招牌按顺序说出每个单词第三个字母的颜色；Kaggle 比赛到12月15日，征集模型还答错的日常问题。
+边界：线索站给出的各模型得分与“四个变体全对才算对”的计分规则，官方博客未写（技术报告未读），正文不写；名称与 Humanity's Last Exam 的关系为推测，已删去。
+
+## 今天可以试试
+本站自拟提示词（年终复盘教练），不来自外部来源；隐私与“钱和身体问专业人士”为本站加注。线索站的教程栏目未采用。
+
+## 好用工具
+Fleetify：https://fleetify.dev/ ；https://github.com/fleetifydev/fleetify （2026-11-26读取）。核对：并排运行 Claude Code、Codex、OpenCode 等 CLI 智能体，每个任务独立 git worktree，显示花费与 token，工具调用审批队列；免费开源，需免费账号、自带 API 密钥；macOS 11+、Windows 10/11、Linux；安装包未签名。许可：GitHub 侧栏与 README 写 MIT，Product Hunt 作者评论写 Apache-2.0，正文写“GitHub 标 MIT 许可”。线索：The Neuron「Treats to Try」。
+Almma's PII Guard：Chrome 网上应用店页面（2026-11-26读取）。核对：识别姓名、邮箱、电话、证件号、地址等，支持自定义；只作用于 claude.ai 与 chat.almma.ai 输入框，不查附件图片；声明本机运行、无网络代码、无账号；版本0.3.2，11月18日更新，用户6人；未写价格。线索：The Neuron「Treats to Try」。
+未收：Epochal Time Portal（官方页只读到元信息，可视化页拒绝抓取，无法确认谁能用、是否收费）；goofyfish（浏览器小游戏合集，不算 AI 工具）；Ramp Glass（候补名单）。
+
+## 今日论文
+出处：https://huggingface.co/papers/2611.28947 （arXiv 2611.28947，11-21发布，11-25进入 Daily Papers）；代码 https://github.com/SuJQ0722/NightWatch （Apache-2.0）
+线索来源：Hugging Face Daily Papers 11月25日榜单前列。
+原文核对：电脑操作智能体的“感知-动作时差”；NightWatch-0.8B 流式监视器，打断推理、作废过时动作、屏幕稳定后唤醒，不改原智能体模型、提示和动作空间；OSWorld 非推理耗时−33%、浪费时间−53%、成功率持平；DynaCU-Bench 成功率39.5%→44.2%。
+边界：页面未显示作者机构，正文不写；未复现。当日榜首 Antom 支付风控模型未选：权重不公开、普通读者关联较弱。
+
+## AI小词典
+本站自写的“开放权重”解释，不含经验数字；示例取自本期快讯04、06、02。
+
+## 模型榜单
+出处：https://artificialanalysis.ai/leaderboards/models （2026-11-26查看）
+原文核对：前六与11-25相同：Claude Fable 5.2 Max 65（$26.54）、GPT-6.2 Astra Max 62（$4.00）、Gemini 4 Neon Xhigh 62（$6.44）、Gemini 4 Carbon High 60（$7.76）、Claude Opus 5.5 Max 59（$10.04）、GPT-6.2 Sol Max 57（$1.01）；国内最高 Kimi K3.1 Pro 47分（第12行）。
+边界：页面未标日期；第三方评测口径。
+
+## 未采用的线索
+Epochal Time Portal（The Rundown 头条）：官方博客只读到一句元描述，开放范围、价格、发布日期均无法核对，不写。
+Meta Muse 进入 Instagram 私信、在英国开放：仅 TechCrunch 标题与英国区公告，国内读者无法使用，本期篇幅有限未写。
+Anthropic 内部模型“解决 VP≠VNP 问题”、OpenAI 矩阵乘法指数预印本：证明尚未经过独立核查，不写。
+OpenAI Private Inference：只有意向表单和 CEO 帖子，不写。
+Google Antigravity 任务清单、ChatGPT Dots 邮箱：来自 testingcatalog 爆料，不写。
+Tidal 删除 AI 生成曲目、纽约州 AI 玩具禁令、Character.AI 破产拍卖：平台与政策新闻，本期未写。
+黄仁勋相关、Anthropic IPO、Sierra 等：人事与资本新闻，不选。
+Axios“员工担心未发布模型安全”：匿名信源报道，无官方材料，不写。
+
+## 发布检查
+正文事实回到发布方材料核对，线索站只用于发现线索，未翻译或照搬其标题与句子。首页、本期页、存档、sitemap、核验页与旧期“今日简报”链接同步更新；HTMLParser 标签检查与 1280/390 宽度截图检查通过后发布。
+</pre></main>
+<footer><div class="wrap">
+  <nav><a href="index.html">首页</a><a href="news/2026-11-26.html">今日简报</a><a href="archive.html">存档</a><a href="about.html">关于</a></nav>
+  非常AI · feichangai.vip<br>本站资讯均标注来源，只做自有摘要与点评并附原文链接，不全文转载。内容由 AI 辅助整理，逐条核对官方来源。
+</div></footer>
+</body></html>
