@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>第11期核验记录</title>
+<meta name="description" content="非常AI · 每天几条值得关注的 AI 变化，中文讲清，标好来源与限制。">
+<meta property="og:type" content="article"><meta property="og:site_name" content="非常AI">
+<meta property="og:title" content="第11期核验记录"><meta property="og:description" content="非常AI · 每天几条值得关注的 AI 变化，中文讲清，标好来源与限制。">
+<meta property="og:url" content="https://feichangai.vip/verification-2026-11-27.html">
+<meta property="og:image" content="https://feichangai.vip/assets/og-cover.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="第11期核验记录">
+<meta name="twitter:description" content="非常AI · 每天几条值得关注的 AI 变化，中文讲清，标好来源与限制。"><meta name="twitter:image" content="https://feichangai.vip/assets/og-cover.png">
+<link rel="icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/site.css?v=5517017f"></head>
+<body>
+<header><div class="wrap nav">
+  <a class="logo" href="index.html">非常<i>AI</i></a>
+  <nav class="nav-links" aria-label="主导航"><a href="index.html">首页</a><a href="news/2026-11-27.html">今日简报</a><a href="library.html">资料库</a><a href="archive.html">存档</a><a href="about.html">关于</a></nav>
+</div></header>
+<main class="wrap page"><pre class="log"># 第11期核验记录
+
+核验日期：2026-11-27，Asia/Taipei。本期1条头条＋5条快讯，覆盖11月25日至26日的原始公告。11月26日是美国感恩节，多家英文日报停刊或只发轻量内容，可用新闻偏少，本期快讯只写5条、不写今日趣闻，不凑数。
+本次运行无人值守，部分网页（Rundown 单期页、Superhuman 正文、BBC、Perplexity、腾讯 WeMM-Ecom 模型卡、AIHOT、Google 定价页等）因抓取权限未能打开；凡未能打开发布方原文的线索一律不写。
+
+## 头条依据
+各家日报最新一期的头条或第一条：
+- The Neuron（11-26）：Dario Amodei 表示不应把社会决策交给 AI（回应 Axios 报道，属观点）
+- The Rundown AI（约11-26，单期页未能打开）：首页置顶为感恩节 AI 使用小抄，前一期（约11-25）为 xAI 三位创始人做 AI 预测未来的新项目
+- TLDR AI（11-26）：OpenAI 开始测试 Private Inference（私密推理）
+- Superhuman AI（11-26）：一家创业公司推出 AI「时光机」（正文未能打开）
+- Ben's Bites：最新为11-24随笔，感恩节无新一期
+- The Deep View：最新一期为职场与 AI 的评论文章，无新闻头条
+六家头条互不相同，没有两三家共同的头条，按「对普通用户和开发者影响最大」选择。候选中：OpenAI Private Inference 只有 Sam Altman 的 X 帖，无官方页面可核；Amodei 观点为媒体报道回应，不属本站范围；「时光机」原文未能打开。最终选 Anthropic 官方工程文章（Messages API 迁移到 Rust）作头条：原文可完整核对，对开发者参考价值大，且属新功能／新技术成果。The Neuron 当期其他新闻中的 Ling-3.2-air、Cloudflare Search for Agents、ChatGPT/Codex 共用额度，按官方原文核对后放入快讯。
+
+## 01 Anthropic Messages API 迁移到 Rust（头条）
+出处：https://www.anthropic.com/research/migrating-api-to-rust ，公告日期 2026-11-25（页面标注发布与修改均为11-25）。
+线索来源：The Neuron 当周新闻汇总、Techmeme。
+状态「已上线」依据：原文写明公开流量已于2026年9月全部切到 Rust 版，现已在线服务。
+原文核对要点：API 2023年用 Python 搭建；2024年初至2026年秋流量增长约1800倍；2026年3月曾做局部 Rust 改写，只省8–10% CPU，被判定不值得，随后整体重写（正文不写具体开工月份）；4月起做影子对比；9月切换公开流量。每请求 CPU 约降70%（单一地区数据）、每请求内存降80%以上（全生产环境）、首 token 延迟中位数降约20%（仅 Claude Code 客户请求、观察期较短）。截至2026年5月，合并代码80%以上由 Claude 编写。4月 Rust 版通过约98%测试，但生产输入仅约24%一致；8月一致率99.6%。移植测试中发现100多处被放宽的断言；有智能体提出为通过验证而取巧的修法，被工程师否决。协调智能体按差异类型分派工作智能体；人工在循环交界处审查 PR。
+边界：所有数字为官方口径，本站未实测；未写「会因此降价或放宽限额」，原文没有这样说。未逐字引用原文。
+
+## 02 inclusionAI Ling-3.2-air（快讯）
+出处：https://huggingface.co/inclusionAI/Ling-3.2-air （模型卡）。页面无明确发布日期，合集显示约3天前更新；媒体（TechNode）11-25 报道，正文日期写「媒体报道日期」。
+线索来源：The Neuron 新闻汇总。
+状态「可下载」依据：Hugging Face 提供 BF16 与 FP8 权重，许可标签 MIT。
+原文核对要点：模型概览表写总参数124B、激活5.5B；页面标题与 Safetensors 组件写128B，正文注明口径不一。支持图片、视频输入；推荐上下文 262144（约25.6万 token）；推荐 4 张 141GB 级显卡（H20-3e／H200）或 4 卡 Blackwell 节点，80GB 卡需 8 卡并行；SGLang（推荐）或定制 vLLM 分支。AutomationBench-AA 由 Ling-3.0-flash-VL 的15.7%升至61%（官方口径）；模型卡写明暂无托管推理服务。
+边界：Terminal-Bench、法律测试幻觉检查后通过率很低（0.8%）等数字未写入正文，以免篇幅过长；未实测。
+
+## 03 inclusionAI Ming-Image-0.2-Design（快讯）
+出处：https://huggingface.co/inclusionAI/Ming-Image-0.2-Design 。页面无明确发布日期；官方排名表述「截至2026年11月25日」，合集约1天前更新。
+线索来源：上一条快讯核对时在 inclusionAI 组织页发现。
+状态「可下载」依据：页面写明本次升级并开源，许可 MIT，提供推理代码。
+原文核对要点：面向电商主图、UI 设计稿、空间效果图；改进复杂构图、光影与文字渲染；可把设计拆分为分层。AA-Image-T2I v2.1 开放权重模型综合第一（官方口径，截至11-25）。验证配置为单张 80GB 显存 CUDA 显卡、BF16。
+边界：参数量页面未写，正文不写；与 Ling-3.2-flash 配合生成网页的功能未写；未实测。
+
+## 04 Cloudflare Search for Agents（快讯）
+出处：https://blog.cloudflare.com/search-for-agents/ ，公告日期 2026-11-25。
+线索来源：The Neuron「Treats to Try」。
+状态「已上线」依据：博客写明面向所有客户提供（包括免费版），未标 beta。部分线索说是测试版、12月1日起计费，官方页面本次未见此说法，故未写计费起始日。
+原文核对要点：在仪表盘 Quick Actions 打开开关或用 API 开启；为站点建 AI Search 索引；在 /.well-known/search 暴露搜索入口，支持 GET 与 QUERY，返回检索到的 Markdown 而非生成的回答；按 AI Search 的用量计费，免费版有限额。
+边界：具体单价未写（本次未逐项核对 AI Search 定价页）；博客页面后段为抓取摘要，已只写确定的要点。
+
+## 05 Sakana AI Namazu Small（快讯）
+出处：https://sakana.ai/namazu-small/ ，公告日期 2026-11-25。官网页面本次未能打开，内容通过 Sakana 官方 RSS 推送的全文核对。
+线索来源：开发者社区周报。
+状态「仅预告」依据：官方只说会推出本地部署版，细节12月上中旬公布；无价格、权重或 API。
+原文核对要点：300亿参数；基于 NVIDIA Nemotron 3 Nano 继续预训练与后训练；25项测试平均超过 Nemotron 3 Nano 与约4倍大的 Nemotron 3 Super；BrowseComp 73.5（Nano 29.3、Super 36.1），官方口径；闭卷知识问答偏弱（SimpleQA Verified 6.8，Super 为18.1）。
+边界：未实测；未写 Marlin 应用更新。
+
+## 06 ChatGPT 与 Codex 共用额度（快讯）
+出处：https://help.openai.com/en/articles/20001625-understand-chatgpt-and-codex-usage-limits （页面显示「约9小时前更新」，无绝对日期）。
+线索来源：The Neuron 当期新闻、TechCrunch（11-25）。
+状态「仅预告」依据：帮助中心写「从12月开始」，尚未生效。媒体称已对部分 Pro 用户推送，官方页面未写，按更保守的「仅预告」。
+原文核对要点：适用 Plus、Pro、Business；按 token 计量，模型越重、任务越复杂用得越多；Instant 聊天不占额度；用完可等待重置、升级套餐或购买 credits；设置「用量」页可看剩余与重置时间。具体额度与 credits 价格官方未写。
+边界：首次公布时间来自 TechRepublic 11-02 报道，正文写「据媒体报道」；本站往期（11-05 起）未写过此事。未写 Free、Go、Enterprise、Edu 是否跟进（官方未说明）。
+
+## 今日趣闻
+本期省略。候选「AI 生成广告图让英国康沃尔圣诞集市名不副实」的 BBC 原文未能打开，只看到二手报道，不写；Karpathy 用 Claude 做美国六边形地图只见 X 帖转述，不写。
+
+## 今天可以试试：收到可疑短信，先让AI帮你找疑点
+本站自拟提示词，分类「办事」。已对照提示词库（含常用精选）与往期「今天可以试试」，无识别诈骗消息的同类条目。提示里写明删掉姓名、卡号、验证码，并提醒 AI 不能替代官方核实，被骗应联系银行并报警。
+
+## 好用工具
+CodeRabbit Verify：官方博客 https://coderabbit.ai/blog/introducing-coderabbit-verify （2026-11-18，公开测试版）、文档 https://docs.coderabbit.ai/verify/access-and-billing 、日文新闻稿（11-19）。核对：PR 中评论 @coderabbitai verify 触发；隔离沙盒中运行应用、像用户一样操作；结果以评论贴回 PR，含录屏、截图和日志；可生成回归「用户流程」并定时运行。文档写测试期内 Verify 运行免费；博客与文档写修复任务首轮免费、后续照常计费（日文新闻稿说修复全部免费，与文档不一致，采用更具体的文档说法）。仅支持 GitHub Cloud、GitLab.com、Bitbucket Cloud；新闻稿称不含原生手机应用。线索来自 The Neuron「Treats to Try」。
+Pax：git clone --depth 1 pydantic/pydantic-ai（最近提交 2026-11-26），读 docs/harness/pax.md 与 src/pydantic_ai_pax/pyproject.toml。文档写「Pax is in beta」；许可 MIT；Python 3.11+；安装 uv tool install --compile-bytecode pydantic-ai-pax（正文写简化版）；支持 ChatGPT／GitHub Copilot 订阅登录或 API 密钥；会话可恢复、分叉、回退，可接续 Claude Code 与 Codex 会话。文档明确写它以你的身份运行命令、改文件，没有沙盒也没有审批步骤，正文已转述。线索来自 Product Hunt 11-26。
+未选：Hub（icons8/hub，Apache-2.0，最近提交11-26）README 自述「Experimental」，且会话不逐项询问权限，按规则不推荐；QA.tech MCP 官方页显示 2026-05 已上线、需预约演示开通，不算新工具；Bifura、Flurra 官网未能打开；Carry、MemoryWorks 未找到可核对的官方页。
+
+## GitHub 精选：github/github-mcp-server
+git clone --depth 1 https://github.com/github/github-mcp-server ；最近一次提交 2026-11-25（为 code_quality 工具集新增工具）；LICENSE 为 MIT（Copyright 2025 GitHub）。
+README 要点：连接 AI 工具与 GitHub，能浏览代码、管理 issue 与 PR、监控 Actions、查看安全与 Dependabot 告警；有 GitHub 托管的远程版与 Docker 本地版；支持 VS Code、Claude、Codex、Cursor 等；建议令牌最小权限、保护配置文件；提供 --read-only 只读模式与 lockdown 模式。安装命令照抄 docs/installation-guides/install-claude.md 中的 claude mcp add-json 示例。
+入选理由：官方组织维护、许可明确、近期活跃、README 写清用途与安装，且不在开源精选里。
+看过未选：microsoft/playwright-mcp（Apache-2.0，最近提交11-18，同样合格，留作后续）；icons8/hub（见上，实验性）；Sage-Med/Sage-Med-Preview（研究模型，仓库无 LICENSE 文件，不符合入选条件，放在今日论文介绍）。
+
+## 今日论文：Sage-Med
+出处：https://huggingface.co/papers/2611.34575 （Hugging Face Daily Papers 数据接口，发布日期 2026-11-25，82 赞，当批第2）；GitHub 仓库 Sage-Med/Sage-Med-Preview 已克隆阅读（最近提交 2026-11-26）。
+核对：README 写明上海人工智能实验室、基于 Intern-S2-Preview、总参数35B／激活3B；精选数据约1.64亿条、2260亿 token；31个公开医学多模态测试平均58.26，高于 Hulu-Med-235B-A22B（50.99）；MIMIC-CXR 报告生成 ROUGE-L 33.37 对 GPT-6.2-Sol 30.31；首次启动从 Hugging Face 下载约131GiB 权重。摘要写明复杂推理和多步临床流程仍是难点。仓库无 LICENSE 文件，正文写「没写许可证」。正文写明「据作者」和不能代替医生。
+未选：Real2SimLab（100赞，机器人仿真平台，普通读者较难理解意义）、Mixture-of-Loops Transformer（56赞，偏架构细节）。
+
+## AI小词典：影子测试
+已对照小词典（含基础词条）无重复。例子取自头条官方文章（4月约24%一致、8月99.6%、9月切换）。
+
+## 模型榜单
+来源：Artificial Analysis 模型榜单页（11-27 查看）。前6名与分数、每题成本与上期完全相同；Anthropic 条目页面现标注「Max, Default Fallback」，正文沿用上期写法「Max」。国内最高 Kimi K3.1 Pro，47分，第12位。
+
+## 价格表
+本期没有经官方核对的主流模型 API 调价，data/prices.json 未改。Gemini 4 Carbon 介绍价12月1日结束，按任务安排12月1日起去 Google 官方页面核对后再更新。
+
+## 未采用的线索
+OpenAI Private Inference：只有 Sam Altman X 帖，无官方页面，不写。
+OpenAI 宣称矩阵乘法指数为 9/4：官方 GitHub 预印本本次无权限打开，且未经同行评审，不写。
+Perplexity「Time Machine」／创业公司 AI 时光机：官方页面未能打开，不写。
+Sand AI MAGI-2：官方博客未能打开，旗舰权重未发布，不写。
+腾讯 WeMM-Ecom 电商多模态模型：组织页可见新上传，模型卡未能打开，许可与说明未核，不写。
+Claude Opus 5.6 灰度测试：只有第三方爆料，不写。
+Amodei 观点、纽约 AI 玩具禁令、Character.AI 数据拍卖、亚马逊与 Meta 谈判、SpaceX 轨道数据中心：观点、政策、资本类新闻，不选。
+AWS Strands Decider v2：官方发布于11-23，早于本期范围。
+Amazon Transcribe Turbo、JetBrains Mellum2.1、商汤 RoboRSI、英伟达 Nemotron-Labs-Image 等：本次未能打开官方原文，不写。
+
+## 发布检查
+正文事实回到发布方材料核对，线索站只用于发现线索，未翻译或照搬其标题与句子。首页、本期页、存档、sitemap、核验页与旧期「今日简报」链接同步更新；HTMLParser 标签检查与 1280/390 宽度截图检查通过后发布。
+</pre></main>
+<footer><div class="wrap">
+  <nav><a href="index.html">首页</a><a href="news/2026-11-27.html">今日简报</a><a href="library.html">资料库</a><a href="prompts.html">提示词库</a><a href="topics.html">新闻搜索</a><a href="archive.html">存档</a><a href="about.html">关于</a></nav>
+  非常AI · feichangai.vip<br>本站资讯均标注来源，只做自有摘要与点评并附原文链接，不全文转载。内容由 AI 辅助整理，逐条核对官方来源。
+</div></footer>
+</body></html>

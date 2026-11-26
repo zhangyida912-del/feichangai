@@ -13,13 +13,21 @@
 <body>
 <header><div class="wrap nav">
   <a class="logo" href="index.html">非常<i>AI</i></a>
-  <nav class="nav-links" aria-label="主导航"><a href="index.html">首页</a><a href="news/2026-11-26.html">今日简报</a><a href="library.html" aria-current="page">资料库</a><a href="archive.html">存档</a><a href="about.html">关于</a></nav>
+  <nav class="nav-links" aria-label="主导航"><a href="index.html">首页</a><a href="news/2026-11-27.html">今日简报</a><a href="library.html" aria-current="page">资料库</a><a href="archive.html">存档</a><a href="about.html">关于</a></nav>
 </div></header>
 <main class="wrap">
 <nav class="crumb"><a href="library.html">资料库</a> / GitHub 开源精选</nav>
-<section class="lib-head"><h1>🐙 GitHub 开源精选</h1><p>每期「GitHub 精选」都收在这里：好用的 Skill、MCP 服务器和 AI 开源项目，写清许可、维护情况和安全提醒。</p><span class="count">已收录 2 个 · 每天更新</span></section>
-<label class="search"><span aria-hidden="true">🔍</span><input id="q" type="search" placeholder="搜一搜：Skill、MCP、Claude……" aria-label="搜索"></label><div class="chips" role="group" aria-label="按分类筛选"><button class="chip-btn" aria-pressed="true" data-cat="全部">全部</button><button class="chip-btn" aria-pressed="false" data-cat="Skill">Skill</button><button class="chip-btn" aria-pressed="false" data-cat="MCP">MCP</button></div>
-<div class="grid"><article class="pcard" data-cat="Skill" style="--accent:var(--ink);--accent-bg:var(--bg)">
+<section class="lib-head"><h1>🐙 GitHub 开源精选</h1><p>每期「GitHub 精选」都收在这里：好用的 Skill、MCP 服务器和 AI 开源项目，写清许可、维护情况和安全提醒。</p><span class="count">已收录 3 个 · 每天更新</span></section>
+<label class="search"><span aria-hidden="true">🔍</span><input id="q" type="search" placeholder="搜一搜：Skill、MCP、Claude……" aria-label="搜索"></label><div class="chips" role="group" aria-label="按分类筛选"><button class="chip-btn" aria-pressed="true" data-cat="全部">全部</button><button class="chip-btn" aria-pressed="false" data-cat="MCP">MCP</button><button class="chip-btn" aria-pressed="false" data-cat="Skill">Skill</button></div>
+<div class="grid"><article class="pcard" data-cat="MCP" style="--accent:var(--ink);--accent-bg:var(--bg)">
+<div class="top"></div><div class="inner">
+<div class="row"><div class="ico" aria-hidden="true">🐙</div><div><span class="tag">MCP</span><h3 style="overflow-wrap:anywhere">github/github-mcp-server</h3></div></div>
+<p style="font-size:15px">GitHub 官方的 MCP 服务器（MCP：让 AI 连接外部软件的通用插头）。接上以后，Claude、Codex、Cursor 等 AI 工具能用大白话帮你翻仓库代码、管理 issue 和拉取请求、查 GitHub Actions 构建为什么失败、看安全告警。它有 GitHub 托管的远程版，也能用 Docker 在自己电脑上跑。</p>
+<p style="font-size:14px;color:var(--soft)"><b>适合谁：</b>天天用 GitHub 的开发者；想让 AI 帮忙分拣 issue、看 CI 报错、写 PR 说明的小团队。</p><pre>claude mcp add-json github &#x27;{&quot;type&quot;:&quot;http&quot;,&quot;url&quot;:&quot;https://api.githubcopilot.com/mcp&quot;,&quot;headers&quot;:{&quot;Authorization&quot;:&quot;Bearer YOUR_GITHUB_PAT&quot;}}&#x27;</pre>
+<p class="preview" style="-webkit-line-clamp:unset">📄 MIT · 🕒 2026-11-25 · 👤 GitHub 官方<br>⚠️ 它会用你的 GitHub 权限读写仓库、issue 和 PR。README 建议访问令牌只给必需的最小权限，保护好存令牌的配置文件；只想让 AI 看、不让它改，可以开 --read-only 只读模式。</p>
+<div class="foot"><span>第11期推荐 · <a href="news/2026-11-27.html#repo">原文</a></span><a class="mini-copy" style="text-decoration:none" href="https://github.com/github/github-mcp-server" target="_blank" rel="noopener">GitHub ↗</a></div>
+</div></article>
+<article class="pcard" data-cat="Skill" style="--accent:var(--ink);--accent-bg:var(--bg)">
 <div class="top"></div><div class="inner">
 <div class="row"><div class="ico" aria-hidden="true">🐙</div><div><span class="tag">Skill</span><h3 style="overflow-wrap:anywhere">anthropics/skills</h3></div></div>
 <p style="font-size:15px">Anthropic 官方的技能（Skill）合集。Skill 就是给 AI 的一份操作说明书，装上以后它能用固定方法完成某类任务。这里有十几个现成的：做 Word、PDF、PPT 和表格，前端页面设计，自动测试网页，帮你搭 MCP 服务器，还有一个专门教你写自己的 Skill 的「skill-creator」。</p>
@@ -41,7 +49,7 @@
 <p class="lib-note">Skill 和 MCP 服务器可能会在你的电脑上运行代码、读写文件。安装前先看代码、限制权限；本站推荐不收费。</p>
 </main>
 <footer><div class="wrap">
-  <nav><a href="index.html">首页</a><a href="news/2026-11-26.html">今日简报</a><a href="library.html">资料库</a><a href="prompts.html">提示词库</a><a href="topics.html">新闻搜索</a><a href="archive.html">存档</a><a href="about.html">关于</a></nav>
+  <nav><a href="index.html">首页</a><a href="news/2026-11-27.html">今日简报</a><a href="library.html">资料库</a><a href="prompts.html">提示词库</a><a href="topics.html">新闻搜索</a><a href="archive.html">存档</a><a href="about.html">关于</a></nav>
   非常AI · feichangai.vip<br>本站资讯均标注来源，只做自有摘要与点评并附原文链接，不全文转载。内容由 AI 辅助整理，逐条核对官方来源。
 </div></footer>
 <script>

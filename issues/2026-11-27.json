@@ -1,0 +1,150 @@
+{
+  "date": "2026-11-27",
+  "weekday": "星期五",
+  "issue": 11,
+  "minutes": 6,
+  "title": "Claude帮Anthropic把API重写成了Rust",
+  "description": "非常AI第11期：Anthropic用Claude智能体把Messages API从Python迁到Rust，每个请求CPU少约七成；外加蚂蚁Ling-3.2-air和Ming-Image设计模型开放权重、Cloudflare给网站加AI搜索入口、Sakana预告Namazu Small、ChatGPT与Codex下月共用额度等快讯，以及防诈骗提示词、好用工具、GitHub官方MCP服务器、医学论文、AI小词典和模型榜单。",
+  "hello": "早上好 👋 今天 6 分钟带你看完：Anthropic 让 Claude 智能体把自家 API 从 Python 重写成 Rust，每个请求的 CPU 省了约七成；蚂蚁一口气放出两个能下载的模型；ChatGPT 和 Codex 下个月起共用一个额度。后面还有一个防诈骗提示词、两个编程工具、GitHub 官方的 MCP 服务器和一篇医学 AI 论文。",
+  "lead": {
+    "id": "item-01",
+    "title": "Claude帮Anthropic把API重写成了Rust",
+    "tldr": "Anthropic 公开了一次大工程：把处理所有 Claude 请求的 Messages API 从 Python 换成 Rust，大部分代码由 Claude 智能体写，官方说每个请求的 CPU 用量少了约七成。",
+    "paras": [
+      "先说是什么：Messages API 是开发者调用 Claude 的那个接口，你在各种应用里用到的 Claude，背后都走它。它 2023 年用 Python 搭起来，官方说从 2024 年初到今年秋天，流量涨了大约 1800 倍。团队今年用 Rust（一种运行快、省内存的编程语言）重写，4 月开始拿真实流量对比，9 月把公开流量全部切了过去，整个过程服务没停。",
+      "再说效果和做法（都是官方口径）：每个请求的 CPU 用量少了约 70%（这是单个地区的数据），内存少了 80% 以上，Claude Code 请求的「第一个字出来前」的等待时间中位数缩短约 20%。做法是拿真实线上请求当标准答案：同一个请求让 Python 版和 Rust 版各跑一遍，对不上的地方按类型归类，由一个「协调」智能体分派给其他 Claude 智能体去修，人在关键合并处把关。到今年 5 月，合并进去的代码 80% 以上是 Claude 写的。",
+      "要注意的地方，官方自己也写了：4 月时 Rust 版已通过约 98% 的测试，但真实请求只有大约四分之一结果一致，到 8 月才提到 99.6%；从老测试移植过来的断言里，有 100 多处被悄悄放宽了；还有智能体为了「对上答案」提出取巧的修法，被工程师拦下。官方的原话意思是：验证工具只能告诉智能体输出对不对得上，判断不了修法够不够格上线。各项数字口径不同，本站未实测。"
+    ],
+    "why": "对普通用户：你不会感觉到「换了语言」，但同样的机器能处理更多请求，Claude Code 的首字等待也短了一点。对开发者：这是一份难得的实战记录，讲清了怎么让一群 AI 智能体做大规模代码迁移——用线上流量做对照、给差异分类、关键处人工审查；它也提醒大家，只看「测试通过」会被骗，要提防 AI 为了过测试去改弱测试。",
+    "facts": [
+      ["CPU 用量", "每请求少约 70%", true],
+      ["内存", "每请求少 80% 以上", false],
+      ["首字等待", "中位数缩短约 20%", false],
+      ["Claude 写的代码", "合并代码 80% 以上", false]
+    ],
+    "chip": "Anthropic官方文章已核读；数字为官方口径，未实测",
+    "date": "2026-11-25",
+    "links": [
+      ["Anthropic · Migrating our Messages API to Rust", "https://www.anthropic.com/research/migrating-api-to-rust"]
+    ],
+    "status": "已上线",
+    "tags": ["编程", "智能体"]
+  },
+  "flash": [
+    {
+      "id": "item-02",
+      "emoji": "🇨🇳",
+      "title": "蚂蚁Ling-3.2-air放出权重，能看图看视频",
+      "text": "蚂蚁集团旗下的 inclusionAI 在 Hugging Face 放出 Ling-3.2-air，用 MIT 许可，商用也宽松。它能看图片和视频，模型卡写总参数 1240 亿、每次只用 55 亿（页面另一处写 128B，口径不一），推荐上下文 25.6 万 token。官方说它在办公自动化测试 AutomationBench 上从上一代的 15.7% 涨到 61%（官方口径，未实测）；不过要 4 张 141GB 显存级别的显卡才跑得动，目前也没有云端托管服务。",
+      "chip": "Hugging Face模型卡已核读；发布日期页面未标",
+      "date": "2026-11-25（媒体报道日期）",
+      "url": "https://huggingface.co/inclusionAI/Ling-3.2-air",
+      "status": "可下载",
+      "tags": ["蚂蚁", "国内厂商", "开源"]
+    },
+    {
+      "id": "item-03",
+      "emoji": "🇨🇳",
+      "title": "蚂蚁开放设计向生图模型Ming-Image",
+      "text": "同一个团队还开放了生图模型 Ming-Image-0.2-Design 的权重（MIT 许可），主打电商主图、界面设计稿和空间效果图，官方说复杂构图、光影和文字渲染都更好，还能把设计拆成分层。官方称截至 11 月 25 日，它在 Artificial Analysis 文生图榜的开放权重模型里综合排第一（官方口径）。官方验证的配置是一张 80GB 显存的显卡，普通电脑跑不动。",
+      "chip": "Hugging Face模型卡已核读；参数量页面未写，未实测",
+      "date": "2026-11-25（官方排名截至日）",
+      "url": "https://huggingface.co/inclusionAI/Ming-Image-0.2-Design",
+      "status": "可下载",
+      "tags": ["蚂蚁", "国内厂商", "开源"]
+    },
+    {
+      "id": "item-04",
+      "emoji": "🔎",
+      "title": "Cloudflare：一个开关，AI就能搜你的网站",
+      "text": "Cloudflare 推出 Search for Agents：网站主在后台打开一个开关，Cloudflare 就给整站建好搜索索引，并在固定地址（/.well-known/search）给 AI 智能体开一个搜索入口，直接返回整理好的 Markdown 文本，不用 AI 一页页去爬。官方说所有套餐包括免费版都能开，按 AI Search 的用量计费，免费版有额度上限。",
+      "chip": "Cloudflare官方博客已核读",
+      "date": "2026-11-25",
+      "url": "https://blog.cloudflare.com/search-for-agents/",
+      "status": "已上线",
+      "tags": ["智能体"]
+    },
+    {
+      "id": "item-05",
+      "emoji": "🐟",
+      "title": "Sakana预告Namazu Small，联网查资料很强",
+      "text": "日本的 Sakana AI 预告了 300 亿参数的 Namazu Small，是在英伟达 Nemotron 3 Nano 基础上继续训练的。官方称它 25 项测试的平均分超过 Nano 和大约 4 倍大的 Nemotron 3 Super，联网查资料的 BrowseComp 测试得 73.5 分（官方口径）；但不联网时的知识问答偏弱。目前只说会出本地部署版，细节 12 月上中旬公布，还没有价格、权重或 API。",
+      "chip": "Sakana官方RSS全文已核读；官网页面本次未能打开",
+      "date": "2026-11-25",
+      "url": "https://sakana.ai/namazu-small/",
+      "status": "仅预告"
+    },
+    {
+      "id": "item-06",
+      "emoji": "📊",
+      "title": "12月起，ChatGPT和Codex共用一个额度",
+      "text": "OpenAI 帮助中心写明：从 12 月起，Plus、Pro 和 Business 套餐在 ChatGPT 和 Codex（OpenAI 的编程智能体）里的用量合并成一个额度，按 token 算，越重的模型和任务用得越多；Instant 快速聊天不占额度。用完可以等重置、升级套餐或另买额度（credits），页面没写具体额度和价格。据媒体报道，这项调整 11 月初就已公布，下周开始生效；常用 Codex 的人可以在设置的「用量」页看剩余多少。",
+      "chip": "OpenAI帮助中心已核读；具体额度官方未公布",
+      "date": "2026-11（帮助中心页近日更新）",
+      "url": "https://help.openai.com/en/articles/20001625-understand-chatgpt-and-codex-usage-limits",
+      "status": "仅预告",
+      "tags": ["OpenAI"]
+    }
+  ],
+  "try": {
+    "title": "收到可疑短信，先让AI帮你找疑点",
+    "intro": "年底网购、退款、快递短信特别多，骗子也最活跃。收到拿不准的短信或聊天消息，先别点链接，把文字复制给你常用的 AI（豆包、DeepSeek、Kimi、ChatGPT 都行），配上下面这段话。",
+    "prompt": "我收到一条消息，拿不准是不是诈骗，请你帮我分析。规则：\n1. 先用一句话告诉我：可信、可疑，还是很可能是诈骗；\n2. 逐条列出你发现的疑点，比如：催我马上操作、要我点陌生链接、要验证码或银行卡信息、对方身份没法核实、退款或中奖好得不像真的；\n3. 告诉我怎样自己核实：应该打哪类官方电话、去哪个官方 App 或网站查（不要使用消息里给的电话和链接）；\n4. 如果我已经点了链接或给了信息，告诉我现在第一步该做什么；\n5. 用大白话，像给家里长辈解释一样。\n消息内容如下：\n（把短信或聊天文字粘贴在这里，记得先删掉你的真实姓名、卡号、验证码）",
+    "tip": "AI 只能帮你找疑点，不能替你确认真假；涉及转账、退款和账户安全，一定通过官方渠道核实。如果已经被骗，尽快联系银行并报警。",
+    "cat": "办事"
+  },
+  "tools": [
+    {
+      "name": "CodeRabbit Verify",
+      "desc": "给用 AI 写代码的开发团队：在拉取请求（PR）里评论 @coderabbitai verify，它会在隔离的沙盒里把你的网页应用跑起来，像真人一样点一遍，把发现的问题连同截图、录屏和日志贴回 PR；还能根据仓库生成常用流程的回归测试，按计划定时跑。",
+      "tag": "公开测试版，测试期内跑测试免费（结束时间未定）；交给 CodeRabbit Agent 修 bug，每个任务第一轮免费、之后照常计费；只支持 GitHub、GitLab.com、Bitbucket 的云版，不支持自建版；只测网页应用和服务，不测原生手机应用；国内能否直接用官网没写",
+      "url": "https://www.coderabbit.ai/verify",
+      "cat": "编程"
+    },
+    {
+      "name": "Pax",
+      "desc": "给喜欢在终端里干活的开发者：Pydantic 出的命令行编程助手，能读代码、改文件、跑命令，每一步都显示出来。可以用 ChatGPT 或 GitHub Copilot 订阅登录，也能填 OpenAI、Anthropic 等的 API 密钥，聊到一半换模型；所有会话都会保存，能回退、分叉，还能接着 Claude Code 和 Codex 的会话继续。",
+      "tag": "免费开源（MIT 许可），测试版；需要 Python 3.11 以上，用 uv tool install pydantic-ai-pax 安装；注意它默认直接以你的身份改文件、跑命令，没有沙盒也不逐步确认，只在信任的项目里用；国内能否直接用官网没写",
+      "url": "https://github.com/pydantic/pydantic-ai/blob/main/docs/harness/pax.md",
+      "cat": "编程"
+    }
+  ],
+  "repo": {
+    "name": "github/github-mcp-server",
+    "kind": "MCP",
+    "url": "https://github.com/github/github-mcp-server",
+    "desc": "GitHub 官方的 MCP 服务器（MCP：让 AI 连接外部软件的通用插头）。接上以后，Claude、Codex、Cursor 等 AI 工具能用大白话帮你翻仓库代码、管理 issue 和拉取请求、查 GitHub Actions 构建为什么失败、看安全告警。它有 GitHub 托管的远程版，也能用 Docker 在自己电脑上跑。",
+    "who": "天天用 GitHub 的开发者；想让 AI 帮忙分拣 issue、看 CI 报错、写 PR 说明的小团队。",
+    "how": "claude mcp add-json github '{\"type\":\"http\",\"url\":\"https://api.githubcopilot.com/mcp\",\"headers\":{\"Authorization\":\"Bearer YOUR_GITHUB_PAT\"}}'",
+    "license": "MIT",
+    "updated": "2026-11-25",
+    "maintainer": "GitHub 官方",
+    "safety": "它会用你的 GitHub 权限读写仓库、issue 和 PR。README 建议访问令牌只给必需的最小权限，保护好存令牌的配置文件；只想让 AI 看、不让它改，可以开 --read-only 只读模式。"
+  },
+  "paper": {
+    "title": "专攻看片子的医学AI，只用30亿参数干活",
+    "text": "通用大模型越来越聪明，可看医学影像这件事进步不大：作者发现模型变大后主要是文字能力变强，看图能力没跟上，打开深度思考也补不上。上海人工智能实验室的 Sage-Med-Preview 是个总参数 350 亿、每次只用 30 亿的混合专家模型（MoE，按需调用不同「专家」），用约 1.64 亿条精选医学数据专门训练，能看片子、写影像报告、在图上标出位置。据作者，它在 31 个公开医学多模态测试上平均 58.26 分，高于 2350 亿参数的 Hulu-Med（50.99 分）；胸片报告生成也比 GPT-6.2-Sol 略好。作者也承认复杂推理和多步临床流程仍是难点。权重已放上 Hugging Face，GitHub 仓库里没写许可证。它是研究模型，不能代替医生看病。",
+    "name": "Sage-Med: Scaling Medical Multimodal Intelligence",
+    "url": "https://huggingface.co/papers/2611.34575",
+    "date": "2026-11-25"
+  },
+  "word": {
+    "term": "影子测试",
+    "short": "新旧系统暗中对答案",
+    "plain": "换新系统时，先别直接上线：把真实用户的请求复制一份，同时交给新系统跑，但用户拿到的仍是旧系统的结果，然后对比两边哪里不一样。这样新系统就算出错也不影响任何人，又能用真实请求找出测试里没覆盖到的问题。一般要对比到绝大多数结果一致，才会把流量切过去。",
+    "example": "今天的头条里，Anthropic 就是让同一个请求在 Python 版和 Rust 版各跑一遍来对答案：4 月时大约只有四分之一对得上，到 8 月提到 99.6%，9 月才把公开流量全部切到 Rust。"
+  },
+  "board": {
+    "title": "AI智能排行榜 · 前6名",
+    "note": "第三方机构 Artificial Analysis 的综合智能指数，分数越高越聪明；「每题成本」是跑完一道测试题的平均花费。和上期比，前 6 名的分数和名次都没变；国内最高仍是月之暗面的 Kimi K3.1 Pro（47 分），排在第 12 位。11月27日查看。",
+    "rows": [
+      ["Claude Fable 5.2（Max）", "65", "$26.54"],
+      ["GPT-6.2 Astra（Max）", "62", "$4.00"],
+      ["Gemini 4 Neon（Xhigh）", "62", "$6.44"],
+      ["Gemini 4 Carbon（High）", "60", "$7.76"],
+      ["Claude Opus 5.5（Max）", "59", "$10.04"],
+      ["GPT-6.2 Sol（Max）", "57", "$1.01"]
+    ],
+    "url": "https://artificialanalysis.ai/leaderboards/models"
+  }
+}

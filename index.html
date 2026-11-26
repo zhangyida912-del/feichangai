@@ -1,88 +1,88 @@
 <!DOCTYPE html>
 <html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Claude做的小工具，能装成电脑应用了 · 非常AI第10期</title>
-<meta name="description" content="非常AI第10期：Claude的Artifacts能一键装成Mac和Windows应用，外加Cognition SWE-2.1、Google Workspace MCP正式版、百度ERNIE 5.5 Flash预览版开放权重、商汤SenseNova U1.6、Bonsai 2.5 27B、GPT-6设计蛋白质等快讯，以及提示词、好用工具、今日论文、AI小词典和模型榜单。">
+<title>Claude帮Anthropic把API重写成了Rust · 非常AI第11期</title>
+<meta name="description" content="非常AI第11期：Anthropic用Claude智能体把Messages API从Python迁到Rust，每个请求CPU少约七成；外加蚂蚁Ling-3.2-air和Ming-Image设计模型开放权重、Cloudflare给网站加AI搜索入口、Sakana预告Namazu Small、ChatGPT与Codex下月共用额度等快讯，以及防诈骗提示词、好用工具、GitHub官方MCP服务器、医学论文、AI小词典和模型榜单。">
 <meta property="og:type" content="article"><meta property="og:site_name" content="非常AI">
-<meta property="og:title" content="Claude做的小工具，能装成电脑应用了 · 非常AI第10期"><meta property="og:description" content="非常AI第10期：Claude的Artifacts能一键装成Mac和Windows应用，外加Cognition SWE-2.1、Google Workspace MCP正式版、百度ERNIE 5.5 Flash预览版开放权重、商汤SenseNova U1.6、Bonsai 2.5 27B、GPT-6设计蛋白质等快讯，以及提示词、好用工具、今日论文、AI小词典和模型榜单。">
+<meta property="og:title" content="Claude帮Anthropic把API重写成了Rust · 非常AI第11期"><meta property="og:description" content="非常AI第11期：Anthropic用Claude智能体把Messages API从Python迁到Rust，每个请求CPU少约七成；外加蚂蚁Ling-3.2-air和Ming-Image设计模型开放权重、Cloudflare给网站加AI搜索入口、Sakana预告Namazu Small、ChatGPT与Codex下月共用额度等快讯，以及防诈骗提示词、好用工具、GitHub官方MCP服务器、医学论文、AI小词典和模型榜单。">
 <meta property="og:url" content="https://feichangai.vip/">
 <meta property="og:image" content="https://feichangai.vip/assets/og-cover.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Claude做的小工具，能装成电脑应用了 · 非常AI第10期">
-<meta name="twitter:description" content="非常AI第10期：Claude的Artifacts能一键装成Mac和Windows应用，外加Cognition SWE-2.1、Google Workspace MCP正式版、百度ERNIE 5.5 Flash预览版开放权重、商汤SenseNova U1.6、Bonsai 2.5 27B、GPT-6设计蛋白质等快讯，以及提示词、好用工具、今日论文、AI小词典和模型榜单。"><meta name="twitter:image" content="https://feichangai.vip/assets/og-cover.png">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Claude帮Anthropic把API重写成了Rust · 非常AI第11期">
+<meta name="twitter:description" content="非常AI第11期：Anthropic用Claude智能体把Messages API从Python迁到Rust，每个请求CPU少约七成；外加蚂蚁Ling-3.2-air和Ming-Image设计模型开放权重、Cloudflare给网站加AI搜索入口、Sakana预告Namazu Small、ChatGPT与Codex下月共用额度等快讯，以及防诈骗提示词、好用工具、GitHub官方MCP服务器、医学论文、AI小词典和模型榜单。"><meta name="twitter:image" content="https://feichangai.vip/assets/og-cover.png">
 <link rel="icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="stylesheet" href="assets/site.css?v=5517017f"></head>
 <body>
 <header><div class="wrap nav">
   <a class="logo" href="index.html">非常<i>AI</i></a>
-  <nav class="nav-links" aria-label="主导航"><a href="index.html" aria-current="page">首页</a><a href="news/2026-11-26.html">今日简报</a><a href="library.html">资料库</a><a href="archive.html">存档</a><a href="about.html">关于</a></nav>
+  <nav class="nav-links" aria-label="主导航"><a href="index.html" aria-current="page">首页</a><a href="news/2026-11-27.html">今日简报</a><a href="library.html">资料库</a><a href="archive.html">存档</a><a href="about.html">关于</a></nav>
 </div></header>
 <main class="wrap">
 <section class="hero">
-  <span class="badge">第10期 <b>11月26日 星期四</b> · 7分钟读完</span>
-  <h1>Claude做的小工具，能装成电脑应用了</h1>
-  <p class="hello">早上好 👋 今天 7 分钟带你看完：Claude 帮你做的小工具，现在能直接装到电脑上当应用用；百度、商汤各放出一个能下载的模型；OpenAI 说 GPT-6 设计的蛋白质在实验室里真的「粘」上了。后面还有一个年终复盘提示词、两个好用工具和一个 AI 小词。</p>
+  <span class="badge">第11期 <b>11月27日 星期五</b> · 6分钟读完</span>
+  <h1>Claude帮Anthropic把API重写成了Rust</h1>
+  <p class="hello">早上好 👋 今天 6 分钟带你看完：Anthropic 让 Claude 智能体把自家 API 从 Python 重写成 Rust，每个请求的 CPU 省了约七成；蚂蚁一口气放出两个能下载的模型；ChatGPT 和 Codex 下个月起共用一个额度。后面还有一个防诈骗提示词、两个编程工具、GitHub 官方的 MCP 服务器和一篇医学 AI 论文。</p>
 </section>
 
-<section class="card fun" id="fun"><div class="sec-title"><span class="em" aria-hidden="true">😄</span>今日趣闻</div><h3>DeepMind给AI出了一套「小学题」</h3><p>AI 能解奥数、写代码，可简单题它能不能每次都做对？Google DeepMind 出了一套叫「人类第一场考试」（Humanity&#x27;s First Exam）的测试，544 道看图、读字的日常小题，覆盖 20 种基本能力。官方举的例子是：看一块霓虹灯招牌，按顺序说出每个单词第三个字母的颜色。现在 Kaggle 上还有个比赛，到 12 月 15 日为止，征集「AI 还答不对的日常问题」。</p><div class="src"><span class="chip">Google官方博客已核读；各模型得分官方博客未列出</span>来源日期：2026-11-24 · <a href="https://blog.google/innovation-and-ai/models-and-research/google-deepmind/humanitys-first-exam/" target="_blank" rel="noopener">原文 ↗</a></div></section>
 
-<nav class="card toc" aria-label="本期目录"><h2><span class="em" aria-hidden="true">📌</span>今天看什么</h2><ol><li><a href="news/2026-11-26.html#item-01">Claude做的小工具，能装成电脑应用了</a></li><li><a href="news/2026-11-26.html#item-02">Cognition出SWE-2.1，底子是Kimi K3</a></li><li><a href="news/2026-11-26.html#item-03">Google Workspace给AI开了「正门」</a></li><li><a href="news/2026-11-26.html#item-04">百度ERNIE 5.5 Flash预览版放出权重</a></li><li><a href="news/2026-11-26.html#item-05">商汤SenseNova U1.6：画完自己检查一遍</a></li></ol><p class="more">还有 2 条快讯，外加今天可以试试、好用工具、GitHub 精选、今日论文、AI小词典和模型榜单 👇</p></nav>
+
+<nav class="card toc" aria-label="本期目录"><h2><span class="em" aria-hidden="true">📌</span>今天看什么</h2><ol><li><a href="news/2026-11-27.html#item-01">Claude帮Anthropic把API重写成了Rust</a></li><li><a href="news/2026-11-27.html#item-02">蚂蚁Ling-3.2-air放出权重，能看图看视频</a></li><li><a href="news/2026-11-27.html#item-03">蚂蚁开放设计向生图模型Ming-Image</a></li><li><a href="news/2026-11-27.html#item-04">Cloudflare：一个开关，AI就能搜你的网站</a></li><li><a href="news/2026-11-27.html#item-05">Sakana预告Namazu Small，联网查资料很强</a></li></ol><p class="more">还有 1 条快讯，外加今天可以试试、好用工具、GitHub 精选、今日论文、AI小词典和模型榜单 👇</p></nav>
 
 <article class="card lead" id="item-01">
-  <div class="sec-title"><span class="em" aria-hidden="true">🔥</span>今日头条 <span class="st" style="background:#fff3d6;color:#a36500">测试中</span></div>
-  <h2>Claude做的小工具，能装成电脑应用了</h2>
-  <div class="tldr">让 Claude 做的小网页工具（Artifacts），现在点一下就能装到 Mac 或 Windows 电脑上，有自己的图标和窗口，像普通软件一样打开。</div>
-  <p>先说谁能用：官方说所有套餐都能用，现在是测试版，在 Claude 的 Mac 和 Windows 桌面应用里逐步推送。用法很简单：打开一个 Artifact，在「分享」菜单里点「Install as app」。不用打包签名，也不用 API 密钥，直接用你的 Claude 账号登录。Team 版默认打开；企业版要等管理员打开；符合 HIPAA（美国医疗隐私法规）要求的组织和混合部署暂时用不了。</p><p>再说能干什么：装好的应用可以调用 Claude 和你接好的连接器，能弹通知、在菜单栏或系统托盘里放个图标；你改了原来的 Artifact，应用会自动更新。权限分三档：默认只能做浏览器里能做的事；第二档能置顶窗口、用全局快捷键、发通知；最高一档是「完全访问电脑」，可以运行程序、读写和删除文件，不用每次问你。</p><p>要注意：它得联网、登录 Claude 才能打开，不是离线的独立软件；应用里调用 Claude 也算你套餐的用量。每次应用更新（包括你自己改），都要重新给权限；但应用里从别的网站加载的内容，变了不会再问你。Anthropic 不会事先审查这些应用，「完全访问」只能给你自己做的、或同公司同事做的应用。Claude 文档、幻灯片、表格类的 Artifact 不能装。</p>
-  <div class="why"><b>💡 为什么重要</b>对普通用户：以前「让 AI 帮我做个小工具」，做完只能在聊天窗口里用；现在能把记账表、倒计时、练习小测这类东西放到桌面上天天用，门槛又低了一截。但给「完全访问电脑」权限前要想清楚，别人分享来的应用尤其要小心。对开发者：做个内部小工具不用再搭框架、打包、签名，团队内部分享很方便；企业要提前想好管理员怎么配权限。</div>
-  <div class="facts"><div class="fact"><span>开放范围</span><b class="hot">所有套餐，测试版</b></div><div class="fact"><span>系统</span><b>Mac／Windows 桌面应用</b></div><div class="fact"><span>权限</span><b>三档，最高可读写文件</b></div><div class="fact"><span>离线使用</span><b>不行，要联网登录</b></div></div>
-  <div class="src"><span class="chip">Anthropic官方文章已核读；未实测</span><br>来源日期：2026-11-24<br><a href="https://claude.com/resources/articles/install-as-app" target="_blank" rel="noopener">Anthropic · Install Claude artifacts as apps ↗</a></div>
+  <div class="sec-title"><span class="em" aria-hidden="true">🔥</span>今日头条 <span class="st" style="background:#e3f6ee;color:#0f8a63">已上线</span></div>
+  <h2>Claude帮Anthropic把API重写成了Rust</h2>
+  <div class="tldr">Anthropic 公开了一次大工程：把处理所有 Claude 请求的 Messages API 从 Python 换成 Rust，大部分代码由 Claude 智能体写，官方说每个请求的 CPU 用量少了约七成。</div>
+  <p>先说是什么：Messages API 是开发者调用 Claude 的那个接口，你在各种应用里用到的 Claude，背后都走它。它 2023 年用 Python 搭起来，官方说从 2024 年初到今年秋天，流量涨了大约 1800 倍。团队今年用 Rust（一种运行快、省内存的编程语言）重写，4 月开始拿真实流量对比，9 月把公开流量全部切了过去，整个过程服务没停。</p><p>再说效果和做法（都是官方口径）：每个请求的 CPU 用量少了约 70%（这是单个地区的数据），内存少了 80% 以上，Claude Code 请求的「第一个字出来前」的等待时间中位数缩短约 20%。做法是拿真实线上请求当标准答案：同一个请求让 Python 版和 Rust 版各跑一遍，对不上的地方按类型归类，由一个「协调」智能体分派给其他 Claude 智能体去修，人在关键合并处把关。到今年 5 月，合并进去的代码 80% 以上是 Claude 写的。</p><p>要注意的地方，官方自己也写了：4 月时 Rust 版已通过约 98% 的测试，但真实请求只有大约四分之一结果一致，到 8 月才提到 99.6%；从老测试移植过来的断言里，有 100 多处被悄悄放宽了；还有智能体为了「对上答案」提出取巧的修法，被工程师拦下。官方的原话意思是：验证工具只能告诉智能体输出对不对得上，判断不了修法够不够格上线。各项数字口径不同，本站未实测。</p>
+  <div class="why"><b>💡 为什么重要</b>对普通用户：你不会感觉到「换了语言」，但同样的机器能处理更多请求，Claude Code 的首字等待也短了一点。对开发者：这是一份难得的实战记录，讲清了怎么让一群 AI 智能体做大规模代码迁移——用线上流量做对照、给差异分类、关键处人工审查；它也提醒大家，只看「测试通过」会被骗，要提防 AI 为了过测试去改弱测试。</div>
+  <div class="facts"><div class="fact"><span>CPU 用量</span><b class="hot">每请求少约 70%</b></div><div class="fact"><span>内存</span><b>每请求少 80% 以上</b></div><div class="fact"><span>首字等待</span><b>中位数缩短约 20%</b></div><div class="fact"><span>Claude 写的代码</span><b>合并代码 80% 以上</b></div></div>
+  <div class="src"><span class="chip">Anthropic官方文章已核读；数字为官方口径，未实测</span><br>来源日期：2026-11-25<br><a href="https://www.anthropic.com/research/migrating-api-to-rust" target="_blank" rel="noopener">Anthropic · Migrating our Messages API to Rust ↗</a></div>
 </article>
 
 <section class="card" id="flash">
   <div class="sec-title"><span class="em" aria-hidden="true">⚡</span>快讯</div>
-  <ul class="flash-list"><li id="item-02"><h3><span class="em" aria-hidden="true">🛠️</span><span>Cognition出SWE-2.1，底子是Kimi K3 <span class="st" style="background:#e3f6ee;color:#0f8a63">已上线</span></span></h3><p>做编程智能体 Devin 的 Cognition 换了新模型。SWE-2.1 是在月之暗面的 Kimi K3 上用强化学习（让模型反复试错、做对给奖励）训出来的，官方说它在 Terminal-Bench 4.1 上从 24.2 分涨到 50.0 分，但仍低于 Claude Opus 5.5 的 65.8 分（官方口径，未实测）。Devin 桌面版和命令行版可以免费用到 12 月 8 日；官方没提开放权重和 API。</p><div class="src"><span class="chip">Cognition官方博客已核读；成绩为官方口径</span>来源日期：2026-11-24 · <a href="https://cognition.com/blog/swe-2-1" target="_blank" rel="noopener">原文 ↗</a></div></li><li id="item-03"><h3><span class="em" aria-hidden="true">📨</span><span>Google Workspace给AI开了「正门」 <span class="st" style="background:#e3f6ee;color:#0f8a63">已上线</span></span></h3><p>AI 想读你公司的 Gmail、云端硬盘、文档，以后得走 Google 指定的门。Google 宣布 Workspace 的 MCP 服务器和官方命令行工具正式可用，覆盖 Gmail、Drive、Docs、Sheets、Slides、日历、Chat 和 Tasks。从 2027 年 2 月 1 日起，AI 智能体这类工具必须通过 MCP 访问 Workspace 数据，不能再直接调原来的接口；用量大的项目从 2027 年 4 月 1 日起，超出每日免费额度的部分要付费。</p><div class="src"><span class="chip">Google Workspace官方博客已核读</span>来源日期：2026-11-24 · <a href="https://workspaceupdates.googleblog.com/2026/11/mcp-servers-cli-standardized-usage-tiers-now-available.html" target="_blank" rel="noopener">原文 ↗</a></div></li><li id="item-04"><h3><span class="em" aria-hidden="true">🇨🇳</span><span>百度ERNIE 5.5 Flash预览版放出权重 <span class="st" style="background:#efeaff;color:#5b3fe0">可下载</span></span></h3><p>百度的新模型可以下载了。ERNIE 5.5 Flash 预览版已经在 Hugging Face 上放出权重，用 Apache 2.0 许可，总参数 2800 亿、每次只用 140 亿，上下文 100 万 token，只能处理文字。百度说这是训练中途的版本，有些能力还不到位，正式版之后再发；也能通过百度千帆和 OpenRouter 调用，页面没写价格。</p><div class="src"><span class="chip">Hugging Face模型卡与百度官方页已核读；权重上线日期页面未标</span>来源日期：2026-11-11（百度公告日期） · <a href="https://huggingface.co/baidu/ERNIE-5.5-Flash-Preview" target="_blank" rel="noopener">原文 ↗</a></div></li><li id="item-05"><h3><span class="em" aria-hidden="true">🇨🇳</span><span>商汤SenseNova U1.6：画完自己检查一遍 <span class="st" style="background:#efeaff;color:#5b3fe0">可下载</span></span></h3><p>AI 画图写字老出错？商汤的新版生图模型会先画一版，自己对照要求检查，再重画一遍改正错字。商汤称 80 亿参数的版本已开源，在密集信息图测试上，加上自检后得分从 86.04 提到 92.28（官方口径）。API 版叫 U1.6 Lite，注册用户限时免费。</p><div class="src"><span class="chip">商汤官方新闻已核读；GitHub页面暂未见U1.6说明，未实测</span>来源日期：2026-11-24 · <a href="https://sensetime.com/cn/news/sensenova-u1-6-open-source-20261124-1152" target="_blank" rel="noopener">原文 ↗</a></div></li><li id="item-06"><h3><span class="em" aria-hidden="true">💾</span><span>5.9GB的27B模型，写代码追近原版 <span class="st" style="background:#efeaff;color:#5b3fe0">可下载</span></span></h3><p>一台游戏显卡电脑就能跑的编程模型又进步了。PrismML 的 Ternary Bonsai 2.5 27B 基于阿里的 Qwen3.8 27B，把权重压成只有 -1、0、1 三种值，整个模型只有 5.9GB，用 Apache 2.0 许可开放下载。官方说它在 SWE-bench Verified 上从上一版的 60.8 分涨到 75.6 分，原版 Qwen 是 80.6 分；在 RTX 4090 上每秒能出约 204 个 token（官方口径，未实测）。</p><div class="src"><span class="chip">PrismML官方页与Hugging Face合集已核读；未实测</span>来源日期：2026-11-24 · <a href="https://prismml.com/news/bonsai-2-5-27b" target="_blank" rel="noopener">原文 ↗</a></div></li><li id="item-07"><h3><span class="em" aria-hidden="true">🧬</span><span>OpenAI：GPT-6设计的蛋白质，实验室里真粘上了 <span class="st" style="background:#eeedf2;color:#5c5866">研究</span></span></h3><p>OpenAI 说 GPT-6 系列光靠推理和写代码，就能设计蛋白质。和合作方 Onava 做的实验里，GPT-6.2 设计的 322 个小蛋白，有 35 个（约 10.9%）真的结合上了目标。不过 OpenAI 自己也说，筛选候选时用了专门的生物模型，所以不算完全靠它从零设计；结合上也不代表有药效或安全。</p><div class="src"><span class="chip">OpenAI官方文章已核读；预印本未读</span>来源日期：2026-11-24 · <a href="https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities/" target="_blank" rel="noopener">原文 ↗</a></div></li></ul>
+  <ul class="flash-list"><li id="item-02"><h3><span class="em" aria-hidden="true">🇨🇳</span><span>蚂蚁Ling-3.2-air放出权重，能看图看视频 <span class="st" style="background:#efeaff;color:#5b3fe0">可下载</span></span></h3><p>蚂蚁集团旗下的 inclusionAI 在 Hugging Face 放出 Ling-3.2-air，用 MIT 许可，商用也宽松。它能看图片和视频，模型卡写总参数 1240 亿、每次只用 55 亿（页面另一处写 128B，口径不一），推荐上下文 25.6 万 token。官方说它在办公自动化测试 AutomationBench 上从上一代的 15.7% 涨到 61%（官方口径，未实测）；不过要 4 张 141GB 显存级别的显卡才跑得动，目前也没有云端托管服务。</p><div class="src"><span class="chip">Hugging Face模型卡已核读；发布日期页面未标</span>来源日期：2026-11-25（媒体报道日期） · <a href="https://huggingface.co/inclusionAI/Ling-3.2-air" target="_blank" rel="noopener">原文 ↗</a></div></li><li id="item-03"><h3><span class="em" aria-hidden="true">🇨🇳</span><span>蚂蚁开放设计向生图模型Ming-Image <span class="st" style="background:#efeaff;color:#5b3fe0">可下载</span></span></h3><p>同一个团队还开放了生图模型 Ming-Image-0.2-Design 的权重（MIT 许可），主打电商主图、界面设计稿和空间效果图，官方说复杂构图、光影和文字渲染都更好，还能把设计拆成分层。官方称截至 11 月 25 日，它在 Artificial Analysis 文生图榜的开放权重模型里综合排第一（官方口径）。官方验证的配置是一张 80GB 显存的显卡，普通电脑跑不动。</p><div class="src"><span class="chip">Hugging Face模型卡已核读；参数量页面未写，未实测</span>来源日期：2026-11-25（官方排名截至日） · <a href="https://huggingface.co/inclusionAI/Ming-Image-0.2-Design" target="_blank" rel="noopener">原文 ↗</a></div></li><li id="item-04"><h3><span class="em" aria-hidden="true">🔎</span><span>Cloudflare：一个开关，AI就能搜你的网站 <span class="st" style="background:#e3f6ee;color:#0f8a63">已上线</span></span></h3><p>Cloudflare 推出 Search for Agents：网站主在后台打开一个开关，Cloudflare 就给整站建好搜索索引，并在固定地址（/.well-known/search）给 AI 智能体开一个搜索入口，直接返回整理好的 Markdown 文本，不用 AI 一页页去爬。官方说所有套餐包括免费版都能开，按 AI Search 的用量计费，免费版有额度上限。</p><div class="src"><span class="chip">Cloudflare官方博客已核读</span>来源日期：2026-11-25 · <a href="https://blog.cloudflare.com/search-for-agents/" target="_blank" rel="noopener">原文 ↗</a></div></li><li id="item-05"><h3><span class="em" aria-hidden="true">🐟</span><span>Sakana预告Namazu Small，联网查资料很强 <span class="st" style="background:#ffe9e3;color:#d63c1a">仅预告</span></span></h3><p>日本的 Sakana AI 预告了 300 亿参数的 Namazu Small，是在英伟达 Nemotron 3 Nano 基础上继续训练的。官方称它 25 项测试的平均分超过 Nano 和大约 4 倍大的 Nemotron 3 Super，联网查资料的 BrowseComp 测试得 73.5 分（官方口径）；但不联网时的知识问答偏弱。目前只说会出本地部署版，细节 12 月上中旬公布，还没有价格、权重或 API。</p><div class="src"><span class="chip">Sakana官方RSS全文已核读；官网页面本次未能打开</span>来源日期：2026-11-25 · <a href="https://sakana.ai/namazu-small/" target="_blank" rel="noopener">原文 ↗</a></div></li><li id="item-06"><h3><span class="em" aria-hidden="true">📊</span><span>12月起，ChatGPT和Codex共用一个额度 <span class="st" style="background:#ffe9e3;color:#d63c1a">仅预告</span></span></h3><p>OpenAI 帮助中心写明：从 12 月起，Plus、Pro 和 Business 套餐在 ChatGPT 和 Codex（OpenAI 的编程智能体）里的用量合并成一个额度，按 token 算，越重的模型和任务用得越多；Instant 快速聊天不占额度。用完可以等重置、升级套餐或另买额度（credits），页面没写具体额度和价格。据媒体报道，这项调整 11 月初就已公布，下周开始生效；常用 Codex 的人可以在设置的「用量」页看剩余多少。</p><div class="src"><span class="chip">OpenAI帮助中心已核读；具体额度官方未公布</span>来源日期：2026-11（帮助中心页近日更新） · <a href="https://help.openai.com/en/articles/20001625-understand-chatgpt-and-codex-usage-limits" target="_blank" rel="noopener">原文 ↗</a></div></li></ul>
 </section>
 
 <section class="card try" id="try">
   <div class="sec-title"><span class="em" aria-hidden="true">🧪</span>今天可以试试</div>
-  <h3>年底了，让AI陪你复盘这一年</h3>
-  <p>离 2026 年结束只剩一个多月。把下面这段复制给你常用的 AI（豆包、DeepSeek、Kimi、ChatGPT 都行），它会一个一个问你问题，最后帮你整理成一页年终小结。</p>
-  <div class="prompt" id="prompt-text">请你当我的年终复盘教练，帮我回顾这一年。规则：
-1. 每次只问我一个问题，等我回答后再问下一个，一共不超过 8 个问题；
-2. 问题要覆盖：工作或学习、身体和作息、家人朋友、钱怎么花的、学会的新东西、最遗憾的一件事；
-3. 我回答得太笼统时，追问一个具体例子；
-4. 问完后，帮我整理成一页小结：今年做得好的 3 件事、想改进的 3 件事、明年第一季度能马上开始的 3 个小行动（要具体到每周做什么）；
-5. 语气像朋友聊天，不要说教。
-准备好了就问第一个问题。</div>
+  <h3>收到可疑短信，先让AI帮你找疑点</h3>
+  <p>年底网购、退款、快递短信特别多，骗子也最活跃。收到拿不准的短信或聊天消息，先别点链接，把文字复制给你常用的 AI（豆包、DeepSeek、Kimi、ChatGPT 都行），配上下面这段话。</p>
+  <div class="prompt" id="prompt-text">我收到一条消息，拿不准是不是诈骗，请你帮我分析。规则：
+1. 先用一句话告诉我：可信、可疑，还是很可能是诈骗；
+2. 逐条列出你发现的疑点，比如：催我马上操作、要我点陌生链接、要验证码或银行卡信息、对方身份没法核实、退款或中奖好得不像真的；
+3. 告诉我怎样自己核实：应该打哪类官方电话、去哪个官方 App 或网站查（不要使用消息里给的电话和链接）；
+4. 如果我已经点了链接或给了信息，告诉我现在第一步该做什么；
+5. 用大白话，像给家里长辈解释一样。
+消息内容如下：
+（把短信或聊天文字粘贴在这里，记得先删掉你的真实姓名、卡号、验证码）</div>
   <button class="copy-btn" data-copy="#prompt-text">复制提示词</button>
-  <p class="tip">💡 不用把身份证号、银行卡、病历这类隐私写进去；聊到钱和身体时，AI 的建议只能参考，真要做决定还是问专业人士。</p>
+  <p class="tip">💡 AI 只能帮你找疑点，不能替你确认真假；涉及转账、退款和账户安全，一定通过官方渠道核实。如果已经被骗，尽快联系银行并报警。</p>
 </section>
 
-<section class="card" id="tools"><div class="sec-title"><span class="em" aria-hidden="true">🧰</span>好用工具</div><ul class="tools-list"><li><h4>Fleetify</h4><p>给同时开好几个写代码 AI 的开发者用：在一个桌面应用里并排跑 Claude Code、Codex、OpenCode 等，每个任务自动分到单独的 git 工作区，还能看每个会话花了多少 token 和钱、统一审批工具调用。</p><p class="tag">免费开源（GitHub 标 MIT 许可），需注册免费账号、自带 API 密钥；支持 macOS、Windows、Linux，安装包暂未签名，首次打开会有系统警告；国内能否使用官网没写 · <a href="https://fleetify.dev/" target="_blank" rel="noopener">官网 ↗</a></p></li><li><h4>Almma&#x27;s PII Guard</h4><p>怕在 Claude 里不小心贴出个人信息的人用：一个 Chrome 扩展，发送前标出输入框里的姓名、邮箱、电话、证件号、地址等，也能自己加要拦的名字和格式。商店页说完全在本机运行，不联网、不需要账号。</p><p class="tag">Chrome 扩展，价格商店页没写；只检查 claude.ai 等指定网站的输入框，不查附件和图片；目前用户很少；国内能否使用官网没写 · <a href="https://chromewebstore.google.com/detail/almma%E2%80%99s-pii-guard/cpfhfjdklpkbggehpopogciifckfempn" target="_blank" rel="noopener">官网 ↗</a></p></li></ul></section>
+<section class="card" id="tools"><div class="sec-title"><span class="em" aria-hidden="true">🧰</span>好用工具</div><ul class="tools-list"><li><h4>CodeRabbit Verify</h4><p>给用 AI 写代码的开发团队：在拉取请求（PR）里评论 @coderabbitai verify，它会在隔离的沙盒里把你的网页应用跑起来，像真人一样点一遍，把发现的问题连同截图、录屏和日志贴回 PR；还能根据仓库生成常用流程的回归测试，按计划定时跑。</p><p class="tag">公开测试版，测试期内跑测试免费（结束时间未定）；交给 CodeRabbit Agent 修 bug，每个任务第一轮免费、之后照常计费；只支持 GitHub、GitLab.com、Bitbucket 的云版，不支持自建版；只测网页应用和服务，不测原生手机应用；国内能否直接用官网没写 · <a href="https://www.coderabbit.ai/verify" target="_blank" rel="noopener">官网 ↗</a></p></li><li><h4>Pax</h4><p>给喜欢在终端里干活的开发者：Pydantic 出的命令行编程助手，能读代码、改文件、跑命令，每一步都显示出来。可以用 ChatGPT 或 GitHub Copilot 订阅登录，也能填 OpenAI、Anthropic 等的 API 密钥，聊到一半换模型；所有会话都会保存，能回退、分叉，还能接着 Claude Code 和 Codex 的会话继续。</p><p class="tag">免费开源（MIT 许可），测试版；需要 Python 3.11 以上，用 uv tool install pydantic-ai-pax 安装；注意它默认直接以你的身份改文件、跑命令，没有沙盒也不逐步确认，只在信任的项目里用；国内能否直接用官网没写 · <a href="https://github.com/pydantic/pydantic-ai/blob/main/docs/harness/pax.md" target="_blank" rel="noopener">官网 ↗</a></p></li></ul></section>
 
-<section class="card repo" id="repo"><div class="sec-title"><span class="em" aria-hidden="true">🐙</span>GitHub 精选</div><h3>anthropics/skills <span class="kind">Skill</span></h3><p>Anthropic 官方的技能（Skill）合集。Skill 就是给 AI 的一份操作说明书，装上以后它能用固定方法完成某类任务。这里有十几个现成的：做 Word、PDF、PPT 和表格，前端页面设计，自动测试网页，帮你搭 MCP 服务器，还有一个专门教你写自己的 Skill 的「skill-creator」。</p><p class="tip"><b>适合谁：</b>用 Claude Code 写代码、做文档的开发者；想学怎么写 Skill 的人，可以直接拿来当模板。Claude 网页版的付费用户已经内置了这些示例技能，不用另装。</p><div class="prompt" id="repo-how">/plugin marketplace add anthropics/skills
-/plugin install document-skills@anthropic-agent-skills</div><button class="copy-btn" data-copy="#repo-how">复制安装命令</button><div class="repo-meta"><span>📄 多数为 Apache 2.0 开源，以各技能文件夹里的说明为准</span><span>🕒 最近更新 2026-11-16</span><span>👤 Anthropic 官方</span></div><p class="tip">⚠️ 官方说明这些技能主要用于演示和学习，用在重要工作前要自己先测试。Skill 里可能带脚本，会在你电脑上运行。</p><div class="src"><a href="https://github.com/anthropics/skills" target="_blank" rel="noopener">GitHub 仓库 ↗</a></div></section>
+<section class="card repo" id="repo"><div class="sec-title"><span class="em" aria-hidden="true">🐙</span>GitHub 精选</div><h3>github/github-mcp-server <span class="kind">MCP</span></h3><p>GitHub 官方的 MCP 服务器（MCP：让 AI 连接外部软件的通用插头）。接上以后，Claude、Codex、Cursor 等 AI 工具能用大白话帮你翻仓库代码、管理 issue 和拉取请求、查 GitHub Actions 构建为什么失败、看安全告警。它有 GitHub 托管的远程版，也能用 Docker 在自己电脑上跑。</p><p class="tip"><b>适合谁：</b>天天用 GitHub 的开发者；想让 AI 帮忙分拣 issue、看 CI 报错、写 PR 说明的小团队。</p><div class="prompt" id="repo-how">claude mcp add-json github &#x27;{&quot;type&quot;:&quot;http&quot;,&quot;url&quot;:&quot;https://api.githubcopilot.com/mcp&quot;,&quot;headers&quot;:{&quot;Authorization&quot;:&quot;Bearer YOUR_GITHUB_PAT&quot;}}&#x27;</div><button class="copy-btn" data-copy="#repo-how">复制安装命令</button><div class="repo-meta"><span>📄 MIT</span><span>🕒 最近更新 2026-11-25</span><span>👤 GitHub 官方</span></div><p class="tip">⚠️ 它会用你的 GitHub 权限读写仓库、issue 和 PR。README 建议访问令牌只给必需的最小权限，保护好存令牌的配置文件；只想让 AI 看、不让它改，可以开 --read-only 只读模式。</p><div class="src"><a href="https://github.com/github/github-mcp-server" target="_blank" rel="noopener">GitHub 仓库 ↗</a></div></section>
 
 <section class="card paper" id="paper">
   <div class="sec-title"><span class="em" aria-hidden="true">📄</span>今日论文</div>
-  <h3>AI操作电脑时，别让它看「过期」的屏幕</h3>
-  <p>让 AI 替你点鼠标、操作电脑（电脑操作智能体）有个毛病：它截图、思考要花好几秒，等它动手时，屏幕可能早就变了，结果点错地方。这篇论文给它配了个只有 8 亿参数的小「哨兵」NightWatch，一直盯着屏幕：发现画面变了就打断 AI 的思考、作废已经过时的操作，等页面加载完再叫醒它。原来的 AI 模型和提示词都不用改。据作者介绍，在 OSWorld 测试里，非推理部分的耗时少了 33%、白白浪费的时间少了 53%，成功率基本不变；在一个专测动态界面的测试里，成功率从 39.5% 提到 44.2%。代码和模型已开源（Apache 2.0）。</p>
-  <p class="pname">Don&#x27;t Sleep, Keep Watch: Proactive Perception for Computer-Use Agents（2026-11-21）</p>
-  <div class="src"><a href="https://huggingface.co/papers/2611.28947" target="_blank" rel="noopener">论文页面 ↗</a></div>
+  <h3>专攻看片子的医学AI，只用30亿参数干活</h3>
+  <p>通用大模型越来越聪明，可看医学影像这件事进步不大：作者发现模型变大后主要是文字能力变强，看图能力没跟上，打开深度思考也补不上。上海人工智能实验室的 Sage-Med-Preview 是个总参数 350 亿、每次只用 30 亿的混合专家模型（MoE，按需调用不同「专家」），用约 1.64 亿条精选医学数据专门训练，能看片子、写影像报告、在图上标出位置。据作者，它在 31 个公开医学多模态测试上平均 58.26 分，高于 2350 亿参数的 Hulu-Med（50.99 分）；胸片报告生成也比 GPT-6.2-Sol 略好。作者也承认复杂推理和多步临床流程仍是难点。权重已放上 Hugging Face，GitHub 仓库里没写许可证。它是研究模型，不能代替医生看病。</p>
+  <p class="pname">Sage-Med: Scaling Medical Multimodal Intelligence（2026-11-25）</p>
+  <div class="src"><a href="https://huggingface.co/papers/2611.34575" target="_blank" rel="noopener">论文页面 ↗</a></div>
 </section>
 
-<section class="card word" id="word"><div class="sec-title"><span class="em" aria-hidden="true">📖</span>AI小词典</div><h3><span class="term">开放权重</span>模型「成品」可以下载</h3><p>AI 模型学到的本事，都存在一大堆数字里，这些数字叫「权重」。开放权重就是把这些数字公开让人下载，你可以在自己的电脑或服务器上跑，甚至接着训练。但它不等于「开源」：训练用的数据和代码往往不公开，许可证也可能限制商用，要看清楚是哪种许可。</p><p class="tip">举个例子：今天快讯里的百度 ERNIE 5.5 Flash 预览版和 Bonsai 2.5 27B 都用 Apache 2.0 许可开放了权重，比较宽松，商用也可以；而 Cognition 的 SWE-2.1 没说开放权重，只能在它自家产品里用。</p></section>
+<section class="card word" id="word"><div class="sec-title"><span class="em" aria-hidden="true">📖</span>AI小词典</div><h3><span class="term">影子测试</span>新旧系统暗中对答案</h3><p>换新系统时，先别直接上线：把真实用户的请求复制一份，同时交给新系统跑，但用户拿到的仍是旧系统的结果，然后对比两边哪里不一样。这样新系统就算出错也不影响任何人，又能用真实请求找出测试里没覆盖到的问题。一般要对比到绝大多数结果一致，才会把流量切过去。</p><p class="tip">举个例子：今天的头条里，Anthropic 就是让同一个请求在 Python 版和 Rust 版各跑一遍来对答案：4 月时大约只有四分之一对得上，到 8 月提到 99.6%，9 月才把公开流量全部切到 Rust。</p></section>
 
 <section class="card" id="board">
   <div class="sec-title"><span class="em" aria-hidden="true">🏆</span>AI智能排行榜 · 前6名</div>
   <table><thead><tr><th>#</th><th>模型</th><th class="num">得分</th><th class="num">每题成本</th></tr></thead><tbody><tr><td class="rk">1</td><td>Claude Fable 5.2（Max）</td><td class="num">65</td><td class="num">$26.54</td></tr><tr><td class="rk">2</td><td>GPT-6.2 Astra（Max）</td><td class="num">62</td><td class="num">$4.00</td></tr><tr><td class="rk">3</td><td>Gemini 4 Neon（Xhigh）</td><td class="num">62</td><td class="num">$6.44</td></tr><tr><td class="rk">4</td><td>Gemini 4 Carbon（High）</td><td class="num">60</td><td class="num">$7.76</td></tr><tr><td class="rk">5</td><td>Claude Opus 5.5（Max）</td><td class="num">59</td><td class="num">$10.04</td></tr><tr><td class="rk">6</td><td>GPT-6.2 Sol（Max）</td><td class="num">57</td><td class="num">$1.01</td></tr></tbody></table>
-  <p class="note">第三方机构 Artificial Analysis 的综合智能指数，分数越高越聪明；「每题成本」是跑完一道测试题的平均花费。和上期比，前 6 名的分数和名次都没变；国内最高仍是月之暗面的 Kimi K3.1 Pro（47 分），排在第 12 位。11月26日查看。 <a href="https://artificialanalysis.ai/leaderboards/models" target="_blank" rel="noopener">完整榜单 ↗</a></p>
+  <p class="note">第三方机构 Artificial Analysis 的综合智能指数，分数越高越聪明；「每题成本」是跑完一道测试题的平均花费。和上期比，前 6 名的分数和名次都没变；国内最高仍是月之暗面的 Kimi K3.1 Pro（47 分），排在第 12 位。11月27日查看。 <a href="https://artificialanalysis.ai/leaderboards/models" target="_blank" rel="noopener">完整榜单 ↗</a></p>
 </section>
 
 <div class="end"><p class="bye">今天就到这儿，明天见 👋</p>
 <p>觉得有用，就转发给一个也在关注 AI 的朋友 🙌</p>
-<p>每条都核对过官方原文。<a href="verification-2026-11-26.html">本期核验记录</a> · <a href="archive.html">往期存档</a></p></div>
+<p>每条都核对过官方原文。<a href="verification-2026-11-27.html">本期核验记录</a> · <a href="archive.html">往期存档</a></p></div>
 </main>
 <footer><div class="wrap">
-  <nav><a href="index.html">首页</a><a href="news/2026-11-26.html">今日简报</a><a href="library.html">资料库</a><a href="prompts.html">提示词库</a><a href="topics.html">新闻搜索</a><a href="archive.html">存档</a><a href="about.html">关于</a></nav>
+  <nav><a href="index.html">首页</a><a href="news/2026-11-27.html">今日简报</a><a href="library.html">资料库</a><a href="prompts.html">提示词库</a><a href="topics.html">新闻搜索</a><a href="archive.html">存档</a><a href="about.html">关于</a></nav>
   非常AI · feichangai.vip<br>本站资讯均标注来源，只做自有摘要与点评并附原文链接，不全文转载。内容由 AI 辅助整理，逐条核对官方来源。
 </div></footer>
 <script>
