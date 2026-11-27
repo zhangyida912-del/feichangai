@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>第12期核验记录</title>
+<meta name="description" content="非常AI · 每天几条值得关注的 AI 变化，中文讲清，标好来源与限制。">
+<meta property="og:type" content="article"><meta property="og:site_name" content="非常AI">
+<meta property="og:title" content="第12期核验记录"><meta property="og:description" content="非常AI · 每天几条值得关注的 AI 变化，中文讲清，标好来源与限制。">
+<meta property="og:url" content="https://feichangai.vip/verification-2026-11-28.html">
+<meta property="og:image" content="https://feichangai.vip/assets/og-cover.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="第12期核验记录">
+<meta name="twitter:description" content="非常AI · 每天几条值得关注的 AI 变化，中文讲清，标好来源与限制。"><meta name="twitter:image" content="https://feichangai.vip/assets/og-cover.png">
+<link rel="icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/site.css?v=5517017f"></head>
+<body>
+<header><div class="wrap nav">
+  <a class="logo" href="index.html">非常<i>AI</i></a>
+  <nav class="nav-links" aria-label="主导航"><a href="index.html">首页</a><a href="news/2026-11-28.html">今日简报</a><a href="library.html">资料库</a><a href="archive.html">存档</a><a href="about.html">关于</a></nav>
+</div></header>
+<main class="wrap page"><pre class="log"># 第12期核验记录
+
+核验日期：2026-11-28，Asia/Taipei。本期1条头条＋3条快讯，覆盖11月26日至27日的原始材料。感恩节后的周五，多家英文日报停刊或只发轻量内容，可核的产品新闻偏少；快讯只写3条、不写今日趣闻，不凑数。
+本次运行无人值守，部分网页（X 帖子页、Rundown 单期页、TLDR AI 存档、Ben's Bites、TechCrunch、Product Hunt、Hugging Face Daily Papers 网页版、GitHub Trending、cmem.ai 等）因抓取权限或站点限制未能打开；凡未能打开发布方原文的线索一律不写，例外情况在对应条目写明。
+
+## 头条依据
+各家日报最新一期的头条或第一条：
+- The Neuron（11-27 全日汇总）：开篇为美国芯片管制拖慢中国 AI 模型研发（Reuters 报道）；Top 5 第一条为 OpenAI 修正 GPT-6.2 计费错误
+- Superhuman AI（11-27）：英伟达暂停向东南亚四国发货服务器
+- The Rundown AI：首页最新一期为「AI 挑战物理学大难题」（GPT-6 Astra 参与物理证明），单期页未能打开
+- TLDR AI：存档页未能打开
+- Ben's Bites：首页未能打开
+- The Deep View：首页头条为 Halliday AI 眼镜上手评测，页面无日期，非新闻
+两家（The Neuron、Superhuman）开篇都与美国芯片出口管制有关，但这属于供应链与政策报道，没有发布方原始材料可核（均为 Reuters、Bloomberg 等媒体报道），不符合本站「新模型／新功能／价格与开放范围变化」的选题范围与核验要求，故未作头条。
+改选 The Neuron Top 5 第一条、The Decoder 也作为当天重点报道的 OpenAI GPT-6.2 计费修正：直接改变所有 ChatGPT／Codex 订阅用户的可用额度，对普通用户和开发者影响最大。
+
+## 01 OpenAI 修正 GPT-6.2 计费错误（头条）
+出处：Thibault Sottiaux（OpenAI，X 账号 @thsottiaux）X 帖 https://x.com/thsottiaux/status/2125784147889393806 ，发帖时间 2026-11-26（据媒体为 02:50 UTC）；补偿规则 https://help.openai.com/en/articles/20001498-how-resets-work-in-codex 。
+线索来源：The Neuron 11-27 汇总、The Decoder。
+原文核对方式：X 帖子页无法抓取（robots 限制）。帖子前半段文字由网页搜索结果中该帖的标题原样给出，可确认：上线时计费错误，大多数用户的 Astra 和 Sol 用量被少算；已修复，同样的工作会多占额度；与上周相比 Astra 快 40%、Sol 快 25% 碰到上限。「其他模型不受影响」「不追溯收费」「Go、Plus、Pro、Business 每人一次 banked reset」三点来自 InfoWorld（11-27）与 SteamDB 对同一帖子的转述，两家一致，正文标为「据媒体转述」。
+帮助中心核对要点：banked reset 为免费一次性重置、存入账户待用；需至少一项受覆盖额度剩余低于 80% 才能手动使用；使用后主额度恢复至 100%（Plus 为5小时与每周，Pro 为每周，Go 为每月）；生图、上传文件、普通语音等单独额度不变；每次重置有到期时间；电脑版在 Settings &gt; Usage &amp; billing，命令行输入 /usage。页面显示约一天前更新。
+状态「已上线」依据：帖子说已经修复，改动已生效。
+边界：Business 用户 Fast Mode 免费到年底一说来自 The Decoder 引用的另一条 X 帖，原帖未能打开，不写；OpenAI 正与部分 Pro 用户测试合并 Chat 与 Work，亦为媒体转述，不写；InfoWorld 提到的超额 credits 计价倍数未核官方定价页，不写；「快40%」的确切含义原帖未说明，正文写明。未逐字引用原帖。
+
+## 02 腾讯 DFly2（快讯）
+出处：https://github.com/Tencent/AngelSpec （git clone --depth 1 读取 README 与 LICENSE；最近提交 2026-11-27）。README 新闻栏：2026/11/26 完整开源 DFly2（权重、训练代码、技术报告 arXiv 2611.34776）。
+线索来源：The Neuron「Treats to Try」、AI Weekly。
+状态「可下载」依据：README 列出 Hugging Face 上的 AngelSlim/Hy4-flash-DFly2-B6、DS-V4.1-Flash-DFly2-B6、GLM-5.3-Flash-DFly2-B6 三个草稿模型权重。
+原文核对要点：DFly2 为块并行投机解码草稿模型，每个草稿层共享目标模型稀疏注意力的 KV 缓存与 top-k 索引，每个草稿 token 最多关注约 2K 个键，成本与上下文长度无关，草稿模型无额外 KV 显存。支持 Hy4、Hy4 flash、DeepSeek-V4.1-Flash、GLM-5.3-Flash。AngelSpec 框架为 Apache-2.0（第三方组件除外）。速度表为单并发贪心解码：Hy4 flash 在 ALB（智能体长任务）上解码 4.55×、端到端 1.35×；正文写「最高约 4.5 倍、端到端约 1.35 倍」。
+边界：线索站称「DeepSeek-V4.1-Flash 吞吐高 81%」，README 未见这一数字，不写；Hugging Face 权重页本次未打开，权重许可未核，正文注明。未实测。
+
+## 03 Kimi for Science（快讯）
+出处：https://www.kimi.com/news/kimi-for-science-program （中文官方页）。页面未标发布日期，AI Weekly 11-27 将其列为当日头条，正文写「媒体报道日期」。
+线索来源：AI Weekly。
+状态「需排队」依据：需提交申请、经评审后才发放额度。
+原文核对要点：面向自然科学、工程学及交叉学科的科研人员与团队；最高 15 万元 Kimi API 额度（约合 70 亿 tokens），按需求和评审定，非现金；另有技术支持、新模型优先体验、长期合作机会；首期 12 月 8 日截止，后续批次陆续开放；可多次提交，以最后一次为准；结果发到申请邮箱。
+边界：线索站写「2 万美元」，官方中文页为 15 万元人民币，按官方写；页面未写名额、地区限制与适用模型，正文不写。
+
+## 04 Perplexity Time Machine（快讯）
+出处：https://docs.perplexity.ai/docs/search/time-machine.md ；更新日志 https://docs.perplexity.ai/changelog/changelog.md （条目标「November 2026」）。
+线索来源：Superhuman AI 11-26 头条（AI「时光机」）、AI Stack Crunch（标 11-25）。上期因官方页面未能打开而未写，本期已核。
+状态「已上线」依据：文档与更新日志写明 Search API、Context API 现已支持该参数，未标 beta。
+原文核对要点：参数 snapshot_as_of，RFC 3339 带时区时间，最多 365 天前、不可是未来；结果取该时间点或之前保存的网页副本；Context API 不实时抓取，无副本时返回 no_content；Agent API 的 web_search、fetch_url 工具也可用；不能与 recency、发布日期等日期筛选及人物搜索同用；Tier 1–5 每个 API 总共 50 次请求，超出返回 429，更多需联系销售。
+边界：线索站写的单价（每千次请求）文档页未写，不写。
+
+## 今天可以试试：年底清一清订阅，让AI帮你算哪些该退
+本站自拟提示词，不涉及具体产品功能。与提示词库（含常用精选）逐条比对，未见订阅盘点类条目。涉及花钱，tip 提醒以平台官方续费与退款规则为准、不要发卡号和密码。
+
+## 好用工具
+Claude-Mem：https://github.com/thedotmack/claude-mem ，clone 读取 README 与 LICENSE（Apache 2.0），最近提交 2026-11-26。核对：npx claude-mem install 安装；记忆存在 ~/.claude-mem；云同步需手动开启（README 顶部为「Everybody gets Cloud Sync」活动横幅）；官方观察者服务 30 天免费试用且需付款方式，也可用 OpenRouter、Gemini 密钥或 Anthropic 套餐；匿名统计默认开启、可关闭；&lt;private&gt; 标签内容不存储。线索：AItoolly 列出 Product Hunt 上的 Claude-Mem Cloud Sync。cmem.ai 官网未能打开，云同步价格未核，不写。
+Superpowers：https://github.com/obra/superpowers ，clone 读取 README 与 LICENSE（MIT），最近提交 2026-11-03「Release v7.0.2」。核对：先问需求、分段确认、按计划测试与实现的技能合集；支持的工具列表照 README；可视化伴侣功能会从作者网站加载 logo 并带版本号，可用 SUPERPOWERS_DISABLE_TELEMETRY 关闭。线索：GitHub Trending（经 AItoolly 列表）。
+两者均未与工具箱 tools.html 已有条目重复。看过未选：Hub（Claude Code／Codex 会话调度器，自述为实验性且跳过逐步授权，按规则不推荐）、OpenChat（v0.0.2，过早）、QA.tech、ExtraOrbital、Moat（官网未能打开）、HKUDS/CLI-Anything（最近提交 2026-09-22，非近期更新）。
+
+## GitHub 精选：huggingface/skills
+克隆读取：git clone --depth 1 https://github.com/huggingface/skills ，最近提交 2026-11-26「Deprecate and remove outdated skills (#312)」。LICENSE 为 Apache 2.0；skills/hf-mem/SKILL.md 头部标 license: mit，正文写明混合许可。
+README 要点：遵循 Agent Skills 格式；兼容 Claude Code、Codex、Gemini CLI、Cursor；Claude Code 安装为 /plugin marketplace add huggingface/skills，再 /plugin install hf-cli@huggingface/skills；其他技能用 hf skills add 安装；npm 方式说明照 README 转述；技能列表含 hf-cli、hf-mem（不下载即估算显存）、huggingface-papers、huggingface-spaces、trl-training 等；需授权或私有模型需要 HF_TOKEN（hf-mem 技能说明）。
+入选理由：官方组织维护、许可明确、3个月内更新、README 写清用途与安装，和本期 DFly2、显存话题相关。与 repos.html 已有的 github/github-mcp-server、anthropics/skills、modelcontextprotocol/servers 不重复。
+看过未选：microsoft/playwright-mcp（Apache 2.0，最近提交 11-18，可作后续备选）；openai/skills（最近提交 2026-06-23，接近3个月上限且未见 LICENSE 文件，不选）；obra/superpowers 放入好用工具。
+
+## 今日论文：OS-Omni
+出处：Hugging Face Daily Papers 接口 https://huggingface.co/api/papers （最新一批 2026-11-25，网页版本次未能打开），该批点赞第一（99）。论文页 https://huggingface.co/papers/2611.34232 ，代码 https://github.com/OS-Copilot/OS-Omni 。
+核对要点（摘要）：每期 300 题，v1 每平台 48 题加 12 个电脑与安卓手机配合的跨平台流程；覆盖 Windows、Ubuntu、macOS、iOS、安卓、网页；人类平均 67.54 步，OSWorld 为 15.0；最强 Claude Opus 5.5 平均成功率 68.5%，人类参考 77.3%；Linux 上前沿模型超过人类，iOS 与 macOS 落后 25 个百分点以上。正文结果写明「据作者」。论文页提交机构字段未写入正文（按规则不写机构）。
+未选：Sage-Med（上期已写）、MoLT、VibeVideoAgent 等（对普通读者较难说清意义）。
+
+## AI小词典：投机解码
+与小词典（含基础词条）比对，未见此词。「大约 2～4 倍」为常见经验区间，写「大约」；例子数字来自 AngelSpec README（Hy4 flash ALB 解码 4.55×）。
+
+## 模型榜单
+来源：https://artificialanalysis.ai/en/leaderboards/models （11-28 查看）。前6名、分数与每题成本与上期相同；第7、8名为 Claude Sonnet 5.5 Max（55）、Gemini 4 Hydrogen Xhigh（54）。国内最高 Kimi K3.1 Pro，47分，第12位。页面标题句另提到 Fable 5.2 xhigh／high 档，表格中未见单列，按表格写。
+
+## 价格表
+本期没有经官方核对的主流模型 API 调价，data/prices.json 未改。Gemini 4 Carbon 介绍价 12 月 1 日结束，按任务 12 月 1 日起再去 Google 官方页面核对。
+
+## 未采用的线索
+美国芯片管制拖慢中国 AI 研发、英伟达暂停东南亚发货、Blackwell 芯片现身上海机房：供应链与政策类媒体报道，无发布方原文，不选。
+Qwen-Audio-3.1 多语种与方言升级：官方 X 帖无法抓取；阿里云 Model Studio 文档页（TTS-Next 10-30 更新、ASR-Flash 11-06 更新）未见本次语种与方言数字，且线索站对方言数量说法不一，不写。
+GPT-6 Astra 参与物理证明（Rundown 头条）：Rundown 单期页未能打开，属研究与个人说法，本次未核原文，不写。
+OpenAI「Athena」数据平台：仅 The Information 报道，不写。OpenAI 反诉苹果、SAP 裁员、Taiwan GDP、Canada 算力基金等：法律、人事、宏观与资本类，不选。
+OpenAI Private Intelligence：发布于 9 月 DevDay，早于本期范围。
+英伟达 Nemotron 3.5 Parse：模型卡显示 10-20 发布，早于范围；11-26 的 Hugging Face 博客未能打开，不写。
+Meta 与 AMI Labs 三篇 JEPA 研究：仅读到 The Decoder 标题，原文未核，不写。
+Switzerland AI 智能体网络攻击、微软 ARTEX 报告：安全事件类媒体报道，本次未打开官方原文，不写。
+「AI 群聊」爆款提示词（construct22.com）、Zoox 警示音：页面未能打开，今日趣闻因此空缺。
+
+## 发布检查
+正文事实回到发布方材料核对，线索站只用于发现线索，未翻译或照搬其标题与句子。首页、本期页、存档、sitemap、核验页与旧期「今日简报」链接同步更新；HTMLParser 标签检查与 1280/390 宽度截图检查通过后发布。
+</pre></main>
+<footer><div class="wrap">
+  <nav><a href="index.html">首页</a><a href="news/2026-11-28.html">今日简报</a><a href="library.html">资料库</a><a href="prompts.html">提示词库</a><a href="topics.html">新闻搜索</a><a href="archive.html">存档</a><a href="about.html">关于</a></nav>
+  非常AI · feichangai.vip<br>本站资讯均标注来源，只做自有摘要与点评并附原文链接，不全文转载。内容由 AI 辅助整理，逐条核对官方来源。
+</div></footer>
+</body></html>

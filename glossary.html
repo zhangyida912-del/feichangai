@@ -13,13 +13,20 @@
 <body>
 <header><div class="wrap nav">
   <a class="logo" href="index.html">非常<i>AI</i></a>
-  <nav class="nav-links" aria-label="主导航"><a href="index.html">首页</a><a href="news/2026-11-27.html">今日简报</a><a href="library.html" aria-current="page">资料库</a><a href="archive.html">存档</a><a href="about.html">关于</a></nav>
+  <nav class="nav-links" aria-label="主导航"><a href="index.html">首页</a><a href="news/2026-11-28.html">今日简报</a><a href="library.html" aria-current="page">资料库</a><a href="archive.html">存档</a><a href="about.html">关于</a></nav>
 </div></header>
 <main class="wrap">
 <nav class="crumb"><a href="library.html">资料库</a> / AI 小词典</nav>
-<section class="lib-head"><h1>📖 AI 小词典</h1><p>新闻里看不懂的 AI 词，这里用大白话讲清楚。每天新增一个。</p><span class="count">已收录 28 个词 · 每天更新</span></section>
+<section class="lib-head"><h1>📖 AI 小词典</h1><p>新闻里看不懂的 AI 词，这里用大白话讲清楚。每天新增一个。</p><span class="count">已收录 29 个词 · 每天更新</span></section>
 <label class="search"><span aria-hidden="true">🔍</span><input id="q" type="search" placeholder="搜一搜：token、智能体……" aria-label="搜索"></label>
 <div class="grid"><article class="pcard" data-cat="词" style="--accent:var(--ink);--accent-bg:var(--bg)">
+<div class="top"></div><div class="inner">
+<h3><span class="term-tag">投机解码</span> 小模型打草稿，大模型改卷</h3>
+<p style="font-size:15px">大模型生成文字是一个字一个字往外蹦，每蹦一个都要把整个大模型算一遍，很慢。投机解码的办法是：让一个小得多的「草稿模型」先快速猜出后面几个字，再让大模型一次性检查——猜对的直接收下，猜错的从错的地方重来。因为最后都由大模型把关，结果和原来一样，只是更快；猜得越准，提速越多，常见能快大约 2～4 倍。</p>
+<p class="preview" style="-webkit-line-clamp:unset">举个例子：今天快讯里腾讯开源的 DFly2 就是这样的草稿模型：它借用大模型自己的缓存来打草稿，官方说在 Hy4 flash 的智能体任务上解码最高快约 4.5 倍。</p>
+<div class="foot"><span>第12期 · <a href="news/2026-11-28.html#word">原文</a></span></div>
+</div></article>
+<article class="pcard" data-cat="词" style="--accent:var(--ink);--accent-bg:var(--bg)">
 <div class="top"></div><div class="inner">
 <h3><span class="term-tag">影子测试</span> 新旧系统暗中对答案</h3>
 <p style="font-size:15px">换新系统时，先别直接上线：把真实用户的请求复制一份，同时交给新系统跑，但用户拿到的仍是旧系统的结果，然后对比两边哪里不一样。这样新系统就算出错也不影响任何人，又能用真实请求找出测试里没覆盖到的问题。一般要对比到绝大多数结果一致，才会把流量切过去。</p>
@@ -220,7 +227,7 @@
 
 </main>
 <footer><div class="wrap">
-  <nav><a href="index.html">首页</a><a href="news/2026-11-27.html">今日简报</a><a href="library.html">资料库</a><a href="prompts.html">提示词库</a><a href="topics.html">新闻搜索</a><a href="archive.html">存档</a><a href="about.html">关于</a></nav>
+  <nav><a href="index.html">首页</a><a href="news/2026-11-28.html">今日简报</a><a href="library.html">资料库</a><a href="prompts.html">提示词库</a><a href="topics.html">新闻搜索</a><a href="archive.html">存档</a><a href="about.html">关于</a></nav>
   非常AI · feichangai.vip<br>本站资讯均标注来源，只做自有摘要与点评并附原文链接，不全文转载。内容由 AI 辅助整理，逐条核对官方来源。
 </div></footer>
 <script>
